@@ -1,0 +1,16 @@
+{
+    "status": "Domain Intelligence v4.2",
+    "domain": "Salud",
+    "primary_intensity": "age",
+    "ratios": {},
+    "metrics": [
+        "age",
+        "treatment_cost",
+        "recovery_days"
+    ],
+    "categories": [
+        "patient_id",
+        "diagnosis",
+        "visit_date"
+    ]
+}

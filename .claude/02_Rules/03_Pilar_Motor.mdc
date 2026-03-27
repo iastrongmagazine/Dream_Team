@@ -1,0 +1,105 @@
+---
+description: PILAR 03: Estándares de Ingeniería, Stack Tecnológico y Organización (Motor AI-Prime)
+globs: */*.{html,css,js,ts,tsx,py,md}
+alwaysApply: true
+---
+
+# 🛠️ Regla 03: El Motor (Engineering & System Standards)
+
+## Overview
+
+Este pilar define la excelencia técnica y arquitectónica de PersonalOS. Asegura que el sistema sea robusto (Armor Layer), estéticamente superior (Premium UI) y esté perfectamente validado (Pure Green).
+
+Implementa la visibilidad de progreso técnica y garantiza el uso de tecnologías premium para una experiencia de usuario superior.
+
+## Rule: Estándares de Ingeniería y Stack
+
+1.  **Tecnología Premium**:
+    - **Vanilla First**: Priorizar Vanilla CSS/JS sobre frameworks. **No usar Tailwind** a menos que sea pedido.
+    - **Aesthetics**: Usar HSL, Glassmorphism (`backdrop-filter`) y bordes sutiles (`0.1 alpha`).
+2.  **Armor Layer (Blindaje)**:
+    - **Rutas Absolutas**: Todo script DEBE resolver rutas dinámicamente desde la raíz del proyecto.
+    - **Validación Proactiva**: Verificar existencia de archivos/carpetas antes de operar.
+3.  **Organización de Habilidades (Skills)**:
+    - Seguir el formato `NN_Nombre_Skill`.
+    - Si un flujo se repite 3 veces, crear una nueva Skill.
+    - **Skill Fusion**: Usar siempre el conocimiento oficial de skills instaladas (Vercel, Docker, etc.) antes de intentar implementaciones manuales.
+4.  **Vitaminización de Scripts**: Los scripts de `04_ENGINE` deben incluir Branding de PersonalOS y notificaciones de voz (TTS).
+5.  **Validación de Salud (Pure Green)**: El sistema debe mantenerse con métricas del 100% en rutas, dependencias y hooks.
+6.  **Visibilidad de Progreso en Scripts Multi-Paso**:
+    - **Descripción**: Todo script en `04_ENGINE` que ejecute múltiples pasos (≥3) DEBE mostrar porcentaje de avance acumulado.
+    - **Formato**: `[XX.X%] Paso N/Total: Descripción`
+    - **Notificaciones de Voz**: Opcional en hitos clave (25%, 50%, 75%) para evitar saturación.
+    - **Template Disponible**: `04_ENGINE/templates/multi_step_script_template.py`
+7.  **Integridad Matemática (Domain Logic)**:
+    - **Centralización**: Todas las constantes físicas y fórmulas de dominio (ej. API RP 13B-1) DEBEN residir únicamente en el Engine.
+    - **Validación de Curvas**: Toda visualización técnica DEBE ser validada contra los puntos de datos reales. Si la curva teórica no pasa por los puntos experimentales, el sistema NO está en PURE GREEN.
+
+## 🎨 Design Tokens (Sleek Dark & Electro-Rams)
+
+- **Primary**: `hsl(230, 100%, 67%)`
+- **Surface**: `rgba(255, 255, 255, 0.03)` + `blur(12px)`
+- **Radius**: `16px` (Premium feel)
+- **Lima (Electro)**: `#BFF333` (Status: Sarta, Éxito)
+- **Lima (Text)**: `#6A8D00` (High Contrast for labels)
+- **Azul (Cobalto)**: `#2563EB` (Status: Anular, Data)
+
+## 🛡️ Estándares Code Logic
+
+### ❌ BAD: Código Frágil o Básico
+
+```python
+# Ruta relativa insegura
+open("data.json")
+# Estilo plano sin estética premium
+background: #333
+```
+
+### ✅ GOOD: Armor Layer & Premium UI
+
+```python
+# Ruta absoluta segura (Armor Layer)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+config_path = os.path.join(BASE_DIR, "data", "config.json")
+```
+
+```css
+/* Glassmorphism Premium */
+.panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+```
+
+## When You Think You Need a Framework
+
+### "Este componente es complejo, Tailwind lo haría más fácil"
+
+- **❌ BAD**: Inyectar Tailwind en un proyecto Vanilla sin permiso explícito.
+- **✅ GOOD**: Usar CSS Variables y Flexbox/Grid con el diseño HSL/Glassmorphism para mantener el control total y la estética Premium.
+
+## Specific Project Patterns
+
+### Design Tokens (Sleek Dark)
+
+- **Primary**: `hsl(230, 100%, 67%)`
+- **Surface**: `rgba(255, 255, 255, 0.03)` + `blur(12px)`
+- **Radius**: `16px`
+
+## Alternative Solutions
+
+### 1. Gestión de Progreso en Scripts
+
+- Usar notificaciones de voz (TTS) solo en hitos clave (25%, 50%, 75%) para evitar la saturación del usuario.
+
+## Checklist for the Assistant
+
+- [ ] ¿He aplicado la Armor Layer a todas las rutas de archivo?
+- [ ] ¿El diseño cumple con los estándares Premium (Glassmorphism/HSL)?
+- [ ] ¿He validado que el sistema esté en PURE GREEN tras mis cambios?
+- [ ] ¿He utilizado las Skills oficiales si están disponibles?
+- [ ] ¿He vitaminizado los nuevos scripts con branding y avisos de voz?
+- [ ] **¿He implementado porcentajes de avance en scripts multi-paso (≥3 pasos)?**
+
+Remember: Indestructible por diseño, superior por estética. Alineado con el Motor PersonalOS.

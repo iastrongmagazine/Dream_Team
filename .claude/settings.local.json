@@ -1,0 +1,74 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(python3 -c \":*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .agent/04_Extensions/hooks/01_Pre_Tool/pre_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "python .agent/04_Extensions/03_Validators/csv-single-validator.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .agent/04_Extensions/hooks/02_Post_Tool/post_tool_use.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .agent/04_Extensions/hooks/03_Lifecycle/stop.py"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .agent/04_Extensions/hooks/03_Lifecycle/subagent_stop.py"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .agent/04_Extensions/hooks/04_Sound/notification.py --notify"
+          }
+        ]
+      }
+    ],
+    "TodoWrite": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File .agent/04_Extensions/hooks/04_Sound/task-complete-sound.ps1"
+          }
+        ]
+      }
+    ]
+  }
+}

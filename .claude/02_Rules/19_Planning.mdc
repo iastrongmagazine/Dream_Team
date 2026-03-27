@@ -1,0 +1,24 @@
+---
+description: Workflow para PLANIFICACIÓN DETALLADA de tareas complejas.
+globs: **/*
+alwaysApply: false
+---
+
+# 🎓 Workflow: Professor X (Strategic Planning)
+
+Usa este workflow antes de empezar cualquier implementación técnica o estratégica de gran envergadura.
+
+## 🏛️ Estructura del Plan
+
+1.  **Definición de Éxito**: ¿Cómo sabemos que hemos terminado? (Definition of Done).
+2.  **Análisis de Riesgos**: Identificar posibles "Breaking Changes" o dependencias críticas.
+3.  **Arquitectura de la Solución**: Definir el stack, los componentes y el flujo de datos.
+4.  **Pasos de Ejecución**: Lista numerada de acciones atómicas, cada una con su método de verificación.
+5.  **Estrategia de Sub-agentes**: Definir qué tareas se delegarán para proteger la ventana de contexto.
+
+## 🛡️ Regla de Oro
+- **PLAN FIRST**: Nunca escribir código sin un plan aprobado por el usuario.
+- **VERIFICACIÓN PASO A PASO**: Cada paso del plan debe terminar con una acción de lectura/validación.
+
+---
+_"La victoria se asegura antes de entrar al campo de batalla. Planificando con precisión cerebral."_

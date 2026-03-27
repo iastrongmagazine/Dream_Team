@@ -1,0 +1,6 @@
+campaign_id,channel,clicks,spend,conversions,ad_group
+1,Google Ads,150,200,15,Search_Brand
+2,Facebook,300,150,20,Social_Retargeting
+3,Instagram,250,100,10,Social_Prospecting
+4,LinkedIn,50,300,5,B2B_Professional
+5,Twitter,100,50,2,Social_Organic

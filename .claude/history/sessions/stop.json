@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-03-20T14:24:45.352994",
+    "data": {
+      "event": "stop",
+      "chat": false
+    }
+  },
+  {
+    "timestamp": "2026-03-20T14:24:57.019350",
+    "data": {
+      "event": "stop",
+      "chat": false
+    }
+  },
+  {
+    "timestamp": "2026-03-20T15:06:10.239291",
+    "data": {
+      "event": "stop",
+      "chat": false
+    }
+  },
+  {
+    "timestamp": "2026-03-20T15:12:49.257517",
+    "data": {
+      "event": "stop",
+      "chat": false
+    }
+  },
+  {
+    "timestamp": "2026-03-20T15:13:56.772929",
+    "data": {
+      "event": "stop",
+      "chat": false
+    }
+  },
+  {
+    "timestamp": "2026-03-21T03:50:22.486891",
+    "data": {
+      "event": "stop",
+      "chat": false
+    }
+  }
+]

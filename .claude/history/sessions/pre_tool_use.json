@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-03-20T15:12:13.047194",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-03-21T03:50:23.151263",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  }
+]

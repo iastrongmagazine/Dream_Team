@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2026-03-21T03:50:24.426889",
+    "data": {
+      "event": "subagent_stop",
+      "status": "success"
+    }
+  }
+]

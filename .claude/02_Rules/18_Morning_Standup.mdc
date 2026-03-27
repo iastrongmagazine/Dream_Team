@@ -1,0 +1,24 @@
+---
+description: Workflow para el Standup Matutino y planificación del día.
+globs: **/*
+alwaysApply: false
+---
+
+# ☀️ Workflow: Morning Standup
+
+Usa este workflow cuando el usuario pregunte "¿Qué debería trabajar hoy?", "Standup matutino" o similar.
+
+## 📋 Protocolo de Enfoque
+
+1.  **Revisión de Prioridades**: Inspeccionar `00_Core/GOALS.md` y `02_Operations/` para identificar tareas P0 y P1.
+2.  **Análisis de Bloqueos**: Identificar tareas con status `b` (blocked) y proponer soluciones inmediatas.
+3.  **Selección del Día (The Big 3)**: Sugerir exactamente 3 tareas para el día que maximicen el avance hacia los objetivos trimestrales.
+4.  **Verificación de Capacidad**: Preguntar al usuario si el plan es realista o si hay compromisos externos (reuniones, etc.).
+
+## 📊 Salida Estructurada
+- **Objetivo Principal**: El "Norte" del día.
+- **Top 3 Tasks**: Lista clara con links a los archivos de tarea.
+- **Recordatorio de Hábito**: Algún consejo basado en Dieter Rams o productividad minimalista.
+
+---
+_"Enfoque total en lo que importa. Menos, pero mejor."_

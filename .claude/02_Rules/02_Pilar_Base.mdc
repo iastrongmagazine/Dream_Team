@@ -1,0 +1,54 @@
+---
+description: PILAR 0: Blindaje de Interconexiones y Auditoría de Motores de Cálculo
+globs: src/engine/**/*.ts
+alwaysApply: true
+---
+
+# 🔘 Pilar 0: Blindaje de Interconexiones (Engine Armor)
+
+## Overview
+
+Este pilar define el protocolo de seguridad para la modificación de los motores de cálculo (Rheology, Hydraulics, Pressures, Pump). Su objetivo es prevenir regresiones y asegurar la integridad de la cadena de cálculo.
+
+## 🧠 Reglas de Oro de los Motores
+
+1.  **Trinidad Reológica**: Todo cálculo de hidráulica DEBE considerar los tres modelos fundamentales: **Bingham Plastic**, **Power Law** y **Herschel-Bulkley**.
+2.  **Protocolo de Interconexión**: Antes de modificar cualquier motor, se debe auditar el `orchestrator.ts` para entender cómo fluyen los datos hacia otros motores.
+3.  **Validación de Tipos (Global Types)**: No se permiten definiciones locales de tipos de resultados. Se deben usar siempre las interfaces definidas en `src/store/types.ts`.
+4.  **Armor Layer en Resultados**: Los resultados de los motores deben ser validados contra `null` o `undefined` en el `store` antes de ser despachados a la UI.
+5.  **Pure Green Engine**: Un cambio en un motor solo se considera completo si `npm run dev` compila sin alertas y los resultados son coherentes con los estándares IADC/API (OilBrain).
+6.  **Directiva de Redundancia Élite (The Octopus)**: Usar siempre **8 Sub-agentes** para tareas críticas (4 para revisión forense, 4 para corrección quirúrgica). Cada sub-agente debe ejecutar el `Workflow Genesis` para asegurar un contexto del 100%.
+7.  **Aprendizajes de Sesión (2026-02-20)**:
+    - **Nan Shielding**: Nunca permitir que `NaN` o `Infinity` lleguen a la UI (usar `Math.max` y guards).
+    - **HB Guard**: El Yield Stress (τ₀) en Herschel-Bulkley debe ser `Math.max(0, ...)`.
+    - **TVD Safe**: Las divisiones por profundidad vertical deben usar un divisor mínimo de 1 para evitar errores de punto flotante o desbordamientos.
+
+## 🛠️ Estándares de Implementación
+
+### ❌ BAD: Saltarse modelos o tipos globales
+
+```typescript
+// Mal: Solo Power Law y tipo local
+function calc(data: any) { ... }
+```
+
+### ✅ GOOD: Integración Total y Tipado
+
+```typescript
+// Bien: Uso de tipos globales e integración de modelos
+import { RheologyResult } from "../store/types";
+function calculateHydraulics(rheology: RheologyResult) {
+  // Manejo de Bingham, PL y HB
+}
+```
+
+## ✅ Checklist de Auditoría
+
+- [ ] ¿He verificado que el cambio afecta a los 3 modelos reológicos si aplica?
+- [ ] ¿He validado la firma de la función contra `orchestrator.ts`?
+- [ ] ¿Los tipos de retorno coinciden exactamente con `types.ts`?
+- [ ] ¿He actualizado la base de conocimientos `oil_brain_standards.md` si la lógica cambió?
+
+---
+
+_Alineado con el Protocolo PersonalOS: "La precisión es el pilar de la seguridad operativa."_

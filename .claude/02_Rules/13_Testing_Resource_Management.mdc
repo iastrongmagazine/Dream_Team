@@ -1,0 +1,67 @@
+---
+description: PILAR 12: Gestión de Recursos de Hardware durante Pruebas (Pure Green Standard)
+globs: */*.{test,spec}.{js,ts,jsx,tsx}
+alwaysApply: false
+---
+
+# 🛡️ Regla 12: Test Resource Management (Skill 48)
+
+## Overview
+
+Esta regla previene el colapso del sistema PersonalOS al ejecutar suites de pruebas pesadas en entornos locales. Garantiza la estabilidad del hardware del usuario durante la validación masiva.
+
+Esta regla previene el colapso del sistema PersonalOS al ejecutar suites de pruebas pesadas en entornos locales.
+
+## Rule: Gestión de Recursos de Hardware (Skill 48)
+
+1.  **Always limit Workers**: Siempre añade el flag de límite de workers si no está presente en el comando de ejecución.
+    - Vitest: `--maxWorkers=4`
+    - Playwright: `--workers=4`
+    - Jest: `--maxWorkers=4`
+2.  **Always Monitor CPU**: Si se detecta un uso de CPU > 90%, cancelar la ejecución e informar al usuario inmediatamente.
+3.  **Always Cleanup**: Asegurar la ejecución de hooks de limpieza tras cada suite para liberar memoria y recursos.
+
+## Common Violations and Solutions
+
+### ❌ BAD: Ejecución por Defecto (Saturación)
+
+```bash
+# Ejecución sin límites
+npx vitest
+# Riesgo: Bloqueo del sistema al usar todos los núcleos disponibles.
+```
+
+### ✅ GOOD: Ejecución Controlada
+
+```bash
+# Ejecución con flags de control
+npx vitest --maxWorkers=4
+# Resultado: Estabilidad del sistema garantizada.
+```
+
+## When You Think You Need More Power
+
+### "Tengo 32 núcleos, puedo usarlos todos para terminar antes"
+
+- **❌ BAD**: Ejecutar al 100% de CPU impidiendo que el usuario pueda seguir usando su ordenador.
+- **✅ GOOD**: "Aunque el hardware es potente, limitaré a 4 workers para mantener la fluidez del entorno operativo siguiendo el Pilar 12."
+
+## Specific Project Patterns
+
+### Skill 48 (Resource Guardian)
+
+- Integrar la validación de hardware en cualquier script de `04_ENGINE` que realice procesamiento intensivo de archivos.
+
+## Alternative Solutions
+
+### 1. Ejecución Secuencial
+
+- Para archivos de test extremadamente pesados, preferir `--runInBand` o ejecución secuencial si `--maxWorkers=4` sigue saturando la CPU.
+
+## Checklist for the Assistant
+
+- [ ] ¿He añadido el flag de workers (`--workers=4` o similar) a mi comando de test?
+- [ ] ¿He verificado que la ejecución no bloqueará el sistema del usuario (CPU < 90%)?
+- [ ] ¿He asegurado que los hooks de limpieza se ejecutan al finalizar?
+
+Remember: La salud del hardware es prioritaria para la continuidad del desarrollo.
