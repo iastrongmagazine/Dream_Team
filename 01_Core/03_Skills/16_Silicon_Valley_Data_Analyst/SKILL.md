@@ -26,6 +26,20 @@ triggers:
 
 > Original purpose of this skill. This section preserves WHY this skill exists.
 
+## ⚠️ Gotchas (Errores Comunes a Evitar)
+
+- **[ERROR]**: Presentar aggregate metrics sin segmentación
+  - **Por qué**: Los promedios ocultan patrones importantes
+  - **Solución**: Siempre segmentar por cohort, fuente, o comportamiento
+
+- **[ERROR]**: No reportar statistical significance
+  - **Por qué**: Sin p-values, no sabemos si la diferencia es real o ruido
+  - **Solución**: Incluir p-value o confidence interval en cada comparación
+
+- **[ERROR]**: Análisis sin recomendación de acción
+  - **Por qué**: Insight sin acción es inútil
+  - **Solución**: Terminar siempre con "we should do X"
+
 
 
 > Level: **TOP TOP** — Executive-Grade Analytics
@@ -518,13 +532,4 @@ This skill transforms you into a **Silicon Valley-grade data analyst**:
 *Author: sebas@thinkdifferent*
 *Framework: Anthropic Skill Creator v2.0*
 *Level: TOP TOP — Executive Grade*
-
-
-## ⚠️ Gotchas (Errores Comunes a Evitar)
-
-> Common mistakes and edge cases to watch for when using this skill.
-
-- **[ERROR]**: Add common error here
-  - **Por qué**: Explanation of why it's an error
-  - **Solución**: How to fix or avoid it
 

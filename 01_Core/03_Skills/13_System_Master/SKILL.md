@@ -13,6 +13,28 @@ argument-hint: "[what you want to accomplish]"
 
 # 🎯 System Master - Guía Maestra del Ecosistema
 
+## Esencia Original
+
+> Original purpose of this skill. This section preserves WHY this skill exists.
+
+## ⚠️ Gotchas (Errores Comunes a Evitar)
+
+- **[ERROR]**: No verificar si la tarea requiere Gentleman o CE
+  - **Por qué**: Usar la herramienta equivocada ralentiza el trabajo
+  - **Solución**: Consultar la Quick Decision Matrix antes de actuar
+
+- **[ERROR]**: Saltarse /ce:brainstorm antes de code
+  - **Por qué**: Sin exploración de requisitos, el código no resuelve el problema
+  - **Solución**: Siempre hacer brainstorm primero
+
+- **[ERROR]**: No hacer /ce:review antes de commit
+  - **Por qué**: Código sin review tiene más bugs
+  - **Solución**: Ejecutar /ce:review siempre antes de commit
+
+- **[ERROR]**: No documentar con /ce:compound
+  - **Por qué**: Sin documentación, el conocimiento se pierde
+  - **Solución**: Siempre hacer compound después de completar features
+
 ## 🧠 Quick Decision Matrix
 
 **GENTLEMAN = MANOS** → Ejecutar código

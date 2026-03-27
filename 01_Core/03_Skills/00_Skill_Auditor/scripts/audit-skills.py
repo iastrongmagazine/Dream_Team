@@ -125,18 +125,17 @@ def audit_skill(skill_dir: Path) -> dict:
             desc_match = re.search(r"^description:\s*(.+)$", yaml_content, re.MULTILINE)
             if desc_match:
                 desc_value = desc_match.group(1).strip()
-                # Check triggers
+                # Check triggers - accept "triggers on:", "triggers:", "trigger:", "TRIGGERS:"
                 has_triggers = (
-                    "triggers on:" in desc_value.lower()
-                    or "trigger" in desc_value.lower()
-                )
+                    "triggers" in desc_value.lower() or "trigger" in desc_value.lower()
+                ) or "TRIGGERS:" in desc_value
                 results["checks"]["description: has triggers"] = has_triggers
 
                 if has_triggers:
                     results["passed"] += 1
                 else:
                     results["failed"] += 1
-                    results["missing"].append("description must include 'triggers on:'")
+                    results["missing"].append("description must include 'triggers'")
 
                 # Check length
                 is_valid_length = len(desc_value) <= 1024
@@ -211,8 +210,11 @@ def audit_skill(skill_dir: Path) -> dict:
         gotcha_patterns = [
             r"\*\*Don\'t\*\*:",  # **Don't**:
             r"\*\*ERROR\*\*:",  # **ERROR**:
+            r"\*\*\[ERROR\]\*\*:",  # **[ERROR]**:
+            r"### ERROR",  # ### ERROR 1: (markdown header)
             r"^- Don\'t:",  # - Don't:
             r"^- \[ERROR\]:",  # - [ERROR]:
+            r"^- \*\*\[ERROR\]\*\*:",  # - **[ERROR]**:
         ]
         gotcha_count = 0
         for pattern in gotcha_patterns:

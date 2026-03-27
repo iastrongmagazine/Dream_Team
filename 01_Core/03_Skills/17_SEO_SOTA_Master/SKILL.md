@@ -25,9 +25,25 @@ triggers:
 
 ## Esencia Original
 
-> Original purpose of this skill. This section preserves WHY this skill exists.
+> Esta skill existe para transformar SEO de "opinión" a "ciencia de datos". Cada recomendación debe estar respaldada por datos,测试y resultados medibles.
 
+## ⚠️ Gotchas (Errores Comunes a Evitar)
 
+- **[ERROR]**: Recomendar cambios sin datos de analytics
+  - **Por qué**: Sin datos, es opinión, no SEO
+  - **Solución**: Siempre Consultar Google Analytics/Console antes de recomendar
+
+- **[ERROR]**: No hacer technical audit primero
+  - **Por qué**: Los problemas técnicos bloquean el ranking
+  - **Solución**: Always hacer audit de Core Web Vitals primero
+
+- **[ERROR]**: No segmentar páginas por performance
+  - **Por qué**: Las páginas tienen comportamientos distintos
+  - **Solución**: Crear cohortes por traffic, conversions, keywords
+
+- **[ERROR]**: Ignorar schema markup
+  - **Por qué**: Schema ayuda a Google a entender el contenido
+  - **Solución**: Siempre incluir JSON-LD para páginas clave
 
 > **Level**: TOP TOP — Silicon Valley Grade SEO
 

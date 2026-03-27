@@ -171,7 +171,7 @@ Para diseño o features que requieren testing visual/interactivo.
 
 - Artículo: [Anthropic Engineering Blog](https://docs.anthropic.com)
 - Scripts: `08_Scripts_Os/Legacy_Backup/11_Anthropic_Harness/` (legacy - verificar)
-- Skills: `.agent/02_Skills/14_Anthropic_Harness/`
+- Skills: `01_Core/03_Skills/14_Anthropic_Harness/`
 
 ---
 
