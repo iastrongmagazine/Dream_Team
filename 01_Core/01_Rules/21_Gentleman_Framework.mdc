@@ -5,7 +5,7 @@ alwaysApply: true
 ---
 # Gentleman Programming Framework
 Before performing any task, the agent MUST:
-1. Load context from .agent/01_Agents/ and .agent/02_Skills/
+1. Load context from 01_Core/03_Agents/ and 01_Core/03_Skills/
 2. Use Orchestrator (10_Workflow_Orchestrator.md) for complex TDD flows.
 3. Validate all code changes using GGA (pre-commit hook).
 4. Utilize Engram MCP for persistent memory.

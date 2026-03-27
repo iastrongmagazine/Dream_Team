@@ -413,6 +413,101 @@ Dumbledor_Silver: feat: initialize Think Different PersonalOS
 
 ---
 
+## 6. SKILL CREATOR v2.0 (Anthropic Official) — ⭐ PRIMARY
+
+> **⭐ SKILL OFICIAL PARA CREAR NUEVAS SKILLS**
+
+**Estado**: ✅ Integrado (2026-03-27)  
+**Fuente**: `anthropics/claude-plugins-official`  
+**Versión**: Skill Creator v2.0 (Skills 2.0)
+**Prioridad**: ⭐ **PRIMARY** — Usar esta versión para crear skills
+
+### Ubicaciones
+| Tipo | Ruta | Estado |
+|------|------|--------|
+| **⭐ PRIMARY Plugin** | `01_Core/08_Plugins/Staff_Claude_Code/plugins/skill-creator/` | ✅ Activo |
+| **⭐ PRIMARY Skill** | `01_Core/08_Plugins/Staff_Claude_Code/skills/15_Skill_Creator_Official/` | ✅ Activo |
+| Backup (Official) | `01_Core/08_Plugins/01_Claude-Plugins_Official/plugins/skill-creator/` | ✅ |
+
+### Características v2.0
+- **评测系统**: `scripts/run_eval.py` - Tests cuantitativos automatizados
+- **Benchmarks**: `scripts/aggregate_benchmark.py` - Métricas de rendimiento
+- **Description Optimization**: `scripts/improve_description.py` - Optimización de triggers
+- **Multi-agent Support**: Ejecución paralela en contexto limpio
+- **Blind Comparison**: `agents/comparator.md` - Comparación A/B ciega
+- **Post-hoc Analysis**: `agents/analyzer.md` - Análisis de resultados
+- **Viewer Web**: `eval-viewer/generate_review.py` - Interfaz de revisión
+
+### Uso
+```bash
+# ⭐ Para crear skills - USAR ESTE (PRIMARY)
+Usar skill en 01_Core/08_Plugins/Staff_Claude_Code/skills/15_Skill_Creator_Official/
+
+# Para benchmarking
+python 01_Core/08_Plugins/Staff_Claude_Code/plugins/skill-creator/skills/skill-creator/scripts/aggregate_benchmark.py <directorio>
+```
+
+---
+
+## 7. SILICON VALLEY DATA ANALYST — ⭐ TOP TOP
+
+> **Skill de análisis de datos de nivel Silicon Valley**
+
+**Estado**: ✅ Creado (2026-03-27)  
+**Ubicación**: `01_Core/03_Skills/16_Silicon_Valley_Data_Analyst/`
+
+### Características
+- **Executive Summaries** — One-pagers para C-level
+- **Cohort Analysis** — Retention matrix y behavior patterns
+- **A/B Testing** — Statistical significance con p-values
+- **Predictive Modeling** — Random Forest, Prophet, Survival Analysis
+- **Data Storytelling** — Insights accionables, no tablas
+
+### Triggers
+- "analyze data", "data analysis"
+- "cohort analysis", "user behavior"
+- "generate insights", "SILICON VALLEY"
+- "revenue metrics", "churn analysis"
+
+### Stack
+```bash
+pandas, numpy, scipy, scikit-learn
+lifelines, prophet, statsmodels
+matplotlib, seaborn, plotly
+```
+
+---
+
+## 7. SILICON VALLEY DATA ANALYST — ⭐ TOP TOP
+
+> **Skill de análisis de datos de nivel Silicon Valley**
+
+**Estado**: ✅ Creado (2026-03-27)  
+**Ubicación**: `01_Core/03_Skills/16_Silicon_Valley_Data_Analyst/`
+
+### Características
+- Executive Summaries, Cohort Analysis, A/B Testing, Predictive Modeling
+
+### Triggers
+- "analyze data", "SILICON VALLEY", "churn analysis"
+
+---
+
+## 8. SEO SOTA MASTER — ⭐ TOP TOP
+
+> **Skill de SEO nivel Silicon Valley**
+
+**Estado**: ✅ Creado (2026-03-27)  
+**Ubicación**: `01_Core/03_Skills/17_SEO_SOTA_Master/`
+
+### Características
+- Technical Audit, Keyword Research, Programmatic SEO, Schema Markup
+
+### Triggers
+- "SEO audit", "technical SEO", "improve ranking", "schema markup"
+
+---
+
 ## Quick Reference
 
 | Category | Command/Tool |

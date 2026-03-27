@@ -273,15 +273,31 @@ Code review con IA.
 
 ## 6. PLUGINS INSTALADOS
 
-### Skill Creator v2.0 (Anthropic Official)
+### Skill Creator v2.0 (Anthropic Official) — ⭐ PRIMARY
 
-**Estado**: ✅ Instalado (2026-03-27)  
+**Estado**: ✅ Integrado (2026-03-27)  
 **Fuente**: `anthropics/claude-plugins-official`  
 **Versión**: Skill Creator v2.0 (Skills 2.0)
+**Prioridad**: ⭐ **PRIMARY** — Usar esta versión para crear skills
 
 #### Ubicaciones
-- **Plugin**: `01_Core/08_Plugins/skill-creator/`
-- **Skill**: `01_Core/03_Skills/15_Skill_Creator_Official/`
+| Tipo | Ruta | Estado |
+|------|------|--------|
+| **⭐ PRIMARY Skill** | `01_Core/08_Plugins/Staff_Claude_Code/skills/15_Skill_Creator_Official/` | ✅ Activo |
+| Plugin Backup | `01_Core/08_Plugins/Staff_Claude_Code/plugins/skill-creator/` | ✅ |
+| Official Backup | `01_Core/08_Plugins/01_Claude-Plugins_Official/plugins/skill-creator/` | ✅ |
+
+#### Estructura
+```
+Staff_Claude_Code/
+├── skills/15_Skill_Creator_Official/     ← ⭐ USAR ESTE
+│   ├── SKILL.md
+│   ├── agents/ (grader, comparator, analyzer)
+│   ├── scripts/ (eval, benchmark, etc.)
+│   └── eval-viewer/
+└── plugins/skill-creator/                 ← Backup
+    └── skills/skill-creator/
+```
 
 #### Características v2.0
 - **评测系统**: `scripts/run_eval.py` - Tests cuantitativos automatizados
@@ -294,11 +310,11 @@ Code review con IA.
 
 #### Uso
 ```bash
-# Para crear skills con testing
-Usar skill en 01_Core/03_Skills/15_Skill_Creator_Official/
+# ⭐ Para crear skills - USAR ESTE (PRIMARY)
+Usar skill en 01_Core/08_Plugins/Staff_Claude_Code/skills/15_Skill_Creator_Official/
 
 # Para benchmarking
-python 01_Core/08_Plugins/skill-creator/skills/skill-creator/scripts/aggregate_benchmark.py <directorio>
+python 01_Core/08_Plugins/Staff_Claude_Code/plugins/skill-creator/skills/skill-creator/scripts/aggregate_benchmark.py <directorio>
 ```
 
 #### Instalación Global (Opcional)
@@ -589,6 +605,65 @@ ls -la 03_Tasks/
 - **Consistencia**: Mismos fundamentos, diferentes tareas
 - **Eficiente**: No reinventar contexto en cada subagente
 - **Escalable**: Nuevos subagentes heredan conocimiento acumulado
+
+---
+
+## 7. SILICON VALLEY DATA ANALYST — ⭐ TOP TOP
+
+> **Skill de análisis de datos de nivel Silicon Valley**
+
+**Estado**: ✅ Creado (2026-03-27)  
+**Ubicación**: `01_Core/03_Skills/16_Silicon_Valley_Data_Analyst/`
+
+### Características
+- **Executive Summaries** — One-pagers para C-level
+- **Cohort Analysis** — Retention matrix y behavior patterns
+- **A/B Testing** — Statistical significance con p-values
+- **Predictive Modeling** — Random Forest, Prophet, Survival Analysis
+- **Data Storytelling** — Insights accionables, no tablas
+
+### Triggers
+- "analyze data", "data analysis"
+- "cohort analysis", "user behavior"
+- "generate insights", "SILICON VALLEY"
+- "revenue metrics", "churn analysis"
+
+### Stack
+```bash
+pandas, numpy, scipy, scikit-learn
+lifelines, prophet, statsmodels
+matplotlib, seaborn, plotly
+```
+
+---
+
+## 8. SEO SOTA MASTER — ⭐ TOP TOP
+
+> **Skill de SEO nivel Silicon Valley**
+
+**Estado**: ✅ Creado (2026-03-27)  
+**Ubicación**: `01_Core/03_Skills/17_SEO_SOTA_Master/`
+
+### Características
+- **Technical Audit** — Core Web Vitals, crawlability, indexation
+- **Keyword Research** — Oportunidades, gaps, quick wins
+- **Content Audit** — Scoring, gaps, refresh recommendations
+- **Programmatic SEO** — Generación de páginas a escala
+- **Ranking Prediction** — ML-based impact estimation
+- **Schema Markup** — Auto-generación de JSON-LD
+
+### Triggers
+- "SEO audit", "technical SEO"
+- "programmatic SEO", "keyword research"
+- "improve ranking", "content strategy"
+- "schema markup", "SEO best practices"
+
+### Stack
+```bash
+ahrefs, semrush, sistrix, screamingfrog
+pandas, scikit-learn, numpy
+selenium, playwright
+```
 
 ---
 

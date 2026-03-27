@@ -62,7 +62,7 @@ def find_project_root():
     """Find the project root."""
     current = Path(__file__).resolve()
     for parent in [current] + list(current.parents):
-        if (parent / ".agent").exists():
+        if (parent / ".agent").exists() or (parent / "01_Core").exists():
             return parent
     return Path.cwd()
 
@@ -234,28 +234,48 @@ def main():
         help="Show what would be fixed without making changes",
     )
     parser.add_argument(
-        "--skill", type=str, help="Fix specific skill only (e.g., 01_Morning_Standup)"
+        "--skill",
+        type=str,
+        help="Fix specific skill only (e.g., 16_Silicon_Valley_Data_Analyst)",
+    )
+    parser.add_argument(
+        "path", nargs="?", type=str, default=None, help="Path to skills directory"
     )
     args = parser.parse_args()
 
     print("=" * 60)
-    print("🔧 SKILL FIXER")
+    print("🔧 SKILL FIXER - SOTA v5.1")
     print(f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     if args.dry_run:
         print("🔍 DRY RUN MODE - No changes will be made")
     print("=" * 60)
 
     project_root = find_project_root()
-    skills_dir = project_root / ".agent" / "02_Skills" / "02_Project_Manager"
+
+    # Determine skills directory
+    if args.path:
+        skills_dir = Path(args.path)
+    else:
+        skills_dir = project_root / "01_Core" / "03_Skills"
+        if not skills_dir.exists():
+            skills_dir = project_root / ".agent" / "02_Skills"
 
     if not skills_dir.exists():
         print(f"❌ Skills directory not found: {skills_dir}")
+        print(f"Usage: python fix-missing.py [--skill NAME] [path/to/skills]")
         return
 
     # Find skills to fix
     if args.skill:
         skill_path = skills_dir / args.skill
-        if skill_path.exists():
+        if not skill_path.exists():
+            # Try case-insensitive search
+            for d in skills_dir.iterdir():
+                if d.is_dir() and d.name.lower() == args.skill.lower():
+                    skill_path = d
+                    break
+
+        if skill_path.exists() and skill_path.is_dir():
             skills = [skill_path]
         else:
             print(f"❌ Skill not found: {args.skill}")
