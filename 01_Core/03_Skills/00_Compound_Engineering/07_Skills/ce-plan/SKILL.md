@@ -56,14 +56,14 @@ A plan is ready when an implementer can start confidently without needing the pl
 
 #### 0.1 Resume Existing Plan Work When Appropriate
 
-If the user references an existing plan file or there is an obvious recent matching plan in `docs/plans/`:
+If the user references an existing plan file or there is an obvious recent matching plan in `04_Operations/05_Plans/`:
 - Read it
 - Confirm whether to update it in place or create a new plan
 - If updating, preserve completed checkboxes and revise only the still-relevant sections
 
 #### 0.2 Find Upstream Requirements Document
 
-Before asking planning questions, search `docs/brainstorms/` for files matching `*-requirements.md`.
+Before asking planning questions, search `04_Operations/07_Brain_Storming/` for files matching `*-requirements.md`.
 
 **Relevance criteria:** A requirements document is relevant if:
 - The topic semantically matches the feature description
@@ -152,7 +152,7 @@ Collect:
 - Architectural patterns and conventions to follow
 - Implementation patterns, relevant files, modules, and tests
 - AGENTS.md guidance that materially affects the plan, with CLAUDE.md used only as compatibility fallback when present
-- Institutional learnings from `docs/solutions/`
+- Institutional learnings from `04_Operations/06_Solutions/`
 
 #### 1.1b Detect Execution Posture Signals
 
@@ -252,8 +252,8 @@ Ask the user only when the answer materially affects architecture, scope, sequen
 
 - Draft a clear, searchable title using conventional format such as `feat: Add user authentication` or `fix: Prevent checkout double-submit`
 - Determine the plan type: `feat`, `fix`, or `refactor`
-- Build the filename following the repository convention: `docs/plans/YYYY-MM-DD-NNN-<type>-<descriptive-name>-plan.md`
-  - Create `docs/plans/` if it does not exist
+- Build the filename following the repository convention: `04_Operations/05_Plans/YYYY-MM-DD-NNN-<type>-<descriptive-name>-plan.md`
+  - Create `04_Operations/05_Plans/` if it does not exist
   - Check existing files for today's date to determine the next sequence number (zero-padded to 3 digits, starting at 001)
   - Keep the descriptive name concise (3-5 words) and kebab-cased
   - Examples: `2026-01-15-001-feat-user-authentication-flow-plan.md`, `2026-02-03-002-fix-checkout-race-condition-plan.md`
@@ -385,7 +385,7 @@ title: [Plan Title]
 type: [feat|fix|refactor]
 status: active
 date: YYYY-MM-DD
-origin: docs/brainstorms/YYYY-MM-DD-<topic>-requirements.md  # include when planning from a requirements doc
+origin: 04_Operations/07_Brain_Storming/YYYY-MM-DD-<topic>-requirements.md  # include when planning from a requirements doc
 deepened: YYYY-MM-DD  # optional, set later by deepen-plan when the plan is substantively strengthened
 ---
 
@@ -416,7 +416,7 @@ deepened: YYYY-MM-DD  # optional, set later by deepen-plan when the plan is subs
 
 ### Institutional Learnings
 
-- [Relevant `docs/solutions/` insight]
+- [Relevant `04_Operations/06_Solutions/` insight]
 
 ### External References
 
@@ -496,7 +496,7 @@ deepened: YYYY-MM-DD  # optional, set later by deepen-plan when the plan is subs
 
 ## Sources & References
 
-- **Origin document:** [docs/brainstorms/YYYY-MM-DD-<topic>-requirements.md](path)
+- **Origin document:** [04_Operations/07_Brain_Storming/YYYY-MM-DD-<topic>-requirements.md](path)
 - Related code: [path or symbol]
 - Related PRs/issues: #[number]
 - External docs: [url]
@@ -577,13 +577,13 @@ If the plan originated from a requirements document, re-read that document and v
 Use the Write tool to save the complete plan to:
 
 ```text
-docs/plans/YYYY-MM-DD-NNN-<type>-<descriptive-name>-plan.md
+04_Operations/05_Plans/YYYY-MM-DD-NNN-<type>-<descriptive-name>-plan.md
 ```
 
 Confirm:
 
 ```text
-Plan written to docs/plans/[filename]
+Plan written to 04_Operations/05_Plans/[filename]
 ```
 
 **Pipeline mode:** If invoked from an automated workflow such as LFG, SLFG, or any `disable-model-invocation` context, skip interactive questions. Make the needed choices automatically and proceed to writing the plan.
@@ -592,7 +592,7 @@ Plan written to docs/plans/[filename]
 
 After writing the plan file, present the options using the platform's blocking question tool when available (see Interaction Method). Otherwise present numbered options in chat and wait for the user's reply before proceeding.
 
-**Question:** "Plan ready at `docs/plans/YYYY-MM-DD-NNN-<type>-<name>-plan.md`. What would you like to do next?"
+**Question:** "Plan ready at `04_Operations/05_Plans/YYYY-MM-DD-NNN-<type>-<name>-plan.md`. What would you like to do next?"
 
 **Options:**
 1. **Open plan in editor** - Open the plan file for review
@@ -604,12 +604,12 @@ After writing the plan file, present the options using the platform's blocking q
 7. **Create Issue** - Create an issue in the configured tracker
 
 Based on selection:
-- **Open plan in editor** → Open `docs/plans/<plan_filename>.md` using the current platform's file-open or editor mechanism (e.g., `open` on macOS, `xdg-open` on Linux, or the IDE's file-open API)
+- **Open plan in editor** → Open `04_Operations/05_Plans/<plan_filename>.md` using the current platform's file-open or editor mechanism (e.g., `open` on macOS, `xdg-open` on Linux, or the IDE's file-open API)
 - **`/deepen-plan`** → Call `/deepen-plan` with the plan path
 - **`document-review` skill** → Load the `document-review` skill with the plan path
 - **Share to Proof** → Upload the plan:
   ```bash
-  CONTENT=$(cat docs/plans/<plan_filename>.md)
+  CONTENT=$(cat 04_Operations/05_Plans/<plan_filename>.md)
   TITLE="Plan: <plan title from frontmatter>"
   RESPONSE=$(curl -s -X POST https://www.proofeditor.ai/share/markdown \
     -H "Content-Type: application/json" \

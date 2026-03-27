@@ -83,7 +83,7 @@ Routing rules:
 | `compound-engineering:review:testing-reviewer` | Coverage gaps, weak assertions, brittle tests |
 | `compound-engineering:review:maintainability-reviewer` | Coupling, complexity, naming, dead code, abstraction debt |
 | `compound-engineering:review:agent-native-reviewer` | Verify new features are agent-accessible |
-| `compound-engineering:research:learnings-researcher` | Search docs/solutions/ for past issues related to this PR |
+| `compound-engineering:research:learnings-researcher` | Search 04_Operations/06_Solutions/ for past issues related to this PR |
 
 **Conditional (selected per diff):**
 
@@ -110,9 +110,9 @@ Every review spawns all 3 always-on personas plus the 2 CE always-on agents, the
 
 The following paths are compound-engineering pipeline artifacts and must never be flagged for deletion, removal, or gitignore by any reviewer:
 
-- `docs/brainstorms/*` -- requirements documents created by ce:brainstorm
-- `docs/plans/*.md` -- plan files created by ce:plan (living documents with progress checkboxes)
-- `docs/solutions/*.md` -- solution documents created during the pipeline
+- `04_Operations/07_Brain_Storming/*` -- requirements documents created by ce:brainstorm
+- `04_Operations/05_Plans/*.md` -- plan files created by ce:plan (living documents with progress checkboxes)
+- `04_Operations/06_Solutions/*.md` -- solution documents created during the pipeline
 
 If a reviewer flags any file in these directories for cleanup or removal, discard that finding during synthesis.
 
@@ -388,7 +388,7 @@ Assemble the final report using the template in [review-output-template.md](./re
 3. **Applied Fixes.** Include only if a fix phase ran in this invocation.
 4. **Residual Actionable Work.** Include when unresolved actionable findings were handed off or should be handed off.
 5. **Pre-existing.** Separate section, does not count toward verdict.
-6. **Learnings & Past Solutions.** Surface learnings-researcher results: if past solutions are relevant, flag them as "Known Pattern" with links to docs/solutions/ files.
+6. **Learnings & Past Solutions.** Surface learnings-researcher results: if past solutions are relevant, flag them as "Known Pattern" with links to 04_Operations/06_Solutions/ files.
 7. **Agent-Native Gaps.** Surface agent-native-reviewer results. Omit section if no gaps found.
 8. **Schema Drift Check.** If schema-drift-detector ran, summarize whether drift was found. If drift exists, list the unrelated schema objects and the required cleanup command. If clean, say so briefly.
 9. **Deployment Notes.** If deployment-verification-agent ran, surface the key Go/No-Go items: blocking pre-deploy checks, the most important verification queries, rollback caveats, and monitoring focus areas. Keep the checklist actionable rather than dropping it into Coverage.
@@ -405,7 +405,7 @@ Before delivering the review, verify:
 2. **No false positives from skimming.** For each finding, verify the surrounding code was actually read. Check that the "bug" isn't handled elsewhere in the same function, that the "unused import" isn't used in a type annotation, that the "missing null check" isn't guarded by the caller.
 3. **Severity is calibrated.** A style nit is never P0. A SQL injection is never P3. Re-check every severity assignment.
 4. **Line numbers are accurate.** Verify each cited line number against the file content. A finding pointing to the wrong line is worse than no finding.
-5. **Protected artifacts are respected.** Discard any findings that recommend deleting or gitignoring files in `docs/brainstorms/`, `docs/plans/`, or `docs/solutions/`.
+5. **Protected artifacts are respected.** Discard any findings that recommend deleting or gitignoring files in `04_Operations/07_Brain_Storming/`, `04_Operations/05_Plans/`, or `04_Operations/06_Solutions/`.
 6. **Findings don't duplicate linter output.** Don't flag things the project's linter/formatter would catch (missing semicolons, wrong indentation). Focus on semantic issues.
 
 ## Language-Agnostic

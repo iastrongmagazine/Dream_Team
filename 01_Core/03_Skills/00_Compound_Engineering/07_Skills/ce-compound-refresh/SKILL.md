@@ -1,13 +1,13 @@
 ---
 name: ce:compound-refresh
-description: Refresh stale or drifting learnings and pattern docs in docs/solutions/ by reviewing, updating, consolidating, replacing, or deleting them against the current codebase. Use after refactors, migrations, dependency upgrades, or when a retrieved learning feels outdated or wrong. Also use when reviewing docs/solutions/ for accuracy, when a recently solved problem contradicts an existing learning, when pattern docs no longer reflect current code, or when multiple docs seem to cover the same topic and might benefit from consolidation.
+description: Refresh stale or drifting learnings and pattern docs in 04_Operations/06_Solutions/ by reviewing, updating, consolidating, replacing, or deleting them against the current codebase. Use after refactors, migrations, dependency upgrades, or when a retrieved learning feels outdated or wrong. Also use when reviewing 04_Operations/06_Solutions/ for accuracy, when a recently solved problem contradicts an existing learning, when pattern docs no longer reflect current code, or when multiple docs seem to cover the same topic and might benefit from consolidation.
 argument-hint: "[mode:autofix] [optional: scope hint]"
 disable-model-invocation: true
 ---
 
 # Compound Refresh
 
-Maintain the quality of `docs/solutions/` over time. This workflow reviews existing learnings against the current codebase, then refreshes any derived pattern docs that depend on them.
+Maintain the quality of `04_Operations/06_Solutions/` over time. This workflow reviews existing learnings against the current codebase, then refreshes any derived pattern docs that depend on them.
 
 ## Mode Detection
 
@@ -84,22 +84,22 @@ For each candidate artifact, classify it into one of five outcomes:
    - newer docs, pattern docs, PRs, or issues provide strong successor evidence.
 8. **Delete when the code is gone.** If the referenced code, controller, or workflow no longer exists in the codebase and no successor can be found, delete the file — don't default to Keep just because the general advice is still "sound." A learning about a deleted feature misleads readers into thinking that feature still exists. When in doubt between Keep and Delete, ask the user (in interactive mode) or mark as stale (in autofix mode). But missing referenced files with no matching code is **not** a doubt case — it is strong, unambiguous Delete evidence. Auto-delete it.
 9. **Evaluate document-set design, not just accuracy.** In addition to checking whether each doc is accurate, evaluate whether it is still the right unit of knowledge. If two or more docs overlap heavily, determine whether they should remain separate, be cross-scoped more clearly, or be consolidated into one canonical document. Redundant docs are dangerous because they drift silently — two docs saying the same thing will eventually say different things.
-10. **Delete, don't archive.** There is no `_archived/` directory. When a doc is no longer useful, delete it. Git history preserves every deleted file — that is the archive. A dedicated archive directory creates problems: archived docs accumulate, pollute search results, and nobody reads them. If someone needs a deleted doc, `git log --diff-filter=D -- docs/solutions/` will find it.
+10. **Delete, don't archive.** There is no `_archived/` directory. When a doc is no longer useful, delete it. Git history preserves every deleted file — that is the archive. A dedicated archive directory creates problems: archived docs accumulate, pollute search results, and nobody reads them. If someone needs a deleted doc, `git log --diff-filter=D -- 04_Operations/06_Solutions/` will find it.
 
 ## Scope Selection
 
-Start by discovering learnings and pattern docs under `docs/solutions/`.
+Start by discovering learnings and pattern docs under `04_Operations/06_Solutions/`.
 
 Exclude:
 
 - `README.md`
-- `docs/solutions/_archived/` (legacy — if this directory exists, flag it for cleanup in the report)
+- `04_Operations/06_Solutions/_archived/` (legacy — if this directory exists, flag it for cleanup in the report)
 
-Find all `.md` files under `docs/solutions/`, excluding `README.md` files and anything under `_archived/`. If an `_archived/` directory exists, note it in the report as a legacy artifact that should be cleaned up (files either restored or deleted).
+Find all `.md` files under `04_Operations/06_Solutions/`, excluding `README.md` files and anything under `_archived/`. If an `_archived/` directory exists, note it in the report as a legacy artifact that should be cleaned up (files either restored or deleted).
 
 If `$ARGUMENTS` is provided, use it to narrow scope before proceeding. Try these matching strategies in order, stopping at the first that produces results:
 
-1. **Directory match** — check if the argument matches a subdirectory name under `docs/solutions/` (e.g., `performance-issues`, `database-issues`)
+1. **Directory match** — check if the argument matches a subdirectory name under `04_Operations/06_Solutions/` (e.g., `performance-issues`, `database-issues`)
 2. **Frontmatter match** — search `module`, `component`, or `tags` fields in learning frontmatter for the argument
 3. **Filename match** — match against filenames (partial matches are fine)
 4. **Content search** — search file contents for the argument as a keyword (useful for feature names or feature areas)
@@ -109,7 +109,7 @@ If no matches are found, report that and ask the user to clarify. In autofix mod
 If no candidate docs are found, report:
 
 ```text
-No candidate docs found in docs/solutions/.
+No candidate docs found in 04_Operations/06_Solutions/.
 Run `ce:compound` after solving problems to start building your knowledge base.
 ```
 
@@ -195,7 +195,7 @@ Three guidelines that are easy to get wrong:
 
 ## Phase 1.5: Investigate Pattern Docs
 
-After reviewing the underlying learning docs, investigate any relevant pattern docs under `docs/solutions/patterns/`.
+After reviewing the underlying learning docs, investigate any relevant pattern docs under `04_Operations/06_Solutions/patterns/`.
 
 Pattern docs are high-leverage — a stale pattern is more dangerous than a stale individual learning because future work may treat it as broadly applicable guidance. Evaluate whether the generalized rule still holds given the refreshed state of the learnings it depends on.
 
@@ -571,7 +571,7 @@ Split actions into two sections:
 
 If all writes succeed, the Recommended section is empty. If no writes succeed (e.g., read-only invocation), all actions appear under Recommended — the report becomes a maintenance plan.
 
-**Legacy cleanup** (if `docs/solutions/_archived/` exists):
+**Legacy cleanup** (if `04_Operations/06_Solutions/_archived/` exists):
 - List archived files found and recommend disposition: restore (if still relevant), delete (if truly obsolete), or consolidate (if overlapping with active docs)
 
 ## Phase 5: Commit Changes

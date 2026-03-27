@@ -31,7 +31,7 @@ Ask one question at a time. Prefer a concise single-select choice when natural o
 <plan_path> #$ARGUMENTS </plan_path>
 
 If the plan path above is empty:
-1. Check `docs/plans/` for recent files
+1. Check `04_Operations/05_Plans/` for recent files
 2. Ask the user which plan to deepen using the platform's blocking question tool when available (see Interaction Method). Otherwise, present numbered options in chat and wait for the user's reply before proceeding
 
 Do not proceed until you have a valid plan file path.
@@ -378,7 +378,7 @@ Before writing:
 Update the plan file in place by default.
 
 If the user explicitly requests a separate file, append `-deepened` before `.md`, for example:
-- `docs/plans/2026-03-15-001-feat-example-plan-deepened.md`
+- `04_Operations/05_Plans/2026-03-15-001-feat-example-plan-deepened.md`
 
 If artifact-backed mode was used and the user did not ask to inspect the scratch files:
 - clean up the temporary scratch directory after the plan is safely written

@@ -11,7 +11,7 @@ CRITICAL: You MUST execute every step below IN ORDER. Do NOT skip any required s
 
 2. `/ce:plan $ARGUMENTS`
 
-   GATE: STOP. Verify that the `ce:plan` workflow produced a plan file in `docs/plans/`. If no plan file was created, run `/ce:plan $ARGUMENTS` again. Do NOT proceed to step 3 until a written plan exists.
+   GATE: STOP. Verify that the `ce:plan` workflow produced a plan file in `04_Operations/05_Plans/`. If no plan file was created, run `/ce:plan $ARGUMENTS` again. Do NOT proceed to step 3 until a written plan exists.
 
 3. **Conditionally** run `/compound-engineering:deepen-plan`
 

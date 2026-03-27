@@ -10,7 +10,7 @@ Coordinate multiple subagents working in parallel to document a recently solved 
 
 ## Purpose
 
-Captures problem solutions while context is fresh, creating structured documentation in `docs/solutions/` with YAML frontmatter for searchability and future reference. Uses parallel subagents for maximum efficiency.
+Captures problem solutions while context is fresh, creating structured documentation in `04_Operations/06_Solutions/` with YAML frontmatter for searchability and future reference. Uses parallel subagents for maximum efficiency.
 
 **Why "compound"?** Each documented solution compounds your team's knowledge. The first time you solve a problem takes research. Document it, and the next occurrence takes minutes. Knowledge compounds.
 
@@ -69,7 +69,7 @@ Launch these subagents IN PARALLEL. Each returns text data to the orchestrator.
    - Identifies problem type, component, symptoms
    - Incorporates auto memory excerpts (if provided by the orchestrator) as supplementary evidence when identifying problem type, component, and symptoms
    - Validates all enum fields against the schema values below
-   - Maps problem_type to the `docs/solutions/` category directory
+   - Maps problem_type to the `04_Operations/06_Solutions/` category directory
    - Suggests a filename using the pattern `[sanitized-problem-slug]-[date].md`
    - Returns: YAML frontmatter skeleton (must include `category:` field mapped from problem_type), category directory path, and suggested filename
 
@@ -118,7 +118,7 @@ Launch these subagents IN PARALLEL. Each returns text data to the orchestrator.
    - **Prevention**: Strategies to avoid recurrence, best practices, and test cases. Include concrete code examples where applicable (e.g., gem configurations, test assertions, linting rules)
 
 #### 3. **Related Docs Finder**
-   - Searches `docs/solutions/` for related documentation
+   - Searches `04_Operations/06_Solutions/` for related documentation
    - Identifies cross-references and links
    - Finds related GitHub issues
    - Flags any related learning or pattern docs that may now be stale, contradicted, or overly broad
@@ -131,7 +131,7 @@ Launch these subagents IN PARALLEL. Each returns text data to the orchestrator.
    **Search strategy (grep-first filtering for efficiency):**
 
    1. Extract keywords from the problem context: module names, technical terms, error messages, component types
-   2. If the problem category is clear, narrow search to the matching `docs/solutions/<category>/` directory
+   2. If the problem category is clear, narrow search to the matching `04_Operations/06_Solutions/<category>/` directory
    3. Use the native content-search tool (e.g., Grep in Claude Code) to pre-filter candidate files BEFORE reading any content. Run multiple searches in parallel, case-insensitive, targeting frontmatter fields. These are template patterns -- substitute actual keywords:
       - `title:.*<keyword>`
       - `tags:.*(<keyword1>|<keyword2>)`
@@ -171,8 +171,8 @@ The orchestrating agent (main conversation) performs these steps:
 
 3. Assemble complete markdown file from the collected pieces
 4. Validate YAML frontmatter against schema
-5. Create directory if needed: `mkdir -p docs/solutions/[category]/`
-6. Write the file: either the updated existing doc or the new `docs/solutions/[category]/[filename].md`
+5. Create directory if needed: `mkdir -p 04_Operations/06_Solutions/[category]/`
+6. Write the file: either the updated existing doc or the new `04_Operations/06_Solutions/[category]/[filename].md`
 
 </sequential_tasks>
 
@@ -209,7 +209,7 @@ When invoking or recommending `ce:compound-refresh`, be explicit about the argum
 - **Specific file** when one learning or pattern doc is the likely stale artifact
 - **Module or component name** when several related docs may need review
 - **Category name** when the drift is concentrated in one solutions area
-- **Pattern filename or pattern topic** when the stale guidance lives in `docs/solutions/patterns/`
+- **Pattern filename or pattern topic** when the stale guidance lives in `04_Operations/06_Solutions/patterns/`
 
 Examples:
 
@@ -254,7 +254,7 @@ The orchestrator (main conversation) performs ALL of the following in one sequen
 
 1. **Extract from conversation**: Identify the problem, root cause, and solution from conversation history. Also read MEMORY.md from the auto memory directory if it exists -- use any relevant notes as supplementary context alongside conversation history. Tag any memory-sourced content incorporated into the final doc with "(auto memory [claude])"
 2. **Classify**: Determine category and filename (same categories as full mode)
-3. **Write minimal doc**: Create `docs/solutions/[category]/[filename].md` with:
+3. **Write minimal doc**: Create `04_Operations/06_Solutions/[category]/[filename].md` with:
    - YAML frontmatter (title, category, date, tags)
    - Problem description (1-2 sentences)
    - Root cause (1-2 sentences)
@@ -267,7 +267,7 @@ The orchestrator (main conversation) performs ALL of the following in one sequen
 ✓ Documentation complete (compact-safe mode)
 
 File created:
-- docs/solutions/[category]/[filename].md
+- 04_Operations/06_Solutions/[category]/[filename].md
 
 Note: This was created in compact-safe mode. For richer documentation
 (cross-references, detailed prevention strategies, specialized reviews),
@@ -307,7 +307,7 @@ In compact-safe mode, the overlap check is skipped (no Related Docs Finder subag
 
 **Organized documentation:**
 
-- File: `docs/solutions/[category]/[filename].md`
+- File: `04_Operations/06_Solutions/[category]/[filename].md`
 
 **Categories auto-detected from problem:**
 
@@ -327,7 +327,7 @@ In compact-safe mode, the overlap check is skipped (no Related Docs Finder subag
 |----------|-----------|
 | Subagents write files like `context-analysis.md`, `solution-draft.md` | Subagents return text data; orchestrator writes one final file |
 | Research and assembly run in parallel | Research completes → then assembly runs |
-| Multiple files created during workflow | One file written or updated: `docs/solutions/[category]/[filename].md` |
+| Multiple files created during workflow | One file written or updated: `04_Operations/06_Solutions/[category]/[filename].md` |
 | Creating a new doc when an existing doc covers the same problem | Check overlap assessment; update the existing doc when overlap is high |
 
 ## Success Output
@@ -349,7 +349,7 @@ Specialized Agent Reviews (Auto-Triggered):
   ✓ every-style-editor: Documentation style verified
 
 File created:
-- docs/solutions/performance-issues/n-plus-one-brief-generation.md
+- 04_Operations/06_Solutions/performance-issues/n-plus-one-brief-generation.md
 
 This documentation will be searchable for future reference when similar
 issues occur in the Email Processing or Brief System modules.
@@ -367,12 +367,12 @@ What's next?
 ```
 ✓ Documentation updated (existing doc refreshed with current context)
 
-Overlap detected: docs/solutions/performance-issues/n-plus-one-queries.md
+Overlap detected: 04_Operations/06_Solutions/performance-issues/n-plus-one-queries.md
   Matched dimensions: problem statement, root cause, solution, referenced files
   Action: Updated existing doc with fresher code examples and prevention tips
 
 File updated:
-- docs/solutions/performance-issues/n-plus-one-queries.md (added last_updated: 2026-03-24)
+- 04_Operations/06_Solutions/performance-issues/n-plus-one-queries.md (added last_updated: 2026-03-24)
 ```
 
 ## The Compounding Philosophy
@@ -380,7 +380,7 @@ File updated:
 This creates a compounding knowledge system:
 
 1. First time you solve "N+1 query in brief generation" → Research (30 min)
-2. Document the solution → docs/solutions/performance-issues/n-plus-one-briefs.md (5 min)
+2. Document the solution → 04_Operations/06_Solutions/performance-issues/n-plus-one-briefs.md (5 min)
 3. Next time similar issue occurs → Quick lookup (2 min)
 4. Knowledge compounds → Team gets smarter
 
@@ -431,5 +431,5 @@ Based on problem type, these agents can enhance documentation:
 
 ## Related Commands
 
-- `/research [topic]` - Deep investigation (searches docs/solutions/ for patterns)
+- `/research [topic]` - Deep investigation (searches 04_Operations/06_Solutions/ for patterns)
 - `/ce:plan` - Planning workflow (references documented solutions)

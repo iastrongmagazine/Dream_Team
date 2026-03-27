@@ -48,7 +48,7 @@ Do not proceed until you have a feature description from the user.
 
 #### 0.1 Resume Existing Work When Appropriate
 
-If the user references an existing brainstorm topic or document, or there is an obvious recent matching `*-requirements.md` file in `docs/brainstorms/`:
+If the user references an existing brainstorm topic or document, or there is an obvious recent matching `*-requirements.md` file in `04_Operations/07_Brain_Storming/`:
 - Read the document
 - Confirm with the user before resuming: "Found an existing requirements doc for [topic]. Should I continue from this, or start fresh?"
 - If resuming, summarize the current state briefly, continue from its existing decisions and outstanding questions, and update the existing document instead of creating a duplicate
@@ -232,7 +232,7 @@ Before finalizing, check:
 
 If planning would need to invent product behavior, scope boundaries, or success criteria, the brainstorm is not complete yet.
 
-Ensure `docs/brainstorms/` directory exists before writing.
+Ensure `04_Operations/07_Brain_Storming/` directory exists before writing.
 
 If a document contains outstanding questions:
 - Use `Resolve Before Planning` only for questions that truly block planning
@@ -282,7 +282,7 @@ Immediately run `/ce:work` in the current session using the finalized brainstorm
 **If user selects "Share to Proof":**
 
 ```bash
-CONTENT=$(cat docs/brainstorms/YYYY-MM-DD-<topic>-requirements.md)
+CONTENT=$(cat 04_Operations/07_Brain_Storming/YYYY-MM-DD-<topic>-requirements.md)
 TITLE="Requirements: <topic title>"
 RESPONSE=$(curl -s -X POST https://www.proofeditor.ai/share/markdown \
   -H "Content-Type: application/json" \
@@ -311,7 +311,7 @@ When complete and ready for planning, display:
 ```text
 Brainstorm complete!
 
-Requirements doc: docs/brainstorms/YYYY-MM-DD-<topic>-requirements.md  # if one was created
+Requirements doc: 04_Operations/07_Brain_Storming/YYYY-MM-DD-<topic>-requirements.md  # if one was created
 
 Key decisions:
 - [Decision 1]
@@ -325,7 +325,7 @@ If the user pauses with `Resolve Before Planning` still populated, display:
 ```text
 Brainstorm paused.
 
-Requirements doc: docs/brainstorms/YYYY-MM-DD-<topic>-requirements.md  # if one was created
+Requirements doc: 04_Operations/07_Brain_Storming/YYYY-MM-DD-<topic>-requirements.md  # if one was created
 
 Planning is blocked by:
 - [Blocking question 1]

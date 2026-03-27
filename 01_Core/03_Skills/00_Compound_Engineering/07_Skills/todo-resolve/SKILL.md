@@ -22,7 +22,7 @@ If a specific todo ID or pattern was passed as an argument, filter to matching t
 
 Residual actionable work from `ce:review mode:autofix` after its `safe_auto` pass will already be `ready`.
 
-Skip any todo that recommends deleting, removing, or gitignoring files in `docs/brainstorms/`, `docs/plans/`, or `docs/solutions/` — these are intentional pipeline artifacts.
+Skip any todo that recommends deleting, removing, or gitignoring files in `04_Operations/07_Brain_Storming/`, `docs/plans/`, or `docs/solutions/` — these are intentional pipeline artifacts.
 
 ### 2. Plan
 
