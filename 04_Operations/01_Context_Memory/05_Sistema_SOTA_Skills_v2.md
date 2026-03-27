@@ -2,57 +2,58 @@
 
 ## Resumen
 
-Reorganización completa del sistema de skills de PersonalOS. `.agent/02_Skills/` es ahora el Source of Truth con jerarquía por prioridad y sync unidireccional a `.cursor/`.
+Reorganización completa del sistema de PersonalOS.
+
+### 🔐 FUENTE DE VERDAD (Source of Truth)
+
+| Nivel | Ubicación | Propósito |
+|-------|-----------|-----------|
+| **Proyecto** | `01_Core/` | Fuente de verdad para TODO el proyecto |
+| **Skills** | `01_Core/03_Skills/` | 160+ skills específicas |
+
+> ⚠️ **IMPORTANTE:** Para OpenCode, `01_Core/` es la carpeta raíz. Las skills están en `01_Core/03_Skills/`.
 
 - --
 
 ## Arquitectura
 
 ```
-.agent/02_Skills/ (MAESTRO - 287 SKILL.md)
-    ↓
-.cursor/02_Skills/ (ESPEJO - sincronizado)
+01_Core/                    (MAESTRO - Todo el sistema)
+├── 03_Skills/             (160+ skills organizadas)
+├── 03_Agents/             (Dream Team + Specialists)
+├── 00_Workflows/          (26 workflows)
+└── 05_Mcp/                (27 MCPs configurados)
 ```
 
-### Jerarquía por Prioridad
+### Estructura Actual de Skills (`01_Core/03_Skills/`)
 
-| #     | Carpeta               | Skills     | Propósito                       |
+| #  | Carpeta | Skills | Propósito |
+|----|---------|--------|-----------|
+| 00 | `00_Compound_Engineering` | CE Workflows | Compound Engineering |
+| 00 | `00_Skill_Auditor` | Auditoría | Validación de skills |
+| 01 | `01_Agent_Teams_Lite` | 11 | SDD phases |
+| 02 | `02_Project_Manager` | 9 | PM workflows |
+| 03 | `03_Product_Manager` | 9 | PRD, Planning |
+| 04 | `04_Product_Design` | 13 | Diseño premium |
+| 05 | `05_Vibe_Coding` | 18 | Dev Frameworks |
+| 06 | `06_Testing` | 18 | Testing + GGA |
+| 07 | `07_DevOps` | 13 | DevOps |
+| 08 | `08_Personal_Os` | 9 | Personal OS |
+| 09 | `09_Marketing` | 11 | Marketing |
+| 10 | `10_Backup` | 5 | Legacy |
+| 11 | `11_Doc_Processing` | 4 | Documentos |
+| 12 | `12_N8N` | 7 | n8n Automation |
+| 13 | `13_System_Master` | 5 | Sistema |
+| 14 | `14_Anthropic_Harness` | 9 | Anthropic Patterns |
 
-|-----------------------------|---------------------------------------------|----------------------------------|-------------------------------------------------------|
-| 1                           | 01_Core                                     | 3                                | Sistema (Fork, Parallel, Git)                         |
-| 2                           | 02_High_Value                               | 31                               | Workflows especializados                              |
-| 3                           | 03_Utilities                                | 30                               | Herramientas                                          |
-| 4                           | 04_Agent_Teams_Lite                         | 10                               | SDD phases                                            |
-| 5                           | 05_Gentleman                                | 41                               | Ecosistema                                            |
-| 6                           | 07_Every                                    | 91                               | TODO consolidado                                      |
-| 7                           | 08_Taste_Skills                             | 5                                | Diseño premium                                        |
-
-- --
-
-## SOTA Testing Suite
-
-8 skills de última generación en `07_Every/05_Utilities/`:
-- Observability, Evaluation, Test_Coverage, Integration_Testing, E2E_Testing, Edge_Case, RTM, MCP_Integration
-
-- --
-
-## Sync Script
-
-* *Ubicación:** `08_Scripts_Os/55_Sync_Skills.py`
-
-```bash
-python 08_Scripts_Os/55_Sync_Skills.py --confirm
-```
+**Total: 160+ skills**
 
 - --
 
-## Documentación
+## 📋 REGLA DEL SISTEMA
 
-| Archivo                                                        | Descripción                               |
-|----------------------------------------------------------------|-------------------------------------------|
-| `Sistema_SOTA_Skills.md`                                       | Guía maestra                              |
-| `Skills_Top_20.md`                                             | Rankings v2.0                             |
-| `Reporte_Skills_Duplicados_vs_SOTA.md`                         | Análisis completo                         |
+> **Para OpenCode:** `01_Core/` es la fuente de verdad del proyecto.
+> **Para Skills específicamente:** `01_Core/03_Skills/`
 
 - --
 
@@ -63,4 +64,4 @@ python 08_Scripts_Os/55_Sync_Skills.py --confirm
 
 - --
 
-* Actualizado: 2026-03-20*
+*Actualizado: 2026-03-27 — Corregido para usar 01_Core/ como fuente de verdad*

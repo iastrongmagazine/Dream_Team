@@ -104,3 +104,10 @@ Revisar_Analizar/
 
 08_Scripts_Os/Analytics_Output/
 08_Scripts_Os/AIPM_Fixed/Analytics_Output/
+
+# =============================================================================
+# REPOS EXTERNOS CLONADOS (no commit)
+# =============================================================================
+
+# Skill Creator Official (Anthropic) - clonar con: git clone <url>
+claude-plugins-official/
