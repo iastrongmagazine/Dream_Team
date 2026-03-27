@@ -163,11 +163,11 @@ Este perfil construye estrategias de marketing técnico: SEO, paid ads, contenid
 ### Anthropic Harness Components (Integración SOTA)
 | Componente | Ubicación | Uso |
 |------------|-----------|-----|
-| **Safety Wrapper** | `04_Engine/08_Scripts_Os/11_Anthropic_Harness/00_Safety_Wrapper.py` | Pre-check antes de ejecutar |
-| **Context Manager** | `04_Engine/08_Scripts_Os/11_Anthropic_Harness/01_Context_Manager.py` | Reset vs Compaction |
-| **Evaluator Runner** | `04_Engine/08_Scripts_Os/11_Anthropic_Harness/02_Evaluator_Runner.py` | QA separado (GAN pattern) |
-| **Sprint Contract** | `04_Engine/08_Scripts_Os/11_Anthropic_Harness/03_Sprint_Contract.py` | Negocia "done" |
-| **Playwright QA** | `04_Engine/08_Scripts_Os/11_Anthropic_Harness/04_Playwright_QA.py` | Testing interactivo |
+| **Safety Wrapper** | `08_Scripts_Os/11_Anthropic_Harness/00_Safety_Wrapper.py` | Pre-check antes de ejecutar |
+| **Context Manager** | `08_Scripts_Os/11_Anthropic_Harness/01_Context_Manager.py` | Reset vs Compaction |
+| **Evaluator Runner** | `08_Scripts_Os/11_Anthropic_Harness/02_Evaluator_Runner.py` | QA separado (GAN pattern) |
+| **Sprint Contract** | `08_Scripts_Os/11_Anthropic_Harness/03_Sprint_Contract.py` | Negocia "done" |
+| **Playwright QA** | `08_Scripts_Os/11_Anthropic_Harness/04_Playwright_QA.py` | Testing interactivo |
 
 ### Skills Anthropic
 | Skill | Ubicación | Uso |

@@ -53,5 +53,5 @@ git commit -m "feat(a11y): improve WCAG compliance"     # FASE 7 (si aplica)
 
 ## Contexto del Sistema
 - Este orquestador coordina los agentes 01-07 de `.agent/01_Agents/`
-- Reglas del proyecto: `.cursor/00_Rules/`
-- Ritual de validación: `python 04_Engine/08_Ritual_Cierre.py`
+- Reglas del proyecto: `01_Core/01_Rules/`
+- Ritual de validación: `python 08_Scripts_Os/04_Ritual_Hub.py`

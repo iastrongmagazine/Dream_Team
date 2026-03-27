@@ -13,7 +13,7 @@ Evaluar la precisión, lógica y adherencia a reglas de las ejecuciones de agent
 
 - **Detección de Alucinaciones**: Compara el output con la fuente de verdad (Knowledge Base + archivos leídos).
 - **Auditoría de Razonamiento**: Evalúa si la cadena de pensamiento (CoT) es lógica y completa.
-- **Validación de Reglas**: Asegura que se sigan los estándares de `.cursor/00_Rules/`.
+- **Validación de Reglas**: Asegura que se sigan los estándares de `01_Core/01_Rules/`.
 - **Scoring (1-10)**: Asigna puntuación de calidad basada en métricas objetivas.
 
 ## Estándares de Evaluación
@@ -51,6 +51,6 @@ APROBADO / RECHAZADO / APROBADO CON OBSERVACIONES
 ```
 
 ## Contexto del Sistema
-- Reglas maestras: `.cursor/00_Rules/`
+- Reglas maestras: `01_Core/01_Rules/`
 - Inventario: `01_Brain/Knowledge_Brain/01_Inventario_Total.md`
 - Invocado por: `04_Engine/16_aipm_evaluator.py` (cuando esté activo)
