@@ -101,10 +101,10 @@ feat: context switcher
 |-------------------------------------------------------------|--------------------------------------------|
 | `~/gr`                                                      | Script bash ejecutable                     |
 | `~/.bashrc`                                                 | Funciones gr, gra, gr-agents               |
-| `04_Engine/08_Scripts_Os/79_System_Guardian.py`             | System Guardian v1.0                       |
+| `08_Scripts_Os/79_System_Guardian.py`             | System Guardian v1.0                       |
 | `.AGENT/04_EXTENSIONS/hooks/03_Lifecycle/stop.py`           | Hook post-sesión                           |
 | `00_Core/AGENTS.md`                                         | Metodología 3-Agents documentada           |
-| `04_Engine/07_Installer/`                                   | Installer v2.0                             |
+| `08_Scripts_Os/07_Installer/`                                   | Installer v2.0                             |
 
 - --
 

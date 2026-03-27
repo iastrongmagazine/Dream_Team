@@ -126,8 +126,8 @@ Think_Different_AI/
 │   └── mcp.json                # 35 MCPs configurados
 ├── ~/.config/opencode/skills/  # Skills globales (OpenCode)
 │   └── gentleman/06_Compound_Engineering/
-├── 04_Engine/08_Scripts_Os/    # 13 scripts activos
-└── 01_Brain/07_Memory_Brain/   # Memoria del sistema
+├── 08_Scripts_Os/    # 13 scripts activos
+└── 04_Operations/04_Memory_Brain/   # Memoria del sistema
     ├── 00_Active/              # Documentos activos
     └── 06_Archive/             # Histórico
 ```

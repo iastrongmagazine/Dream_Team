@@ -1,7 +1,7 @@
 ---
 description: Review - Revisión de código exhaustiva multi-agente (Vision)
 argument-hint: "[PR number, GitHub URL, branch name, or latest]"
-allowed-tools: Bash(python 04_Engine/08_Scripts_Os/*.py), Read(*), Glob(*), Bash(gh *)
+allowed-tools: Bash(python 08_Scripts_Os/*.py), Read(*), Glob(*), Bash(gh *)
 ---
 
 # Workflows: Review Command
@@ -19,5 +19,5 @@ Realiza revisiones de código exhaustivas usando análisis multi-agente.
 Execute the Vision review workflow:
 
 ```bash
-python 04_Engine/08_Scripts_Os/04_Vision_Review.py "$ARGUMENTS"
+python 08_Scripts_Os/04_Vision_Review.py "$ARGUMENTS"
 ```

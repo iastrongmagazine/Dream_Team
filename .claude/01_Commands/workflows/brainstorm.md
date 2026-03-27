@@ -1,7 +1,7 @@
 ---
 description: Brainstorm - Explora ideas antes de planear (Spider-Man)
 argument-hint: "[feature idea or problem to explore]"
-allowed-tools: Bash(python 04_Engine/08_Scripts_Os/*.py), Read(*), Glob(*)
+allowed-tools: Bash(python 08_Scripts_Os/*.py), Read(*), Glob(*)
 ---
 
 # Workflows: Brainstorm Command
@@ -18,5 +18,5 @@ Explora requerimientos y enfoques antes de planear la implementación.
 Execute the Spider-Man brainstorm workflow:
 
 ```bash
-python 04_Engine/08_Scripts_Os/01_Spider_Brainstorm.py "$ARGUMENTS"
+python 08_Scripts_Os/01_Spider_Brainstorm.py "$ARGUMENTS"
 ```

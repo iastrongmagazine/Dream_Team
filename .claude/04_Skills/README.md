@@ -158,7 +158,7 @@ Skills migradas del ecosistema Gentleman.Dots con estructura numerada.
 | -------------------- | -------------------------------- |
 | `.agent/01_Agents/`  | 12 agentes que usan estas skills |
 | `.agent/03_Workflows/` | 21 workflows que invocan skills  |
-| `04_Engine/`         | Scripts que ejecutan skills      |
+| `08_Scripts_Os/`     | Scripts que ejecutan skills      |
 
 ---
 

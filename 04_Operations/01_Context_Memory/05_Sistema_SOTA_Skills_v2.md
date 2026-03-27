@@ -38,10 +38,10 @@ Reorganización completa del sistema de skills de PersonalOS. `.agent/02_Skills/
 
 ## Sync Script
 
-* *Ubicación:** `04_Engine/08_Scripts_Os/55_Sync_Skills.py`
+* *Ubicación:** `08_Scripts_Os/55_Sync_Skills.py`
 
 ```bash
-python 04_Engine/08_Scripts_Os/55_Sync_Skills.py --confirm
+python 08_Scripts_Os/55_Sync_Skills.py --confirm
 ```
 
 - --

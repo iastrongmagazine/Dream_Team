@@ -48,7 +48,7 @@ Se crearon scripts para asegurar la escalabilidad:
 - `fix_marketing_essences.py`
 - `fix_yaml_skills.py`
 - `fix_doc_processing_essences.py`
-- `generate_skills_tree.py` (movido a `04_Engine/04_Tools/`)
+- `generate_skills_tree.py` (movido a `08_Scripts_Os/`)
 
 ---
 
@@ -88,14 +88,14 @@ Category
 10_Backup
 ✅ Documentation Updates:
 - CLAUDE.md: Updated 8 Dimensiones architecture, .agent/ section (305 skills), Protocolo Génesis with Engram
-- 01_Brain/01_Context_Memory: Renumbered to 01-11 with descriptive names
-- 01_Brain/02_Knowledge_Brain: Renumbered 01-21, removed duplicates, created README.md + tree.txt
-- 01_Brain/08_Audit_Sota: Renumbered from 10_, added 11_, 12_
-- 01_Brain/09_Momentum_Os: Renumbered 03-07, removed duplicate dirs (claude-code, cursor-ide)
+- 04_Operations/01_Context_Memory: Renumbered to 01-11 with descriptive names
+- 04_Operations/02_Knowledge_Brain: Renumbered 01-21, removed duplicates, created README.md + tree.txt
+- 04_Operations/08_Audit_Sota: Renumbered from 10_, added 11_, 12_
+- 04_Operations/09_Momentum_Os: Renumbered 03-07, removed duplicate dirs (claude-code, cursor-ide)
 - 06_Archive: Added 00_Backups, 13_Script_Aud_Perfiles/, cleaned tree.txt (1700→60 lines)
 ✅ Scripts Archived:
 - Created 06_Archive/13_Script_Aud_Perfiles/ with 6 automation scripts
-- Moved generate_skills_tree.py to 04_Engine/04_Tools/83_Generate_Skills_Tree.py
+- Moved generate_skills_tree.py to 08_Scripts_Os/83_Generate_Skills_Tree.py
 ✅ System Audits:
 - Structure Auditor: ✅ PASSED (7 dimensions, all scripts numbered)
 - HULK Compound Audit: ✅ PASSED
@@ -111,17 +111,17 @@ Skills directories (audited):
 - .agent/02_Skills/11_Doc_Processing/ - 3 skills fixed
 Documentation updated:
 - CLAUDE.md - Protocolo Génesis + architecture
-- 01_Brain/01_Context_Memory/ - Reenumerated
-- 01_Brain/02_Knowledge_Brain/ - README + tree.txt created
-- 01_Brain/08_Audit_Sota/ - Renumbered
-- 01_Brain/09_Momentum_Os/ - Cleaned + reenumerated
-- 01_Brain/tree.txt - Updated
+- 04_Operations/01_Context_Memory/ - Reenumerated
+- 04_Operations/02_Knowledge_Brain/ - README + tree.txt created
+- 04_Operations/08_Audit_Sota/ - Renumbered
+- 04_Operations/09_Momentum_Os/ - Cleaned + reenumerated
+- 04_Operations/tree.txt - Updated
 - 06_Archive/README.md - Updated
 - 06_Archive/tree.txt - Simplified
-- 01_Brain/07_Memory_Brain/14_Skills_Audit_Summary_2026-03-24.md - Created
+- 04_Operations/07_Memory_Brain/14_Skills_Audit_Summary_2026-03-24.md - Created
 Scripts created:
 - 06_Archive/13_Script_Aud_Perfiles/ - 6 Python scripts
-- 04_Engine/04_Tools/83_Generate_Skills_Tree.py
+- 08_Scripts_Os/83_Generate_Skills_Tree.py
 Summary files created:
 - SESION_SUMMARY_2026-03-24_HIPERDETALLADO.md - Root level summary
 Engram memory saved:

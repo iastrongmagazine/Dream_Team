@@ -1,6 +1,6 @@
 ---
 description: PILAR 04: Gestión Estratégica, Flujos y Observabilidad (Mente AI-Prime)
-globs: **/*.md, 02_Operations/**/_, 04_Engine/**/_
+globs: **/*.md, 03_Tasks/**/_, 08_Scripts_Os/**/_
 alwaysApply: true
 ---
 

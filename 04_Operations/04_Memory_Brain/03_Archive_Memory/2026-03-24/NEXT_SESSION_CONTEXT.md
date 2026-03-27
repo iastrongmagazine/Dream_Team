@@ -153,7 +153,7 @@ Think_Different_AI/
    - BACKLOG.md: Agregado #SOTA-MCP
 
 5. **Session Summary**
-   - Guardado en `01_Brain/07_Memory_Brain/SESION_SUMMARY_2026-03-24_HIPERDETALLADO.md`
+   - Guardado en `04_Operations/04_Memory_Brain/SESION_SUMMARY_2026-03-24_HIPERDETALLADO.md`
    - Guardado en Engram con topic: `next-challenge/sota-mcp-skills`
 
 ### Commits realizados:
@@ -175,7 +175,7 @@ Think_Different_AI/
 2. Implementar validación Pydantic
 3. Agregar idempotency_key obligatorio
 4. Agregar modo dry-run
-5. Documentar en `04_Engine/13_Integrations/`
+5. Documentar en `08_Scripts_Os/`
 
 ### Phase 2: Notion
 
@@ -197,14 +197,14 @@ Think_Different_AI/
 # Protocolo de Inicio
 
 1. Leer 00_Core/AGENTS.md
-2. Leer este documento: 01_Brain/07_Memory_Brain/NEXT_SESSION_CONTEXT.md
+2. Leer este documento: 04_Operations/04_Memory_Brain/NEXT_SESSION_CONTEXT.md
 3. Leer 00_Core/BACKLOG.md (buscar #SOTA-MCP)
 4. Ejecutar: git pull para obtener últimos cambios
 5. Ejecutar: Structure Auditor para validar Pure Green
 6. Preguntar: "¿Continuamos con el desarrollo de Stripe Schema?"
 
 # Script de validación
-python 04_Engine/08_Scripts_Os/53_Structure_Auditor.py
+python 08_Scripts_Os/53_Structure_Auditor.py
 ```
 
 ---
@@ -215,10 +215,10 @@ python 04_Engine/08_Scripts_Os/53_Structure_Auditor.py
 |--------------------------------------------------------------------------|------------------------------|
 | `00_Core/AGENTS.md`                                                      | Instrucciones del agente     |
 | `00_Core/BACKLOG.md`                                                     | #SOTA-MCP con las 4 skills   |
-| `01_Brain/07_Memory_Brain/SESION_SUMMARY_2026-03-24_HIPERDETALLADO.md`   | Session summary              |
+| `04_Operations/04_Memory_Brain/SESION_SUMMARY_2026-03-24_HIPERDETALLADO.md`   | Session summary              |
 | `README.md`                                                              | Estado del sistema           |
 | `.agent/CLAUDE.md`                                                       | Configuración del agente     |
-| `04_Engine/08_Scripts_Os/SCRIPTS_INDEX.md`                               | Catálogo de scripts          |
+| `08_Scripts_Os/SCRIPTS_INDEX.md`                               | Catálogo de scripts          |
 
 ---
 

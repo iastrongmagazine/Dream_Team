@@ -65,9 +65,9 @@
 
 ### Reglas Cargadas
 
-- `.cursor/00_Rules/01_Context_Protocol.mdc` — Protocolo de inicio
-- `.cursor/00_Rules/09_Elite_Reporting.mdc` — Estándar de reportes
-- `.cursor/00_Rules/{otras reglas relevantes}`
+- `01_Core/01_Rules/01_Context_Protocol.mdc` — Protocolo de inicio
+- `01_Core/01_Rules/09_Elite_Reporting.mdc` — Estándar de reportes
+- `01_Core/01_Rules/{otras reglas relevantes}`
 
 - --
 

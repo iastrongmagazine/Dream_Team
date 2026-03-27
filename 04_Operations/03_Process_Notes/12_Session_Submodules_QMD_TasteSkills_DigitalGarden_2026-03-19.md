@@ -156,7 +156,7 @@ qmd collection list
 
 ### Script de Actualización Creado
 
-* *Ubicación:** `04_Engine/08_Scripts_Os/56_Update_QMD_Index.py`
+* *Ubicación:** `08_Scripts_Os/56_Update_QMD_Index.py`
 
 ```python
 #!/usr/bin/env python3
@@ -453,7 +453,7 @@ bun qmd.js search "query"
 bun qmd.js query "pregunta"
 bun qmd.js status
 bun qmd.js update
-python 04_Engine/08_Scripts_Os/56_Update_QMD_Index.py
+python 08_Scripts_Os/56_Update_QMD_Index.py
 
 # Git
 
@@ -482,8 +482,8 @@ npm run build  # deploy
 | `.gitmodules`                                                  | Creado                    | 12 submodules registrados                               |
 | `README.md`                                                    | Actualizado               | Agregado QMD, Taste-Skills, DigitalGarden               |
 | `00_Core/AGENTS.md`                                            | Actualizado               | Secciones 2.7 QMD, 2.8 DigitalGarden                    |
-| `04_Engine/08_Scripts_Os/qmd.sh`                               | Creado                    | Wrapper para QMD                                        |
-| `04_Engine/08_Scripts_Os/56_Update_QMD_Index.py`               | Creado                    | Script de update QMD                                    |
+| `08_Scripts_Os/qmd.sh`                               | Creado                    | Wrapper para QMD                                        |
+| `08_Scripts_Os/56_Update_QMD_Index.py`               | Creado                    | Script de update QMD                                    |
 | `.cursor/02_Skills/11_Taste_Skills/`                           | Creado                    | 5 taste-skills                                          |
 | `.agent/02_Skills/11_Taste_Skills/`                            | Creado                    | 5 taste-skills                                          |
 | `.agent/03_Workflows/09_Frontend_Premium.md`                   | Creado                    | Workflow frontend                                       |

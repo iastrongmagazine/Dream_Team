@@ -28,9 +28,9 @@
 Al iniciar una nueva sesión, ejecutar esta secuencia **ANTES** de responder:
 
 1. Leer `@AGENTS.md` en `00_Core/AGENTS.md`
-2. Leer `.cursor/00_Rules/01_Context_Protocol.mdc` (reglas de sesión)
-3. Leer `01_Brain/01_Context_Memory/` (memoria a largo plazo)
-4. Leer `01_Brain/03_Process_Notes/` (contexto reciente)
+2. Leer `01_Core/01_Rules/01_Context_Protocol.mdc` (reglas de sesión)
+3. Leer `04_Operations/01_Context_Memory/` (memoria a largo plazo)
+4. Leer `04_Operations/03_Process_Notes/` (contexto reciente)
 5. Leer Todo el Proyecto en General
 6. **Reportar en chat** un resumen del contexto cargado
 
@@ -285,18 +285,18 @@ Antes de cerrar sesión, verificar:
 | `gr-agents`               | --agents               | `79_System_Guardian.py --agents-only`               |
 
 * *Location**: `~/gr`, `~/.bashrc` functions
-* *Source**: `04_Engine/08_Scripts_Os/79_System_Guardian.py`
+* *Source**: `08_Scripts_Os/79_System_Guardian.py`
 
 ### CE Commands (ce-*)
 
 | Alias                        | Description                               | Source Script                                               |
 |------------------------------|-------------------------------------------|-------------------------------------------------------------|
-| `ce-commit`                  | Safe commit with validation               | `04_Engine/08_Scripts_Os/52_Safe_Commit.py`                 |
-| `ce-guard`                   | Commit guardrails                         | `04_Engine/08_Scripts_Os/52_Commit_Guard.py`                |
-| `ce-audit`                   | Engineering audit                         | `04_Engine/08_Scripts_Os/42_Audit_Engineering.py`           |
-| `ce-structure`               | Structure auditor                         | `04_Engine/08_Scripts_Os/53_Structure_Auditor.py`           |
+| `ce-commit`                  | Safe commit with validation               | `08_Scripts_Os/52_Safe_Commit.py`                 |
+| `ce-guard`                   | Commit guardrails                         | `08_Scripts_Os/52_Commit_Guard.py`                |
+| `ce-audit`                   | Engineering audit                         | `08_Scripts_Os/42_Audit_Engineering.py`           |
+| `ce-structure`               | Structure auditor                         | `08_Scripts_Os/53_Structure_Auditor.py`           |
 
-* *Location**: `04_Engine/00_Config/aliases.sh`
+* *Location**: `08_Scripts_Os/00_Config/aliases.sh`
 
 - --
 

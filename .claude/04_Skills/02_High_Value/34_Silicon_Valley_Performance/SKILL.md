@@ -18,7 +18,7 @@ Esta Skill eleva la simple analítica de datos a una función de consultoría es
 
 ### 1. Ingesta Inteligente (Smart Ingestion)
 El sistema detecta automáticamente el dominio del set de datos:
-- **Metodología**: Utiliza `04_Engine/20_Master_Analytics_Factory.py` para perfilar datos y detectar dominios (SaaS, E-commerce, Marketing, Ops).
+- **Metodología**: Utiliza `08_Scripts_Os/20_Master_Analytics_Factory.py` para perfilar datos y detectar dominios (SaaS, E-commerce, Marketing, Ops).
 - **Workspace**: Crea un entorno de análisis aislado para evitar contaminación.
 
 ### 2. Generación de Insights (Deep Context Analysis)

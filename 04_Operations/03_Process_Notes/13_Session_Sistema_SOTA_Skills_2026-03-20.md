@@ -100,7 +100,7 @@ El usuario reorganizó `.agent/02_Skills/` con nueva estructura:
 
 ### Ubicación
 
-`04_Engine/08_Scripts_Os/55_Sync_Skills.py`
+`08_Scripts_Os/55_Sync_Skills.py`
 
 ### Características
 
@@ -232,7 +232,7 @@ Agregar al `.mcp.json`:
 | `Sistema_SOTA_Skills.md`                              | Guía maestra del sistema SOTA               |
 | `Skills_Top_20.md`                                    | Rankings TOP 20                             |
 | `Reporte_Skills_Duplicados_vs_SOTA.md`                | Análisis de duplicados                      |
-| `04_Engine/08_Scripts_Os/55_Sync_Skills.py`           | Script de sincronización                    |
+| `08_Scripts_Os/55_Sync_Skills.py`           | Script de sincronización                    |
 | `.agent/02_Skills/README.md`                          | README actualizado                          |
 | `06_Archive/01_Backups/skills_sync/`                  | Backups de sync                             |
 

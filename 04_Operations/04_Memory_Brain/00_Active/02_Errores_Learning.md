@@ -16,7 +16,7 @@
 | Cursor Skills                            | Sincronizado manualmente                     | README only (espejo)                       |
 | Context Memory                           | Duplicado (08_Context_Memory)                | Solo 01_Context_Memory/                    |
 | Numeración                               | Rotas (huecos, duplicados)                   | PERFECTA (01-09 secuencial)                |
-| Backup Central                           | No existía                                   | 01_Brain/06_Backup_Central/                |
+| Backup Central                           | No existía                                   | 05_Archive/06_Backup_Central/                |
 
 ### QMD MCP Integration (PENDIENTE)
 
@@ -49,7 +49,7 @@ Reorganización completa del sistema ejecutada exitosamente:
    - Solo 01_Context_Memory/ como source of truth
 
 3. **Backup Central Created**
-   - Nueva carpeta: `01_Brain/06_Backup_Central/`
+   - Nueva carpeta: `05_Archive/06_Backup_Central/`
    - Estructura: 01_Config, 02_Mcp, 03_Agents, 04_Projects, 05_Repos
 
 4. **Documentation Beautified**
