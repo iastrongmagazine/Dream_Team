@@ -1,0 +1,28 @@
+---
+description: Workflow para el Recap y planificación del día.
+globs: **/*
+alwaysApply: false
+---
+
+# ☀️ Workflow: Recap_Morning
+
+Usa este workflow cuando el usuario pregunte "¿Recap?", "/Recap_Morning" o similar con la palabra Recap
+
+## 📋 Protocolo de Enfoque Avanzado
+
+1.  **Sincronización Fireflies**: Ejecutar `python 04_ENGINE/39_Recap_Planning.py` para identificar reuniones recientes y alinear prioridades.
+2.  **Revisión de Prioridades**: Inspeccionar `00_Core/GOALS.md` y `02_Operations/Tasks/` para identificar tareas P0 y P1 mediante MCP.
+3.  **Análisis de Bloqueos**: Identificar tareas con status `b` (blocked) y proponer soluciones inmediatas.
+4.  **Selección del Día (The Big 3)**: Sugerir exactamente 3 tareas para el día que maximicen el avance hacia los objetivos trimestrales.
+5.  **Victorias Rápidas**: Identificar tareas de baja fricción para generar momentum.
+
+## 📊 Salida Estructurada
+- **Resumen Fireflies**: Hitos clave de reuniones recientes.
+- **Objetivo Principal**: El "Norte" del día.
+- **Top 3 Tasks**: Lista clara con links a los archivos de tarea.
+- **Victorias Rápidas**: Tareas sugeridas para ejecución inmediata.
+- **Housekeeping**: Notas de mantenimiento del sistema.
+- **¿En qué trabajar primero?**: Recomendación directa de inicio.
+
+---
+_"Enfoque total en lo que importa. Menos, pero mejor."_

@@ -1,0 +1,24 @@
+---
+description: Workflow para sesiones de BRAINSTORMING y generación de ideas creativas.
+globs: **/*
+alwaysApply: false
+---
+
+# 🕷️ Workflow: Spider Brainstorm
+
+Usa este workflow cuando el usuario quiera explorar ideas, resolver un problema complejo de diseño o conceptualizar un nuevo proyecto.
+
+## 🧠 Fases de Exploración
+
+1.  **Divergencia (Captura Total)**: Generar la mayor cantidad de ideas sin juzgar. Usar analogías y pensamiento lateral.
+2.  **Mapeo Mental**: Agrupar ideas en nodos temáticos. Identificar conexiones no obvias.
+3.  **Convergencia (Filtrado)**: Evaluar ideas contra los principios de **Dieter Rams** y los objetivos de `00_Core/GOALS.md`.
+4.  **Selección Elite**: Elegir las 3 mejores rutas para profundizar.
+
+## 🛠️ Herramientas Sugeridas
+- Usar sub-agentes para investigar referencias externas (Exa).
+- Crear diagramas Mermaid para visualizar las conexiones.
+- Aplicar la técnica de los "5 Porqués" para llegar a la raíz.
+
+---
+_"Explorando el multiverso de posibilidades. Conectando lo invisible."_

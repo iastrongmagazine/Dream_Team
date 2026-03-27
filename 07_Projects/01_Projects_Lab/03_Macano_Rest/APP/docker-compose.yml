@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Frontend
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    command: npm run dev
+
+  # Backend
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./media:/app/media
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=postgresql://macano:macano@db:5432/macano
+      - SECRET_KEY=dev-secret-key-change-in-production
+    depends_on:
+      - db
+      - redis
+
+  # Database
+  db:
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=macano
+      - POSTGRES_PASSWORD=macano
+      - POSTGRES_DB=macano
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:

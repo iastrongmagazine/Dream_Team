@@ -1,0 +1,68 @@
+---
+description: PILAR 11: NEXUS - Sistema de Routing y Gestión de Contexto Inteligente
+globs: */*
+alwaysApply: true
+---
+
+# 🌐 Regla 11: Nexus Routing Layer
+
+## Overview
+
+Nexus es la capa de inteligencia que coordina agentes y skills en PersonalOS. Su objetivo es maximizar la eficiencia de la ventana de contexto y minimizar el desperdicio de tokens.
+
+Nexus coordina, no adivina. Actúa como el orquestador maestro del sistema.
+
+## Rule: Nexus Routing Layer y Protocolo de Escalación
+
+1.  **Always Identify Domain**: Antes de cualquier acción, el asistente DEBE clasificar la tarea según los dominios definidos en `CLAUDE.md`.
+2.  **Always Prioritize Documentation**:
+    - Leer `01_Inventario_Total.md` antes de asumir la existencia de cualquier componente.
+    - Usar `ACE Skill (Skill 47)` para análisis de código complejo.
+3.  **Always Optimize Reading**:
+    - **Never use** `ls -R` o lecturas recursivas masivas.
+    - **Always use** Lectura específica de archivos identificados previamente en el inventario.
+4.  **Escalación**:
+    - Si un agente especializado no resuelve -> Consultar `AIPM Judge`.
+    - Si `AIPM Judge` detecta desviación -> El `Orchestrator` resetea el plan y notifica al usuario.
+5.  **Pure Green Standard**: Todo cambio debe pasar por el filtro de validación de los Pilares 0 y 1. No se permite cierre de sesión sin estado Green.
+
+## Common Violations and Solutions
+
+### ❌ BAD: Lectura Masiva y Exploración a Ciegas
+
+- Ejecutar `ls -R` para "ver qué hay" sin consultar el inventario maestro.
+- Consecuencia: Desperdicio masivo de tokens y ruido en el contexto.
+
+### ✅ GOOD: Lectura Quirúrgica
+
+- "Consulto `01_Inventario_Total.md`, identifico el módulo de pagos y leo solo `payments_engine.py`."
+- Clasificar el dominio antes de actuar para activar el agente correcto.
+
+## When You Think You Need a Full Scan
+
+### "No encuentro el archivo, haré un `find` desde la raíz"
+
+- **❌ BAD**: Inundar la ventana de contexto con cientos de rutas irrelevantes.
+- **✅ GOOD**: "Como no está en el inventario maestro, consultaré `MAPA_MAESTRO_FLUJOS.md` o pediré aclaración al usuario sobre la ubicación esperada."
+
+## Specific Project Patterns
+
+### Protocolo Nexus
+
+- Nexus prioriza la lectura de metadatos (KIs, Inventarios) sobre los archivos fuente brutos hasta que la tarea está definida.
+
+## Alternative Solutions
+
+### 1. Gestión de Errores en Nexus
+
+- Si un agente falla 3 veces en la misma tarea, Nexus debe forzar una pausa y sugerir un cambio de estrategia al usuario.
+
+## Checklist for the Assistant
+
+- [ ] ¿He clasificado el dominio de la tarea según `CLAUDE.md`?
+- [ ] ¿He consultado `01_Inventario_Total.md` antes de explorar archivos?
+- [ ] ¿He evitado lecturas recursivas (`ls -R`) innecesarias?
+- [ ] ¿He validado el cambio contra los Pilares 0 y 1?
+- [ ] ¿He escalado al `AIPM Judge` si la tarea superó mi especialidad?
+
+Remember: Nexus coordina, no adivina. La precisión es eficiencia.

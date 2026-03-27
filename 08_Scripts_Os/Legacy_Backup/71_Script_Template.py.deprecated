@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+"""
+[SCRIPT_NAME] - [SHORT DESCRIPTION]
+
+[Detailed description of what the script does]
+
+Usage:
+    python [SCRIPT_NAME].py [args]
+
+Author: PersonalOS
+Version: 1.0
+"""
+
+import sys
+import io
+
+if sys.stdout.encoding != "utf-8":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+
+from config_paths import ROOT_DIR, ENGINE_SCRIPTS_DIR
+
+
+def main():
+    """Main function."""
+    print("[SCRIPT_NAME] Starting...")
+    # TODO: Add logic
+    print("[SCRIPT_NAME] Done!")
+
+
+if __name__ == "__main__":
+    main()

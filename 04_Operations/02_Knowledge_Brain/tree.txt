@@ -1,0 +1,23 @@
+- 02_Knowledge_Brain/
+  - README.md
+  - 01_Inventario_Total.md
+  - 02_Personal_Os_Evolution.md
+  - 03_Anthropic_Skills_Framework.md
+  - 04_Cursor_Shortcuts_Reference.md
+  - 05_References_Guide.md
+  - 06_Metodologia_Ingenieria_Compuesta.md
+  - 07_Claude_Best_Practices.md
+  - 08_Claude_Code_Pro_Tips.pdf
+  - 09_Founderz_Diccionario_IA.pdf
+  - 10_Data_Lab_Unicorn.pdf
+  - 11_Design_Trends_Freepik.pdf
+  - 12_Globant_Tech_Trends.pdf
+  - 13_Aprende_Cursor_AI.pdf
+  - 14_Claude_Code_Obsidian.pdf
+  - 15_Fundamentos_Python.pdf
+  - 16_Generador_Imagenes_Nano_Banana_Guia.pdf
+  - 17_Guia_Agente_Creativo_Publicitario.pdf
+  - 18_Metodologia_Claude_Code.pdf
+  - 19_Predicciones_IA_Marketing.pdf
+  - 20_Prompting_Guide_101_Espanol.pdf
+  - 21_State_AI_Business_2025_Report.pdf

@@ -1,0 +1,88 @@
+---
+description: Workflow de INICIO DE SESIÓN (Génesis) para cargar reglas, memoria y contexto.
+globs: **/*
+alwaysApply: true
+---
+
+# 🧬 Workflow: Génesis (Protocolo de Inicio de Sesión)
+
+Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuperación del 110% del contexto.
+
+## 🚀 SECUENCIA OBLIGATORIA DE ATERRIZAJE
+
+### FASE 1: Inventario y Reglas
+
+1.  **Leer Inventario Total**: `01_Brain/02_Knowledge_Brain/01_Inventario_Total.md`
+    - Carga TODO el sistema: estructura, agentes, scripts, MCPs, skills
+2.  **Leer Goals**: `00_Core/GOALS.md` → Norte estratégico
+3.  **Leer Backlog**: `00_Core/BACKLOG.md` → Pendientes sin estructurar
+4.  **Leer Reglas**: `.cursor/00_Rules/*.mdc` (todas las reglas activas)
+5.  **Leer CLAUDE.md**: Confirmar alineación con instrucciones globales
+
+### FASE 2: Memoria AI (Contexto Inter-sesiones)
+
+6.  **CTX más reciente**: `01_Brain/01_Context_Memory/CTX_*.md`
+    - Tu contexto personal para no perder memoria entre sesiones
+7.  **Process Notes más reciente**: `01_Brain/03_Process_Notes/*.md`
+    - Qué hizo el usuario en la última sesión
+8.  **Buscar en Engram** (opcional): `mem_search` si hay algo relevante
+
+### FASE 3: Morning Standup
+
+9.  **Ejecutar Script**: `python 04_Engine/08_Scripts_Os/14_Morning_Standup.py`
+    - Plan del día, prioridades P0/P1, bloqueos
+    - Si es primera sesión del día → presentar "The Big 3"
+
+### FASE 4: Reporte Handshake (OBLIGATORIO)
+
+10. **Presentar en chat** (antes de cualquier otra acción):
+    - **Contexto Técnico**: Estado del sistema, MCPs activos, scripts importantes
+    - **Contexto Humano**: Última nota del usuario, objetivos del día
+    - **Plan del Día**: The Big 3 tareas prioritarias
+    - **⚠️ NO PROCEDER hasta haber emitido este reporte**
+
+---
+
+## 📢 Reporting Obligatorio (10% Steps)
+
+**EN CADA TAREA MULTI-PASO (3+ pasos):**
+
+```
+[10%] Iniciando: [nombre de tarea]
+[20%] Completado paso 1/4: [descripción]
+[30%] Completado paso 2/4: [descripción]
+[50%] Mitad de camino: [estado actual]
+[70%] Completado paso 3/4: [descripción]
+[90%] Finalizando: [últimos ajustes]
+[100%] ✅ Tarea completada: [resultado]
+```
+
+---
+
+## 🔔 Campanillas (Task Complete Sound)
+
+**Al finalizar CADA TAREA SIGNIFICATIVA:**
+- Ejecutar: `.agent/04_Extensions/hooks/task-complete-sound.ps1`
+- O notificar por voz: "Tarea completada"
+
+---
+
+## 🗣️ Idioma
+
+- Toda comunicación, reportes y tareas deben ser en **ESPAÑOL**
+
+---
+
+## 🛠️ Checklist Mental de Verificación
+
+- [ ] ¿He leído `01_Inventario_Total.md` + `GOALS.md` + `BACKLOG.md`?
+- [ ] ¿He leído el último CTX de `01_Context_Memory/`?
+- [ ] ¿He leído la última Process Note de `03_Process_Notes/`?
+- [ ] ¿He ejecutado `14_Morning_Standup.py`?
+- [ ] ¿He emitido el reporte de Handshake (Contexto + Plan)?
+- [ ] ¿Estoy redactando todo en **ESPAÑOL**?
+- [ ] ¿He mostrado el **PORCENTAJE** de avance (10%) en tareas multi-paso?
+
+---
+
+_"Sin contexto no hay inteligencia. Sin claridad no hay avance. Protocolo de Génesis completado."_

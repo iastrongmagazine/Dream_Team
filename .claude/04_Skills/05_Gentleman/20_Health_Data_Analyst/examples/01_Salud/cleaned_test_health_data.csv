@@ -1,0 +1,6 @@
+patient_id,patient_name,visit_date,age,region,priority,diagnosis
+1,John Doe,2023-01-15,45,North,High,Flu
+2,Jane Smith,2023-02-10,30,South,Low,Cold
+3,Alice Brown,,65,North,High,Covid
+4,Bob White,,25,West,Unknown,Injury
+5,Charlie Green,2023-05-20,50,East,Medium,Back Pain

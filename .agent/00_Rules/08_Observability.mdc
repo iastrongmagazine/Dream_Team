@@ -1,0 +1,72 @@
+---
+description: PILAR 07: Estándares de Observabilidad, CoT y Eficiencia para el Desarrollo de Agentes (AIPM-Grade)
+globs: [".agent/01_Agents/*.md", ".claude/agents/*.md", "04_ENGINE/*.py"]
+alwaysApply: true
+---
+
+# 📊 Regla 07: Estándar AIPM: Observabilidad y Razonamiento
+
+## Overview
+
+Este estándar asegura que todos los agentes y motores de PersonalOS cumplan con los requisitos de un **AI Product Manager (AIPM)** de nivel 2026, enfocándose en la transparencia del razonamiento y la eficiencia de recursos.
+
+Tomamos decisiones intencionadas, no solo usamos IA.
+
+## Rule: Protocolo de Razonamiento y Métricas AIPM
+
+1.  **Visibilidad Obligatoria**: Todo agente DEBE documentar su proceso de razonamiento (`thought_process`). No basta con el resultado final.
+2.  **Las 4 C del Prompting**:
+    - **Claro**: Instrucciones sin ambigüedad.
+    - **Contexto**: Escenario completo.
+    - **Constraints**: Restricciones técnicas y de negocio.
+    - **Correctness/Examples**: Ejemplos de entrada/salida para guiar el modelo.
+3.  **Registro Granular**: Diferenciar siempre entre `tokens_cot` (pensar) y `tokens_response` (actuar).
+4.  **Ratio de Eficiencia**: Apuntar a un balance saludable (20% - 50%).
+    - **Over-thinking**: Si el razonamiento es > 100% de la respuesta, simplificar la lógica o el prompt.
+    - **Superficialidad**: Si el razonamiento es < 15%, forzar un análisis más profundo.
+5.  **Latencia**: El umbral crítico es de **2000ms**. Reportar proactivamente cualquier ejecución que supere este límite.
+6.  **Auditoría y Pedagogía**:
+    - Pasar el `16_aipm_evaluator.py` sobre la traza de ejecución antes de finalizar.
+    - El feedback debe explicar el "Por Qué" (ej: costo de tokens).
+
+## Common Violations and Solutions
+
+### ❌ BAD: Resultados "Mágicos" sin Trazabilidad
+
+- Entregar código funcional pero sin explicar las decisiones tomadas en el `thought_process`.
+- Omitir el registro de métricas de tokens en logs de producción.
+- Ignorar latencias altas sin proponer soluciones de caché o refinamiento.
+
+### ✅ GOOD: AIPM-Grade Execution
+
+- "He analizado el prompt actual [Ratio CoT: 35%]. La latencia fue de 1200ms. He inyectado un ejemplo de Correctness para reducir alucinaciones en el paso 2."
+- Generar respuestas con "guardrails" de validación previa.
+
+## When You Think You Need an Exception
+
+### "La respuesta es obvia, no hace falta CoT detallado"
+
+- **❌ BAD**: Responder directamente sin razonamiento visible.
+- **✅ GOOD**: "Aunque la solución parece directa, el protocolo AIPM exige validar el impacto en el Pilar 3... [Thought Process]... Proponiendo cambio."
+
+## Specific Project Patterns
+
+### 4 C del Prompting
+
+- **Correctness**: Incluir siempre una muestra de lo esperado para minimizar el sesgo probalístico.
+
+## Alternative Solutions
+
+### 1. Gestión de Latencia
+
+- Si se superan los 2000ms recurrentemente, proponer el uso de un modelo más ligero o fragmentar la tarea en subtareas atómicas.
+
+## Checklist for the Assistant
+
+- [ ] ¿He documentado mi razonamiento (CoT) completo?
+- [ ] ¿He seguido las 4 C del Prompting (Claro, Contexto, Constraints, Correctness)?
+- [ ] ¿He validado el ratio de eficiencia de tokens (20%-50%)?
+- [ ] ¿He reportado proactivamente si la latencia superó los 2000ms?
+- [ ] ¿He pasado el evaluador de AIPM sobre mi traza de ejecución?
+
+Remember: Tomamos decisiones intencionadas. El razonamiento es tan importante como el resultado.

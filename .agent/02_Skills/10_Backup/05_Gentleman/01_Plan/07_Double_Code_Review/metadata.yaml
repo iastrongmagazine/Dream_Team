@@ -1,0 +1,15 @@
+name: Double Code Review
+description: Silicon Valley-style double code review with 6 hats methodology. Apply after any plan creation, sprint close, or significant work session.
+version: 1.0.0
+category: Plan
+triggers:
+  - "double code review"
+  - "review de plan"
+  - "hat review"
+  - "post-mortem"
+  - "verification"
+  - "cerrar sesión"
+  - "terminar fase"
+  - "sprint review"
+author: Think Different AI System
+date: 2026-03-24

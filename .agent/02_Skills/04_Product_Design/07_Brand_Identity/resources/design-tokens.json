@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "brand_name": "[INSERT NAME]",
+    "description": "Core design tokens for UI implementation."
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#FF6363",
+      "hover": "#E55858",
+      "foreground": "#07080A"
+    },
+    "accent": {
+      "DEFAULT": "#13271F",
+      "foreground": "#FFFFFF"
+    },
+    "background": "#FFFFFF",
+    "foreground": "#07080A",
+    "link": "#13271F",
+    "secondary": {
+      "DEFAULT": "#F4F4F5",
+      "foreground": "#18181B"
+    },
+    "muted": "#F4F4F5",
+    "destructive": "#EF4444",
+    "success": "#10B981"
+  },
+  "typography": {
+    "font_family_headings": ["Inter", "sans-serif"],
+    "font_family_body": ["Inter", "sans-serif"],
+    "font_family_mono": ["Geist Mono", "monospace"],
+    "font_weight_bold": "700",
+    "font_weight_normal": "400",
+    "sizes": {
+      "h1": "64px",
+      "h2": "20px",
+      "body": "18px"
+    }
+  },
+  "ui": {
+    "border_radius_default": "0.5rem",
+    "border_radius_small": "0.25rem",
+    "spacing_base_unit": "4px"
+  }
+}

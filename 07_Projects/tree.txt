@@ -1,0 +1,43 @@
+07_Projects/
+|-- 00_Context
+|   |-- 01_PRDs
+|   |-- 02_Data
+|   |-- 03_Docs
+|   |-- 04_Podcast
+|   |-- 05_Strategy
+|   |-- 06_Tech
+|   |-- 07_Template
+|   +-- README.md
+|-- 01_Projects_Lab
+|   |-- 01_Efrain_World
+|   |-- 02_Cassette
+|   |-- 03_Macano_Rest
+|   +-- Every_Sync_Zone
+|-- 02_Test_Env
+|-- 03_Momentum_Ws
+|   |-- 00_Genesis_Report_2026-03-24.md
+|   |-- 00_Genesis_Report_2026-03-26.md
+|   |-- 00_Reporte_Analisis_Completo_Sistema.md
+|   |-- 00_Reporte_Gentleman_Ecosistema_2026-03-25.md
+|   |-- AGENTS.md
+|   |-- Architecture_Map.md
+|   |-- CLAUDE.md
+|   |-- Draft_Agents.md
+|   |-- Draft_Readme_2026-03-19.md
+|   |-- Evaluacion_Sistema_2026-03-25.md
+|   |-- Examples_Os
+|   |-- Project_Storytelling.md
+|   |-- README.md
+|   |-- Reporte_Skills_Duplicados_vs_SOTA.md
+|   |-- Reporte_Submodules_2026-03-19.md
+|   |-- Sistema_SOTA.md
+|   +-- Workflows
+|-- README.md
++-- Safe_Backup
+    |-- 01_Every
+    |-- 02_Every_Pre_Integration
+    |-- 03_Side_Project_Backup
+    |-- 04_Claude_Code_Backup
+    |-- 05_Cursor_IDE_Backup
+    |-- 06_Every_Upstream_Latest
+    +-- 07_Repos_Gentleman_Backup

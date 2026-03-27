@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de Prompts Profesionales | Framework RICO | Founderz</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23584ec8'/%3E%3Cstop offset='100%25' style='stop-color:%237c6fd9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M20,85 L25,80 L30,85 L35,80 L40,85 L45,80 L50,85 L50,50 L45,45 L40,50 L35,45 L30,50 L25,45 L20,50 Z'/%3E%3Cpath fill='url(%23g)' d='M50,50 L55,45 Q70,30 75,15 L70,10 Q50,25 45,45 Z'/%3E%3Ccircle fill='url(%23g)' cx='77' cy='12' r='8'/%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-bottom: 2px solid #584ec8;
+            padding: 2rem 0;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-container svg {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-text h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-text p {
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #584ec8 0%, #7c6fd9 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(88, 78, 200, 0.4);
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tab-navigation {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .tab-btn {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            color: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            white-space: nowrap;
+            text-align: center;
+            width: 100%;
+        }
+
+        .tab-btn:hover {
+            background: #584ec8;
+            border-color: #7c6fd9;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #584ec8 0%, #7c6fd9 100%);
+            border-color: #7c6fd9;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .section-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #c4b5fd;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .term-card {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .term-card:hover {
+            border-color: #584ec8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(88, 78, 200, 0.2);
+        }
+
+        .term-card h4 {
+            font-size: 1.3rem;
+            color: #7c6fd9;
+            margin-bottom: 0.75rem;
+        }
+
+        .term-card .definition {
+            color: #ccc;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .term-card .example {
+            background: #584ec820;
+            border-left: 3px solid #584ec8;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #999;
+        }
+
+        .practice-card {
+            background: #0a0a0a;
+            border-left: 4px solid #584ec8;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .practice-card h4 {
+            color: #c4b5fd;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .practice-card p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .rico-generator {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 2px solid #584ec8;
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #c4b5fd;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #584ec8;
+            box-shadow: 0 0 0 3px rgba(88, 78, 200, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #584ec8 0%, #7c6fd9 100%);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(88, 78, 200, 0.4);
+        }
+
+        .btn-secondary {
+            background: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #444;
+        }
+
+        .output-box {
+            background: #0a0a0a;
+            border: 2px solid #584ec8;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            min-height: 150px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: #c4b5fd;
+        }
+
+        .prompt-card {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .prompt-card h4 {
+            color: #7c6fd9;
+            margin-bottom: 0.5rem;
+        }
+
+        .prompt-card .category-tag {
+            background: #584ec820;
+            color: #c4b5fd;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-text {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .prompt-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .prompt-actions button {
+            flex: 0 1 auto;
+        }
+
+        .saved-prompts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .saved-prompts-table th,
+        .saved-prompts-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .saved-prompts-table th {
+            background: #584ec820;
+            color: #c4b5fd;
+            font-weight: 600;
+        }
+
+        .saved-prompts-table tr:hover {
+            background: #1a1a1a;
+        }
+
+        .saved-prompts-table td:last-child {
+            min-width: 400px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #22c55e;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s;
+            z-index: 2000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-banner {
+            background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
+            border: 2px solid #ddd6fe;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            color: #fff;
+        }
+
+        .info-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-banner p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 1024px) {
+            .tab-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1.5rem;
+            }
+
+            .header-content {
+                padding: 0 1.5rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .tab-navigation {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .saved-prompts-table {
+                font-size: 0.9rem;
+            }
+
+            .saved-prompts-table td:last-child {
+                min-width: auto;
+            }
+
+            .prompt-actions {
+                flex-direction: column;
+            }
+
+            .prompt-actions button {
+                width: 100%;
+            }
+
+            .master-btn {
+                padding: 0.8rem 0.5rem !important;
+                font-size: 0.9rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="https://founderz.com/" target="_blank" style="display: block; text-decoration: none;">
+                    <svg viewBox="0 0 660.3 126.9" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#584ec8" d="M586 120.4 654.1 120.4 654.1 101.8 614.7 101.8 614.7 101 653.2 56.7 653.2 40.5 587.5 40.5 587.5 59.2 624.8 59.2 624.8 59.8 586 104.1 586 120.4"/>
+                        <path fill="#584ec8" d="M525.4,63.1v57.3h20.8v-34.3c0-13.5,4.1-25.7,17.1-25.7s7.2,1,9.1,2.5l.5-.2c.3-5.8,5.1-14.2,9.7-17.3v-.5c-3.3-3.8-8.7-5.9-16-5.9s-17.3,6.3-20.9,15v-13.5h-20.3v22.6h0Z"/>
+                        <path fill="#584ec8" d="M478,38.1c-23.6,0-40.7,18.9-40.7,42.3s17.3,42.5,41.8,42.5,31-7.2,38-22.7v-.5c-5.4.2-13.7-3.8-17-8.1h-.3c-2.6,7.4-9.9,13.5-20.3,13.5s-20.1-6.8-22.4-18.3h60.5c3.6-27-12.7-48.8-39.7-48.8h.1ZM457.9,70.8c2.6-9.5,9.9-15.5,19.9-15.5s17.8,5.9,20.3,15.5h-40.2,0Z"/>
+                        <path fill="#584ec8" d="M409.8,4v48.1c-5.6-8.7-16.1-13.3-26.2-13.3-22.7,0-38,18.5-38,41.7s15.3,41.8,38,41.8,21.2-4.8,26.7-14.2l.2,12.3h20.1V4h-20.8ZM388.2,103.1c-12.5,0-21.9-10.1-21.9-22.7s9.1-22.6,21.9-22.6,22.1,10.1,22.1,22.6-9.2,22.7-22.1,22.7Z"/>
+                        <path fill="#584ec8" d="M263.2,58.5v61.9h20.8v-44.6c0-11,7.6-18,17.5-18s16.8,6.8,16.8,17.5v45.1h20.8v-52.9c0-17-12.9-29.2-30.1-29.2s-20.3,4.9-25.4,14.5v-12.4h-20.3v18h0Z"/>
+                        <path fill="#584ec8" d="M205.2,122.6c9.9,0,20.1-4.6,25.2-15.2v13h20.1V40.5h-20.6v44.5c0,11-7.2,18.1-17.1,18.1s-16.3-6.8-16.3-17.6v-45h-20.8v52.6c0,17.3,12.9,29.5,29.5,29.5"/>
+                        <path fill="#584ec8" d="M126.4,37.9c-24.2,0-42.8,18.8-42.8,42.5s18.6,42.5,42.8,42.5,42.7-18.8,42.7-42.5-18.6-42.5-42.7-42.5ZM126.4,103.3c-12.7,0-22.1-10.2-22.1-22.9s9.2-22.9,22.1-22.9,22.1,10.2,22.1,22.9-9.6,22.9-22.1,22.9Z"/>
+                        <path fill="#584ec8" d="M74.8,51.4H26.1v-12.6l-.3-.2c-5.6,2.3-14.3,2.3-19.9,0l-.5.2v81.7h20.8v-48.3h48.6v-20.8h0Z"/>
+                        <path fill="#584ec8" d="M78.4,25.9V5.2h-40.8l-.2.3c2.3,5.6,2.3,14.3,0,19.9l.2.5h40.8Z"/>
+                        <path fill="#584ec8" d="M2.2,17.2c0,6.9,6.1,12.9,13.5,12.9s13.5-5.9,13.5-12.9-6.1-12.7-13.5-12.7S2.2,10.5,2.2,17.2"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="header-text">
+                <h1>Kit de Prompts Profesionales</h1>
+                <p>Domina la IA con prompts profesionales, Framework RICO y herramientas verificadas del workshop Intensivo de IA gratis para empezar el 2026 usándola como un profesional</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero-section">
+            <h2>🚀 Tu Kit Completo para Dominar la IA</h2>
+            <p>Aprende el Framework RICO, descubre las mejores prácticas 2026, accede a prompts profesionales listos para usar y crea tu biblioteca personalizada. Todo lo que necesitas para trabajar con IA como un experto.</p>
+        </div>
+
+        <nav class="tab-navigation">
+            <button class="tab-btn active" onclick="switchTab('explicacion')">📚 Qué es este Kit</button>
+            <button class="tab-btn" onclick="switchTab('diccionario')">📖 Diccionario IA 2026</button>
+            <button class="tab-btn" onclick="switchTab('practicas')">✨ Mejores Prácticas</button>
+            <button class="tab-btn" onclick="switchTab('rico')">🎯 Framework RICO</button>
+            <button class="tab-btn" onclick="switchTab('gpts')">🤖 GPTs Premium</button>
+            <button class="tab-btn" onclick="switchTab('prompts')">💼 Prompts Profesionales</button>
+            <button class="tab-btn" onclick="switchTab('misprompts')">⭐ Mis Prompts</button>
+            <button class="tab-btn" onclick="switchTab('master')">🎓 Master IA</button>
+        </nav>
+
+        <!-- TAB: Explicación -->
+        <div id="tab-explicacion" class="tab-content active">
+            <div class="info-banner">
+                <h3>Bienvenido al Kit de Prompts Profesionales</h3>
+                <p><strong>Este recurso está diseñado para profesionales de alto impacto</strong> que quieren dominar la IA generativa en 2026. Es el complemento perfecto del workshop "Intensivo de IA para empezar 2026 usándola como un profesional".</p>
+            </div>
+
+            <div class="section-card" style="background: linear-gradient(135deg, #584ec8 0%, #7c6fd9 100%); border: 2px solid #a78bfa; margin-top: 2rem;">
+                <h3 style="color: #fff; text-align: center; margin-bottom: 1.5rem;">🎓 Profundiza con el MÁSTER en IA e Innovación</h3>
+                <p style="color: #e9d5ff; text-align: center; margin-bottom: 2rem; font-size: 1.05rem;">
+                    ¿Quieres convertirte en un experto en IA? Descubre nuestro programa completo de formación profesional en Inteligencia Artificial e Innovación.
+                </p>
+                
+                <div style="display: flex; flex-wrap: nowrap; gap: 1rem; justify-content: space-between;">
+                    <button class="btn master-btn" style="flex: 1; padding: 1.2rem; font-size: 1.05rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border: none;" onclick="window.open('https://founderz.com/es/programa/master-inteligencia-artificial-online/', '_blank')">
+                        🇪🇸 MÁSTER Online España
+                    </button>
+                    
+                    <button class="btn master-btn" style="flex: 1; padding: 1.2rem; font-size: 1.05rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border: none;" onclick="window.open('https://founderz.com/mx/programa/diplomado-inteligencia-artificial-online/', '_blank')">
+                        🇲🇽 Diplomado Online México
+                    </button>
+                    
+                    <button class="btn master-btn" style="flex: 1; padding: 1.2rem; font-size: 1.05rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border: none;" onclick="window.open('https://founderz.com/co/programa/master-inteligencia-artificial-online/', '_blank')">
+                        🇨🇴 MÁSTER Online Colombia
+                    </button>
+                    
+                    <button class="btn master-btn" style="flex: 1; padding: 1.2rem; font-size: 1.05rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border: none;" onclick="window.open('https://founderz.com/latam/programa/master-inteligencia-artificial-online/', '_blank')">
+                        🌎 MÁSTER Online LATAM
+                    </button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>¿Qué encontrarás en este Kit?</h3>
+                <div class="grid-2" style="margin-top: 2rem;">
+                    <div class="term-card">
+                        <h4>📖 Diccionario de IA 2026</h4>
+                        <div class="definition">
+                            Domina el vocabulario técnico que usan los profesionales. Términos clave como LLM, Agentes, RAG, Hallucination, Fine-tuning y más, con definiciones claras y ejemplos prácticos.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>✨ Mejores Prácticas</h4>
+                        <div class="definition">
+                            Técnicas probadas basadas en investigación de 2025-2026 de OpenAI, Anthropic y expertos en prompt engineering. Aprende qué funciona realmente y qué debes evitar.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>🎯 Framework RICO</h4>
+                        <div class="definition">
+                            El framework estructurado del workshop: <strong>Rol, Instrucciones, Contexto, Output</strong>. Incluye un generador interactivo para crear prompts profesionales en segundos.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>💼 Prompts Listos</h4>
+                        <div class="definition">
+                            Biblioteca curada de prompts profesionales para Dirección, Ventas, Marketing y Operaciones. Cópialos, personalízalos y úsalos inmediatamente.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>⭐ Tu Biblioteca Personal</h4>
+                        <div class="definition">
+                            Guarda tus propios prompts favoritos. Se almacenan en tu navegador y persisten entre sesiones. Construye tu biblioteca personalizada.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>🚀 100% Práctico</h4>
+                        <div class="definition">
+                            Todo está listo para copiar y usar. No teoría abstracta, solo herramientas que funcionan para profesionales que generan resultados reales.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Cómo Usar Este Kit</h3>
+                <div class="practice-card">
+                    <h4>1. Empieza por el Diccionario</h4>
+                    <p>Familiarízate con los términos clave. Entender el vocabulario te permitirá comunicarte con precisión sobre IA.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>2. Estudia las Mejores Prácticas</h4>
+                    <p>Lee las 10 prácticas fundamentales. Son el resultado de investigación académica y práctica profesional en 2025-2026.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>3. Aprende el Framework RICO</h4>
+                    <p>Entiende cada componente (Rol, Instrucciones, Contexto, Output) y practica con el generador interactivo.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>4. Explora los Prompts Profesionales</h4>
+                    <p>Navega por categoría (Dirección, Ventas, Marketing, Operaciones). Copia, personaliza y prueba los que necesites.</p>
+                </div>
+                <div class="practice-card">
+                    <h4>5. Construye Tu Biblioteca</h4>
+                    <p>Guarda tus prompts favoritos o crea nuevos. La sección "Mis Prompts" mantiene todo organizado y accesible.</p>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Sobre el Workshop</h3>
+                <p style="color: #ccc; line-height: 1.8; margin-bottom: 1rem;">
+                    Este kit es el complemento del <strong>"Intensivo de IA gratis para empezar 2026 usándola como un profesional"</strong> de Founderz, workshop de 2 días diseñado para profesionales de alto impacto:
+                </p>
+                <div class="grid-2">
+                    <div class="term-card">
+                        <h4>Día 1: Conceptos básicos</h4>
+                        <div class="definition">
+                            • Mejorar tu prompting<br>
+                            • Casos de Uso<br>
+                            • Introducción Asistentes
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>Día 2: Estratega</h4>
+                        <div class="definition">
+                            • Creación de GPTs personalizados<br>
+                            • Automatización sin código<br>
+                            • Razonamiento avanzado<br>
+                            • De usuario a Profesional de Alto Impacto
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 2rem;">
+                <h3>🎓 Profundiza tu Conocimiento: MÁSTER en IA e Innovación</h3>
+                <p style="color: #ccc; line-height: 1.8; margin-bottom: 2rem;">
+                    ¿Quieres ir más allá? El <strong>MÁSTER ONLINE en IA e Innovación</strong> de Founderz es la formación más completa para profesionales que quieren dominar la IA y liderar la transformación en sus organizaciones. Certificación oficial, casos reales y mentoría personalizada.
+                </p>
+                <div style="display: flex; flex-wrap: nowrap; gap: 1rem; justify-content: space-between;">
+                    <button class="btn master-btn" style="flex: 1; padding: 1rem; font-size: 1.05rem;" onclick="window.open('https://founderz.com/es/programa/master-inteligencia-artificial-online/', '_blank')">
+                        🇪🇸 MÁSTER España
+                    </button>
+                    <button class="btn master-btn" style="flex: 1; padding: 1rem; font-size: 1.05rem;" onclick="window.open('https://founderz.com/mx/programa/diplomado-inteligencia-artificial-online/', '_blank')">
+                        🇲🇽 DIPLOMADO México
+                    </button>
+                    <button class="btn master-btn" style="flex: 1; padding: 1rem; font-size: 1.05rem;" onclick="window.open('https://founderz.com/co/programa/master-inteligencia-artificial-online/', '_blank')">
+                        🇨🇴 MÁSTER Colombia
+                    </button>
+                    <button class="btn master-btn" style="flex: 1; padding: 1rem; font-size: 1.05rem;" onclick="window.open('https://founderz.com/latam/programa/master-inteligencia-artificial-online/', '_blank')">
+                        🌎 MÁSTER LATAM
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: Diccionario -->
+        <div id="tab-diccionario" class="tab-content">
+            <div class="section-card">
+                <h3>📖 Diccionario de IA para Profesionales 2026</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">Domina el vocabulario esencial que todo profesional de alto impacto debe conocer en 2026.</p>
+                
+                <div class="grid-2">
+                    <div class="term-card">
+                        <h4>🤖 LLM (Large Language Model)</h4>
+                        <div class="definition">
+                            Modelo de lenguaje entrenado con billones de parámetros en vastos conjuntos de datos. Entiende y genera lenguaje natural. GPT-4, Claude, Gemini son ejemplos.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> ChatGPT usa GPT-4, un LLM con cientos de billones de parámetros entrenado en libros, artículos y transcripciones.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎯 Prompt</h4>
+                        <div class="definition">
+                            Instrucción o pregunta que das a un modelo de IA para obtener una respuesta. La calidad del prompt determina directamente la calidad del output.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Actúa como CMO. Analiza esta estrategia de contenido y proporciona 5 mejoras con ROI estimado" es un prompt estructurado.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔧 Prompt Engineering</h4>
+                        <div class="definition">
+                            Disciplina de diseñar, refinar y optimizar prompts para obtener los mejores resultados. Combina técnica con comprensión del modelo.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Cambiar "resume esto" por "Extrae los 3 puntos clave en bullet points, máximo 50 palabras total" es prompt engineering.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎭 Rol / Persona</h4>
+                        <div class="definition">
+                            Asignar una identidad específica al modelo (experto, consultor, analista) para moldear el tono, profundidad y perspectiva de la respuesta.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Eres un CFO con 20 años de experiencia en SaaS B2B" genera respuestas muy diferentes que "Eres un estudiante de finanzas".
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🧠 Razonamiento Avanzado</h4>
+                        <div class="definition">
+                            Modo de modelos (como o1, o3) que generan cadenas de pensamiento paso a paso antes de responder. Mejora precisión en tareas complejas.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> GPT-4o es rápido para tareas simples. o1 usa razonamiento avanzado para decisiones estratégicas complejas.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>💡 Chain-of-Thought (CoT)</h4>
+                        <div class="definition">
+                            Técnica que instruye al modelo a "mostrar su trabajo" paso a paso. Mejora dramáticamente precisión en razonamiento lógico y matemático.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Agregar "Piensa paso a paso y explica tu razonamiento antes de la respuesta final" activa CoT.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎨 Few-Shot Prompting</h4>
+                        <div class="definition">
+                            Proporcionar 2-5 ejemplos de entrada-salida deseada para que el modelo entienda exactamente qué formato y estilo quieres.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Extrae info así → Cliente: Acme Corp | Budget: $50K | Timeline: Q2. Ahora extrae de este email..."
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎯 Context Window</h4>
+                        <div class="definition">
+                            Cantidad máxima de texto (tokens) que el modelo puede procesar en una conversación. GPT-4: 128K tokens ≈ 96,000 palabras.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Puedes cargar un documento de 80 páginas completo dentro del context window de GPT-4.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>👻 Hallucination</h4>
+                        <div class="definition">
+                            Cuando el modelo genera información falsa pero plausible. Inventa hechos, cifras o referencias que no existen.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Preguntas sobre un evento post-cutoff y el modelo inventa detalles en lugar de decir "no tengo esa información".
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🤖 Agente de IA</h4>
+                        <div class="definition">
+                            Sistema que usa LLMs para ejecutar tareas autónomamente, interactuando con herramientas y datos. Va más allá de chatbots simples.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Un agente que busca info web, analiza datos, genera reporte y lo envía por email sin intervención humana.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>📚 RAG (Retrieval-Augmented Generation)</h4>
+                        <div class="definition">
+                            Técnica que combina búsqueda de información con generación. El modelo busca datos relevantes antes de generar respuesta.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Chatbot empresarial que busca en documentación interna antes de responder preguntas de empleados.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎓 Fine-tuning</h4>
+                        <div class="definition">
+                            Entrenamiento adicional de un modelo base con datos específicos de tu dominio para mejorar rendimiento en tareas especializadas.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Ajustar GPT-4 con 10,000 emails de atención cliente de tu empresa para respuestas más precisas.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔄 Multimodal</h4>
+                        <div class="definition">
+                            Modelos que procesan y generan múltiples tipos de contenido: texto, imágenes, audio, video simultáneamente.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> GPT-4 Vision analiza una imagen de dashboard y genera análisis de métricas + sugerencias de mejora.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🪙 Token</h4>
+                        <div class="definition">
+                            Unidad básica de procesamiento. Aproximadamente 4 caracteres = 1 token. Los modelos cobran y limitan por tokens.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Hola mundo" = ~3 tokens. Un documento de 10,000 palabras ≈ 13,000 tokens.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>⚙️ System Prompt</h4>
+                        <div class="definition">
+                            Instrucciones persistentes que definen el comportamiento base del modelo a lo largo de toda la conversación.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Eres un asistente especializado en análisis financiero. Usa siempre fuentes verificables y cita números exactos."
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎯 Zero-Shot</h4>
+                        <div class="definition">
+                            Pedir al modelo realizar una tarea sin proporcionar ejemplos previos. Confía en su entrenamiento base.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Traduce este texto al francés" sin dar ejemplos de traducción. El modelo lo hace directamente.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>📊 Embedding</h4>
+                        <div class="definition">
+                            Representación matemática de texto como vector numérico. Permite búsqueda semántica y comparación de similitud.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Convertir "CEO" y "Director Ejecutivo" en vectors similares para identificar que son conceptos relacionados.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔒 Jailbreaking</h4>
+                        <div class="definition">
+                            Técnicas para evadir restricciones de seguridad del modelo. Importante conocerlo para proteger sistemas empresariales.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Reformular peticiones prohibidas de forma indirecta para bypass de filtros de contenido.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>⚙️ Custom Instructions</h4>
+                        <div class="definition">
+                            Instrucciones persistentes que defines una vez y el modelo las aplica a todas las conversaciones. Configura tono, formato y preferencias.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Configurar "Siempre responde en bullets, máximo 3 frases por punto, tono ejecutivo directo" para todas tus conversaciones.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔑 Keyword (Palabra Clave)</h4>
+                        <div class="definition">
+                            Términos específicos que guían al modelo hacia el tipo de respuesta que necesitas. Usar keywords correctas mejora precisión y relevancia.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> En lugar de "dame ideas", usa keywords como "brainstorm", "análisis comparativo", "lista priorizada" o "estrategia paso a paso".
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🚀 API</h4>
+                        <div class="definition">
+                            Interfaz de programación que permite integrar modelos de IA en tus aplicaciones, productos o flujos de trabajo.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Usar OpenAI API para integrar GPT-4 en tu CRM y automatizar generación de propuestas comerciales.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔢 Token</h4>
+                        <div class="definition">
+                            Unidad básica de procesamiento en LLMs. Un token equivale aproximadamente a 4 caracteres o ¾ de una palabra. Los modelos tienen límites de tokens (context window).
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> GPT-4 Turbo tiene 128K tokens de contexto (~96K palabras). "Hola mundo" = 3 tokens. Controlar token usage optimiza costos en APIs.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔄 Workflow (Flujo de Trabajo)</h4>
+                        <div class="definition">
+                            Secuencia automatizada de tareas conectadas que procesan datos entre aplicaciones. Herramientas como Make, n8n y Zapier permiten crearlos sin código.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Workflow que al recibir email → extrae datos → actualiza CRM → envía notificación Slack → genera factura. Todo automático en segundos.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>⚡ Trigger (Disparador)</h4>
+                        <div class="definition">
+                            Evento que inicia un workflow automáticamente. Puede ser un cambio en base de datos, nuevo email, hora programada, webhook recibido, etc.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> "Cuando se añade fila en Google Sheets" (trigger) → ejecuta automatización. También: webhook, schedule (cron), manual, API call.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🎯 Action (Acción)</h4>
+                        <div class="definition">
+                            Paso ejecutado dentro de un workflow tras un trigger. Cada action realiza una tarea específica: enviar email, crear registro, llamar API, transformar datos.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Trigger: nuevo contacto → Action 1: crear en CRM → Action 2: enviar bienvenida → Action 3: notificar equipo ventas. Múltiples actions en secuencia.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔗 Node (Nodo)</h4>
+                        <div class="definition">
+                            Bloque visual en herramientas como n8n o Make que representa una operación: app integration, lógica condicional, transformación de datos. Los nodos se conectan para formar workflows.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Nodo "HTTP Request" → Nodo "IF" (condición) → Nodo "Slack" (send message). Cada nodo = 1 operación. Make cobra por operations, Zapier por tasks.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🪝 Webhook</h4>
+                        <div class="definition">
+                            URL que recibe datos en tiempo real cuando ocurre un evento. Sistema push (no polling). Clave para automatizaciones instantáneas entre aplicaciones.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Stripe envía webhook a tu URL cuando hay pago → tu sistema procesa al instante. Sin webhooks tendrías que consultar (polling) cada minuto si hay pagos.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔌 API Integration</h4>
+                        <div class="definition">
+                            Conexión entre aplicaciones mediante APIs (REST, GraphQL, SOAP). Permite que una app lea/escriba datos en otra automáticamente. Base de cualquier automatización.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Make conecta con API de HubSpot (CRM), extrae contactos nuevos, y los envía a API de Mailchimp para email marketing. 2 APIs comunicándose.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>⚙️ Self-Hosting</h4>
+                        <div class="definition">
+                            Opción de instalar software en tus propios servidores en lugar de usar versión cloud (SaaS). n8n lo permite, dando control total de datos y costos a largo plazo.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> n8n self-hosted en AWS = $50/mes servidor vs n8n Cloud = $200/mes por volumen alto. Self-hosting requiere equipo técnico pero es más económico a escala.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🚦 Rate Limit</h4>
+                        <div class="definition">
+                            Límite de requests por minuto/hora que una API acepta. Excederlo = error 429. Critical en automatizaciones de alto volumen. Requiere throttling y reintentos con backoff.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> API de Twitter: 300 requests/15min. Tu workflow procesa 1000 tweets → implementa pausas (sleep), batch processing y retry logic para no fallar.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>🔒 Idempotencia</h4>
+                        <div class="definition">
+                            Propiedad de una operación que produce el mismo resultado si se ejecuta múltiples veces. Evita duplicados en automatizaciones. Usa claves únicas (IDs) para deduplicación.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Workflow crea cliente en CRM usando email como clave única. Si se ejecuta 2 veces, verifica "¿email existe?" antes de crear. Sin idempotencia = duplicados.
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>📊 Operations vs Tasks</h4>
+                        <div class="definition">
+                            Métricas de consumo en plataformas: Make usa "operations" (cada módulo ejecutado), Zapier usa "tasks" (cada acción completa). Impacta directamente en costos mensuales.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplo:</strong> Workflow con 5 pasos = 5 operations en Make pero 4 tasks en Zapier (trigger no cuenta). Make cobra por operation, Zapier por task ejecutada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: Prácticas -->
+        <div id="tab-practicas" class="tab-content">
+            <div class="section-card">
+                <h3>10 Mejores Prácticas de Prompt Engineering 2026</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">Basadas en investigación de OpenAI, Anthropic, Google y expertos en el campo. Estas prácticas están probadas en entornos profesionales reales.</p>
+
+                <div class="practice-card">
+                    <h4>1. Sé Específico y Claro, Evita Ambigüedad</h4>
+                    <p>
+                        <strong>La regla de oro:</strong> Palabras vagas como "bueno", "profesional", "engagement", "interesante" no significan nada para un LLM. Son "calorías vacías" que fuerzan al modelo a adivinar.<br><br>
+                        
+                        ❌ <strong>Mal:</strong> "Dame un resumen profesional de este documento."<br>
+                        ✅ <strong>Bien:</strong> "Extrae los 5 puntos clave en máximo 150 palabras, usando bullet points. Enfócate en ROI y métricas cuantificables."<br><br>
+                        
+                        <strong>Por qué funciona:</strong> Conviertes deseos subjetivos en parámetros objetivos que el modelo puede ejecutar sin ambigüedad.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>2. Asigna Roles o Personas Específicas</h4>
+                    <p>
+                        <strong>El poder del contexto:</strong> Asignar un rol específico cambia completamente tono, profundidad y perspectiva. Un CFO responde diferente que un estudiante.<br><br>
+                        
+                        ❌ <strong>Mal:</strong> "Dame consejos sobre presupuesto."<br>
+                        ✅ <strong>Bien:</strong> "Eres un CFO con 15 años en empresas SaaS B2B de ARR $10M-50M. Dame 5 estrategias de optimización de cash flow para Q1."<br><br>
+                        
+                        <strong>Tip:</strong> Usa "Eres X" en lugar de "Actúa como X" - estudios muestran mejor performance.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>3. Usa Chain-of-Thought para Tareas Complejas</h4>
+                    <p>
+                        <strong>Muestra el trabajo:</strong> Para decisiones complejas, lógica o matemáticas, pide al modelo "pensar en voz alta" paso a paso.<br><br>
+                        
+                        ✅ <strong>Patrón efectivo:</strong> "Antes de dar tu respuesta final, explica tu cadena de razonamiento paso a paso. Después de explicar tu lógica, proporciona la conclusión."<br><br>
+                        
+                        <strong>Impacto:</strong> Mejora dramáticamente precisión en análisis estratégico, problemas lógicos y decisiones multi-factor. El modelo o1 de OpenAI usa esto por defecto.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>4. Proporciona Ejemplos (Few-Shot)</h4>
+                    <p>
+                        <strong>Muestra, no solo digas:</strong> 2-5 ejemplos de entrada-salida deseada son más efectivos que largas descripciones.<br><br>
+                        
+                        ✅ <strong>Estructura:</strong><br>
+                        "Extrae información así:<br>
+                        Input: 'Reunión con Acme Corp el martes, budget $50K'<br>
+                        Output: Cliente: Acme Corp | Fecha: martes | Budget: $50,000<br><br>
+                        
+                        Ahora extrae de: [tu texto aquí]"<br><br>
+                        
+                        <strong>Cuándo usarlo:</strong> Tareas con formato específico, tono personalizado o estructuras de salida complejas.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>5. Define Formato de Output Explícitamente</h4>
+                    <p>
+                        <strong>Estructura es claridad:</strong> Especifica exactamente cómo quieres la respuesta: bullets, tabla, JSON, markdown, etc.<br><br>
+                        
+                        ✅ <strong>Ejemplos efectivos:</strong><br>
+                        • "Responde en tabla de 3 columnas: Problema | Impacto | Solución"<br>
+                        • "Formato JSON con campos: name, priority, deadline, owner"<br>
+                        • "Máximo 5 bullet points, cada uno de 20-30 palabras"<br><br>
+                        
+                        <strong>Beneficio:</strong> Eliminas tiempo de reformateo y garantizas consistencia en outputs.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>6. Establece Límites y Constraints</h4>
+                    <p>
+                        <strong>Las reglas mejoran outputs:</strong> Limitaciones claras fuerzan precisión y evitan respuestas genéricas infladas.<br><br>
+                        
+                        ✅ <strong>Tipos de constraints:</strong><br>
+                        • Longitud: "Máximo 100 palabras" o "Entre 300-500 palabras"<br>
+                        • Prohibiciones: "No uses buzzwords como 'innovador', 'game-changer', 'disruptivo'"<br>
+                        • Requisitos: "Cita al menos 3 fuentes verificables" o "Incluye números concretos"<br><br>
+                        
+                        <strong>Resultado:</strong> Outputs más útiles, accionables y libres de "relleno de IA".
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>7. Proporciona Contexto Rico Pero Organizado</h4>
+                    <p>
+                        <strong>Contexto es poder:</strong> Más contexto relevante = mejores resultados. Pero debe estar bien estructurado.<br><br>
+                        
+                        ✅ <strong>Template efectivo:</strong><br>
+                        "CONTEXTO:<br>
+                        - Empresa: SaaS B2B, ARR $5M, 30 empleados<br>
+                        - Audiencia: CTOs de empresas 100-500 empleados<br>
+                        - Objetivo: Generar 50 MQLs en Q1<br>
+                        - Restricciones: Budget $15K, equipo de 2 personas<br><br>
+                        
+                        TAREA: [tu instrucción específica]"<br><br>
+                        
+                        <strong>Tip Pro:</strong> Para proyectos recurrentes, crea un "documento de persona" reutilizable con todo el contexto.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>8. Itera y Refina - El Prompting es Conversacional</h4>
+                    <p>
+                        <strong>Raramente es one-shot:</strong> Los mejores resultados vienen de refinamiento iterativo. El prompt perfecto primera vez es un mito.<br><br>
+                        
+                        ✅ <strong>Proceso:</strong><br>
+                        1. Prompt inicial → obtén resultado<br>
+                        2. Analiza qué falta o sobra<br>
+                        3. Refina con "Ahora mejora X..." o "Cambia el tono a Y"<br>
+                        4. Documenta el prompt final para reutilizar<br><br>
+                        
+                        <strong>Realidad:</strong> Incluso expertos iteran 3-5 veces en prompts complejos. Es normal y esperado.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>9. Usa Delimitadores para Secciones Complejas</h4>
+                    <p>
+                        <strong>Organización visual:</strong> ### o """ o --- ayudan al modelo a parsear instrucciones complejas con múltiples secciones.<br><br>
+                        
+                        ✅ <strong>Ejemplo:</strong><br>
+                        """<br>
+                        CONTEXTO:<br>
+                        [contexto aquí]<br>
+                        ---<br>
+                        DATOS:<br>
+                        [datos aquí]<br>
+                        ---<br>
+                        TAREA:<br>
+                        [instrucción aquí]<br>
+                        ---<br>
+                        FORMATO DESEADO:<br>
+                        [formato aquí]<br>
+                        """<br><br>
+                        
+                        <strong>Cuándo usarlo:</strong> Prompts con múltiples inputs, datos tabulares o instrucciones multi-paso.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>10. Itera y Documenta tus Mejores Prompts</h4>
+                    <p>
+                        <strong>El proceso importa:</strong> Raramente obtienes el prompt perfecto en el primer intento. La iteración es normal y esperada. Los mejores prompts son el resultado de 3-5 refinamientos.<br><br>
+                        
+                        ✅ <strong>Workflow recomendado:</strong><br>
+                        1. <strong>Primera versión:</strong> Escribe el prompt básico<br>
+                        2. <strong>Evalúa el output:</strong> ¿Qué falta? ¿Qué sobra? ¿Qué está mal?<br>
+                        3. <strong>Refina:</strong> Añade especificidad, ejemplos o constraints<br>
+                        4. <strong>Repite:</strong> Hasta lograr consistencia en resultados<br>
+                        5. <strong>Documenta:</strong> Guarda los prompts que funcionan en tu biblioteca personal<br><br>
+                        
+                        <strong>Tip profesional:</strong> Usa la sección "Mis Prompts" de este kit para guardar tus versiones exitosas y construir tu biblioteca personalizada.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 2rem;">
+                <h3>Anti-patrones Comunes a Evitar</h3>
+                <div class="grid-3">
+                    <div class="term-card">
+                        <h4>❌ Prompts Demasiado Vagos</h4>
+                        <div class="definition">
+                            "Hazlo mejor", "Sé creativo", "Make it pop" - el modelo no sabe qué significa esto para ti.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>❌ Múltiples Tareas en Un Prompt</h4>
+                        <div class="definition">
+                            Pedir analizar + resumir + traducir + formatear en un solo prompt. Separa en pasos.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>❌ No Verificar Outputs</h4>
+                        <div class="definition">
+                            Confiar ciegamente. Siempre revisa hechos, datos y lógica. Los modelos alucinan.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>❌ Copiar Prompts Sin Adaptar</h4>
+                        <div class="definition">
+                            Los prompts "universales" de internet raramente funcionan para tu caso específico.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>❌ Ignorar el Context Window</h4>
+                        <div class="definition">
+                            Cargar documentos masivos sin resumen previo. Usa embeddings o chunking estratégico.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>❌ No Documentar Prompts Exitosos</h4>
+                        <div class="definition">
+                            Encontrar un prompt perfecto y no guardarlo. Crea una biblioteca personal.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: RICO Framework -->
+        <div id="tab-rico" class="tab-content">
+            <div class="section-card">
+                <h3>Framework RICO</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">
+                    RICO es el framework estructurado del workshop de Founderz para crear prompts profesionales consistentes. 
+                    Transforma peticiones vagas en instrucciones precisas que generan resultados predecibles y de alto impacto.
+                </p>
+
+                <div class="grid-2" style="margin-bottom: 2rem;">
+                    <div class="term-card">
+                        <h4>🎭 R - Rol</h4>
+                        <div class="definition">
+                            Define quién es el modelo. Un CFO piensa diferente que un CMO. El rol moldea perspectiva, vocabulario y profundidad.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplos:</strong><br>
+                            • "Eres un CEO con 20 años liderando empresas SaaS de $50M+ ARR"<br>
+                            • "Eres una consultora de McKinsey especializada en transformación digital"<br>
+                            • "Eres un VP de Ventas B2B Enterprise con historial de cerrar deals $500K+"
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>📋 I - Instrucciones</h4>
+                        <div class="definition">
+                            Qué debe hacer exactamente. Usa verbos de acción concretos. Evita "haz algo interesante" - sé preciso.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplos:</strong><br>
+                            • "Analiza estos 5 competidores y crea matriz comparativa de 3 columnas"<br>
+                            • "Genera 10 headlines de email usando curiosity gap y urgencia"<br>
+                            • "Extrae métricas clave, calcula variance YoY, identifica 3 red flags"
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>📊 C - Contexto</h4>
+                        <div class="definition">
+                            Información de fondo relevante. Quién es tu audiencia, qué limitaciones hay, qué ya se probó. Más contexto = mejor output.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplos:</strong><br>
+                            • "Contexto: Empresa B2B SaaS, ICP = CTOs 50-500 empleados, ticket promedio $80K/año"<br>
+                            • "Budget: $20K, Plazo: 6 semanas, Team: 3 personas júnior"<br>
+                            • "Ya probamos ads de Facebook ($15K spend, 2.1 ROAS). Ahora exploramos LinkedIn"
+                        </div>
+                    </div>
+
+                    <div class="term-card">
+                        <h4>📄 O - Output</h4>
+                        <div class="definition">
+                            Cómo quieres la respuesta. Formato, estructura, longitud, tono. Especificidad aquí ahorra horas de edición.
+                        </div>
+                        <div class="example">
+                            <strong>Ejemplos:</strong><br>
+                            • "Output: Tabla 4 columnas (Estrategia | Costo | Timeline | ROI esperado)"<br>
+                            • "Formato: 5 bullet points, cada uno 30-40 palabras, tono ejecutivo"<br>
+                            • "Máximo 200 palabras total, incluye 3 métricas cuantificables"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Generador RICO Interactivo</h3>
+                <p style="color: #ccc; margin-bottom: 1.5rem;">Completa los campos y genera tu prompt profesional estructurado al instante.</p>
+                
+                <div class="rico-generator">
+                    <div class="form-group">
+                        <label>🎭 ROL - ¿Quién debe ser el modelo?</label>
+                        <input type="text" id="rico-rol" placeholder="Ej: Eres un CFO con 15 años de experiencia en empresas SaaS B2B">
+                    </div>
+
+                    <div class="form-group">
+                        <label>📋 INSTRUCCIONES - ¿Qué debe hacer exactamente?</label>
+                        <textarea id="rico-instrucciones" placeholder="Ej: Analiza este P&L trimestral, identifica las 3 áreas con mayor oportunidad de optimización y proporciona recomendaciones accionables"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>📊 CONTEXTO - Información de fondo relevante</label>
+                        <textarea id="rico-contexto" placeholder="Ej: Empresa SaaS B2B, ARR $5M, 30 empleados, burn rate $150K/mes. Objetivo: extender runway 6 meses sin afectar crecimiento"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>📄 OUTPUT - Formato deseado de la respuesta</label>
+                        <textarea id="rico-output" placeholder="Ej: Tabla con 3 columnas (Área | Ahorro estimado | Impacto en ops). Máximo 300 palabras total. Incluye números concretos"></textarea>
+                    </div>
+
+                    <button class="btn" onclick="generarPromptRICO()">🎯 Generar Prompt RICO</button>
+
+                    <div id="rico-resultado" class="output-box" style="display: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <strong style="color: #7c6fd9;">Tu Prompt Profesional Generado:</strong>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <button class="btn btn-secondary" onclick="copiarPromptRICO()" style="padding: 0.5rem 1rem;">📋 Copiar</button>
+                                <button class="btn btn-secondary" onclick="abrirRICOEnChatGPT()" style="padding: 0.5rem 1rem;">🤖 ChatGPT</button>
+                                <button class="btn btn-secondary" onclick="abrirRICOEnClaude()" style="padding: 0.5rem 1rem;">💬 Claude</button>
+                                <button class="btn btn-secondary" onclick="abrirRICOEnCopilot()" style="padding: 0.5rem 1rem;">🔷 Copilot</button>
+                            </div>
+                        </div>
+                        <div id="rico-output-text"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 2rem;">
+                <h3>Ejemplos RICO por Función Profesional</h3>
+                
+                <div class="prompt-card">
+                    <h4>📊 Dirección - Análisis Estratégico</h4>
+                    <span class="category-tag">CEO / C-Level</span>
+                    <div class="prompt-text" id="ejemplo-direccion">
+<strong>ROL:</strong> Eres un CEO con 20 años liderando empresas B2B SaaS en crecimiento ($10M-$100M ARR).
+
+<strong>INSTRUCCIONES:</strong> Analiza nuestra posición competitiva actual y genera una matriz 2x2 (Ventaja Competitiva vs Urgencia Estratégica) con nuestras 8 iniciativas. Prioriza las top 3 para próximo trimestre.
+
+<strong>CONTEXTO:</strong> Empresa SaaS B2B, ARR $15M (+120% YoY), 45 empleados, levantamos Series A ($8M) hace 6 meses. Mercado: Marketing automation para e-commerce. Principales competidores: HubSpot, Klaviyo, ActiveCampaign.
+
+<strong>OUTPUT:</strong> 1) Matriz visual 2x2 con las 8 iniciativas posicionadas. 2) Justificación de top 3 (max 100 palabras c/u). 3) Tabla de recursos necesarios (FTEs | Budget | Timeline). Total máximo 500 palabras.
+                    </div>
+                    <div class="prompt-actions">
+                        <button class="btn" onclick="copiarEjemploRICO('ejemplo-direccion')">📋 Copiar Prompt</button>
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💰 Ventas - Pipeline Analysis</h4>
+                    <span class="category-tag">VP Sales / Revenue</span>
+                    <div class="prompt-text" id="ejemplo-ventas">
+<strong>ROL:</strong> Eres un VP de Ventas B2B Enterprise con 15 años cerrando deals de $100K-$1M+ en software empresarial.
+
+<strong>INSTRUCCIONES:</strong> Analiza este pipeline Q4, identifica deals en riesgo (>30 días sin avance), segmenta por win probability, y proporciona tácticas específicas para acelerar cierre de los 5 deals más valiosos.
+
+<strong>CONTEXTO:</strong> Pipeline: 45 oportunidades, $8.5M total value. Ciclo de venta promedio: 90 días. Tenemos 6 semanas para Q4. Team: 1 AE senior, 2 AE mid-level. Ticket promedio histórico: $120K. Win rate: 28%.
+
+<strong>OUTPUT:</strong> Tabla con columnas: Deal | Value | Days in Stage | Risk Level | Specific Action | Owner. Separa en 3 categorías: Hot (close esta semana), Warm (cierre en 2-3 semanas), Cold (reactivar o descalificar). Máximo 400 palabras de análisis + tabla.
+                    </div>
+                    <div class="prompt-actions">
+                        <button class="btn" onclick="copiarEjemploRICO('ejemplo-ventas')">📋 Copiar Prompt</button>
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>📢 Marketing - Campaign Strategy</h4>
+                    <span class="category-tag">CMO / Growth</span>
+                    <div class="prompt-text" id="ejemplo-marketing">
+<strong>ROL:</strong> Eres una CMO con 12 años en growth marketing B2B, experta en paid acquisition y funnel optimization para SaaS.
+
+<strong>INSTRUCCIONES:</strong> Diseña estrategia de paid ads para Q1 con objetivo de generar 200 MQLs. Distribuye presupuesto entre canales (LinkedIn, Google, Facebook), define targeting, crea 3 variantes de messaging y establece KPIs por canal.
+
+<strong>CONTEXTO:</strong> Producto: CRM para real estate. ICP: Brokers/agencies 10-100 agentes. Ticket: $299/mes. LTV: $10,800. CAC permitido: $1,200. Budget total Q1: $60K. Conversión histórica: web visit → trial = 3.5%, trial → paid = 18%.
+
+<strong>OUTPUT:</strong> 1) Tabla allocation por canal (% budget | Expected MQLs | CPL estimado). 2) 3 hooks/headlines por canal. 3) Targeting specifics c/canal. 4) KPIs semanales. Formato markdown, máximo 600 palabras.
+                    </div>
+                    <div class="prompt-actions">
+                        <button class="btn" onclick="copiarEjemploRICO('ejemplo-marketing')">📋 Copiar Prompt</button>
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>⚙️ Operaciones - Process Optimization</h4>
+                    <span class="category-tag">COO / Operations</span>
+                    <div class="prompt-text" id="ejemplo-operaciones">
+<strong>ROL:</strong> Eres un COO con experiencia escalando operaciones en startups de 20 a 200+ empleados, especializado en automation y efficiency.
+
+<strong>INSTRUCCIONES:</strong> Audita nuestro proceso actual de onboarding de clientes, identifica los 5 bottlenecks principales, calcula tiempo/costo de cada uno, y propón stack de herramientas + workflow automatizado para reducir time-to-value 50%.
+
+<strong>CONTEXTO:</strong> Proceso actual: 12 pasos, 14 días promedio, involucra 4 equipos (Sales, Success, Product, Support). 80 nuevos clientes/mes. Cada día de delay = $450 en opportunity cost. Team mayormente manual (spreadsheets, emails). Budget automation: $15K setup + $3K/mes.
+
+<strong>OUTPUT:</strong> 1) Diagrama flujo actual vs propuesto (texto). 2) Tabla de bottlenecks (Step | Current time | Cost | Root cause). 3) Stack recomendado (Tool | Use case | Cost | Integration effort). 4) ROI projection 12 meses. Max 700 palabras + tablas.
+                    </div>
+                    <div class="prompt-actions">
+                        <button class="btn" onclick="copiarEjemploRICO('ejemplo-operaciones')">📋 Copiar Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: GPTs Premium -->
+        <div id="tab-gpts" class="tab-content">
+            <div class="info-banner" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #6ee7b7;">
+                <h3>Custom GPTs Verificados</h3>
+                <p><strong>Herramientas especializadas de la GPT Store de OpenAI</strong> - Custom GPTs creados por expertos y la comunidad que extienden las capacidades de ChatGPT para tareas específicas.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem;"><strong>Acceso:</strong> Los GPTs públicos están disponibles para todos los usuarios de ChatGPT. La cuenta gratuita tiene acceso limitado a GPT-4o con restricciones de uso. ChatGPT Plus ($20/mes) ofrece acceso completo a GPT-4o, GPT-4 y o1, con mayor disponibilidad y la capacidad de crear tus propios Custom GPTs.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>Los Mejores Custom GPTs para Profesionales</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">
+                    Estos GPTs han sido seleccionados por su utilidad real, popularidad en la GPT Store y relevancia para el workshop. Todos están disponibles oficialmente en <a href="https://chatgpt.com/gpts" target="_blank" style="color: #7c6fd9;">chatgpt.com/gpts</a>
+                </p>
+
+                <div class="grid-2">
+                    <div class="term-card" style="border-left: 4px solid #10b981;">
+                        <h4>Write For Me</h4>
+                        <div class="category-tag" style="background: #10b98120;">Escritura y Contenido</div>
+                        <div class="definition">
+                            GPT especializado en creación de contenido profesional: artículos, blogs, tutoriales, ensayos. Genera contenido estructurado con tablas y formato. Permite especificar word count, audiencia e intención.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Content marketers, bloggers, copywriters que necesitan drafts rápidos de calidad.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-B3hgivKK9-write-for-me', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #f59e0b;">
+                        <h4>Consensus</h4>
+                        <div class="category-tag" style="background: #f59e0b20;">Research e Investigación</div>
+                        <div class="definition">
+                            Busca y resume papers científicos de bases de datos académicas. Proporciona respuestas basadas en evidencia con citas de estudios peer-reviewed. Ideal para fundamentar decisiones con research sólido.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Executives, consultores, researchers que necesitan evidencia científica para estrategias, análisis de mercado o decisiones basadas en datos.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-bo0FiWLY7-consensus', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #8b5cf6;">
+                        <h4>Data Analysis</h4>
+                        <div class="category-tag" style="background: #8b5cf620;">Análisis y BI</div>
+                        <div class="definition">
+                            GPT oficial de OpenAI para análisis de datos. Sube archivos CSV, Excel, JSON y obtén insights, visualizaciones, análisis estadístico. Procesa y visualiza datos complejos sin código.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Analistas de datos, CFOs, product managers que necesitan análisis rápido.
+                            <br><strong>Nota:</strong> File uploads limitados a 3 archivos por día en tier gratuito.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-HMNcP6w7d-data-analysis', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #ef4444;">
+                        <h4>AskYourPDF Research Assistant</h4>
+                        <div class="category-tag" style="background: #ef444420;">Investigación</div>
+                        <div class="definition">
+                            Extrae información de PDFs al instante. Sube documentos largos, papers, reportes y haz preguntas específicas. Genera resúmenes, encuentra secciones relevantes, cita páginas.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Researchers, consultores, executives que procesan muchos documentos.
+                            <br><strong>Nota:</strong> File uploads limitados en tier gratuito.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-UfFxTDMxq-askyourpdf-research-assistant', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #06b6d4;">
+                        <h4>The Negotiator</h4>
+                        <div class="category-tag" style="background: #06b6d420;">Negocios y Ventas</div>
+                        <div class="definition">
+                            Entrena tus habilidades de negociación. Simula negociaciones complejas (salarios, deals, contratos), proporciona estrategias, tácticas persuasivas y mejores prácticas probadas.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Sales executives, founders, profesionales antes de negociaciones importantes.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-TTTAK9GuS-the-negotiator', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #a855f7;">
+                        <h4>Prompt Perfect</h4>
+                        <div class="category-tag" style="background: #a855f720;">Prompt Engineering</div>
+                        <div class="definition">
+                            Optimiza tus prompts automáticamente. Analiza tu prompt, identifica debilidades y lo mejora usando mejores prácticas de prompt engineering basadas en ciencia de LLMs.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Cualquier profesional que usa IA diariamente y quiere mejorar la calidad de sus prompts.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-0QDef4GiE-prompt-perfect', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #ec4899;">
+                        <h4>ScholarAI</h4>
+                        <div class="category-tag" style="background: #ec489920;">Research Académico</div>
+                        <div class="definition">
+                            Accede a millones de artículos científicos y papers peer-reviewed. Encuentra research actualizado, cita fuentes académicas y genera bibliografías. Ideal para fundamentar decisiones con evidencia científica.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Researchers, consultores, executives que necesitan datos académicos para estrategias y análisis basados en evidencia.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-L2HknCZTC-scholar-ai', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #14b8a6;">
+                        <h4>Diagrams: Show Me</h4>
+                        <div class="category-tag" style="background: #14b8a620;">Visualización</div>
+                        <div class="definition">
+                            Crea diagramas, flowcharts, arquitecturas, mapas mentales a partir de descripciones. Convierte conceptos complejos en visuales claras. Export en múltiples formatos.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Product managers, arquitectos de software, consultores que necesitan documentar procesos.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-5QhhdsfDj-diagrams-show-me', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #f97316;">
+                        <h4>Video Summarizer</h4>
+                        <div class="category-tag" style="background: #f9731620;">Productividad</div>
+                        <div class="definition">
+                            Extrae información clave de videos de YouTube. Pega un link y obtén resumen, timestamps, key takeaways, transcripción. Ahorra horas de visualización.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Profesionales que consumen contenido educativo en video y necesitan los puntos clave rápido.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-GvcYCKPIH-video-summarizer', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #6366f1;">
+                        <h4>Code Copilot</h4>
+                        <div class="category-tag" style="background: #6366f120;">Código y Automatización</div>
+                        <div class="definition">
+                            Asistente de programación avanzado. Escribe, revisa, debuggea y optimiza código en múltiples lenguajes. Explica documentación técnica y ayuda a construir proyectos más rápido.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Developers, tech leads, profesionales que automatizan workflows con scripts o necesitan integrar APIs.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-2DQzU5UZl-code-copilot', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #84cc16;">
+                        <h4>WebPilot</h4>
+                        <div class="category-tag" style="background: #84cc1620;">Web Research</div>
+                        <div class="definition">
+                            Navega y extrae contenido de páginas web en tiempo real. Analiza sitios completos, extrae datos estructurados, resume artículos largos y compara múltiples fuentes simultáneamente.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Researchers, analistas competitivos, consultores que necesitan investigación web profunda y análisis de múltiples fuentes.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-pNWGgUYqS-webpilot', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #dc2626;">
+                        <h4>Logo Creator</h4>
+                        <div class="category-tag" style="background: #dc262620;">Branding</div>
+                        <div class="definition">
+                            Genera logos profesionales con DALL-E. Crea hasta 9 opciones únicas simultáneamente. Ideal para brainstorming de branding, mockups rápidos o starting point para diseños finales.
+                        </div>
+                        <div class="example">
+                            <strong>Ideal para:</strong> Entrepreneurs, startups, brand managers que necesitan explorar direcciones visuales.
+                            <br><strong>Nota:</strong> DALL-E limitado a 2-3 imágenes por día en tier gratuito.
+                        </div>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.open('https://chatgpt.com/g/g-gFt1ghYJl-logo-creator', '_blank')">
+                            Abrir en GPT Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 2rem;">
+                <h3>Cómo Usar Custom GPTs</h3>
+                <div class="practice-card">
+                    <h4>Acceso en Tier Gratuito</h4>
+                    <p>
+                        Los Custom GPTs públicos están disponibles para usuarios gratuitos de ChatGPT. Puedes acceder y usar GPTs creados por otros sin necesidad de suscripción ChatGPT Plus.
+                    </p>
+                    <p style="margin-top: 0.5rem;">
+                        <strong>Límites en tier gratuito:</strong>
+                    </p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Comparten el límite de mensajes de GPT-4o/GPT-5 (aproximadamente 10 mensajes cada 5 horas)</li>
+                        <li>Herramientas avanzadas (análisis de datos, file uploads, DALL-E) tienen límites más estrictos</li>
+                        <li>File uploads: máximo 3 archivos por 24 horas</li>
+                        <li>DALL-E: 2-3 imágenes por día</li>
+                        <li>No puedes crear tus propios GPTs (solo ChatGPT Plus, Team o Enterprise)</li>
+                    </ul>
+                </div>
+                <div class="practice-card">
+                    <h4>Acceder a la GPT Store</h4>
+                    <p>
+                        Ve a <a href="https://chatgpt.com/gpts" target="_blank" style="color: #7c6fd9;">chatgpt.com/gpts</a> o haz clic en "Explore GPTs" en el menú lateral de ChatGPT. Puedes buscar por nombre o explorar por categorías (Writing, Productivity, Research, Programming, Education, Lifestyle).
+                    </p>
+                </div>
+                <div class="practice-card">
+                    <h4>Iniciar Conversación</h4>
+                    <p>
+                        Haz clic en el GPT que quieras usar y luego en "Start Chat". El GPT abrirá un chat nuevo con instrucciones especializadas y conocimiento pre-cargado para su tarea específica.
+                    </p>
+                </div>
+                <div class="practice-card">
+                    <h4>Usar Prompts Específicos</h4>
+                    <p>
+                        Aunque el GPT está especializado, sigue aplicando las mejores prácticas de prompting. Sé específico, proporciona contexto relevante y define claramente el output deseado. Los GPTs son más efectivos cuando reciben instrucciones claras.
+                    </p>
+                </div>
+                <div class="practice-card">
+                    <h4>Combinar con el Framework RICO</h4>
+                    <p>
+                        Usa los prompts profesionales de este kit dentro de los GPTs especializados. Por ejemplo: usa un prompt de "Content Strategy" en "Write For Me" o un prompt de "Research Analysis" en "ScholarAI" para resultados optimizados. El Framework RICO funciona perfectamente dentro de Custom GPTs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-banner" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-color: #fbbf24; margin-top: 2rem;">
+                <h3>Crear Tus Propios GPTs</h3>
+                <p>
+                    <strong>¿Tienes un workflow específico que repites constantemente?</strong> Con ChatGPT Plus ($20/mes), Team ($25/usuario/mes con facturación anual) o Enterprise puedes crear tus propios Custom GPTs sin código. Usa el GPT Builder para diseñar un asistente personalizado con tus instrucciones, tono y conocimiento específico.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    Crear GPTs te permite automatizar tareas repetitivas, mantener consistencia en outputs y compartir expertise con tu equipo. Es más fácil de lo que piensas y puede multiplicar significativamente tu productividad.
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB: Prompts Profesionales -->
+        <div id="tab-prompts" class="tab-content">
+            <div class="section-card">
+                <h3>Biblioteca de Prompts Profesionales</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">
+                    Prompts listos para usar, organizados por función profesional. Cópialos, personalízalos según tu contexto y obtén resultados inmediatos.
+                </p>
+
+                <div class="tab-navigation" style="margin-bottom: 2rem;">
+                    <button class="tab-btn active" onclick="filterPrompts('all')">Todos</button>
+                    <button class="tab-btn" onclick="filterPrompts('direccion')">📊 Dirección</button>
+                    <button class="tab-btn" onclick="filterPrompts('ventas')">💰 Ventas</button>
+                    <button class="tab-btn" onclick="filterPrompts('marketing')">📢 Marketing</button>
+                    <button class="tab-btn" onclick="filterPrompts('operaciones')">⚙️ Operaciones</button>
+                    <button class="tab-btn" onclick="filterPrompts('producto')">📦 Producto</button>
+                    <button class="tab-btn" onclick="filterPrompts('finanzas')">💼 Finanzas</button>
+                    <button class="tab-btn" onclick="filterPrompts('rrhh')">👥 RRHH</button>
+                </div>
+
+                <div id="prompts-container"></div>
+            </div>
+        </div>
+
+        <!-- TAB: Mis Prompts -->
+        <div id="tab-misprompts" class="tab-content">
+            <div class="section-card">
+                <h3>⭐ Mis Prompts Guardados</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">
+                    Crea y gestiona tu biblioteca personal de prompts. Todo se guarda automáticamente en tu navegador y persiste entre sesiones.
+                </p>
+
+                <div class="rico-generator" style="margin-bottom: 2rem;">
+                    <h4 style="color: #c4b5fd; margin-bottom: 1rem;">➕ Agregar Nuevo Prompt</h4>
+                    
+                    <div class="form-group">
+                        <label>Título del Prompt</label>
+                        <input type="text" id="new-prompt-title" placeholder="Ej: Análisis Competitivo Q4">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select id="new-prompt-category">
+                            <option value="direccion">📊 Dirección</option>
+                            <option value="ventas">💰 Ventas</option>
+                            <option value="marketing">📢 Marketing</option>
+                            <option value="operaciones">⚙️ Operaciones</option>
+                            <option value="producto">📦 Producto</option>
+                            <option value="finanzas">💼 Finanzas</option>
+                            <option value="rrhh">👥 RRHH</option>
+                            <option value="otro">🔧 Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Prompt</label>
+                        <textarea id="new-prompt-text" rows="6" placeholder="Escribe tu prompt aquí..."></textarea>
+                    </div>
+
+                    <button class="btn" onclick="guardarNuevoPrompt()">💾 Guardar Prompt</button>
+                </div>
+
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="color: #c4b5fd; margin: 0;">📚 Tus Prompts Guardados</h4>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn btn-secondary" onclick="descargarPromptsTXT()" style="padding: 0.75rem 1.5rem;">
+                                📄 Descargar TXT
+                            </button>
+                            <button class="btn btn-secondary" onclick="descargarPromptsExcel()" style="padding: 0.75rem 1.5rem;">
+                                📊 Descargar Excel
+                            </button>
+                        </div>
+                    </div>
+                    <div id="saved-prompts-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: Master IA -->
+        <div id="tab-master" class="tab-content">
+            <div class="info-banner" style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); border-color: #fda4af;">
+                <h3>🎓 Master en Inteligencia Artificial Aplicada</h3>
+                <p><strong>El programa formativo más completo</strong> para profesionales que quieren dominar la IA de forma práctica, ética y estratégica. De los fundamentos a la aplicación real en tu negocio.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>¿Qué Aprenderás en el Master?</h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">Un programa diseñado para transformar tu dominio de la IA desde cero hasta nivel experto, con foco en aplicación práctica inmediata.</p>
+                
+                <div class="grid-2">
+                    <div class="term-card" style="border-left: 4px solid #a78bfa;">
+                        <h4>🎯 Fundamentos hasta Aplicación Empresarial</h4>
+                        <div class="definition">
+                            Dominarás la IA desde sus conceptos básicos hasta su implementación práctica en sectores empresariales clave. Entenderás cómo funcionan los modelos, qué pueden hacer y sus limitaciones.
+                        </div>
+                        <div class="example">
+                            <strong>Aplicarás:</strong> LLMs, Computer Vision, NLP, análisis predictivo, automatización inteligente en casos reales de tu industria.
+                        </div>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #ec4899;">
+                        <h4>🎨 Creación de Contenido Profesional</h4>
+                        <div class="definition">
+                            Crearás contenido visual, textual y multimedia con IA de forma profesional y efectiva. Aprenderás técnicas avanzadas de generación, edición y optimización.
+                        </div>
+                        <div class="example">
+                            <strong>Dominarás:</strong> Midjourney, DALL-E, Stable Diffusion, video AI, audio synthesis, copywriting con IA, diseño asistido.
+                        </div>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #f59e0b;">
+                        <h4>🤖 Desarrollo de Agentes y Automatizaciones</h4>
+                        <div class="definition">
+                            Desarrollarás agentes inteligentes, soluciones automatizadas y flujos de trabajo adaptados a tus proyectos específicos. De la idea al deployment.
+                        </div>
+                        <div class="example">
+                            <strong>Crearás:</strong> Custom GPTs, agentes con APIs, RAG systems, automatizaciones con Make/Zapier, chatbots empresariales.
+                        </div>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #10b981;">
+                        <h4>🛡️ IA Ética, Responsable y Segura</h4>
+                        <div class="definition">
+                            Aplicarás la IA de manera ética, responsable y segura. Protegerás datos sensibles, evitarás sesgos y riesgos, y cumplirás con regulaciones.
+                        </div>
+                        <div class="example">
+                            <strong>Implementarás:</strong> Governance frameworks, auditorías de sesgo, protección de datos, compliance con AI Act, evaluación de riesgos.
+                        </div>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #6366f1;">
+                        <h4>⚡ Creatividad, Productividad y Liderazgo</h4>
+                        <div class="definition">
+                            Potenciarás tu creatividad, productividad y liderazgo usando la IA como herramienta estratégica. Transformarás tu forma de trabajar y liderar equipos.
+                        </div>
+                        <div class="example">
+                            <strong>Mejorarás:</strong> Toma de decisiones data-driven, gestión del tiempo, ideación creativa, comunicación efectiva, strategic thinking.
+                        </div>
+                    </div>
+
+                    <div class="term-card" style="border-left: 4px solid #ef4444;">
+                        <h4>📢 Marketing, RRSS y Branding con IA</h4>
+                        <div class="definition">
+                            Aprenderás cómo utilizar la IA para impulsar tu estrategia de marketing, gestión de redes sociales y construcción de marca de forma profesional y escalable.
+                        </div>
+                        <div class="example">
+                            <strong>Ejecutarás:</strong> Campañas automatizadas, análisis de audiencias, content calendar inteligente, SEO con IA, social listening, brand positioning.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 2rem;">
+                <h3>Metodología del Master</h3>
+                <div class="grid-2">
+                    <div class="term-card">
+                        <h4>📚 Teoría Aplicada</h4>
+                        <div class="definition">
+                            Conceptos explicados con claridad, sin jerga innecesaria. Cada tema incluye el "por qué" y el "cómo aplicarlo".
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>🛠️ Práctica Intensiva</h4>
+                        <div class="definition">
+                            70% del tiempo en proyectos reales. Aprenderás haciendo, con feedback personalizado y casos de tu industria.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>🤝 Comunidad Premium</h4>
+                        <div class="definition">
+                            Acceso a red de profesionales, mentorías grupales, masterclasses con expertos y soporte continuo.
+                        </div>
+                    </div>
+                    <div class="term-card">
+                        <h4>🎓 Certificación & Portfolio</h4>
+                        <div class="definition">
+                            Certificado oficial verificable y portfolio de proyectos reales que demuestran tu expertise en IA aplicada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 2rem; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 2px solid #6366f1;">
+                <h3 style="color: #c4b5fd;">🚀 Perfil del Egresado</h3>
+                <p style="color: #e0e7ff; margin-bottom: 1.5rem;">
+                    Al finalizar el Master, serás capaz de:
+                </p>
+                <div style="color: #e0e7ff; line-height: 2;">
+                    ✅ Liderar proyectos de transformación digital con IA en tu organización<br>
+                    ✅ Evaluar, seleccionar e implementar soluciones de IA adaptadas a tu negocio<br>
+                    ✅ Crear productos, servicios y experiencias potenciados por IA<br>
+                    ✅ Automatizar procesos complejos y liberar tiempo para tareas estratégicas<br>
+                    ✅ Comunicar el valor y los riesgos de la IA a stakeholders y equipos<br>
+                    ✅ Mantenerte actualizado en un campo que evoluciona constantemente<br>
+                    ✅ Posicionarte como referente en IA aplicada en tu industria
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); border-radius: 16px;">
+                <h3 style="margin-bottom: 1rem;">¿Listo para dominar la IA?</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Este kit es tu punto de partida. El Master es tu transformación completa.
+                </p>
+                <button class="btn" style="background: #fff; color: #ec4899; padding: 1rem 3rem; font-size: 1.1rem; font-weight: 700;" onclick="window.open('https://founderz.com', '_blank')">
+                    Más Información del Master →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // Storage para prompts guardados
+        const STORAGE_KEY = 'founderz_prompts_guardados';
+
+        // Prompts profesionales predefinidos
+        const promptsProfesionales = [
+            {
+                id: 1,
+                categoria: 'direccion',
+                titulo: 'Análisis SWOT Estratégico',
+                prompt: `ROL: Eres un consultor estratégico senior con 15 años en análisis competitivo y planificación corporativa.
+
+INSTRUCCIONES: Realiza un análisis SWOT completo de nuestra empresa. Identifica 4-5 puntos por cuadrante y prioriza los 3 más críticos de cada sección.
+
+CONTEXTO: [Describe tu empresa, mercado, posición competitiva, recursos actuales]
+
+OUTPUT: Matriz SWOT con bullet points. Para cada ítem crítico (top 3 por cuadrante), añade: 1) Impacto esperado (Alto/Medio/Bajo), 2) Urgencia (Inmediato/3 meses/6+ meses), 3) Acción recomendada (1 frase). Máximo 500 palabras total.`
+            },
+            {
+                id: 2,
+                categoria: 'direccion',
+                titulo: 'OKRs Trimestrales',
+                prompt: `ROL: Eres un CEO experimentado en metodología OKR, has implementado OKRs en 10+ empresas tech.
+
+INSTRUCCIONES: Crea 3-5 OKRs para próximo trimestre basándote en nuestra situación actual. Cada Objective debe tener 3-4 Key Results medibles y ambiciosos pero alcanzables.
+
+CONTEXTO: [Visión de empresa, principales retos actuales, recursos disponibles, contexto de mercado]
+
+OUTPUT: Tabla con formato: Objective | Key Results (numerados) | Métrica | Baseline | Target. Añade 1 párrafo por Objective explicando rationale. Máximo 400 palabras.`
+            },
+            {
+                id: 3,
+                categoria: 'direccion',
+                titulo: 'Due Diligence Rápido',
+                prompt: `ROL: Eres un analista de M&A senior especializado en tech companies, has evaluado 100+ adquisiciones.
+
+INSTRUCCIONES: Crea checklist de due diligence para evaluar [tipo de empresa]. Organiza en 6 áreas clave, identifica red flags críticos y sugiere fuentes de validación.
+
+CONTEXTO: [Tipo de deal, tamaño, industria, timeline disponible para DD]
+
+OUTPUT: Lista numerada por área (Financiero, Legal, Tech, Comercial, HR, IP). Por cada área: 5-7 preguntas clave, 3 red flags comunes, fuentes recomendadas de validación. Formato tabla, máximo 600 palabras.`
+            },
+            {
+                id: 4,
+                categoria: 'direccion',
+                titulo: 'Board Deck Ejecutivo',
+                prompt: `ROL: Eres un CFO que ha preparado 50+ board decks para empresas en crecimiento ($10M-$100M ARR).
+
+INSTRUCCIONES: Genera outline y key messages para board deck trimestral. 12-15 slides cubriendo: métricas clave, logros, challenges, forecast, asks al board.
+
+CONTEXTO: [Stage de empresa, principales métricas de éxito, situación actual, qué necesitas del board]
+
+OUTPUT: Lista de slides con: 1) Título del slide, 2) Key message (1 frase), 3) Datos a incluir (3-5 bullets), 4) Visual recomendado (gráfico/tabla/texto). Máximo 500 palabras.`
+            },
+            {
+                id: 5,
+                categoria: 'direccion',
+                titulo: 'Plan de Contingencia Crisis',
+                prompt: `ROL: Eres un COO con experiencia manejando crisis operacionales y financieras en startups.
+
+INSTRUCCIONES: Crea plan de contingencia para escenario de crisis [describe escenario]. Incluye: acciones inmediatas (24-72h), plan 30 días, plan 90 días, criterios de decisión, stakeholder communication.
+
+CONTEXTO: [Tipo de crisis, recursos actuales, burn rate, runway, dependencies críticas]
+
+OUTPUT: Documento estructurado: 1) Severity assessment, 2) Playbook por timeline (24h/7d/30d/90d), 3) Decision tree, 4) Communication templates. Máximo 700 palabras.`
+            },
+            {
+                id: 6,
+                categoria: 'ventas',
+                titulo: 'Qualification BANT Mejorado',
+                prompt: `ROL: Eres un Sales Director B2B Enterprise con 10 años de experiencia calificando deals de $100K+.
+
+INSTRUCCIONES: Crea framework de qualification personalizado para nuestro ICP. Expande BANT tradicional con preguntas específicas y scoring system.
+
+CONTEXTO: [Describe tu producto, ICP, ticket promedio, sales cycle, pain points que resuelves]
+
+OUTPUT: Framework con 4 secciones (Budget, Authority, Need, Timeline) + añade Champion y Competition. Por sección: 5-7 preguntas de discovery, scoring (1-10), red flags, follow-up actions. Tabla formato, max 600 palabras.`
+            },
+            {
+                id: 7,
+                categoria: 'ventas',
+                titulo: 'Email Secuencia Outbound',
+                prompt: `ROL: Eres un SDR top performer que genera 30% reply rate en cold outbound B2B.
+
+INSTRUCCIONES: Crea secuencia de 5 emails para outbound a [ICP]. Cada email debe tener hook diferente, value prop claro, CTA específico.
+
+CONTEXTO: [ICP detallado, pain points conocidos, tu solución, competencia, por qué deberían responder]
+
+OUTPUT: 5 emails numerados con: Subject line (2 variantes cada uno), Body (max 100 palabras), CTA específico, Timing (día X después de email anterior). Incluye rationale de cada email. Max 700 palabras total.`
+            },
+            {
+                id: 8,
+                categoria: 'ventas',
+                titulo: 'Battlecard Competencia',
+                prompt: `ROL: Eres un Sales Enablement Manager que ha creado battlecards para 20+ productos B2B SaaS.
+
+INSTRUCCIONES: Crea battlecard para competir contra [Competidor X]. Incluye: posicionamiento, traps para ellos, landmines que evitar, proof points, objeción handling.
+
+CONTEXTO: [Tu producto, competidor específico, tus ventajas, debilidades conocidas, casos de win/loss contra ellos]
+
+OUTPUT: Documento 1-pager: 1) Overview (2-3 frases), 2) Cuando competimos (scenarios), 3) Traps (preguntas que hacen tropezar), 4) Landmines (evitar mencionar X), 5) Proof points (casos concretos), 6) Objeciones comunes + responses. Max 500 palabras.`
+            },
+            {
+                id: 9,
+                categoria: 'ventas',
+                titulo: 'ROI Calculator',
+                prompt: `ROL: Eres un Sales Engineer experto en construir ROI business cases que justifican inversiones de $50K-$500K.
+
+INSTRUCCIONES: Crea framework de ROI calculator para demos de ventas. Identifica inputs clave, fórmulas de cálculo, outputs visuales, rangos realistas.
+
+CONTEXTO: [Tu producto, qué problema resuelve, métricas típicas de clientes, savings o revenue impact esperado]
+
+OUTPUT: Documento con: 1) Inputs necesarios del prospect (5-7 variables), 2) Fórmulas de cálculo explicadas, 3) Outputs (savings/revenue/time), 4) Ranges típicos por tamaño de empresa, 5) Assumptions a documentar. Max 500 palabras.`
+            },
+            {
+                id: 10,
+                categoria: 'ventas',
+                titulo: 'Forecast Accuracy',
+                prompt: `ROL: Eres un VP of Sales obsesionado con forecast accuracy, históricamente mantienes +/-5% accuracy.
+
+INSTRUCCIONES: Crea methodology para mejorar accuracy de forecast mensual. Define categorías de deals, criterios de stage advancement, commit vs best case.
+
+CONTEXTO: [Tamaño de equipo de ventas, sales cycle promedio, complejidad de deals, stakeholders que consumen forecast]
+
+OUTPUT: 1) Tabla de criterios por stage (qué debe pasar para avanzar), 2) Categorías de forecast (Commit/Best Case/Pipeline) con definiciones, 3) Template de weekly forecast review, 4) Red flags de sandbagging. Max 600 palabras.`
+            },
+            {
+                id: 11,
+                categoria: 'marketing',
+                titulo: 'ICP Definition Deep Dive',
+                prompt: `ROL: Eres una Growth Marketing Lead con 8 años definiendo y refinando ICPs para B2B SaaS.
+
+INSTRUCCIONES: Crea perfil de ICP ultra-detallado para nuestro producto. Incluye: firmográficos, demographics, psychographics, technographics, buying behavior.
+
+CONTEXTO: [Tu producto, mercado, competencia, tus mejores clientes actuales con mayor LTV y menor churn]
+
+OUTPUT: Documento estructurado: 1) Firmográficos (industria, size, revenue, tech stack), 2) Stakeholders (titles, seniority, pain points), 3) Buying triggers, 4) Red flags (cuando NO es ICP), 5) Example companies. Max 600 palabras.`
+            },
+            {
+                id: 12,
+                categoria: 'marketing',
+                titulo: 'Content Calendar Q1',
+                prompt: `ROL: Eres una Content Marketing Manager que ha escalado blogs de 0 a 100K visitors orgánicos/mes.
+
+INSTRUCCIONES: Crea content calendar para Q1 con mix de formatos (blog, video, webinar, case study). Alineado a customer journey y keyword opportunities.
+
+CONTEXTO: [Tu audiencia, tus pilares de contenido, recursos de equipo, goals de traffic/leads, competencia en SEO]
+
+OUTPUT: Tabla mensual con columnas: Week | Content piece | Format | Stage (ToFu/MoFu/BoFu) | Target keyword | Owner | Status. 12-16 piezas total. Incluye rationale por formato/mix. Max 600 palabras.`
+            },
+            {
+                id: 13,
+                categoria: 'marketing',
+                titulo: 'Landing Page Conversion',
+                prompt: `ROL: Eres un CRO specialist con portfolio de 50+ landing pages optimizadas para SaaS con avg 8-12% conversion.
+
+INSTRUCCIONES: Audita y optimiza estructura de landing page para [campaña X]. Identifica friction points, propón A/B tests, mejora copy y CTAs.
+
+CONTEXTO: [Propósito de LP, tráfico source, audiencia, oferta, conversion goal, current conversion rate]
+
+OUTPUT: 1) Audit checklist (above fold, value prop, social proof, form, CTAs), 2) 5 friction points identificados, 3) 3 A/B tests priorizados (hipótesis + métricas), 4) Revised copy suggestions. Max 600 palabras.`
+            },
+            {
+                id: 14,
+                categoria: 'marketing',
+                titulo: 'Email Nurture Sequence',
+                prompt: `ROL: Eres una Email Marketing Manager que diseña nurture flows con 25-30% open rate y 8-12% CTR.
+
+INSTRUCCIONES: Diseña email nurture sequence para leads [segmento específico]. 6-8 emails, mix de educación/value/product, progresión lógica.
+
+CONTEXTO: [Segmento de leads, donde están en journey, qué contenido ya consumieron, objetivo final de conversión]
+
+OUTPUT: Serie de 6-8 emails con: Subject line, Preview text, Key message (2-3 frases), CTA, Timing (días entre emails), Exit criteria. Max 700 palabras total.`
+            },
+            {
+                id: 15,
+                categoria: 'marketing',
+                titulo: 'Attribution Model',
+                prompt: `ROL: Eres un Growth Analytics Lead experto en marketing attribution y multi-touch models.
+
+INSTRUCCIONES: Diseña modelo de attribution para nuestro funnel B2B. Define touchpoints clave, weights, herramientas de tracking, dashboards.
+
+CONTEXTO: [Sales cycle, touchpoints típicos (ads, content, emails, demos), tools en stack, data sources disponibles]
+
+OUTPUT: 1) Customer journey map con touchpoints, 2) Attribution model elegido (first-touch/last-touch/multi-touch) con rationale, 3) Weights por touchpoint, 4) KPIs a trackear, 5) Dashboard template. Max 600 palabras.`
+            },
+            {
+                id: 16,
+                categoria: 'operaciones',
+                titulo: 'Onboarding Playbook',
+                prompt: `ROL: Eres un Customer Success Director que ha optimizado onboarding en 15+ SaaS companies, reduciendo time-to-value 50%+.
+
+INSTRUCCIONES: Crea playbook de onboarding para nuevos clientes [tipo de producto]. Define fases, milestones, check-ins, success metrics, escalation paths.
+
+CONTEXTO: [Tu producto, complejidad de setup, stakeholders involucrados, time-to-value objetivo, recursos de CS team]
+
+OUTPUT: Playbook con 4-5 fases: 1) Nombre de fase, 2) Duration, 3) Actividades clave, 4) Success criteria, 5) Owner, 6) Red flags. Incluye templates de check-in calls. Max 700 palabras.`
+            },
+            {
+                id: 17,
+                categoria: 'operaciones',
+                titulo: 'SOP Documentation',
+                prompt: `ROL: Eres un Operations Manager que ha documentado procesos en 10+ empresas escalando de 20 a 200+ empleados.
+
+INSTRUCCIONES: Crea SOP template y metodología para documentar procesos críticos. Define estructura, nivel de detalle, ownership, maintenance.
+
+CONTEXTO: [Tipo de procesos a documentar, audiencia (roles), frecuencia de cambios, herramientas de documentation]
+
+OUTPUT: 1) SOP template (título, owner, version, purpose, steps, inputs/outputs, tools, FAQs), 2) Guía de cuándo crear SOP, 3) Review cycle, 4) Ejemplo de SOP aplicado a [proceso específico]. Max 600 palabras.`
+            },
+            {
+                id: 18,
+                categoria: 'operaciones',
+                titulo: 'KPI Dashboard',
+                prompt: `ROL: Eres un Data Analytics Lead que diseña dashboards ejecutivos para monitorear health de empresa en tiempo real.
+
+INSTRUCCIONES: Diseña estructura de KPI dashboard para [área/función]. Identifica métricas clave, leading/lagging indicators, benchmarks, alerting.
+
+CONTEXTO: [Función a monitorear, objetivos de negocio, data sources disponibles, audiencia del dashboard, frecuencia de review]
+
+OUTPUT: 1) Lista de KPIs (10-15) organizados por categoría, 2) Por cada KPI: definición, fórmula, fuente de datos, benchmark, 3) Mock structure de dashboard, 4) Alert thresholds. Max 600 palabras.`
+            },
+            {
+                id: 19,
+                categoria: 'operaciones',
+                titulo: 'Vendor Selection',
+                prompt: `ROL: Eres un Procurement Manager que ha evaluado 100+ vendors y negociado $10M+ en contratos SaaS.
+
+INSTRUCCIONES: Crea framework de vendor selection para [categoría de herramienta]. Criteria de evaluación, scoring, process, negotiation playbook.
+
+CONTEXTO: [Tipo de herramienta, must-haves vs nice-to-haves, budget range, stakeholders, integrations needed]
+
+OUTPUT: 1) Evaluation matrix con criteria (20-25) y weights, 2) RFP template questions, 3) Scoring rubric, 4) Negotiation tactics por escenario, 5) Decision template. Max 700 palabras.`
+            },
+            {
+                id: 20,
+                categoria: 'operaciones',
+                titulo: 'Capacity Planning',
+                prompt: `ROL: Eres un Workforce Planning Lead experto en proyectar headcount needs en empresas tech de crecimiento.
+
+INSTRUCCIONES: Crea modelo de capacity planning para próximos 12 meses. Proyecta needs por departamento basándote en growth assumptions y ratios óptimos.
+
+CONTEXTO: [Headcount actual por dept, growth rate esperado, ratios actuales vs benchmarks, budget constraints, hiring lead times]
+
+OUTPUT: 1) Tabla mensual proyectada (Dept | Current HC | Projected HC | New Hires | Budget), 2) Assumptions documentadas, 3) Scenario planning (base/best/worst), 4) Critical roles timeline. Max 600 palabras.`
+            },
+            {
+                id: 21,
+                categoria: 'producto',
+                titulo: 'Product Roadmap Quarterly',
+                prompt: `ROL: Eres un CPO con 10+ años liderando producto en SaaS B2B, experto en priorización y roadmapping estratégico.
+
+INSTRUCCIONES: Crea roadmap de producto para próximo trimestre usando framework RICE (Reach, Impact, Confidence, Effort). Prioriza top 8 features/initiatives de backlog actual.
+
+CONTEXTO: [Visión producto, user feedback principal, métricas actuales, recursos eng/design disponibles, competitive pressure, business goals Q]
+
+OUTPUT: 1) Matriz RICE completa con scores, 2) Top 8 features priorizadas con timeline semanal, 3) Dependencies y risks por feature, 4) Success metrics por feature. Formato tabla + explicación. Max 700 palabras.`
+            },
+            {
+                id: 22,
+                categoria: 'producto',
+                titulo: 'User Research Synthesis',
+                prompt: `ROL: Eres un Head of UX Research especializado en convertir research cualitativo en insights accionables para producto.
+
+INSTRUCCIONES: Analiza estos user interviews/feedback y extrae los top 5 insights más críticos. Prioriza por frecuencia + impacto potencial en retention/NPS.
+
+CONTEXTO: [Transcripciones de entrevistas, tickets de soporte, feedback surveys, user session recordings, current pain points documentados]
+
+OUTPUT: 1) Top 5 insights con quotes representativos, 2) Severity score (1-10), 3) Affected user segments, 4) Recommended actions con esfuerzo estimado, 5) Quick wins vs long-term fixes. Max 600 palabras.`
+            },
+            {
+                id: 23,
+                categoria: 'finanzas',
+                titulo: 'Budget Allocation Anual',
+                prompt: `ROL: Eres un CFO experimentado en startups tech, experto en resource allocation y financial planning en entornos de crecimiento.
+
+INSTRUCCIONES: Crea propuesta de budget allocation anual distribuido por departamento. Optimiza para growth vs profitability según stage de empresa.
+
+CONTEXTO: [Revenue proyectado, burn rate actual, runway, investors expectations, departamentos y headcount actual, top business priorities, market conditions]
+
+OUTPUT: 1) Tabla allocation por dept (% total budget | Absoluto | YoY change), 2) Rationale de cada allocation, 3) Budget para hiring vs operational, 4) Contingency plan si revenue cae 20%, 5) Key assumptions. Max 700 palabras.`
+            },
+            {
+                id: 24,
+                categoria: 'finanzas',
+                titulo: 'Unit Economics & CAC Payback',
+                prompt: `ROL: Eres un Finance Director especializado en SaaS metrics, experto en unit economics y payback analysis.
+
+INSTRUCCIONES: Analiza unit economics actuales, calcula CAC payback period y proporciona recomendaciones para mejorar efficiency hacia benchmarks de industria.
+
+CONTEXTO: [CAC por canal, LTV, MRR/customer, gross margin %, churn rate mensual, sales cycle length, avg deal size, costos por customer]
+
+OUTPUT: 1) Dashboard metrics (CAC, LTV, LTV:CAC ratio, Payback months, Magic Number), 2) Comparación vs industry benchmarks, 3) Breakdown CAC por canal, 4) Top 3 levers para reducir payback, 5) Proyección 12 meses. Max 650 palabras + tabla.`
+            },
+            {
+                id: 25,
+                categoria: 'rrhh',
+                titulo: 'Hiring Plan & JD Creation',
+                prompt: `ROL: Eres un Head of Talent con experiencia contratando para roles tech en startups de alto crecimiento, especializado en employer branding y JDs efectivos.
+
+INSTRUCCIONES: Crea job description completo para este rol crítico y proporciona hiring plan con timeline, sourcing strategy y key interview focus areas.
+
+CONTEXTO: [Rol a contratar, skills must-have vs nice-to-have, team actual composition, company stage, budget range, urgency level, growth projections]
+
+OUTPUT: 1) JD optimizado para ATS y atractivo (responsibilities, requirements, benefits), 2) Hiring timeline con milestones, 3) Sourcing channels recomendados, 4) Interview process sugerido (stages + competencies por stage), 5) Red flags a evitar. Max 700 palabras.`
+            },
+            {
+                id: 26,
+                categoria: 'rrhh',
+                titulo: 'Performance Review Framework',
+                prompt: `ROL: Eres un CHRO especializado en performance management systems y desarrollo de talento en empresas tech.
+
+INSTRUCCIONES: Diseña framework de performance reviews para próximo ciclo. Define competencias core, ratings scale y calibration process para mantener fairness.
+
+CONTEXTO: [Tamaño equipo, roles diversity, company values, growth stage, feedback actual de managers/ICs sobre proceso anterior, principales challenges detectados]
+
+OUTPUT: 1) Competency matrix (core competencies + nivel-specific), 2) Rating scale definida (labels + descriptions), 3) Review template con secciones, 4) Calibration meeting structure, 5) Timeline recomendado y communication plan. Max 800 palabras.`
+            }
+        ];
+
+        // Función para mostrar toast
+        function showToast(message, duration = 3000) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, duration);
+        }
+
+        // Cambiar tabs
+        function switchTab(tabName) {
+            // Ocultar todos los tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Desactivar todos los botones
+            document.querySelectorAll('.tab-navigation .tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Activar tab y botón seleccionado
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            // Si es la tab de prompts, renderizar
+            if (tabName === 'prompts') {
+                renderPrompts();
+            }
+
+            // Si es la tab de mis prompts, renderizar
+            if (tabName === 'misprompts') {
+                renderSavedPrompts();
+            }
+        }
+
+        // Generar prompt RICO
+        function generarPromptRICO() {
+            const rol = document.getElementById('rico-rol').value;
+            const instrucciones = document.getElementById('rico-instrucciones').value;
+            const contexto = document.getElementById('rico-contexto').value;
+            const output = document.getElementById('rico-output').value;
+
+            if (!rol || !instrucciones || !contexto || !output) {
+                showToast('⚠️ Por favor completa todos los campos del framework RICO');
+                return;
+            }
+
+            const promptGenerado = `ROL: ${rol}
+
+INSTRUCCIONES: ${instrucciones}
+
+CONTEXTO: ${contexto}
+
+OUTPUT: ${output}`;
+
+            document.getElementById('rico-output-text').textContent = promptGenerado;
+            document.getElementById('rico-resultado').style.display = 'block';
+
+            showToast('✅ Prompt RICO generado correctamente');
+        }
+
+        // Copiar prompt RICO
+        function copiarPromptRICO() {
+            const text = document.getElementById('rico-output-text').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('📋 Prompt copiado al portapapeles');
+            });
+        }
+
+        // Abrir prompt RICO en plataformas
+        function abrirRICOEnChatGPT() {
+            const text = document.getElementById('rico-output-text').textContent;
+            abrirEnChatGPT(text);
+        }
+
+        function abrirRICOEnClaude() {
+            const text = document.getElementById('rico-output-text').textContent;
+            abrirEnClaude(text);
+        }
+
+        function abrirRICOEnCopilot() {
+            const text = document.getElementById('rico-output-text').textContent;
+            abrirEnCopilot(text);
+        }
+
+        // Filtrar prompts
+        let currentFilter = 'all';
+        function filterPrompts(categoria) {
+            currentFilter = categoria;
+            renderPrompts();
+        }
+
+        // Renderizar prompts
+        function renderPrompts() {
+            const container = document.getElementById('prompts-container');
+            const filtered = currentFilter === 'all' 
+                ? promptsProfesionales 
+                : promptsProfesionales.filter(p => p.categoria === currentFilter);
+
+            container.innerHTML = filtered.map(prompt => `
+                <div class="prompt-card">
+                    <h4>${prompt.titulo}</h4>
+                    <span class="category-tag">${getCategoryName(prompt.categoria)}</span>
+                    <div class="prompt-text">${prompt.prompt.replace(/\n/g, '<br>')}</div>
+                    <div class="prompt-actions">
+                        <button class="btn" onclick="copiarPrompt('${prompt.id}')">📋 Copiar</button>
+                        <button class="btn btn-secondary" onclick="abrirEnChatGPT(\`${prompt.prompt.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`)">🤖 ChatGPT</button>
+                        <button class="btn btn-secondary" onclick="abrirEnClaude(\`${prompt.prompt.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`)">💬 Claude</button>
+                        <button class="btn btn-secondary" onclick="abrirEnCopilot(\`${prompt.prompt.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`)">🔷 Copilot</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCategoryName(cat) {
+            const names = {
+                'direccion': '📊 Dirección',
+                'ventas': '💰 Ventas',
+                'marketing': '📢 Marketing',
+                'operaciones': '⚙️ Operaciones',
+                'producto': '📦 Producto',
+                'finanzas': '💼 Finanzas',
+                'rrhh': '👥 RRHH',
+                'otro': '🔧 Otro'
+            };
+            return names[cat] || cat;
+        }
+
+        // Versión sin emojis para Excel
+        function getCategoryNameClean(cat) {
+            const names = {
+                'direccion': 'Dirección',
+                'ventas': 'Ventas',
+                'marketing': 'Marketing',
+                'operaciones': 'Operaciones',
+                'producto': 'Producto',
+                'finanzas': 'Finanzas',
+                'rrhh': 'RRHH',
+                'otro': 'Otro'
+            };
+            return names[cat] || cat;
+        }
+
+        function copiarPrompt(id) {
+            const prompt = promptsProfesionales.find(p => p.id == id);
+            if (prompt) {
+                navigator.clipboard.writeText(prompt.prompt).then(() => {
+                    showToast('📋 Prompt copiado al portapapeles');
+                });
+            }
+        }
+
+        // Copiar ejemplos RICO
+        function copiarEjemploRICO(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                const text = element.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('📋 Ejemplo RICO copiado al portapapeles');
+                }).catch(() => {
+                    showToast('⚠️ Error al copiar. Inténtalo manualmente.');
+                });
+            }
+        }
+
+        // Sistema de prompts guardados
+        function guardarNuevoPrompt() {
+            const title = document.getElementById('new-prompt-title').value;
+            const category = document.getElementById('new-prompt-category').value;
+            const text = document.getElementById('new-prompt-text').value;
+
+            if (!title || !text) {
+                showToast('⚠️ Por favor completa título y prompt');
+                return;
+            }
+
+            // Obtener prompts guardados
+            let saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+            // Agregar nuevo prompt
+            const newPrompt = {
+                id: Date.now(),
+                title,
+                category,
+                text,
+                created: new Date().toISOString()
+            };
+
+            saved.push(newPrompt);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            // Limpiar form
+            document.getElementById('new-prompt-title').value = '';
+            document.getElementById('new-prompt-text').value = '';
+
+            showToast('✅ Prompt guardado correctamente');
+            renderSavedPrompts();
+        }
+
+        function renderSavedPrompts() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const container = document.getElementById('saved-prompts-list');
+
+            if (saved.length === 0) {
+                container.innerHTML = `
+                    <div class="term-card" style="text-align: center; padding: 3rem;">
+                        <h4 style="color: #999;">📂 No tienes prompts guardados aún</h4>
+                        <p style="color: #666; margin-top: 1rem;">Crea tu primer prompt usando el formulario arriba</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = `
+                <table class="saved-prompts-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Categoría</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${saved.reverse().map(prompt => `
+                            <tr>
+                                <td><strong>${prompt.title}</strong></td>
+                                <td>${getCategoryName(prompt.category)}</td>
+                                <td>${new Date(prompt.created).toLocaleDateString('es-ES')}</td>
+                                <td>
+                                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                        <button class="btn" style="padding: 0.5rem 1rem;" onclick="verPrompt(${prompt.id})">👁️ Ver</button>
+                                        <button class="btn" style="padding: 0.5rem 1rem;" onclick="copiarPromptGuardado(${prompt.id})">📋 Copiar</button>
+                                        <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" onclick="abrirPromptGuardadoEnChatGPT(${prompt.id})">🤖 GPT</button>
+                                        <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" onclick="abrirPromptGuardadoEnClaude(${prompt.id})">💬 Claude</button>
+                                        <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" onclick="abrirPromptGuardadoEnCopilot(${prompt.id})">🔷 Copilot</button>
+                                        <button class="btn btn-secondary" style="padding: 0.5rem 1rem; background: #dc2626;" onclick="eliminarPrompt(${prompt.id})">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function verPrompt(id) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const prompt = saved.find(p => p.id === id);
+            if (prompt) {
+                alert(`Título: ${prompt.title}\n\nPrompt:\n${prompt.text}`);
+            }
+        }
+
+        function copiarPromptGuardado(id) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const prompt = saved.find(p => p.id === id);
+            if (prompt) {
+                navigator.clipboard.writeText(prompt.text).then(() => {
+                    showToast('📋 Prompt copiado al portapapeles');
+                });
+            }
+        }
+
+        function eliminarPrompt(id) {
+            if (confirm('¿Estás seguro de eliminar este prompt?')) {
+                let saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+                saved = saved.filter(p => p.id !== id);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                showToast('🗑️ Prompt eliminado');
+                renderSavedPrompts();
+            }
+        }
+
+        // ========== FUNCIONES DE DESCARGA ==========
+
+        function descargarPromptsTXT() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            
+            if (saved.length === 0) {
+                showToast('⚠️ No tienes prompts guardados para descargar');
+                return;
+            }
+
+            let contenido = '='.repeat(80) + '\n';
+            contenido += 'MIS PROMPTS PROFESIONALES - FOUNDERZ\n';
+            contenido += 'Generado: ' + new Date().toLocaleString('es-ES') + '\n';
+            contenido += '='.repeat(80) + '\n\n';
+
+            saved.forEach((prompt, index) => {
+                contenido += `${index + 1}. ${prompt.title}\n`;
+                contenido += '-'.repeat(80) + '\n';
+                contenido += `Categoría: ${getCategoryName(prompt.category)}\n`;
+                contenido += `Fecha: ${new Date(prompt.created).toLocaleDateString('es-ES')}\n\n`;
+                contenido += `PROMPT:\n${prompt.text}\n\n`;
+                contenido += '='.repeat(80) + '\n\n';
+            });
+
+            const blob = new Blob([contenido], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `mis-prompts-founderz-${new Date().toISOString().split('T')[0]}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('📄 Archivo TXT descargado correctamente');
+        }
+
+        function descargarPromptsExcel() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            
+            if (saved.length === 0) {
+                showToast('⚠️ No tienes prompts guardados para descargar');
+                return;
+            }
+
+            // Crear CSV (compatible con Excel) con UTF-8 BOM
+            let csv = '\uFEFF'; // BOM para UTF-8
+            csv += 'Titulo;Categoria;Fecha;Prompt\n'; // Usar ; como delimitador
+
+            saved.forEach(prompt => {
+                // Limpiar y escapar valores
+                const titulo = prompt.title.replace(/"/g, '""').replace(/[\r\n]/g, ' ');
+                const categoria = getCategoryNameClean(prompt.category);
+                const fecha = new Date(prompt.created).toLocaleDateString('es-ES');
+                const texto = prompt.text.replace(/"/g, '""').replace(/[\r\n]/g, ' ');
+                
+                csv += `"${titulo}";"${categoria}";"${fecha}";"${texto}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `mis-prompts-founderz-${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('📊 Archivo Excel descargado correctamente');
+        }
+
+        // ========== FUNCIONES ABRIR EN PLATAFORMAS ==========
+
+        function abrirEnChatGPT(promptText) {
+            // Copiar al clipboard
+            navigator.clipboard.writeText(promptText).then(() => {
+                showToast('📋 Prompt copiado. Abriendo ChatGPT... ¡Pega con Ctrl+V!');
+                // Abrir ChatGPT en nueva pestaña
+                setTimeout(() => {
+                    window.open('https://chatgpt.com/', '_blank');
+                }, 500);
+            }).catch(() => {
+                showToast('⚠️ Error al copiar. Inténtalo manualmente.');
+            });
+        }
+
+        function abrirEnClaude(promptText) {
+            // Copiar al clipboard
+            navigator.clipboard.writeText(promptText).then(() => {
+                showToast('📋 Prompt copiado. Abriendo Claude... ¡Pega con Ctrl+V!');
+                // Abrir Claude en nueva pestaña
+                setTimeout(() => {
+                    window.open('https://claude.ai/new', '_blank');
+                }, 500);
+            }).catch(() => {
+                showToast('⚠️ Error al copiar. Inténtalo manualmente.');
+            });
+        }
+
+        function abrirEnCopilot(promptText) {
+            // Copiar al clipboard
+            navigator.clipboard.writeText(promptText).then(() => {
+                showToast('📋 Prompt copiado. Abriendo Copilot... ¡Pega con Ctrl+V!');
+                // Abrir Copilot en nueva pestaña
+                setTimeout(() => {
+                    window.open('https://copilot.microsoft.com/', '_blank');
+                }, 500);
+            }).catch(() => {
+                showToast('⚠️ Error al copiar. Inténtalo manualmente.');
+            });
+        }
+
+        // Versiones para prompts guardados
+        function abrirPromptGuardadoEnChatGPT(id) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const prompt = saved.find(p => p.id === id);
+            if (prompt) {
+                abrirEnChatGPT(prompt.text);
+            }
+        }
+
+        function abrirPromptGuardadoEnClaude(id) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const prompt = saved.find(p => p.id === id);
+            if (prompt) {
+                abrirEnClaude(prompt.text);
+            }
+        }
+
+        function abrirPromptGuardadoEnCopilot(id) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const prompt = saved.find(p => p.id === id);
+            if (prompt) {
+                abrirEnCopilot(prompt.text);
+            }
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPrompts();
+            renderSavedPrompts();
+        });
+    </script>
+</body>
+</html>

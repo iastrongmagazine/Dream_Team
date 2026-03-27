@@ -1,0 +1,106 @@
+# =============================================================================
+# PersonalOS - Think Different
+# Base: Gentleman Programming PersonalOS Template
+# =============================================================================
+
+# Template .gitignore for Task Management System
+# Copy relevant parts to your .gitignore
+
+# =============================================================================
+# PERSONAL OS CORE
+# =============================================================================
+
+# Personal task files
+03_Tasks/*.md
+!03_Tasks/.gitkeep
+!03_Tasks/README.md
+
+# Matrix files (personal)
+00_Winter_is_Coming/BACKLOG.md
+00_Winter_is_Coming/GOALS.md
+
+# Personal knowledge files
+02_Knowledge/*.md
+!02_Knowledge/.gitkeep
+!02_Knowledge/README.md
+
+# Personal configuration
+CLAUDE.md       # If customized from template
+
+# Keep templates and examples
+!CLAUDE_TEMPLATE.md
+!config.example.yaml
+!Tasks/example.md
+!CRM/example.md
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# =============================================================================
+# IDE & EDITOR CONFIGS
+# =============================================================================
+
+.vscode/
+.idea/
+.obsidian/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.ruff_cache/
+
+# =============================================================================
+# TOOL-SPECIFIC
+# =============================================================================
+
+.specstory/
+.factory/
+.pytest_cache/
+.coverage
+*.log
+logs/
+
+# Testing
+test_*.py
+*.test.py
+
+# MCP/System
+.mcp_cache/
+*.pid
+*.lock
+
+# =============================================================================
+# LOCAL CONFIG - Do not commit
+# =============================================================================
+
+# MCP configurations (local to each machine)
+.claude/mcp.json
+.agent/mcp.json
+.obsidian/mcp.json
+
+# Focus Now Lab (local workspace)
+Focus_Now_Lab/
+
+# Revisar/Analizar (local analysis)
+Revisar_Analizar/
+
+# =============================================================================
+# SCRIPTS OUTPUT
+# =============================================================================
+
+08_Scripts_Os/Analytics_Output/
+08_Scripts_Os/AIPM_Fixed/Analytics_Output/

@@ -1,0 +1,27 @@
+---
+description: Workflow de INICIO DE SESIÓN (Génesis) para cargar reglas, memoria y contexto.
+globs: **/*
+alwaysApply: false
+---
+
+# 🧬 Workflow: Génesis (Protocolo de Inicio)
+
+Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuperación del 1100% del contexto.
+
+## 🚀 Pasos de Aterrizaje
+
+1.  **Sincronización de Reglas**: Leer `.cursor/00_Rules/` para cargar los Pilares y reglas activas.
+2.  **Carga de Memoria (Long-Term)**: Leer el archivo más reciente en `01_Brain/context_memory/`.
+3.  **Carga de Notas (Short-Term)**: Leer el archivo más reciente en `01_Brain/process_notes/` para entender la última sesión.
+4.  **Estado del Backlog**: Leer `00_Core/BACKLOG.md` y tareas activas en `02_Operations/`.
+5.  **Reporte Handshake**: Emitir un resumen estructurado del contexto recuperado:
+    - **Contexto Técnico**: (Stack, arquitectura actual).
+    - **Estado del Sistema**: (Últimos cambios, bloqueos).
+    - **Siguiente Paso Inmediato**: (Qué toca hacer ahora).
+
+## 🛡️ Protección de Contexto
+- Activar **Sub-agentes** para tareas de carga pesada si es necesario durante la fase de inicio.
+- Confirmar que el idioma de operación es **ESPAÑOL**.
+
+---
+_"Sin contexto no hay inteligencia. Iniciando protocolo de alineación..."_

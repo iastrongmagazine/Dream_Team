@@ -1,0 +1,12 @@
+# Macano Backend Requirements
+django>=5.0
+djangorestframework>=3.14
+psycopg2-binary>=2.9
+django-cors-headers>=4.3
+django-rest-auth>=0.9
+celery>=5.3
+redis>=5.0
+python-dotenv>=1.0
+gunicorn>=21.0
+pytest>=8.0
+pytest-django>=4.7

@@ -1,0 +1,88 @@
+---
+description: PILAR 04: Gestión Estratégica, Flujos y Observabilidad (Mente AI-Prime)
+globs: **/*.md, 02_Operations/**/_, 04_Engine/**/_
+alwaysApply: true
+---
+
+# 🧠 Regla 04: La Estrategia (Strategic Management & AIPM)
+
+## Overview
+
+Este pilar dirige la "mente" del asistente. Define cómo gestionar el contexto atómico, orquestar workflows complejos y aplicar la observabilidad de un AI Product Manager (AIPM) para optimizar resultados probabilísticos.
+
+Mantiene los estándares de razonamiento transparente (CoT), eficiencia de tokens y calidad visual en reportes mediante la "Perfección Geométrica".
+
+## Rule: Gestión de Tareas, Contexto y AIPM (2026 Grade)
+
+1.  **Contexto Atómico**: Una Tarea = Un Chat. Resetear el contexto al cambiar de objetivo para evitar la degradación y el ruido.
+2.  **Ciclo de Tarea**: Triage -> Plan -> Ejecución (Progreso 10%) -> Verificación (Walkthrough) -> Aprendizaje (Reglas).
+3.  **The Golden Loop**: Cada error debe inyectarse en las reglas. Las Notas de Proceso (`01_Brain/Process_Notes/`) son la memoria persistente del sistema.
+4.  **Ingesta de Contexto**: Todo workflow DEBE comenzar obligando al asistente a leer las reglas vigentes.
+5.  **Observabilidad CoT**: El razonamiento (`thought_process`) debe ser transparente y documentado.
+6.  **Eficiencia de Tokens**: Monitorear el ratio `CoT / Response`.
+    - Apuntar al 20%-50%.
+    - Evitar Over-thinking (>100%) y Superficialidad (<15%).
+7.  **Límites de Latencia**: Alertar si la ejecución supera los **2000ms**.
+8.  **Analítica de Dominio**: Todo reporte debe identificar su dominio (Marketing, Salud, etc.) y mostrar la muestra real (Stripplot) sobre la agregación.
+9.  **Perfección Geométrica**: Los reportes Markdown deben usar anchos de columna fijos y una columna aislada (`ST`) para emojis para evitar desajustes visuales.
+
+## Common Violations and Solutions
+
+### ❌ BAD: Ejecución sin Rastro y Contexto Sucio
+
+- No resetear el chat entre tareas.
+- Omitir el razonamiento CoT en el log.
+- Ignorar el paso de planificación (Plan-First).
+- Mezclar múltiples tareas complejas en un solo chat.
+- Ignorar latencia alta (>2000ms) sin alertar.
+
+### ✅ GOOD: AIPM Senior Execution (Pure Green)
+
+- Iniciar un chat limpio -> Pegar Briefing de Contexto -> Ejecutar con trazabilidad de tokens y latencia -> Documentar lecciones en Notas de Proceso.
+- Monitorear ratio CoT/Response (objetivo: 20%-50%).
+- Notificar proactivamente sobre riesgos y latencia.
+- Terminar con Walkthrough y actualización de la base de conocimiento (KIs/Reglas).
+
+## When You Think You Need a Shortcut
+
+### "La tarea es pequeña, no hace falta resetear el chat"
+
+- **❌ BAD**: Continuar en un chat con 50 mensajes previos sobre otro tema para ahorrar tiempo.
+- **✅ GOOD**: "Para mantener la precisión y evitar ruido de contexto, iniciemos un nuevo chat para este ajuste específico."
+
+## Specific Project Patterns
+
+### Perfección Geométrica en Markdown (Geometric Perfection)
+
+```markdown
+// ❌ BAD: Mezclar emojis con texto en celdas de datos (causa desalineación visual).
+| Task | Status |
+| :--- | :--- |
+| Fix bug 🐛 | DONE |
+
+// ✅ GOOD: Columna 'ST' (Status/Icon) aislada para emojis.
+| ST | Task | Status |
+| :---: | :--- | :--- |
+| 🐛 | Fix bug | DONE |
+```
+
+## Alternative Solutions
+
+### 1. Gestión de Eficiencia de Tokens
+
+- **Over-thinking**: (>100% CoT vs Response) Sugerir fragmentación de la tarea para manejar la complejidad.
+- **Superficialidad**: (<15% CoT) El asistente debe profundizar más en el razonamiento antes de proponer cambios críticos.
+
+## Checklist for the Assistant
+
+- [ ] ¿He sugerido un nuevo chat para esta tarea si el contexto actual está saturado?
+- [ ] ¿He incluido el razonamiento detallado (CoT) en mi proceso?
+- [ ] ¿He validado el ratio de eficiencia de tokens (20%-50%)?
+- [ ] ¿He actualizado las Notas de Proceso con los aprendizajes tras detectar un error?
+- [ ] ¿El reporte generado cumple con la Perfección Geométrica (Solo emojis en col 1/ST)?
+
+Remember: El código es temporal, las reglas son eternas. Razonamos con incertidumbre, decidimos con intención.
+
+---
+
+_Alineado con la Mente PersonalOS: "Razonamos con incertidumbre, decidimos con intención."_
