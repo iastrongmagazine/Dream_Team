@@ -68,12 +68,15 @@ def dynamic_speak(text):
 
 
 def run_script(script_name):
-    script_path = Path(__file__).parent / "Legacy_Backup" / script_name
+    # Usamos Ritual_Fixed para los scripts corregidos
+    script_path = Path(__file__).parent / "Ritual_Fixed" / script_name
     if not script_path.exists():
         print(f"{Fore.RED}[ERROR] Script no encontrado: {script_path}{Style.RESET_ALL}")
         return
 
-    print(f"{Fore.YELLOW}[RUNNING] Ejecutando: {script_name}...{Style.RESET_ALL}")
+    print(
+        f"{Fore.YELLOW}[RUNNING] Ejecutando versión corregida: {script_name}...{Style.RESET_ALL}"
+    )
     subprocess.run([sys.executable, str(script_path)])
 
 
