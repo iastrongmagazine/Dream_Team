@@ -8,38 +8,40 @@ Your AI-powered task management system that keeps you focused on what matters.
 
 Brain dump into `BACKLOG.md`, tell your AI assistant to process it, and get organized tasks automatically prioritized based on your goals.
 
-| Section | Status |
-|---------|--------|
-| Task Management | ✅ |
-| Goal-driven Prioritization | ✅ |
-| Knowledge Base | ✅ |
-| Backlog Processing | ✅ |
-| Session Evals | ✅ |
-| MCP Server (optional) | ✅ |
+| Section                    | Status |
+| -------------------------- | ------ |
+| Task Management            | ✅     |
+| Goal-driven Prioritization | ✅     |
+| Knowledge Base             | ✅     |
+| Backlog Processing         | ✅     |
+| Session Evals              | ✅     |
+| MCP Server (optional)      | ✅     |
 
 ---
 
-*Quick links:* [Quick Start](#quick-start) · [How It Works](#how-it-works) · [Directory Structure](#directory-structure) · [Daily Workflow](#daily-workflow)
+_Quick links:_ [Quick Start](#quick-start) · [How It Works](#how-it-works) · [Directory Structure](#directory-structure) · [Daily Workflow](#daily-workflow)
 
 ---
 
 <img width="1071" height="677" alt="Screenshot 2025-12-26 at 11 51 27 PM" src="https://github.com/user-attachments/assets/bbde8dc5-7e17-4ced-bc2b-ede505ee4a72" />
 
-
 ## Quick Start
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/amanaiproduct/personal-os.git
 cd personal-os
 ```
 
 ### 2. Run Setup (2 minutes)
+
 ```bash
 ./setup.sh
 ```
 
 The setup will:
+
 - Create your workspace directories
 - Guide you through questions about your goals and priorities
 - Generate your personalized GOALS.md
@@ -48,6 +50,7 @@ The setup will:
 **Note:** Python 3.10+ is only needed if you want to run the MCP server. The basic setup works with just bash.
 
 ### 3. Start Using It
+
 ```
 # In your AI assistant (Claude Code, etc.)
 "Read AGENTS.md and help me get organized"
@@ -69,12 +72,12 @@ The setup will:
 
 ### Priorities
 
-| Priority | Meaning | Limit |
-|----------|---------|-------|
-| **P0** | Do today | max 3 |
-| **P1** | This week | max 7 |
-| **P2** | Scheduled | - |
-| **P3** | Someday/maybe | - |
+| Priority | Meaning       | Limit |
+| -------- | ------------- | ----- |
+| **P0**   | Do today      | max 3 |
+| **P1**   | This week     | max 7 |
+| **P2**   | Scheduled     | -     |
+| **P3**   | Someday/maybe | -     |
 
 ## Directory Structure
 
@@ -120,10 +123,96 @@ personal-os/
 ## For Contributors
 
 The `core/` directory contains the reusable system. Contributions should:
+
 - Not include personal information
 - Be generic and configurable
 - Include documentation
 - Follow the existing patterns
+
+---
+
+## Think Different PersonalOS v6.1
+
+**PersonalOS** ha sido adaptado y extendido como **Think Different PersonalOS v6.1**, una implementación personalizada con estructura numerada, scripts de auditoría y herramientas de productividad avanzadas.
+
+### Estructura de Directorios Numerada (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/          # Matrix de objetivos, backlogs y agentes
+├── 01_Core/                      # Núcleo del sistema (skills, workflows, evaluaciones)
+├── 02_Knowledge/                 # Base de conocimiento (investigación, perfiles, contenido)
+├── 03_Tasks/                     # Tareas activas (gitignored)
+├── 04_Operations/                # Operaciones (contexto, conocimiento, reglas, notas)
+├── 05_Archive/                   # Archivo histórico
+├── 06_Playground/                # Área de pruebas
+├── 07_Projects/                  # Proyectos activos
+├── 08_Scripts_Os/                # Scripts del sistema (Hubs, auditorías, utilidades)
+├── 01_Report_Status.md           # Reporte de estado del sistema
+└── README.md                     # Este archivo
+```
+
+### Convención de Nombres
+
+- **Directorios numerados**: `00_`, `01_`, `02_`... para orden lógico
+- **Archivos de reporte**: Primera letra mayúscula (`01_Report_Status.md`)
+- **Scripts Python**: Formato `##_Nombre_Script.py` (`01_Auditor_Hub.py`, `20_Master_Analytics_Factory.py`)
+- **Hubs centralizadores**: `##_Nombre_Hub.py` (`04_Ritual_Hub.py`, `10_General_Hub.py`)
+
+### Hubs del Sistema (08_Scripts_Os/)
+
+| Hub | Script | Propósito |
+|-----|--------|-----------|
+| **Auditor** | `01_Auditor_Hub.py` | Auditorías del sistema |
+| **Git** | `02_Git_Hub.py` | Operaciones de Git |
+| **AIPM** | `03_AIPM_Hub.py` | AI Performance Monitoring |
+| **Ritual** | `04_Ritual_Hub.py` | Rituales de sesión |
+| **Validator** | `05_Validator_Hub.py` | Validación de código |
+| **Tool** | `06_Tool_Hub.py` | Gestión de herramientas |
+| **Integration** | `07_Integration_Hub.py` | Integraciones MCP |
+| **Workflow** | `08_Workflow_Hub.py` | Automatización de workflows |
+| **Data** | `09_Data_Hub.py` | Procesamiento de datos |
+| **General** | `10_General_Hub.py` | Utilidades generales |
+
+### Comandos Rápidos (Aliases configurados en `.bashrc`)
+
+```bash
+# Hubs principales
+gr            # System Auditor (Auditor Hub)
+audit         # System Auditor (mismo que gr)
+git-hub       # Git operations
+aipm          # AI Performance Monitoring
+ritual        # Session rituals
+validate      # Code validation
+tools         # Tool management
+integration   # MCP integraciones
+workflows     # Workflow automation
+data          # Data processing
+general       # General utilities
+
+# System Guardian
+gr-dry        # Dry run validation
+gr-apply      # Apply fixes
+gr-agents     # Run agent review
+```
+
+### Archivos de Auditoría Restaurados
+
+Tras la reestructuración v6.1, se restauraron archivos críticos de auditoría:
+
+- **`01_Report_Status.md`**: Reporte de estado con lista de pendientes
+- **`08_Scripts_Os/12_Audits/REPORTE_AUDITORIA_SKILLS_ROUTES.md`**: Auditoría de rutas de skills (195 referencias encontradas)
+- **`08_Scripts_Os/12_Audits/audit_skills_routes.py`**: Script de auditoría Python
+- **`08_Scripts_Os/12_Audits/migrate_skills_routes.ps1`**: Script de migración PowerShell
+
+### Estado Actual del Sistema
+
+- **Versión**: v6.1
+- **Última reestructuración**: 2026-03-28 (commit a4b6471 "Base Limpia")
+- **Estado**: Sistema estable con estructura numerada limpia
+- **Próximas tareas**: Ejecutar auditoría masiva "Super Campeones", refactorizar scripts legacy
+
+---
 
 ## License
 

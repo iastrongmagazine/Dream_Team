@@ -92,7 +92,7 @@ Orquestan las jugadas. Definen el flujo de trabajo completo.
 |-------------|----------|---------|-----------|
 | **Skills** | 160+ | Patrones y workflows específicos | `01_Core/03_Skills/` |
 | **MCPs** | 27 | Herramientas externas | `01_Core/05_Mcp/opencode.json` |
-| **Commands** | - | Comandos slash (/sdd, /ce, etc.) | `01_Core/06_Commands/` |
+| **Commands** | - | Comandos slash (/sdd, /ce, etc.) | `01_Core/06_Integrations/` |
 | **Hooks** | 6 | Puntos de ejecución automática | `01_Core/07_Hooks/` |
 | **Rules** | 22 | Reglas del juego | `01_Core/01_Rules/` |
 
@@ -113,9 +113,9 @@ Evalúa el rendimiento del equipo. Mide calidad y eficiencia.
 | Skills | `01_Core/03_Skills/` | ✅ **FUENTE DE VERDAD** |
 | Integrations | `01_Core/06_Integrations/` | ✅ |
 | MCPs | `01_Core/05_Mcp/opencode.json` | ✅ |
-| Commands | `01_Core/06_Commands/` | ✅ |
+| Commands | `01_Core/06_Integrations/` | ✅ |
 | Hooks | `01_Core/07_Hooks/` | ✅ |
-| Plugins | `01_Core/08_Plugings/` | ✅ |
+| Plugins | `01_Core/08_Plugins/` | ✅ |
 | Server | `01_Core/09_Server/` | ✅ |
 | Templates | `01_Core/10_Templates/` | ✅ |
 

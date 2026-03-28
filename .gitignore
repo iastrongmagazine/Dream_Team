@@ -115,3 +115,6 @@ claude-plugins-official/
 01_Core/05_Mcp/mcp.json
 01_Core/05_Mcp/opencode.json
 07_Projects/01_Projects_Lab/03_Side_Project_Backup/
+
+# Guardian Angel Entrypoint
+AGENTS.md

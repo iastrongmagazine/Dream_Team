@@ -478,20 +478,6 @@ matplotlib, seaborn, plotly
 
 ---
 
-## 7. SILICON VALLEY DATA ANALYST — ⭐ TOP TOP
-
-> **Skill de análisis de datos de nivel Silicon Valley**
-
-**Estado**: ✅ Creado (2026-03-27)
-**Ubicación**: `01_Core/03_Skills/16_Silicon_Valley_Data_Analyst/`
-
-### Características
-- Executive Summaries, Cohort Analysis, A/B Testing, Predictive Modeling
-
-### Triggers
-- "analyze data", "SILICON VALLEY", "churn analysis"
-
----
 
 ## 8. SEO SOTA MASTER — ⭐ TOP TOP
 
