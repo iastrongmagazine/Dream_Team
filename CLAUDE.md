@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working in this
 ## 🔴 REGLA 00: Protocolo Génesis (OBLIGATORIO)
 
 **⚠️ REGLA ORO: SIN CONTEXTO NO HAY CHAT**
+
 - ❌ **PROHIBIDO** chatear sin cargar contexto primero
 - ✅ Antes de responder: ejecutar `engram_mem_context(limit=10)`
 - ✅ Si hay session_summary previo, cargarlo
