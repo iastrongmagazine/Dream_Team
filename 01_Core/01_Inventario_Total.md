@@ -20,9 +20,9 @@
 | DevOps             | 12         | ✅ Esencias reales   | 100% auditado                       |
 | Personal_Os        | 10         | ✅ Esencias reales   | 100% auditado                       |
 | Marketing          | 32         | ✅ Esencias reales   | 100% auditado (15+10+7)             |
-| Backup             | 177        | ⏭️ SKIPPED          | Por instrucción del usuario         |
+| Backup             | 177        | ⏭️ SKIPPED           | Por instrucción del usuario         |
 | Doc_Processing     | 3          | ✅ Esencias reales   | 100% auditado                       |
-| **TOTAL**          | **305**    | **99%**             | **Auditado a estándar Anthropic**   |
+| **TOTAL**          | **305**    | **99%**              | **Auditado a estándar Anthropic**   |
 
 ---
 

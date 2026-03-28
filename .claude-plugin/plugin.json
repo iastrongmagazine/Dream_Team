@@ -1,0 +1,32 @@
+{
+  "name": "think-different",
+  "version": "1.0.0",
+  "description": "Think Different PersonalOS - Sistema de productividad personal con SDD, Compound Engineering, y Agent Teams",
+  "author": {
+    "name": "Jesus Obando",
+    "email": "ia.strongmagazine@gmail.com",
+    "url": "https://github.com/iastrongmagazine/Dream_Team"
+  },
+  "homepage": "https://github.com/iastrongmagazine/Dream_Team",
+  "repository": "https://github.com/iastrongmagazine/Dream_Team",
+  "license": "MIT",
+  "keywords": [
+    "personal-os",
+    "productivity",
+    "sdd",
+    "agent-teams",
+    "compound-engineering",
+    "workflow",
+    "system-guardian"
+  ],
+  "skills": [
+    "skills/personal-os.md",
+    "skills/sdd-workflow.md",
+    "skills/system-guardian.md",
+    "01_Core/03_Skills/01_Agent_Teams_Lite/*/SKILL.md",
+    "01_Core/03_Skills/00_Compound_Engineering/*/SKILL.md",
+    "01_Core/03_Skills/16_Silicon_Valley_Data_Analyst/SKILL.md",
+    "01_Core/03_Skills/17_SEO_SOTA_Master/SKILL.md",
+    "01_Core/03_Skills/13_System_Master/SKILL.md"
+  ]
+}
