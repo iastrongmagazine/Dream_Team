@@ -2,7 +2,7 @@
 81_RTM_Generator.py - Armor Layer Protected
 Requirements Traceability Matrix.
 Mapea requisitos → tests → código y genera matriz de trazabilidad.
-Basado en: .agent/02_Skills/05_Gentleman/05_Utilities/12_RTM/SKILL.md
+Basado en: 01_Core/03_Skills/05_Gentleman/05_Utilities/12_RTM/SKILL.md
 """
 
 import json

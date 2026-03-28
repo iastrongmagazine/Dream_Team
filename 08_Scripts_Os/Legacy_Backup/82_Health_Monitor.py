@@ -2,7 +2,7 @@
 82_Health_Monitor.py - Armor Layer Protected
 Observabilidad del sistema PersonalOS.
 Monitor de sistema con métricas de hooks y scripts.
-Basado en: .agent/02_Skills/05_Gentleman/05_Utilities/06_Observability/SKILL.md
+Basado en: 01_Core/03_Skills/05_Gentleman/05_Utilities/06_Observability/SKILL.md
 """
 
 import json

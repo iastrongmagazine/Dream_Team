@@ -1,7 +1,7 @@
 """
 80_Edge_Case_Validator.py - Armor Layer Protected
 Detecta boundary conditions y valida inputs extremos.
-Basado en: .agent/02_Skills/05_Gentleman/05_Utilities/11_Edge_Case/SKILL.md
+Basado en: 01_Core/03_Skills/05_Gentleman/05_Utilities/11_Edge_Case/SKILL.md
 """
 
 import ast

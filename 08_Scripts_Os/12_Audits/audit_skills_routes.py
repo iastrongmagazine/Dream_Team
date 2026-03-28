@@ -40,10 +40,6 @@ def find_references():
                 content = f.read_text(encoding="utf-8", errors="ignore")
                 lines = content.split("\n")
                 for i, line in enumerate(lines, 1):
-                    if OLD_PATH in line and ".agent/02_Skills/" not in line.replace(
-                        OLD_PATH, ""
-                    ):
-                        continue
                     if OLD_PATH in line:
                         refs[str(f.relative_to(ROOT))].append((i, line.strip()[:100]))
             except Exception:
@@ -86,8 +82,8 @@ def analyze_impact():
     print("=" * 80)
     print(f"Archivos a modificar: {len(refs)}")
     print(f"Reemplazos totales: {sum(len(v) for v in refs.values())}")
-    print("\nPrecaución: Muchos archivos son文档ación que referencia")
-    print("la estructura, no código que llama las skills.")
+    print("\nPrecauci\u00f3n: Muchos archivos son documentaci\u00f3n que referencia")
+    print("la estructura, no c\u00f3digo que llama las skills.")
 
     return refs
 
