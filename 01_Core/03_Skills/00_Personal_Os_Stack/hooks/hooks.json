@@ -1,0 +1,12 @@
+{
+  "hooks": [
+    {
+      "event": "Notification",
+      "matcher": {
+        "type": "task_complete"
+      },
+      "command": "${CLAUDE_PLUGIN_ROOT}/hooks/task-complete-sound.sh",
+      "description": "Play sound when task completes"
+    }
+  ]
+}

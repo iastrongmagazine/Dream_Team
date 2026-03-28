@@ -300,7 +300,7 @@ Staff_Claude_Code/
 ```
 
 #### Características v2.0
-- **评测系统**: `scripts/run_eval.py` - Tests cuantitativos automatizados
+- **Sistema de Evaluacion**: `scripts/run_eval.py` - Tests cuantitativos automatizados
 - **Benchmarks**: `scripts/aggregate_benchmark.py` - Métricas de rendimiento
 - **Description Optimization**: `scripts/improve_description.py` - Optimización de triggers
 - **Multi-agent Support**: Ejecución paralela en contexto limpio

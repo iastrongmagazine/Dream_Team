@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working in this
 
 Al iniciar una nueva sesión, ejecutar esta secuencia antes de responder:
 
-0. Leer `00_Winter_is_Coming/AGENTS.md` — TU MATRIX, la fuente de verdad completa
+0. Leer `00_Winter_is_Coming/AGENTS.md` y SIEMPRE Comunicarte en Español en Chat — TU MATRIX, la fuente de verdad completa
 1. Leer `01_Core/01_Rules/01_Context_Protocol.mdc` — Reglas de sesión
 2. Leer `04_Operations/01_Context_Memory/` y `04_Operations/04_Memory_Brain/` — Último contexto guardado
 3. Ejecutar `mem_context(limit=10)` — Últimas 10 sesiones de Engram

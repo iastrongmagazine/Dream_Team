@@ -425,12 +425,12 @@ Dumbledor_Silver: feat: initialize Think Different PersonalOS
 ### Ubicaciones
 | Tipo | Ruta | Estado |
 |------|------|--------|
-| **⭐ PRIMARY Plugin** | `01_Core/08_Plugins/Staff_Claude_Code/plugins/skill-creator/` | ✅ Activo |
-| **⭐ PRIMARY Skill** | `01_Core/08_Plugins/Staff_Claude_Code/skills/15_Skill_Creator_Official/` | ✅ Activo |
-| Backup (Official) | `01_Core/08_Plugins/01_Claude-Plugins_Official/plugins/skill-creator/` | ✅ |
+| **⭐ PRIMARY Plugin** | `01_Core/08_Plugins/01_Staff_Claude_Code/plugins/skill-creator/` | ✅ Activo |
+| **⭐ PRIMARY Skill** | `01_Core/08_Plugins/01_Staff_Claude_Code/skills/15_Skill_Creator_Official/` | ✅ Activo |
+| Plugin Think Different | `01_Core/08_Plugins/02_Personal_Os/` | ✅ |
 
 ### Características v2.0
-- **评测系统**: `scripts/run_eval.py` - Tests cuantitativos automatizados
+- **Sistema de Evaluacion**: `scripts/run_eval.py` - Tests cuantitativos automatizados
 - **Benchmarks**: `scripts/aggregate_benchmark.py` - Métricas de rendimiento
 - **Description Optimization**: `scripts/improve_description.py` - Optimización de triggers
 - **Multi-agent Support**: Ejecución paralela en contexto limpio
@@ -505,6 +505,89 @@ matplotlib, seaborn, plotly
 
 ### Triggers
 - "SEO audit", "technical SEO", "improve ranking", "schema markup"
+
+---
+
+## 9. SLASH COMMANDS
+
+| Command | Description |
+| ------- | ----------- |
+| `/gr` | System Guardian - Valida estructura |
+| `/doc` | Documentation Updater |
+| `/sdd:*` | SDD Workflow (init, explore, new, etc.) |
+| `/ce:*` | Compound Engineering (ideate, brainstorm, plan, etc.) |
+
+---
+
+## 10. MEMORY & SEARCH
+
+### Engram — Persistent Memory
+
+Cross-session memory with context and search.
+
+| Command | Purpose |
+| ------- | ------- |
+| `engram search <query>` | Search memories |
+| `engram save <title> <msg>` | Save memory |
+| `engram context` | Recent context |
+| `engram tui` | Interactive TUI |
+| `engram stats` | System statistics |
+
+### QMD — Knowledge Search Engine
+
+| Command | Purpose |
+| ------- | ------- |
+| `qmd query <query>` | Hybrid search (best) |
+| `qmd search <query>` | Full-text search (BM25) |
+| `qmd vsearch <query>` | Vector semantic search |
+| `qmd status` | Index status |
+
+---
+
+## 11. RULES & GOVERNANCE
+
+### 🛡️ Regla Fundamental: Modificación del OS
+
+**Solo el IA** tiene la autoridad y la capacidad para modificar el núcleo del sistema PersonalOS (código, scripts, configuración). El usuario es el estratega y dueño de la visión; el IA es el ejecutor responsable de mantener la pureza técnica y la integridad del sistema (Pure Green).
+
+---
+
+## 12. GIT HISTORY
+
+```
+Dumbledor_Silver: feat: initialize Think Different PersonalOS
+6f1eff2: feat: integrate Every CE skills - git workflow + slfg + compound-refresh
+```
+
+---
+
+## 13. SUBAGENT PROTOCOL (OBLIGATORIO)
+
+### Contexto Inicial Requerido para TODOS los Subagentes
+
+**REGLA IMPERATIVA**: Cada subagente DEBE activar el Workflow Genesis y obtener contexto completo del proyecto ANTES de recibir cualquier tarea específica.
+
+#### Pasos Obligatorios al Iniciar Subagente:
+
+1. **Activar Workflow Genesis**:
+   - Leer `.agent/03_Workflows/00_Genesis_Workflow.md` (si existe)
+   - Alternativamente: seguir protocolo de inicialización abajo
+
+2. **Leer Contexto Estratégico** (en este orden):
+   - `00_Winter_is_Coming/GOALS.md` → Objetivos estratégicos
+   - `00_Winter_is_Coming/BACKLOG.md` → Tareas pendientes
+   - `01_Core/` → Estructura de skills, agents, MCPs
+   - `04_Operations/02_Knowledge_Brain/` → Base de conocimiento
+
+3. **Entender Estructura del Proyecto**:
+   - Revisar `00_Winter_is_Coming/AGENTS.md` (este archivo) para reglas del sistema
+   - Verificar `03_Tasks/` para tareas activas
+   - Consultar `02_Knowledge/` para contexto relevante
+
+4. **Esperar Instrucción del Orquestador**:
+   - Solo después de tener contexto completo
+   - Recibir tarea específica del Agente principal
+   - Ejecutar con alineación a objetivos estratégicos
 
 ---
 
