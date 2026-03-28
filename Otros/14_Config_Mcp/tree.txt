@@ -1,0 +1,23 @@
+03_Knowledge/08_Config_Mcp/
+├── mcp-tools/
+│   ├── README.md                    # Índice general
+│   ├── 01_core/
+│   │   ├── 01_context7.md           # Docs de librerías
+│   │   ├── 02_engram.md             # Memoria persistente
+│   │   └── 03_github.md             # Repo management
+│   ├── 02_knowledge/
+│   │   ├── 01_obsidian.md          # Notas locales
+│   │   ├── 02_notion.md             # Proyectos
+│   │   └── 03_aim-memory.md        # Knowledge graph
+│   ├── 03_development/
+│   │   ├── 01_playwright.md         # E2E testing
+│   │   ├── 02_docker.md             # Containers
+│   │   └── 03_chrome-devtools.md   # Browser automation
+│   ├── 04_research/
+│   │   ├── 01_firecrawl.md          # Web scraping
+│   │   └── 02_exa.md                # Búsqueda web
+│   ├── 05_visual/
+│   │   └── 01_excalidraw.md         # Diagramas
+│   └── 06_productivity/
+│       └── 01_linear.md             # Issue tracking
+└── (mcp.json en /.claude/)

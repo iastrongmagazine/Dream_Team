@@ -176,7 +176,7 @@ python -m py_compile 01_Core/09_Server/mcp/Server.py
 │   ├── Tutorials/
 │   └── Example_Files/
 ├── 01_Research_Os/
-├── 08_Writing_Content/
+├── 03_Writing_Content/
 ├── .gitkeep
 ├── README.md
 └── Skill_Creator_v2_Analysis.md
