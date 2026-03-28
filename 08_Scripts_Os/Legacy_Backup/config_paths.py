@@ -66,6 +66,12 @@ ARCHIVE_DIR = ROOT_DIR / "05_Archive"
 # Projects
 PROJECTS_DIR = ROOT_DIR / "07_Projects"
 
+# Engine (legacy - ahora es 08_Scripts_Os)
+ENGINE_DIR = ROOT_DIR / "08_Scripts_Os"
+
+# System (ahora en 01_Core)
+SYSTEM_DIR = ROOT_DIR / "01_Core"
+
 # Scripts
 SCRIPTS_DIR = ROOT_DIR / "08_Scripts_Os"
 
