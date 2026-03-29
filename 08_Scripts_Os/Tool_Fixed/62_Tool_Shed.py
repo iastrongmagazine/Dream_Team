@@ -168,26 +168,26 @@ def load_mcp_config() -> dict:
 def print_tool_shed(tiers: list):
     """Muestra el Tool Shed actual."""
     print("\n" + "=" * 60)
-    print("🗄️  TOOL SHED - PersonalOS")
+    print("TOOL SHED - PersonalOS")
     print("=" * 60)
-    print(f"\n📅 Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"\n🎯 Contextos detectados: {', '.join(tiers)}")
+    print(f"\nFecha: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"\nContextos detectados: {', '.join(tiers)}")
     print()
 
-    print("📦 MCPs por Tier:")
+    print("MCPs por Tier:")
     print("-" * 40)
 
     all_mcps = []
     for tier in tiers:
         if tier in MCP_TIERS:
             info = MCP_TIERS[tier]
-            print(f"\n🔹 {info['name']} ({info['description']})")
+            print(f"\n[{info['name']}] ({info['description']})")
             for mcp in info["mcps"]:
-                print(f"   • {mcp}")
+                print(f"   - {mcp}")
                 all_mcps.append(mcp)
 
     print("\n" + "-" * 40)
-    print(f"📊 Total MCPs activos: {len(set(all_mcps))}")
+    print(f"Total MCPs activos: {len(set(all_mcps))}")
     print("=" * 60)
 
 
@@ -198,7 +198,7 @@ def main():
         user_input = " ".join(sys.argv[1:])
     else:
         # Modo interactivo
-        print("🗄️  Tool Shed - Detector de Contexto")
+        print("Tool Shed - Detector de Contexto")
         print("Ingresa contexto (o presiona Enter para modo desarrollo): ")
         user_input = input("> ").strip()
 
@@ -213,12 +213,12 @@ def main():
     available_mcps = list(mcp_config.get("mcpServers", {}).keys())
     active_mcps = get_mcps_for_tiers(tiers)
 
-    print("\n✅ MCPs disponibles en config:")
+    print("\n[OK] MCPs disponibles en config:")
     for mcp in active_mcps:
-        status = "✓" if mcp in available_mcps else "✗"
+        status = "[OK]" if mcp in available_mcps else "[MISSING]"
         print(f"   {status} {mcp}")
 
-    print("\n💡 Tip: Usa esta información para configurar tu sesión de trabajo.")
+    print("\n[TIP] Usa esta información para configurar tu sesión de trabajo.")
     print("   Los MCPs activos se cargan automáticamente según el contexto.")
 
 
