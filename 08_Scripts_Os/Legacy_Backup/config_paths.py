@@ -89,7 +89,7 @@ CORE_SERVER_DIR = CORE_DIR / "09_Server"
 # SUBDIRECTORIOS OPERATIONS
 # =============================================================================
 
-OPERATIONS_MEMORY_DIR = OPERATIONS_DIR / "01_Context_Memory"
+OPERATIONS_MEMORY_DIR = OPERATIONS_DIR / "00_Context_Memory"
 OPERATIONS_BRAIN_DIR = OPERATIONS_DIR / "02_Knowledge_Brain"
 OPERATIONS_NOTES_DIR = OPERATIONS_DIR / "03_Process_Notes"
 OPERATIONS_MEMORY_MAP_DIR = OPERATIONS_DIR / "04_Memory_Brain"
@@ -116,7 +116,7 @@ PLANS_DIR = KNOWLEDGE_PLANS_DIR  # Compatibilidad
 BASE_DIR = ROOT_DIR  # Alias para scripts que usan BASE_DIR
 PROJECT_ROOT = ROOT_DIR  # Alias para scripts que usan PROJECT_ROOT
 BRAIN_DIR = OPERATIONS_DIR  # Alias legacy (Operations ahora es el Brain)
-BRAIN_MEMORY_DIR = OPERATIONS_DIR / "01_Context_Memory"
+BRAIN_MEMORY_DIR = OPERATIONS_DIR / "00_Context_Memory"
 BRAIN_KNOWLEDGE_DIR = OPERATIONS_DIR / "02_Knowledge_Brain"
 BRAIN_NOTES_DIR = OPERATIONS_DIR / "03_Process_Notes"
 BRAIN_RULES_DIR = OPERATIONS_DIR / "04_Memory_Brain"

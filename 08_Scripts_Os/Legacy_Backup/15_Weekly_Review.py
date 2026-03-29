@@ -38,7 +38,7 @@ from config_paths import ROOT_DIR, OPERATIONS_DIR, KNOWLEDGE_DIR
 # ============================================================================
 
 TASKS_DIR = PROJECT_ROOT / "03_Tasks"
-CONTEXT_MEMORY_DIR = PROJECT_ROOT / "04_Operations" / "01_Context_Memory"
+CONTEXT_MEMORY_DIR = PROJECT_ROOT / "04_Operations" / "00_Context_Memory"
 GOALS_FILE = PROJECT_ROOT / "00_Winter_is_Coming" / "GOALS.md"
 PROCESS_NOTES_DIR = PROJECT_ROOT / "04_Operations" / "03_Process_Notes"
 

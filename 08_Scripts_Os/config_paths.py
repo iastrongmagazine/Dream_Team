@@ -56,7 +56,7 @@ PLAYGROUND_DIR = ROOT_DIR / "06_Playgraound"
 # SUBDIRECTORIOS BRAIN/OPERATIONS (v6.1)
 # =============================================================================
 
-BRAIN_MEMORY_DIR = BRAIN_DIR / "01_Context_Memory"
+BRAIN_MEMORY_DIR = BRAIN_DIR / "00_Context_Memory"
 BRAIN_KNOWLEDGE_DIR = BRAIN_DIR / "02_Knowledge_Brain"
 BRAIN_NOTES_DIR = BRAIN_DIR / "03_Process_Notes"
 BRAIN_RULES_DIR = BRAIN_DIR / "04_Memory_Brain"
