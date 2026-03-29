@@ -39,7 +39,7 @@ Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
 
 3.  **🧠 SINCRONIZAR MEMORIA (Para MÍ - Gentleman)**:
     - **PRIORIDAD 1**: Leer `04_Operations/00_Context_Memory/CTX_*.md` (más reciente) → **MI contexto** para no perder memoria entre sesiones.
-    - **PRIORIDAD 2**: Leer `01_Brain/03_Process_Notes/*.md` (más reciente) → Qué hizo el usuario.
+    - **PRIORIDAD 2**: Leer `04_Operations/03_Process_Notes/*.md` (más reciente) → Qué hizo el usuario.
     - **OPCIONAL**: Buscar en Engram (MCP) con `mem_search` si hay algo relevante.
 
 4.  **☀️ EJECUTAR MORNING STANDUP**:
@@ -114,8 +114,8 @@ Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
 
 ```text
 Think_Different/ (00→06, secuencial)
-├── 00_Core/       # ADN: Agentes, Metas, Backlog
-├── 01_Brain/      # Mapa: Inventario, Memoria AI, Process_Notes
+├── 00_Winter_is_Coming/       # ADN: Agentes, Metas, Backlog
+├── 04_Operations/      # Mapa: Inventario, Memoria AI, Process_Notes
 ├── 02_Operations/ # Manos: Tasks activas, Evaluaciones
 ├── 03_Knowledge/  # Memoria: Research, Examples/, Resources/
 ├── 08_Scripts_Os/ # Motor: 38 scripts Python
@@ -123,7 +123,7 @@ Think_Different/ (00→06, secuencial)
 └── 06_Archive/    # Baúl: Legacy, backups
 ```
 
-1.  **ARCHIVO MAESTRO**: `01_Brain/Knowledge_Brain/01_Inventario_Total.md` y `CLAUDE.md` son la fuente de verdad de la estructura.
+1.  **ARCHIVO MAESTRO**: `04_Operations/Knowledge_Brain/01_Inventario_Total.md` y `CLAUDE.md` son la fuente de verdad de la estructura.
 2.  **MCPs ACTIVOS**: `.mcp.json` en raíz — Playwright (navegación web) y Fireflies (reuniones). API keys en `env`.
 3.  **VISIBILIDAD**: Actualizar `01_Inventario_Total.md` en cada hito para evitar referencias rotas.
 
@@ -135,8 +135,8 @@ Think_Different/ (00→06, secuencial)
 ## 🛠️ Checklist de Verificación (Mental)
 
 - [ ] ¿He leído `01_Inventario_Total.md` + `GOALS.md` + `BACKLOG.md` al inicio?
-- [ ] ¿He leído el último CTX de `01_Brain/01_Context_Memory/`?
-- [ ] ¿He leído la última Process Note de `01_Brain/03_Process_Notes/`?
+- [ ] ¿He leído el último CTX de `04_Operations/01_Context_Memory/`?
+- [ ] ¿He leído la última Process Note de `04_Operations/03_Process_Notes/`?
 - [ ] ¿He ejecutado Morning Standup para el plan del día?
 - [ ] ¿He emitido el reporte de Handshake (Contexto + Plan)?
 - [ ] ¿He validado el impacto global de mis cambios de nombre antes de renombrar?

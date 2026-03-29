@@ -12,18 +12,18 @@ Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuper
 
 ### FASE 1: Inventario y Reglas
 
-1.  **Leer Inventario Total**: `01_Brain/02_Knowledge_Brain/01_Inventario_Total.md`
+1.  **Leer Inventario Total**: `04_Operations/02_Knowledge_Brain/01_Inventario_Total.md`
     - Carga TODO el sistema: estructura, agentes, scripts, MCPs, skills
-2.  **Leer Goals**: `00_Core/GOALS.md` → Norte estratégico
-3.  **Leer Backlog**: `00_Core/BACKLOG.md` → Pendientes sin estructurar
+2.  **Leer Goals**: `00_Winter_is_Coming/GOALS.md` → Norte estratégico
+3.  **Leer Backlog**: `00_Winter_is_Coming/BACKLOG.md` → Pendientes sin estructurar
 4.  **Leer Reglas**: `01_Core/01_Rules/*.mdc` (todas las reglas activas)
 5.  **Leer CLAUDE.md**: Confirmar alineación con instrucciones globales
 
 ### FASE 2: Memoria AI (Contexto Inter-sesiones)
 
-6.  **CTX más reciente**: `01_Brain/01_Context_Memory/CTX_*.md`
+6.  **CTX más reciente**: `04_Operations/01_Context_Memory/CTX_*.md`
     - Tu contexto personal para no perder memoria entre sesiones
-7.  **Process Notes más reciente**: `01_Brain/03_Process_Notes/*.md`
+7.  **Process Notes más reciente**: `04_Operations/03_Process_Notes/*.md`
     - Qué hizo el usuario en la última sesión
 8.  **Buscar en Engram** (opcional): `mem_search` si hay algo relevante
 

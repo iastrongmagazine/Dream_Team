@@ -1,6 +1,28 @@
-# 📋 Índice de Reglas — PersonalOS (00_Rules)
+# 📋 Índice de Reglas — PersonalOS
 
-Este archivo enumera y describe la función de cada regla activa en el sistema para facilitar la auditoría y el cumplimiento del protocolo.
+**Versión:** 6.1
+**Última actualización:** 2026-03-29
+**Ubicación:** `01_Core/01_Rules/`
+
+---
+
+## 📂 Estructura del Workspace
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/             # Tareas activas
+├── 04_Operations/        # Memoria y Procesos
+├── 05_Archive/           # Legacy
+├── 06_Playground/       
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 🔘 Pilares Fundamentales (The Core Triad)
 
@@ -38,15 +60,12 @@ Este archivo enumera y describe la función de cada regla activa en el sistema p
 | [20_Recap_Morning.mdc](./20_Recap_Morning.mdc) | Recap Morning | Resumen de lo planificado por la mañana. |
 | [21_Gentleman_Framework.mdc](./21_Gentleman_Framework.mdc) | Gentleman Framework | Marco de trabajo para desarrollo guiado por agentes. |
 
-## 🧬 Workflows Especializados
+## 🧬 Reglas Adicionales
 
-| Regla | Nombre | Descripción |
-| :--- | :--- | :--- |
-| [17_Genesis.mdc](./17_Genesis.mdc) | Workflow Génesis | Paso a paso del inicio de sesión (Aterrizaje). |
-| [18_Morning_Standup.mdc](./18_Morning_Standup.mdc) | Morning Standup | Ritual de sincronización matutina. |
-| [19_Planning.mdc](./19_Planning.mdc) | Planning | Fase de planificación detallada de tareas. |
-| [20_Recap_Morning.mdc](./20_Recap_Morning.mdc) | Recap Morning | Resumen de lo planificado por la mañana. |
-| [21_Gentleman_Framework.mdc](./21_Gentleman_Framework.mdc) | Gentleman Framework | Marco de trabajo para desarrollo guiado por agentes. |
+| Regla | Nombre | Descripción | Estado |
+| :--- | :--- | :--- | :--- |
+| [22_Pencil_Design_Studio.mdc](./22_Pencil_Design_Studio.mdc) | Pencil Design Studio | Estudio de diseño premium | ✅ |
 
 ---
-_Total Reglas: 21_
+
+_Total Reglas: 22_
