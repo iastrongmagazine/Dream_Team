@@ -1,9 +1,11 @@
 import sys
 from pathlib import Path
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 import sys
 from pathlib import Path
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 """
@@ -22,14 +24,12 @@ from colorama import Fore, Style, init
 init()
 
 sys.path.insert(0, str(Path(__file__).parent))
-from config_paths import (ROOT_DIR, BRAIN_DIR, BRAIN_RULES_DIR, COMPOUND_ENGINE_DIR, ENGINE_DIR)
-    PROJECT_ROOT,
-    BRAIN_DIR as BRAIN_DIR_IMPORTED,
-    CORE_DIR as CORE_DIR_IMPORTED,
-    OPERATIONS_DIR as OPERATIONS_DIR_IMPORTED,
-    BRAIN_MEMORY_DIR,
-    BRAIN_NOTES_DIR,
-    KNOWLEDGE_DIR,
+from config_paths import (
+    ROOT_DIR,
+    BRAIN_DIR,
+    BRAIN_RULES_DIR,
+    COMPOUND_ENGINE_DIR,
+    ENGINE_DIR,
 )
 
 REQUIRED_DIRS = [

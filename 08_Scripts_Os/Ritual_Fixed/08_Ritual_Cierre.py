@@ -1,9 +1,11 @@
 import sys
 from pathlib import Path
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 import sys
 from pathlib import Path
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 import sys
@@ -15,7 +17,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 # Ajuste de imports
 try:
-    from config_paths import (ROOT_DIR, BRAIN_DIR, BRAIN_RULES_DIR, COMPOUND_ENGINE_DIR, ENGINE_DIR)
+    from config_paths import (
         ROOT_DIR,
         BRAIN_DIR,
         BRAIN_RULES_DIR,

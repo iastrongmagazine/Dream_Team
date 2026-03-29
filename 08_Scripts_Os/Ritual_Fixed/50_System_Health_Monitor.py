@@ -1,9 +1,11 @@
 import sys
 from pathlib import Path
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 import sys
 from pathlib import Path
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 import os
@@ -25,14 +27,12 @@ except ImportError:
 
 # Add ROOT_DIR to path for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-from config_paths import (ROOT_DIR, BRAIN_DIR, BRAIN_RULES_DIR, COMPOUND_ENGINE_DIR, ENGINE_DIR)
-    CORE_DIR,
+from config_paths import (
+    ROOT_DIR,
     BRAIN_DIR,
-    OPERATIONS_DIR,
-    KNOWLEDGE_DIR,
+    BRAIN_RULES_DIR,
+    COMPOUND_ENGINE_DIR,
     ENGINE_DIR,
-    SYSTEM_DIR,
-    ARCHIVE_DIR,
 )
 
 init(autoreset=True)
