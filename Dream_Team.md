@@ -78,23 +78,23 @@ Orquestan las jugadas. Definen el flujo de trabajo completo.
 
 ### 🤖 Los Jugadores — Dream Team (Agents)
 
-| Jugador | Posición | Kit de Skills Principal | Ruta |
+| Jugador | Posicion | Kit de Skills Principal | Ruta |
 |---------|----------|------------------------|------|
-| **Product Builder** | Delantero | PRD, Planning, React, TypeScript | `01_Core/04_Agents/01_Dream_Team/01_Product_Builder.md` |
-| **Data_Engineer** | Centrocampista | Python, Supabase, CSV, Analytics | `01_Core/04_Agents/01_Dream_Team/02_Data_Engineer.md` |
-| **Marketing_Tech** | Extremo | Marketing, SEO, Firecrawl | `01_Core/04_Agents/01_Dream_Team/03_Marketing_Tech.md` |
-| **Design_Ops** | Lateral | Diseño, Vercel, Playwright | `01_Core/04_Agents/01_Dream_Team/04_Design_Ops.md` |
-| **Platform_Engineer** | Portero | DevOps, System Master, MCP Client | `01_Core/04_Agents/01_Dream_Team/05_Platform_Engineer.md` |
+| **Product Builder** | Delantero | PRD, Planning, React, TypeScript | `01_Core/03_Agents/01_Dream_Team/01_Product_Builder.md` |
+| **Data_Engineer** | Centrocampista | Python, Supabase, CSV, Analytics | `01_Core/03_Agents/01_Dream_Team/02_Data_Engineer.md` |
+| **Marketing_Tech** | Extremo | Marketing, SEO, Firecrawl | `01_Core/03_Agents/01_Dream_Team/03_Marketing_Tech.md` |
+| **Design_Ops** | Lateral | Diseno, Vercel, Playwright | `01_Core/03_Agents/01_Dream_Team/04_Design_Ops.md` |
+| **Platform_Engineer** | Portero | DevOps, System Master, MCP Client | `01_Core/03_Agents/01_Dream_Team/05_Platform_Engineer.md` |
 
 ### 🛠️ El Kit — Skills, MCPs, Commands, Hooks, Rules
 
-| Herramienta | Cantidad | Función | Ubicación |
+| Herramienta | Cantidad | Funcion | Ubicacion |
 |-------------|----------|---------|-----------|
-| **Skills** | 160+ | Patrones y workflows específicos | `01_Core/03_Skills/` |
-| **MCPs** | 27 | Herramientas externas | `01_Core/05_Mcp/opencode.json` |
-| **Commands** | - | Comandos slash (/sdd, /ce, etc.) | `01_Core/06_Integrations/` |
-| **Hooks** | 6 | Puntos de ejecución automática | `01_Core/07_Hooks/` |
-| **Rules** | 22 | Reglas del juego | `01_Core/01_Rules/` |
+| **Skills** | 19 categorias | Patrones y workflows especificos | `01_Core/03_Skills/` |
+| **MCPs** | 18+ | Herramientas externas | `01_Core/05_Mcp/opencode.json` |
+| **Commands** | - | Comandos slash (/sdd, /ce, /gr) | `01_Core/06_Commands/` |
+| **Hooks** | 7 | Puntos de ejecucion automatica | `.agent/04_Extensions/hooks/` |
+| **Rules** | 22+ | Reglas del juego | `01_Core/01_Rules/` |
 
 ### 📊 El Árbitro — Evals
 Evalúa el rendimiento del equipo. Mide calidad y eficiencia.

@@ -4,226 +4,254 @@ This file provides guidance to Claude Code (claude.ai/code) when working in this
 
 ---
 
-# 🌐 Constitución Think Different
+# Constitucion Think Different
 
-## 🔴 REGLA 00: Protocolo Génesis (OBLIGATORIO)
+## REGLA 00: Protocolo Genesis (OBLIGATORIO)
 
-**⚠️ REGLA ORO: SIN CONTEXTO NO HAY CHAT**
+**REGLA ORO: SIN CONTEXTO NO HAY CHAT**
 
-- ❌ **PROHIBIDO** chatear sin cargar contexto primero
-- ✅ Antes de responder: ejecutar `engram_mem_context(limit=10)`
-- ✅ Si hay session_summary previo, cargarlo
+- **PROHIBIDO** chatear sin cargar contexto primero
+- Antes de responder: ejecutar `engram_mem_context(limit=10)`
+- Si hay session_summary previo, cargarlo
 
 **IDIOMA:**
-- ✅ **SIEMPRE** Español en chat (es mi idioma natal)
-- ✅ Usar español rioplatense: laburo, ponete las piedras, boludo, quilombo, bancá, dale, etc.
+- **SIEMPRE** Espanol en chat (es mi idioma natal)
+- Usar espanol rioplatense: laburo, ponete las pilas, boludo, quilombo, banca, dale, etc.
 
-**SONIDO AL FINALIZAR TAREA:**
-- ✅ Ejecutar beep/sound al completar cualquier tarea importante
-- ✅ Usar: `powershell -ExecutionPolicy Bypass -File ".agent/04_Extensions/hooks/04_Sound/task-complete-sound.ps1"`
-- ✅ O usar función `speak()` para confirmación por voz
-
-**📋 REPORTE OBLIGATORIO (cada beep = reporte):**
-- ✅ Porcentaje de avance completado
-- ✅ Qué tarea terminé
-- ✅ En qué tarea estoy
-- ✅ Cuál es la próxima tarea
+**REPORTE OBLIGATORIO (cada tarea = reporte):**
+- Porcentaje de avance completado
+- Que tarea termine
+- En que tarea estoy
+- Cual es la proxima tarea
 
 ---
 
-Al iniciar una nueva sesión, ejecutar esta secuencia antes de responder:
+Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
 
-0. Leer `00_Winter_is_Coming/AGENTS.md` y SIEMPRE Comunicarte en Español en Chat — TU MATRIX, la fuente de verdad completa
-1. Leer `01_Core/01_Rules/01_Context_Protocol.mdc` — Reglas de sesión
-2. Leer `04_Operations/01_Context_Memory/` y `04_Operations/04_Memory_Brain/` — Último contexto guardado
-3. Ejecutar `mem_context(limit=10)` — Últimas 10 sesiones de Engram
-4. Ejecutar `mem_session_summary()` — Recuperar estado si hubo compaction
-5. Leer los recursos principales: `.agent/`, `01_Core/`, `02_Knowledge/`, `03_Tasks/`, `04_Operations/`
+0. Leer `00_Winter_is_Coming/AGENTS.md` y SIEMPRE Comunicarte en Espanol en Chat
+1. Leer `00_Winter_is_Coming/GOALS.md` — Metas y prioridades
+2. Leer `00_Winter_is_Coming/BACKLOG.md` — Bandeja de entrada
+3. Ejecutar `engram_mem_context(limit=10)` — Ultimas 10 sesiones de Engram
+4. Ejecutar `engram_mem_session_summary()` — Recuperar estado si hubo compaction
+5. Leer los recursos principales: `01_Core/`, `02_Knowledge/`, `04_Operations/`
 6. **Reportar en el chat** un resumen del contexto cargado antes de actuar
 
 ---
 
-## ⚖️ Las 12 Leyes Maestras (Legacy Core)
+## Las 12 Leyes Maestras
 
-1. **Piensa Primero, Investiga Después**: Lee el código base ANTES de actuar.
+1. **Piensa Primero, Investiga Despues**: Lee el codigo base ANTES de actuar.
 2. **Explica Cada Paso**: Transparencia total.
 3. **Simplicidad ante Todo**: Soluciones simples y legibles.
-4. **Mantén la Documentación al Día**: Cambios significativos = docs actualizadas.
-5. **Mantén Documentación Arquitectónica**: Arquitectura interna y externa al día.
-6. **Cero Alucinaciones, Solo Hechos**: Basado en investigación real.
-7. **Mantén el Inventario Actualizado**: Todo nuevo código/script/conocimiento al inventario.
-8. **No Borrar Información sin Permiso**: Preservar la integridad.
-9. **Respetar la Estructura Existente**: No modificar carpetas sin instrucción.
+4. **Mantén la Documentacion al Dia**: Cambios significativos = docs actualizadas.
+5. **Mantén Documentacion Arquitectonica**: Arquitectura interna y externa al dia.
+6. **Cero Alucinaciones, Solo Hechos**: Basado en investigacion real.
+7. **Mantén el Inventario Actualizado**: Todo nuevo codigo/script/conocimiento al inventario.
+8. **No Borrar Informacion sin Permiso**: Preservar la integridad.
+9. **Respetar la Estructura Existente**: No modificar carpetas sin instruccion.
 10. **Procesos en Formato Lista**: Presenta pasos como listas numeradas.
 11. **Estructura de Carpetas**: Solo crear si es estrictamente necesario.
-12. **Identificación de Repositorios**: Identificar el repo/directorio antes de operar.
+12. **Identificacion de Repositorios**: Identificar el repo/directorio antes de operar.
 
 ---
 
-## 🔴 REGLAS IMPERATIVAS (OBLIGATORIAS)
+## REGLAS IMPERATIVAS (OBLIGATORIAS)
 
 ### REGLA 1: NO ACTUAR SIN PLAN APROBADO
 
-- **PROHIBIDO** ejecutar cualquier acción sin un plan aprobado por el usuario
+- **PROHIBIDO** ejecutar cualquier accion sin un plan aprobado por el usuario
 - **Siempre** presentar el plan en formato checklist antes de actuar
-- **Siempre** esperar confirmación antes de proceder
-- **Nunca** actuar por iniciativa propia - Esperar Aprobación
+- **Siempre** esperar confirmacion antes de proceder
+- **Nunca** actuar por iniciativa propia - Esperar Aprobacion
 
-### REGLA 2: ENUMERACIÓN CORRECTA (SIEMPRE)
+### REGLA 2: ENUMERACION CORRECTA (SIEMPRE)
 
-- **Carpetas:** `XX_Nombre_Carpeta/` (número 2 dígitos, Mayúscula Inicial, Guiones Bajos)
+- **Carpetas:** `XX_Nombre_Carpeta/` (numero 2 digitos, Mayuscula Inicial, Guiones Bajos)
 - **Archivos:** `XX_Nombre_Archivo.ext`
 - **ANTES** de crear/mover: Verificar secuencia Existente
 - **NUNCA** dejar archivos sueltos sin numerar
-- **NUNCA** crear duplicados de numeración
+- **NUNCA** crear duplicados de numeracion
 
-### REGLA 3: CORRECCIÓN DE ERRORES
+### REGLA 3: CORRECCION DE ERRORES
 
-- Si se detecta numeración incorrecta: DETENERSE
-- Documentar qué está mal
-- Presentar plan de corrección
-- Esperar aprobación antes de ejecutar
+- Si se detecta numeracion incorrecta: DETENERSE
+- Documentar que esta mal
+- Presentar plan de correccion
+- Esperar aprobacion antes de ejecutar
 
 ---
 
-## 🏗️ Arquitectura del Sistema (Estructura Real)
+# Arquitectura del Sistema (Estructura Real v6.1)
 
 ```
 Think_Different/
-│
-├── 📁 00_Winter_is_Coming/    # 🟣 TU MATRIX - Fuente de verdad completa
-│   ├── AGENTS.md              # Instrucciones del agente (TU POWER)
-│   ├── GOALS.md               # Metas, prioridades, estrategia
-│   └── BACKLOG.md             # Bandeja de entrada de tareas
-│
-├── 📁 01_Core/                # Motor: Workflows, Rules, Agents, Skills
-│   ├── 00_Workflows/         # 26 workflows tipo Marvel
-│   ├── 01_Rules/             # 25 reglas activas
-│   ├── 02_Agents/            # 12+ agentes especializados
-│   ├── 03_Skills/            # Skills del sistema
-│   └── templates/             # Templates
-│
-├── 📁 02_Knowledge/           # Base de conocimiento
-│   └── ...                    # Research, notas, recursos
-│
-├── 📁 03_Tasks/               # Tareas con YAML frontmatter
-│
-├── 📁 04_Operations/          # 🧠 Memoria y contexto
-│   ├── 01_Context_Memory/    # CTX files (sesiones)
-│   ├── 02_Knowledge_Brain/   # Inventario del sistema
-│   ├── 03_Process_Notes/     # Notas de sesiones
-│   └── 04_Memory_Brain/      # Mapeos y análisis
-│
-├── 📁 .agent/                # 🔌 Centro de Poder AI
-│   ├── 01_Agents/            # Agentes especializados
-│   ├── 02_Skills/            # 160+ skills
-│   ├── 03_Workflows/         # Workflows avanzados
-│   ├── 04_Extensions/        # Hooks (7 activos)
-│   └── 05_GGA/               # Guardian Angel Code Review
-│
-├── 📁 05_System/              # Chasis: Config, Env, MCP
-│
-├── 📁 06_Archive/             # Baúl: Backups, Legacy
-│
-├── 📁 07_Projects/            # Labs: Projects, Focus_Now_Lab
-│
-├── 📄 AGENTS.md               # Referencia simple (apunta a 00_Winter_is_Coming/)
-├── 📄 CLAUDE.md                # Config para Claude Code
-└── 📄 README.md               # Original PersonalOS
+|
+|--- 00_Winter_is_Coming/     # MATRIX: Goals, Backlog, AGENTS.md
+|--- 01_Core/                 # CORE: Skills, Agents, MCP, Server
+|    |--- 03_Skills/          # Skills numeradas (00-17)
+|    |--- 03_Agents/          # Agent definitions
+|    |--- 02_Evals/           # Evaluations
+|    |--- 05_Mcp/             # MCP servers config
+|    |--- 09_Server/          # Python MCP server
+|    |--- 10_Templates/       # Templates
+|    +--- 01_Rules/           # Rules del sistema
+|
+|--- 02_Knowledge/            # Base de conocimiento
+|--- 03_Tasks/               # Tareas con YAML frontmatter
+|--- 04_Operations/           # Memoria y contexto
+|    |--- 01_Auto_Improvement/ # Motor de automejora
+|    |--- 04_Memory_Brain/    # Mapeos y analisis
+|    |--- 05_Plans/           # Planes
+|    |--- 06_Solutions/        # Soluciones
+|    |--- 07_Installer/       # Instalador
+|    |--- 08_Auditorias/      # Auditorias
+|
+|--- 05_Archive/             # Archivo: Repos, legacy
+|    |--- 10_Repos_Gentleman/ # Repos Gentleman
+|
+|--- 06_Playground/          # Area de pruebas
+|--- 07_Projects/            # Proyectos activos
+|--- 08_Scripts_Os/          # HUBs: Auditor, Git, AIPM, Ritual, etc.
+|    |--- Auditor_Fixed/      # Scripts de auditoria
+|    |--- Ritual_Fixed/       # Scripts de rituales
+|    |--- Legacy_Backup/      # Scripts legacy
+|
+|--- Maerks/                  # Maerks workspace
+|--- Otros/                   # Otros recursos
+|
+|--- AGENTS.md                # Root entry (apunta a 00_Winter_is_Coming/)
+|--- CLAUDE.md                # Config para Claude Code
+|--- README.md                # Documentacion principal
+|--- Dream_Team.md           # Equipo de agentes
 ```
 
 ---
 
-## 📁 Estructura .agent/ (Configuración AI)
+# Estructura .agent/ (Configuracion AI)
 
 ```
 .agent/
-├── 00_Rules/                # Reglas del agente
-├── 01_Agents/               # Agentes externos configurados
-├── 02_Skills/               # Skills organizadas (305 total)
-│   ├── 01_Agent_Teams_Lite/ # SDD Workflows (9 skills)
-│   ├── 02_Project_Manager/  # Project management (9 skills)
-│   ├── 03_Product_Manager/  # Product management (7 skills)
-│   ├── 04_Product_Design/   # Design skills (11 skills)
-│   ├── 05_Gentleman/        # Gentleman Programming (1 skill)
-│   ├── 05_Vibe_Coding/      # Framework skills (21 skills)
-│   ├── 06_Testing/          # Testing skills (13 skills)
-│   ├── 07_DevOps/           # DevOps skills (12 skills)
-│   ├── 08_Personal_Os/      # Personal OS skills (10 skills)
-│   ├── 09_Marketing/        # Marketing skills (32 skills)
-│   │   ├── 01_Marketing_Strategy/  # (15 sub-skills)
-│   │   └── 02_Marketing_Tech/      # (10 sub-skills)
-│   ├── 10_Backup/           # Backup/Legacy (177 skills)
-│   └── 11_Doc_Processing/   # Document processing (3 skills)
-├── 03_Workflows/            # Flujos de trabajo predefinidos
-├── 04_Extensions/           # Hooks del sistema
-│   └── hooks/               # Hooks activos (7 hooks)
-│       ├── 01_Pre_Tool/     # PreToolUse: battery, security
-│       ├── 02_Post_Tool/    # PostToolUse: backup, voice
-│       ├── 03_Lifecycle/    # Stop, SubagentStop
-│       └── 04_Sound/        # Notifications, sounds
-├── 05_GGA/                  # Gentleman Guardian Angel (Code Review)
-└── README.md
+|--- 00_Rules/                # Reglas del agente
+|--- 01_Agents/               # Agentes externos configurados
+|--- 02_Skills/               # Skills organizadas (legacy backup)
+|--- 03_Skills/               # Skills PRINCIPALES (01_Core/03_Skills/)
+|--- 04_Extensions/          # Hooks del sistema
+|    +--- hooks/              # Hooks activos
+|        |--- 01_Pre_Tool/    # PreToolUse: battery, security
+|        |--- 02_Post_Tool/  # PostToolUse: backup, voice
+|        |--- 03_Lifecycle/   # Stop, SubagentStop
+|        +--- 04_Sound/      # Notifications, sounds
+|--- 05_GGA/                 # Gentleman Guardian Angel (Code Review)
 ```
 
 ---
 
-## 📁 Estructura .cursor/ (Configuración Cursor)
+# HUB Scripts
+
+Centralized HUBs in `08_Scripts_Os/`:
+
+| Hub | Script | Proposito |
+|-----|--------|-----------|
+| **Auditor** | `01_Auditor_Hub.py` | System validation: structure, links, skills, health |
+| **Git** | `02_Git_Hub.py` | Git operations + structure audits |
+| **AIPM** | `03_AIPM_Hub.py` | AI Performance Monitoring |
+| **Ritual** | `04_Ritual_Hub.py` | Session rituals: open, close, recovery |
+| **Validator** | `05_Validator_Hub.py` | Code validation: rules, stack, patterns |
+| **Tool** | `06_Tool_Hub.py` | Tool integration and management |
+| **Integration** | `07_Integration_Hub.py` | MCP and external integrations |
+| **Workflow** | `08_Workflow_Hub.py` | Workflow automation |
+| **Data** | `09_Data_Hub.py` | Data processing and analytics |
+| **General** | `10_General_Hub.py` | General utilities |
+
+---
+
+# Skills Disponibles
+
+## Skills por Categoria (`01_Core/03_Skills/`)
+
+| Categoria | Skills | Ubicacion |
+|-----------|--------|-----------|
+| **00_Compound_Engineering** | 8 | `00_Compound_Engineering/` |
+| **00_Personal_Os_Stack** | Core OS | `00_Personal_Os_Stack/` |
+| **00_Skill_Auditor** | Auditor | `00_Skill_Auditor/` |
+| **01_Agent_Teams_Lite** | SDD Workflows | `01_Agent_Teams_Lite/` |
+| **02_Project_Manager** | Project management | `02_Project_Manager/` |
+| **03_Product_Manager** | Product management | `03_Product_Manager/` |
+| **04_Product_Design** | Design skills | `04_Product_Design/` |
+| **05_Vibe_Coding** | Framework skills | `05_Vibe_Coding/` |
+| **06_Testing** | Testing skills | `06_Testing/` |
+| **07_DevOps** | DevOps skills | `07_DevOps/` |
+| **08_Personal_Os** | Personal OS skills | `08_Personal_Os/` |
+| **09_Marketing** | Marketing skills | `09_Marketing/` |
+| **10_Backup** | Backup/Legacy | `10_Backup/` |
+| **11_Doc_Processing** | Document processing | `11_Doc_Processing/` |
+| **12_N8N** | N8N workflows | `12_N8N/` |
+| **13_System_Master** | Master skill | `13_System_Master/` |
+| **14_Anthropic_Harness** | Evaluators | `14_Anthropic_Harness/` |
+| **15_Skill_Creator_Oficial** | Skill Creator v2.0 | `15_Skill_Creator_Oficial/` |
+| **16_Silicon_Valley_Data_Analyst** | Data Analyst | `16_Silicon_Valley_Data_Analyst/` |
+| **17_SEO_SOTA_Master** | SEO Master | `17_SEO_SOTA_Master/` |
+
+**Total: 19 categorias de skills**
+
+---
+
+# Sistema de Auto-Mejora Recursiva
+
+Ubicacion: `04_Operations/01_Auto_Improvement/`
 
 ```
-.cursor/
-├── 00_Rules/            # Reglas de sesión
-├── 01_Agents/
-├── 02_Skills/           # Skills sincronizadas (mismo contenido que .agent/02_Skills/)
-├── 03_Workflows/
-├── 04_Extensions/       # Hooks sincronizados
-├── 05_GGA/              # GGA sincronizado
-├── 06_History/          # Historial de sesiones
-│   ├── README.md
-│   └── sessions/
-│       └── voice_state.json
-└── README.md
+01_Auto_Improvement/
+|--- 01_Engine/
+|    |--- detector.py         # Detecta issues criticos
+|    |--- analyzer.py        # Analiza y clasifica
+|    |--- executor.py        # Aplica fixes
+|    |--- learner.py         # Aprende de fixes
+|    +--- recursive_improvement_engine.py
+|
+|--- 02_Rules/
+|    +--- rules_engine.py    # Motor de reglas
+|
+|--- 04_Triggers/
+|    +--- manual_trigger.py  # Disparador manual
 ```
 
 ---
 
-## 🔌 Extensiones y Hooks Activos
+# Comandos Rapidos (Aliases en .bashrc)
 
-### 04_Extensions — Sistema de Hooks
+```bash
+# Hubs principales
+gr              # System Auditor (Auditor Hub)
+audit           # System Auditor (mismo que gr)
+git-hub         # Git operations
+aipm            # AI Performance Monitoring
+ritual          # Session rituals
+validate        # Code validation
 
-**7 Hooks Activos:**
-
-| Hook                         | Trigger                                   | Script                                | Función                                                     |
-|------------------------------|-------------------------------------------|---------------------------------------|-------------------------------------------------------------|
-| PreToolUse                   | Antes de cada tool                        | `pre_tool_use.py`                     | Batería < 15%, bloquea `rm -rf`, protege `.env`             |
-| PreToolUse                   | Antes de cada tool                        | `csv-single-validator.py`             | Valida estructura CSV                                       |
-| PostToolUse                  | Después de modificar archivos             | `post_tool_use.py`                    | Backup, voz cada 2 archivos                                 |
-| Stop                         | Al cerrar sesión                          | `stop.py`                             | "Sesión finalizada"                                         |
-| SubagentStop                 | Al terminar sub-agente                    | `subagent_stop.py`                    | "Subagente completado"                                      |
-| UserPromptSubmit             | Usuario envía mensaje                     | `notification.py`                     | Alerta + voz                                                |
-| TodoWrite                    | Al usar TodoWrite                         | `task-complete-sound.ps1`             | 🔊 Sonido de completado                                      |
-
-### Configuración
-
-```json
-// .claude/settings.local.json
-{
-  "hooks": {
-    "PreToolUse": [...],
-    "PostToolUse": [...],
-    "Stop": [...],
-    "SubagentStop": [...],
-    "UserPromptSubmit": [...],
-    "TodoWrite": [...]
-  }
-}
+# System Guardian
+gr-dry          # Dry run validation
+gr-apply        # Apply fixes
+gr-agents       # Run agent review
 ```
 
 ---
 
-## 🛡️ GGA (Gentleman Guardian Angel)
+# SDD Workflow
 
-Code Review con IA integrado.
+Usa los comandos SDD: `/sdd:init`, `/sdd:explore`, `/sdd:new`, `/sdd:spec`, `/sdd:design`, `/sdd:tasks`, `/sdd:apply`, `/sdd:verify`, `/sdd:archive`.
+
+---
+
+# Compound Engineering
+
+Usa los comandos CE: `/ce:ideate`, `/ce:brainstorm`, `/ce:plan`, `/ce:work`, `/ce:review`, `/ce:compound`.
+
+---
+
+# GGA — Guardian Angel (Code Review)
+
+Code review con IA integrado.
 
 ```bash
 .agent/05_GGA/bin/gga run      # Revisar archivos staged
@@ -232,138 +260,24 @@ Code Review con IA integrado.
 
 ---
 
-## 📚 Directrices del Sistema (Rules Registry)
+# Reglas Fundamentales
 
-Las reglas están en `01_Core/01_Rules/`:
-- [Context Protocol](01_Core/01_Rules/01_Context_Protocol.mdc)
-- [Pilar Base](01_Core/01_Rules/02_Pilar_Base.mdc)
-- [Pilar Motor](01_Core/01_Rules/03_Pilar_Motor.mdc)
-- [Y más reglas en](01_Core/01_Rules/)
+## Regla Fundamental: Modificacion del OS
+
+**Solo el IA** tiene la autoridad y la capacidad para modificar el nucleo del sistema PersonalOS (codigo, scripts, configuracion). El usuario es el estratega y dueño de la vision; el IA es el ejecutor responsable de mantener la pureza tecnica y la integridad del sistema (Pure Green).
 
 ---
 
-## 📚 Skills Disponibles
+# Estado Actual del Sistema (2026-03-29)
 
-### Skills por Categoría (`.agent/02_Skills/`)
-
-| Categoría                    | Skills               | Ubicación                          |
-|------------------------------|----------------------|------------------------------------|
-| Agent_Teams_Lite             | 9                    | `01_Agent_Teams_Lite/`             |
-| Project_Manager              | 9                    | `02_Project_Manager/`              |
-| Product_Manager              | 7                    | `03_Product_Manager/`              |
-| Product_Design               | 11                   | `04_Product_Design/`               |
-| Gentleman                    | 1                    | `05_Gentleman/`                    |
-| Vibe_Coding                  | 21                   | `05_Vibe_Coding/`                  |
-| Testing                      | 13                   | `06_Testing/`                      |
-| DevOps                       | 12                   | `07_DevOps/`                       |
-| Personal_Os                  | 10                   | `08_Personal_Os/`                  |
-| Marketing                    | 32                   | `09_Marketing/`                    |
-| Backup                       | 177                  | `10_Backup/`                       |
-| Doc_Processing               | 3                    | `11_Doc_Processing/`               |
-| **TOTAL**                    | **305**              |                                    |
-
-### Gentleman Skills (`.agent/02_Skills/05_Gentleman/`)
-
-| Categoría               | Count               | Ubicación                   |
-|-------------------------|---------------------|-----------------------------|
-| Plan                    | 8                   | `01_Plan/`                  | ← +1 (07_Double_Code_Review) |
-| Work                    | 6                   | `02_Work/`                  |
-| Review                  | 6                   | `03_Review/`                |
-| Compound                | 15                  | `04_Compound/`              |
-| Utilities               | 4                   | `05_Utilities/`             |
-
-### 🔄 REGLA: Double Code Review (OBLIGATORIO)
-
-**Después de TODO plan o sesión significativa, ejecutar Double Code Review:**
-
-```bash
-# Al terminar sesión o plan
-"Hacé el double code review"
-```
-
-**Fases:**
-1. **FASE 1**: Planning Status — checklist de planificación
-2. **FASE 2**: 6 Sombreros — Information🔵, Emotions🔴, Benefits🟡, Risks🟢, Meta🟣, Process⚪
-3. **FASE 3**: Verification — Execution, Completeness, Quality, Lessons Learned
-
-Reports se guardan en: `04_Operations/04_Memory_Brain/`
-
-### TASTE-SKILLS (PRIORIDAD ALTA PARA FRONTEND)
-
-**Ubicación:** `.agent/02_Skills/04_Product_Design/`
-
-| Skill                            | Uso                                         |
-|----------------------------------|---------------------------------------------|
-| **taste-skill**                  | Diseño desde cero - premium                 |
-| **soft-skill**                   | Proyectos premium, invitaciones             |
-| **minimalist-skill**             | Estilo Notion/Linear                        |
-| **redesign-skill**               | Mejorar proyectos existentes                |
-| **output-skill**                 | Evita código incompleto                     |
+| Categoria | Estado |
+|-----------|--------|
+| Estructura (00-08) | ✅ PASS |
+| HUBs (01-10) | ✅ ACTIVE |
+| Skills (19 categorias) | ✅ OPERATIONAL |
+| Auto-Improvement Engine | ✅ OPERATIONAL |
+| Git Estado | ✅ CLEAN |
 
 ---
 
-## ⚙️ Setup
-
-```bash
-# Instalar dependencias
-pip install -r 01_Core/Requirements.txt
-
-# Verificar estructura
-ls -la
-```
-
----
-
-## 🔧 Scripts del Motor
-
-Scripts principales en `08_Scripts_Os/` y `01_Core/`:
-
-```bash
-# Scripts principales
-python 08_Scripts_Os/01_Auditor_Hub.py
-python 08_Scripts_Os/03_AIPM_Hub.py
-python 08_Scripts_Os/04_Ritual_Hub.py
-
-# En 01_Core/
-python 01_Core/04_Tools/...
-
-# Validadores
-python 08_Scripts_Os/01_Auditor_Hub.py validate
-```
-
----
-
-## ⚖️ Leyes Operativas (HULK AUDIT)
-1. **Pensar 3 veces**: Antes de ejecutar, validar el efecto colateral.
-2. **Validación Triple**: Todo script y skill debe pasar 3 pruebas (lógica, datos, output).
-3. **Esencia**: Nunca romper la esencia del OS original.
-4. **Cero alucinaciones**: Toda afirmación basada en lectura directa.
-
----
-
-## 🎯 Spec-Driven Development (SDD)
-
-Usa los comandos SDD: `/sdd:init`, `/sdd:explore`, `/sdd:new`, `/sdd:spec`, `/sdd:design`, `/sdd:tasks`, `/sdd:apply`, `/sdd:verify`, `/sdd:archive`.
-
----
-
-## 📋 Estado Actual del Sistema (2026-03-25)
-
-| Categoría                    | Skills               | Esencias               | Estado                                  |
-|------------------------------|----------------------|------------------------|-----------------------------------------|
-| Agent_Teams_Lite             | 9                    | ✅                      | No tocado (por instrucción)             |
-| Project_Manager              | 9                    | ✅ Reales               | 100%                                    |
-| Product_Manager              | 7                    | ✅ Reales               | 100%                                    |
-| Product_Design               | 11                   | ✅ Reales               | 100%                                    |
-| Vibe_Coding                  | 21                   | ✅ Reales               | 100%                                    |
-| Testing                      | 13                   | ✅ Reales               | 100%                                    |
-| DevOps                       | 12                   | ✅ Reales               | 100%                                    |
-| Personal_Os                  | 10                   | ✅ Reales               | 100%                                    |
-| Marketing                    | 32                   | ✅ Reales               | 100%                                    |
-| Backup                       | 177                  | —                      | SKIPPED                                 |
-| Doc_Processing               | 3                    | ✅ Reales               | 100%                                    |
-| **TOTAL**                    | **128+**             | **99%**                | **Auditado**                            |
-
----
-
-© 2026 PersonalOS
+© 2026 PersonalOS v6.1

@@ -1,7 +1,7 @@
 {
   "name": "think-different",
-  "version": "1.0.0",
-  "description": "Think Different PersonalOS - Sistema de productividad personal con SDD, Compound Engineering, y Agent Teams",
+  "version": "6.1.0",
+  "description": "Think Different PersonalOS v6.1 - Sistema de productividad personal con SDD, Compound Engineering, Agent Teams, Auto-Improvement Engine y System Guardian",
   "author": {
     "name": "Jesus Obando",
     "email": "ia.strongmagazine@gmail.com",
@@ -17,17 +17,140 @@
     "agent-teams",
     "compound-engineering",
     "workflow",
-    "system-guardian"
+    "system-guardian",
+    "auto-improvement",
+    "recursive-engine"
   ],
+  "structure": {
+    "dimensions": [
+      "00_Winter_is_Coming",
+      "01_Core",
+      "02_Knowledge",
+      "03_Tasks",
+      "04_Operations",
+      "05_Archive",
+      "06_Playground",
+      "07_Projects",
+      "08_Scripts_Os"
+    ],
+    "core_folders": [
+      "01_Core/03_Agents",
+      "01_Core/03_Skills",
+      "01_Core/02_Evals",
+      "01_Core/05_Mcp"
+    ]
+  },
+  "hubs": [
+    {
+      "name": "01_Auditor_Hub",
+      "path": "08_Scripts_Os/01_Auditor_Hub.py",
+      "scripts": "08_Scripts_Os/Auditor_Fixed/",
+      "function": "Auditorías del sistema"
+    },
+    {
+      "name": "02_Git_Hub",
+      "path": "08_Scripts_Os/02_Git_Hub.py",
+      "function": "Git operations (safe-commit, guard-commit)"
+    },
+    {
+      "name": "03_AIPM_Hub",
+      "path": "08_Scripts_Os/03_AIPM_Hub.py",
+      "scripts": "08_Scripts_Os/AIPM_Fixed/",
+      "function": "AI Project Management"
+    },
+    {
+      "name": "04_Ritual_Hub",
+      "path": "08_Scripts_Os/04_Ritual_Hub.py",
+      "scripts": "08_Scripts_Os/Ritual_Fixed/",
+      "function": "Rituales y standups"
+    },
+    {
+      "name": "05_Validator_Hub",
+      "path": "08_Scripts_Os/05_Validator_Hub.py",
+      "scripts": "08_Scripts_Os/Validator_Fixed/",
+      "function": "Validaciones del sistema"
+    },
+    {
+      "name": "06_Tool_Hub",
+      "path": "08_Scripts_Os/06_Tool_Hub.py",
+      "scripts": "08_Scripts_Os/Tool_Fixed/",
+      "function": "Herramientas utilities"
+    },
+    {
+      "name": "07_Integration_Hub",
+      "path": "08_Scripts_Os/07_Integration_Hub.py",
+      "scripts": "08_Scripts_Os/Integration_Fixed/",
+      "function": "Integraciones externas"
+    },
+    {
+      "name": "08_Workflow_Hub",
+      "path": "08_Scripts_Os/08_Workflow_Hub.py",
+      "scripts": "08_Scripts_Os/Workflow_Fixed/",
+      "function": "Workflows y procesos"
+    },
+    {
+      "name": "09_Data_Hub",
+      "path": "08_Scripts_Os/09_Data_Hub.py",
+      "scripts": "08_Scripts_Os/Data_Fixed/",
+      "function": "Datos y reportes"
+    },
+    {
+      "name": "10_General_Hub",
+      "path": "08_Scripts_Os/10_General_Hub.py",
+      "scripts": "08_Scripts_Os/General_Fixed/",
+      "function": "Utilidades generales"
+    },
+    {
+      "name": "11_Auto_Learn_Hub",
+      "path": "08_Scripts_Os/11_Auto_Learn_Hub.py",
+      "function": "Motor de automejora"
+    }
+  ],
+  "auto_improvement_engine": {
+    "path": "04_Operations/01_Auto_Improvement/",
+    "modules": [
+      "01_Engine/detector.py",
+      "01_Engine/analyzer.py",
+      "01_Engine/executor.py",
+      "01_Engine/learner.py",
+      "01_Engine/recursive_improvement_engine.py"
+    ],
+    "components": [
+      "02_Rules/rules_engine.py",
+      "02_Rules/auto_fix_rules.json",
+      "03_Metrics/improvement_log.json",
+      "04_Triggers/manual_trigger.py",
+      "05_Knowledge/knowledge_base.json"
+    ]
+  },
   "skills": [
-    "skills/personal-os.md",
-    "skills/sdd-workflow.md",
-    "skills/system-guardian.md",
-    "skills/backlog-processing.md",
-    "01_Core/03_Skills/01_Agent_Teams_Lite/*/SKILL.md",
     "01_Core/03_Skills/00_Compound_Engineering/*/SKILL.md",
-    "01_Core/03_Skills/16_Silicon_Valley_Data_Analyst/SKILL.md",
-    "01_Core/03_Skills/17_SEO_SOTA_Master/SKILL.md",
-    "01_Core/03_Skills/13_System_Master/SKILL.md"
-  ]
+    "01_Core/03_Skills/01_Agent_Teams_Lite/*/SKILL.md",
+    "01_Core/03_Skills/02_Project_Manager/*/SKILL.md",
+    "01_Core/03_Skills/03_Product_Manager/*/SKILL.md",
+    "01_Core/03_Skills/04_Product_Design/*/SKILL.md",
+    "01_Core/03_Skills/05_Vibe_Coding/*/SKILL.md",
+    "01_Core/03_Skills/06_Testing/*/SKILL.md",
+    "01_Core/03_Skills/07_DevOps/*/SKILL.md",
+    "01_Core/03_Skills/08_Personal_Os/*/SKILL.md",
+    "01_Core/03_Skills/09_Marketing/*/SKILL.md"
+  ],
+  "tests": {
+    "path": "Maerks/05_Tests/",
+    "main": "Maerks/05_Tests/Test_Engine.py",
+    "config": "Maerks/05_Tests/conftest.py"
+  },
+  "docs": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    "README.md",
+    "Dream_Team.md",
+    "00_Plan_Automejora_Recursiva_v6.1.md",
+    "01_Report_Status.md",
+    "CHANGELOG.md"
+  ],
+  "legacy": {
+    "path": "08_Scripts_Os/Legacy_Backup/",
+    "description": "Scripts legacy (no usar para nuevos desarrollos)"
+  }
 }
