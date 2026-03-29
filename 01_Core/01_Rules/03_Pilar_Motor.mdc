@@ -6,6 +6,26 @@ alwaysApply: true
 
 # 🛠️ Regla 03: El Motor (Engineering & System Standards)
 
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
+
 ## Overview
 
 Este pilar define la excelencia técnica y arquitectónica de PersonalOS. Asegura que el sistema sea robusto (Armor Layer), estéticamente superior (Premium UI) y esté perfectamente validado (Pure Green).
@@ -24,13 +44,13 @@ Implementa la visibilidad de progreso técnica y garantiza el uso de tecnología
     - Seguir el formato `NN_Nombre_Skill`.
     - Si un flujo se repite 3 veces, crear una nueva Skill.
     - **Skill Fusion**: Usar siempre el conocimiento oficial de skills instaladas (Vercel, Docker, etc.) antes de intentar implementaciones manuales.
-4.  **Vitaminización de Scripts**: Los scripts de `04_ENGINE` deben incluir Branding de PersonalOS y notificaciones de voz (TTS).
+4.  **Vitaminización de Scripts**: Los scripts de `08_Scripts_Os` deben incluir Branding de PersonalOS y notificaciones de voz (TTS).
 5.  **Validación de Salud (Pure Green)**: El sistema debe mantenerse con métricas del 100% en rutas, dependencias y hooks.
 6.  **Visibilidad de Progreso en Scripts Multi-Paso**:
-    - **Descripción**: Todo script en `04_ENGINE` que ejecute múltiples pasos (≥3) DEBE mostrar porcentaje de avance acumulado.
+    - **Descripción**: Todo script en `08_Scripts_Os` que ejecute múltiples pasos (≥3) DEBE mostrar porcentaje de avance acumulado.
     - **Formato**: `[XX.X%] Paso N/Total: Descripción`
     - **Notificaciones de Voz**: Opcional en hitos clave (25%, 50%, 75%) para evitar saturación.
-    - **Template Disponible**: `04_ENGINE/templates/multi_step_script_template.py`
+    - **Template Disponible**: `08_Scripts_Os/templates/multi_step_script_template.py`
 7.  **Integridad Matemática (Domain Logic)**:
     - **Centralización**: Todas las constantes físicas y fórmulas de dominio (ej. API RP 13B-1) DEBEN residir únicamente en el Engine.
     - **Validación de Curvas**: Toda visualización técnica DEBE ser validada contra los puntos de datos reales. Si la curva teórica no pasa por los puntos experimentales, el sistema NO está en PURE GREEN.

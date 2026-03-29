@@ -2,7 +2,7 @@
 description: PILAR 02: Ejecución de Redundancia Élite (Metodología The Octopus) y Audición Robusta
 globs: **/*
 alwaysApply: true
---- 
+---
 
 # 🔘 Pilar 02: Protocolo "The Octopus" (Blindaje y Redundancia Élite)
 
@@ -11,6 +11,30 @@ alwaysApply: true
     Este pilar define el estándar de máxima seguridad (Armor Layer) para la ejecución y corrección de Tareas Críticas dentro de PersonalOS v6.1. Su objetivo es anular regresiones, bugs silenciosos o pérdida de estado a través de redundancia masiva paralela.
   </fundamental_rule>
 </system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
+
+## 🎯 Propósito
+
+El **Motor de Automatización** del PersonalOS - scripts Python para operaciones, auditorías, workflows y rituales diarios.
 
 ## 🐙 LA METODOLOGÍA OCTOPUS
 <octopus_framework>
