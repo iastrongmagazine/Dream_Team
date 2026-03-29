@@ -15,16 +15,17 @@ from pathlib import Path
 # ============================================================
 # ARMOR LAYER — Ruta centralizada a los scripts del sistema
 # ============================================================
-LEGACY_SCRIPTS_DIR = Path(__file__).parent.parent / "08_Scripts_Os" / "Legacy_Backup"
+# CORREGIDO: ruta correcta desde raíz del proyecto
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+LEGACY_SCRIPTS_DIR = PROJECT_ROOT / "08_Scripts_Os" / "Legacy_Backup"
 sys.path.insert(0, str(LEGACY_SCRIPTS_DIR))
-sys.path.insert(0, str(Path(__file__).parent.parent / "08_Scripts_Os"))
+sys.path.insert(0, str(PROJECT_ROOT / "08_Scripts_Os"))
 
 
 @pytest.fixture
 def script_dir():
     """Fixture que expone la ruta a Legacy_Backup para los tests."""
     return LEGACY_SCRIPTS_DIR
-
 
 
 @pytest.fixture
