@@ -6,40 +6,77 @@
 
 ---
 
-## 📂 Estructura v6.1
+## 📂 Workspace Structure (00-08 + Maerks)
 
 ```
-01_Core/
-├── README.md                    # Este archivo
-├── 00_Comandos_Workflows.md    # Comandos y workflows disponibles
-├── 01_Inventario_Total.md      # Inventario completo del OS
-├── 02_Dream_Team.md           # Equipo de agentes
-├── Requirements.txt             # Dependencias Python
-├── 00_Workflows/              # 26+ workflows
-├── 01_Rules/                    # 22+ reglas del sistema
-├── 02_Evals/                    # Métricas y evaluaciones
-├── 03_Skills/                   # 18 carpetas de skills (FUENTE DE VERDAD)
-├── 04_Agents/                   # Agentes configurados
-├── 05_Mcp/                     # 20+ MCPs configurados
-├── 06_Integrations/            # Integraciones externas
-├── 07_Hooks/                   # Hooks del sistema
-├── 08_Plugins/                # Plugins
-├── 09_Server/                  # Servidor backend
-└── 10_Templates/               # Plantillas
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria (ESTRATÉGICO)
+├── 01_Core/               # Motor: Skills, Agents, MCPs, Workflows 💾
+├── 02_Evals/              # Métricas y evaluaciones
+├── 03_Knowledge/          # Documentación, Research, Notas
+├── 04_Docs/               # Planes estratégicos
+├── 05_Archive/            # Legacy archivado
+├── 06_Archive/            # Backups centrales
+├── 07_Projects/           # Proyectos
+├── 08_Scripts_Os/         # Scripts operativos
+│   ├── Ritual_Fixed/      # 12 scripts funcionando
+│   └── Tool_Fixed/        # Herramientas
+└── Maerks/               # Tests, planes legacy
 ```
 
 ---
 
-## 🛠️ Herramientas Creadas (2026-03-29)
+## 📂 Estructura 01_Core (15 Elementos)
 
-| Herramienta | Ubicación | Función |
-|-------------|-----------|---------|
-| **Tool Shed** | `08_Scripts_Os/Tool_Fixed/62_Tool_Shed.py` | Auto-detecta contexto y sugiere MCPs |
-| **Skill Harmonizer** | `08_Scripts_Os/Tool_Fixed/63_Skill_Harmonizer.py` | Valida paridad de skills (20/20) |
-| **Notifier** | `08_Scripts_Os/Tool_Fixed/00_Notifier.py` | Sonido al completar tareas |
+| # | Carpeta | Contenido | Estado |
+|---|---------|-----------|--------|
+| 01 | `00_Workflows/` | 26+ workflows | ✅ |
+| 02 | `01_Rules/` | 22+ reglas del sistema | ✅ |
+| 03 | `02_Evals/` | Métricas y evaluaciones | ✅ |
+| 04 | `03_Skills/` | 18 carpetas de skills | ✅ |
+| 05 | `04_Agents/` | Agentes configurados | ✅ |
+| 06 | `05_Mcp/` | 20+ MCPs configurados | ✅ |
+| 07 | `06_Integrations/` | Integraciones externas | ✅ |
+| 08 | `07_Hooks/` | Hooks del sistema | ✅ |
+| 09 | `08_Plugins/` | Plugins | ✅ |
+| 10 | `09_Server/` | Servidor backend | ✅ |
+| 11 | `10_Templates/` | Plantillas | ✅ |
+| 12 | `00_Comandos_Workflows.md` | Comandos disponibles | ✅ |
+| 13 | `02_Dream_Team.md` | Equipo de agentes | ✅ |
+| 14 | `01_Inventario_Total.md` | Inventario completo | ✅ |
+| 15 | `Requirements.txt` | Dependencias Python | ✅ |
 
-### Scripts Reparados (Ritual_Fixed)
-- 08, 11, 12, 13, 16, 17, 19, 50, 57 — todos funcionando ✅
+---
+
+## 🛠️ Herramientas (Tool_Fixed)
+
+| # | Herramienta | Función |
+|---|-------------|---------|
+| 01 | **Tool Shed** (62_Tool_Shed.py) | Auto-detecta contexto y sugiere MCPs |
+| 02 | **Skill Harmonizer** (63_Skill_Harmonizer.py) | Valida paridad de skills (20/20) |
+| 03 | **Notifier** (00_Notifier.py) | Sonido al completar tareas |
+| 04 | **Fast Vision** (60_Fast_Vision.py) | Revisión rápida de código |
+| 05 | **MCP Health Check** (61_MCP_Health_Check.py) | Verifica estado de MCPs |
+| 06 | **Repair Corruption** (39_Repair_Corruption.py) | Repara archivos corruptos |
+
+---
+
+## ✅ Scripts (Ritual_Fixed) — Todos Funcionando
+
+| # | Script | Función |
+|---|--------|---------|
+| 01 | 08_Ritual_Cierre.py | Cierre de sesión |
+| 02 | 09_Backlog_Triage.py | Procesamiento de backlog |
+| 03 | 11_Sync_Notes.py | Sincronización de notas |
+| 04 | 12_Update_Links.py | Actualización de enlaces |
+| 05 | 13_Validate_Stack.py | Validación del stack |
+| 06 | 14_Morning_Standup.py | Daily standup |
+| 07 | 15_Weekly_Review.py | Revisión semanal |
+| 08 | 16_Clean_System.py | Limpieza del sistema |
+| 09 | 17_Ritual_Dominical.py | Ritual dominical |
+| 10 | 19_Generate_Progress.py | Generación de progreso |
+| 11 | 50_System_Health_Monitor.py | Monitor de salud |
+| 12 | 57_Repo_Sync_Auditor.py | Auditor de sync |
 
 ---
 
@@ -73,28 +110,28 @@ Code review, arquitectura, seguridad, performance, etc.
 
 ### Skills (18 carpetas)
 
-| Carpeta | Cantidad | Estado |
-|---------|----------|--------|
-| 00_Compound_Engineering | 8+ | ✅ |
-| 00_Personal_Os_Stack | - | ✅ |
-| 00_Skill_Auditor | 3+ | ✅ |
-| 01_Agent_Teams_Lite | 11+ | ✅ |
-| 02_Project_Manager | 9+ | ✅ |
-| 03_Product_Manager | 9+ | ✅ |
-| 04_Product_Design | 13+ | ✅ |
-| 05_Vibe_Coding | 18+ | ✅ |
-| 06_Testing | 18+ | ✅ |
-| 07_DevOps | 13+ | ✅ |
-| 08_Personal_Os | 9+ | ✅ |
-| 09_Marketing | 11+ | ✅ |
-| 10_Backup | 5+ | 📦 |
-| 11_Doc_Processing | 4+ | ✅ |
-| 12_N8N | 7+ | ✅ |
-| 13_System_Master | 5+ | ✅ |
-| 14_Anthropic_Harness | 9+ | ✅ |
-| 15_Skill_Creator_Oficial | - | ✅ |
-| 16_Silicon_Valley_Data_Analyst | - | ✅ |
-| 17_SEO_SOTA_Master | - | ✅ |
+| # | Carpeta | Cantidad | Estado |
+|---|---------|----------|--------|
+| 01 | 00_Compound_Engineering | 8+ | ✅ |
+| 02 | 00_Personal_Os_Stack | - | ✅ |
+| 03 | 00_Skill_Auditor | 3+ | ✅ |
+| 04 | 01_Agent_Teams_Lite | 11+ | ✅ |
+| 05 | 02_Project_Manager | 9+ | ✅ |
+| 06 | 03_Product_Manager | 9+ | ✅ |
+| 07 | 04_Product_Design | 13+ | ✅ |
+| 08 | 05_Vibe_Coding | 18+ | ✅ |
+| 09 | 06_Testing | 18+ | ✅ |
+| 10 | 07_DevOps | 13+ | ✅ |
+| 11 | 08_Personal_Os | 9+ | ✅ |
+| 12 | 09_Marketing | 11+ | ✅ |
+| 13 | 10_Backup | 5+ | 📦 |
+| 14 | 11_Doc_Processing | 4+ | ✅ |
+| 15 | 12_N8N | 7+ | ✅ |
+| 16 | 13_System_Master | 5+ | ✅ |
+| 17 | 14_Anthropic_Harness | 9+ | ✅ |
+| 18 | 15_Skill_Creator_Oficial | - | ✅ |
+| 19 | 16_Silicon_Valley_Data_Analyst | - | ✅ |
+| 20 | 17_SEO_SOTA_Master | - | ✅ | |
 
 ### Workflows (26+ archivos)
 
