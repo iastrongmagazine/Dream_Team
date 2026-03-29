@@ -35,7 +35,7 @@ Usar cuando el contexto de la sesión está degradado: respuestas incoherentes, 
 1. Abrir nueva conversación en Claude/OpenCode
 2. Ejecutar el Workflow Génesis (`01_Iron_Man_Gen.md`) completo:
    - `01_Core/01_Rules/`
-   - `04_Operations/01_Context_Memory/` (último archivo)
+   - `04_Operations/00_Context_Memory/` (último archivo)
    - `04_Operations/03_Process_Notes/` (último archivo)
    - `01_Core/01_Inventario_Total.md`
    - **Engram**: `mem_search()` + `mem_context()`

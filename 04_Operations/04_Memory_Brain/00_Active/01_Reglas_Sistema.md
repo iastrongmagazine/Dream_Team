@@ -29,7 +29,7 @@ Al iniciar una nueva sesión, ejecutar esta secuencia **ANTES** de responder:
 
 1. Leer `@AGENTS.md` en `00_Core/AGENTS.md`
 2. Leer `01_Core/01_Rules/01_Context_Protocol.mdc` (reglas de sesión)
-3. Leer `04_Operations/01_Context_Memory/` (memoria a largo plazo)
+3. Leer `04_Operations/00_Context_Memory/` (memoria a largo plazo)
 4. Leer `04_Operations/03_Process_Notes/` (contexto reciente)
 5. Leer Todo el Proyecto en General
 6. **Reportar en chat** un resumen del contexto cargado

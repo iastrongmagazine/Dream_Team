@@ -95,7 +95,7 @@ What were the action items from my meetings this week?
 | File | Location | Purpose |
 |------|----------|---------|
 | `YYYY-MM-DD_Title.md` | `03_Knowledge/Transcripts/` | Full transcript |
-| `action_items.json` | `04_Operations/01_Context_Memory/` | Extracted tasks |
+| `action_items.json` | `04_Operations/00_Context_Memory/` | Extracted tasks |
 
 ---
 

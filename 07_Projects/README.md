@@ -1,19 +1,36 @@
 # 07_Projects — Laboratorios y Proyectos
 
 **Versión:** 6.1
-**Última actualización:** 2026-03-27
+**Última actualización:** 2026-03-29
 **Estado:** ✅ Activo
 
 ---
 
-## 📂 Estructura
+## 📂 Estructura (Workspace)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria (ESTRATÉGICO)
+├── 01_Core/               # Motor: Skills, Agents, MCPs, Workflows 💾
+├── 02_Knowledge/          # Documentación, Research, Notas 📚
+├── 03_Tasks/             # Tareas activas (YAML frontmatter)
+├── 04_Operations/        # Memoria y Procesos
+├── 05_Archive/           # Legacy archivado 📦
+├── 06_Playground/       # Pruebas y experimentos
+├── 07_Projects/         # Proyectos activos ✅
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             # Tests legacy, planes
+```
+
+---
+
+## 📂 Estructura 07_Projects
 
 ```
 07_Projects/
 ├── README.md                    # Este archivo
 ├── tree.txt                     # Árbol del directorio
 ├── 00_Context/                  # Contexto estratégico
-│   ├── README.md
 │   ├── 01_PRDs/                # Product Requirements Docs
 │   ├── 05_Strategy/            # Estrategia y roadmap
 │   └── 06_Tech/                # Diagramas técnicos

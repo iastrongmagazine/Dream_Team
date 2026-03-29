@@ -1,38 +1,55 @@
 # 04_Operations — Memoria y Procesos
 
 **Versión:** 6.1
-**Última actualización:** 2026-03-27
+**Última actualización:** 2026-03-29
 **Estado:** ✅ Activo
 
 ---
 
-## 📂 Estructura
+## 📂 Estructura (Workspace)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria (ESTRATÉGICO)
+├── 01_Core/               # Motor: Skills, Agents, MCPs, Workflows 💾
+├── 02_Knowledge/          # Documentación, Research, Notas 📚
+├── 03_Tasks/             # Tareas activas (YAML frontmatter)
+├── 04_Operations/        # Memoria y Procesos ✅
+├── 05_Archive/           # Legacy archivado
+├── 06_Playground/       # Pruebas y experimentos
+├── 07_Projects/         # Proyectos activos
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             # Tests legacy, planes
+```
+
+---
+
+## 📂 Estructura 04_Operations
 
 ```
 04_Operations/
-├── README.md                    # Este archivo
-├── 01_Context_Memory/           # Memoria de contexto (sesiones)
-│   ├── README.md
-│   ├── _jsons/                  # JSONs de validación
+├── README.md                         # Este archivo
+├── EVOLUTION_LOG.md                 # Log de evolución del sistema
+├── GOVERNANCE.md                    # Gobernanza
+├── RUNBOOK.md                       # Manual de operaciones
+├── 01_Auto_Improvement/            # Auto-mejora del sistema
+├── 01_Context_Memory/               # Memoria de contexto (sesiones)
+│   ├── _jsons/                     # JSONs de validación
 │   ├── CTX_AUTO_Intelligence_*.md
-│   ├── CTX_00*.md              # Sesiones 001-003
-│   └── [Archivos de contexto]
-├── 02_Knowledge_Brain/         # Base de conocimiento técnico
-│   ├── README.md
+│   └── CTX_00*.md
+├── 02_Knowledge_Brain/             # Base de conocimiento técnico
 │   ├── 01_Inventario_Total.md
-│   ├── 00_Library_PDFs/        # PDFs de referencia (14 archivos)
-│   └── [Notas de investigación]
-├── 03_Process_Notes/           # Notas de sesiones
-│   ├── README.md
-│   └── [21 notas de sesión]
-└── 04_Memory_Brain/            # Mapeos y análisis
-    ├── README.md
-    ├── 00_Active/             # Memoria activa
-    ├── 01_Mapeos/            # Mapas del sistema
-    ├── 02_Code_Reviews/       # Revisiones de código
-    └── 03_Archive_Memory/    # Archivo por fecha
-        └── 2026-03-21/
-        └── 2026-03-24/
+│   └── 00_Library_PDFs/           # PDFs de referencia
+├── 03_Process_Notes/               # Notas de sesiones (~21 archivos)
+├── 04_Memory_Brain/                 # Mapeos y análisis
+│   ├── 00_Active/                 # Memoria activa
+│   ├── 01_Mapeos/                 # Mapas del sistema
+│   ├── 02_Code_Reviews/           # Revisiones de código
+│   └── 03_Archive_Memory/         # Archivo por fecha
+├── 05_Plans/                       # Planes
+├── 06_Solutions/                   # Soluciones
+├── 07_Installer/                    # Instalador
+└── 08_Auditorias/                  # Auditorías
 ```
 
 ---

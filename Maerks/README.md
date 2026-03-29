@@ -1,20 +1,53 @@
-# Revisar_Analizar
+# Maerks — Tests Legacy y Planes
 
-## Contenido
-
-| # | Archivo | Descripción |
-|---|--------|-------------|
-| 1 | 00_Reference_Guide.md | |
-| 2 | 00_Resumen_Sistema_V5.2.md | |
-| 3 | 01_Analisis_Stripe_Minions.md | |
-| 4 | 01_Create_Agent_Skills | |
-| 5 | 02_Gentleman_Ecosystem_Tutorial.md | |
-| 6 | 02_Skill_Creator | |
-| 7 | 03_File_Todos | |
-| 8 | 03_Firecrawl_Guide.md | |
-| 9 | README.md | |
-| 10 | tree.txt | |
+**Versión:** 6.1
+**Última actualización:** 2026-03-29
+**Estado:** 📦 Legacy
 
 ---
-*Actualizado: 2026-03-26 16:27*
-*Scripts en esta carpeta: 10*
+
+## 📂 Estructura (Workspace)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria (ESTRATÉGICO)
+├── 01_Core/               # Motor: Skills, Agents, MCPs, Workflows 💾
+├── 02_Knowledge/          # Documentación, Research, Notas 📚
+├── 03_Tasks/             # Tareas activas (YAML frontmatter)
+├── 04_Operations/        # Memoria y Procesos
+├── 05_Archive/           # Legacy archivado 📦
+├── 06_Playground/       # Pruebas y experimentos
+├── 07_Projects/         # Proyectos activos
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             # Tests legacy, planes 📦
+```
+
+---
+
+## 📂 Contenido Maerks
+
+```
+Maerks/
+├── README.md                     # Este archivo
+├── 00_Plan_Automejora_v6.1.md  # Plan de automejora
+├── 01_Report_Status.md          # Reporte de estado
+├── 15_Architecture_Map.md       # Mapa de arquitectura
+├── 16_SOP_Prompts/              # Prompts SOP
+├── 18_Gap_Analysis_v5.2_to_v6.1.md # Análisis de gaps
+├── Dream_Team.md               # Equipo de agentes
+├── Otros/                      # Otros archivos legacy
+│   ├── 08_Config/
+│   ├── 13_Strategic_Plans/
+│   └── 14_Config_Mcp/
+└── test/                        # Scripts de prueba
+```
+
+---
+
+## 🎯 Propósito
+
+Almacena **tests legacy, planes antiguos, y documentación de referencia** que ya no está activa pero se conserva por razones históricas o de referencia.
+
+---
+
+*Think Different PersonalOS v6.1 — Archivo legacy*

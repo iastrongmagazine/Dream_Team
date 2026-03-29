@@ -35,7 +35,7 @@ Se está actualizando todas las referencias a carpetas obsoletas en el PersonalO
 | Vieja | Nueva |
 |-------|-------|
 | `.cursor/00_Rules/` | `01_Core/01_Rules/` |
-| `01_Brain/Context_Memory/` | `04_Operations/01_Context_Memory/` + Engram |
+| `01_Brain/Context_Memory/` | `04_Operations/00_Context_Memory/` + Engram |
 | `01_Brain/Process_Notes/` | `04_Operations/03_Process_Notes/` + Engram |
 | `01_Brain/07_Memory_Brain/` | `04_Operations/04_Memory_Brain/` + Engram |
 | `02_Operations/Tasks/` | `03_Tasks/` |

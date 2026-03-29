@@ -1,18 +1,39 @@
-# 05_Archive — Baúl y Repositorios
+# 05_Archive — Legacy y Repositorios
 
 **Versión:** 6.1
-**Última actualización:** 2026-03-27
-**Estado:** ✅ Activo
+**Última actualización:** 2026-03-29
+**Estado:** 📦 Legacy
 
 ---
 
-## 📂 Estructura
+## 📂 Estructura (Workspace)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria (ESTRATÉGICO)
+├── 01_Core/               # Motor: Skills, Agents, MCPs, Workflows 💾
+├── 02_Knowledge/          # Documentación, Research, Notas 📚
+├── 03_Tasks/             # Tareas activas (YAML frontmatter)
+├── 04_Operations/        # Memoria y Procesos
+├── 05_Archive/           # Legacy archivado 📦
+├── 06_Playground/       # Pruebas y experimentos
+├── 07_Projects/         # Proyectos activos
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             # Tests legacy, planes
+```
+
+---
+
+## 📂 Estructura 05_Archive
 
 ```
 05_Archive/
 ├── README.md                    # Este archivo
-├── 00_Respaldo/                 # Backups (vacío actualmente)
-└── 10_Repos_Gentleman/          # Repositorios clonados
+├── 00_Raiz_Archive/           # Archivos de raíz archivados
+├── 01_Recursos/               # Recursos varios
+├── 14_Legacy_Strategic_Plans/ # Planes estratégicos legacy
+├── Auto_Improvement_Backups/  # Backups de auto-mejora
+└── 10_Repos_Gentleman/        # Repositorios clonados
     ├── README.md               # Guía de repos
     ├── agent-teams-lite/       # SDD workflow
     ├── compound-engineering-plugin/ # Compound Engineering
