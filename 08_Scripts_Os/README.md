@@ -6,18 +6,36 @@
 
 ---
 
-## 📂 Estructura
+## 📂 Estructura (Workspace)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria (ESTRATÉGICO)
+├── 01_Core/               # Motor: Skills, Agents, MCPs, Workflows 💾
+├── 02_Knowledge/          # Documentación, Research, Notas 📚
+├── 03_Tasks/             # Tareas activas (YAML frontmatter)
+├── 04_Operations/        # Memoria y Procesos
+├── 05_Archive/           # Legacy archivado 📦
+├── 06_Playground/       # Pruebas y experimentos
+├── 07_Projects/         # Proyectos activos
+├── 08_Scripts_Os/       # Scripts operativos ✅
+└── Maerks/             # Tests legacy, planes
+```
+
+---
+
+## 📂 Estructura 08_Scripts_Os
 
 ```
 08_Scripts_Os/
 ├── README.md                    # Este archivo
 ├── SCRIPTS_INDEX.md             # Índice de scripts
-├── config_paths.py              # Configuración de rutas centralizadas
+├── config_paths.py              # Rutas centralizadas (actualizado)
 ├── qmd.sh                      # Script QMD
 ├── testsprite_failover.sh      # Failover para TestSprite
-├── 01_Auditor_Hub.py           # Auditor principal del sistema
-├── 02_Git_Hub.py              # Operaciones Git automatizadas
-├── 03_AIPM_Hub.py             # AIPM logging y tracking
+├── 01_Auditor_Hub.py           # Auditor principal
+├── 02_Git_Hub.py              # Operaciones Git
+├── 03_AIPM_Hub.py             # AIPM logging
 ├── 04_Ritual_Hub.py           # Orquestador de rituales
 ├── 05_Validator_Hub.py         # Validador de reglas
 ├── 06_Tool_Hub.py             # Herramientas varias
@@ -26,9 +44,8 @@
 ├── 09_Data_Hub.py             # Datos y sincronización
 ├── 10_General_Hub.py          # Utilidades generales
 ├── 11_Anthropic_Harness/     # Anthropic patterns
-├── Auditor_Fixed/             # Scripts de auditoría funcionando
-├── Ritual_Fixed/              # Rituales funcionando (13 scripts)
-├── Tool_Fixed/                # Herramientas funcionando
+├── Ritual_Fixed/              # Rituales funcionando (12 scripts)
+├── Tool_Fixed/                # Herramientas (6)
 ├── Validator_Fixed/           # Validadores funcionando
 ├── Workflow_Fixed/            # Workflows funcionando
 └── Legacy_Backup/             # Scripts legacy (referencia)

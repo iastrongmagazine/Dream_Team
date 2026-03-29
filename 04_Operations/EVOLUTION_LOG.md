@@ -179,6 +179,71 @@ improvement:
   status: "✅ COMPLETADO"
 ```
 
+#### Mejora #005: Auditoría y Estandarización de Skill 'Personal OS Stack'
+
+```yaml
+improvement:
+  id: "EV-2026-0329-005"
+  title: "Auditoría y estandarización del Skill 'Personal OS Stack'"
+  category: "governance"
+  
+  trigger:
+    - "Solicitud de mejora de calidad (score 50%)"
+  
+  changes:
+    - "SKILL.md: Agregadas secciones ⚠️ Gotchas y Esencia Original"
+    - "SKILL.md: Formato YAML corregido (lowercase, sin espacios)"
+    - "SKILL.md: Agregados triggers semánticos y descripción"
+    - "Estructura: Creadas carpetas references/ y scripts/"
+  
+  rationale:
+    - "Aumentar score de calidad de 50%"
+    - "Cumplir estándares de estructura de skills"
+    - "Mejorar la documentabilidad y triggers de la skill"
+  
+  impact:
+    - files_created: 2
+    - files_modified: 1
+    - autonomy_change: "no"
+    - risk_reduction: "medio"
+  
+  artifacts:
+    - "01_Core/03_Skills/00_Personal_Os_Stack/SKILL.md"
+  
+  status: "✅ COMPLETADO"
+```
+
+#### Mejora #006: Creación de cron_trigger.py para ejecución periódica
+
+```yaml
+improvement:
+  id: "EV-2026-0329-006"
+  title: "Creación de cron_trigger.py para ejecución periódica"
+  category: "automation"
+  
+  trigger:
+    - "Avanzar fase 2 autonomía: ejecución automática cada hora"
+  
+  changes:
+    - "04_Operations/01_Auto_Improvement/04_Triggers/cron_trigger.py: Creado"
+  
+  rationale:
+    - "Estructurar la base para la ejecución periódica programada (cron)"
+    - "Preparar integración con Detector/Executor"
+    - "Garantizar cumplimiento de niveles de autonomía"
+  
+  impact:
+    - files_created: 1
+    - files_modified: 0
+    - autonomy_change: "sí - base para nivel 2 (asistido)"
+    - risk_reduction: "medio - ejecución controlada"
+  
+  artifacts:
+    - "04_Operations/01_Auto_Improvement/04_Triggers/cron_trigger.py"
+  
+  status: "✅ COMPLETADO"
+```
+
 ---
 
 ## 📈 Métricas de Evolución
