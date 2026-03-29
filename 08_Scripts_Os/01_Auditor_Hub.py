@@ -115,7 +115,8 @@ def dynamic_speak(text):
 
 
 def run_script(script_name):
-    script_path = Path(__file__).parent / "Legacy_Backup" / script_name
+    # Usamos Auditor_Fixed para scripts corregidos (SISTEMA INDEPENDIENTE)
+    script_path = Path(__file__).parent / "Auditor_Fixed" / script_name
     if not script_path.exists():
         print(f"{Fore.RED}[ERROR] Script no encontrado: {script_path}{Style.RESET_ALL}")
         return
