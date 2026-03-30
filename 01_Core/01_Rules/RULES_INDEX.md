@@ -104,6 +104,7 @@ Think_Different/
 | Regla | Nombre | Descripción | Estado |
 | :--- | :--- | :--- | :--- |
 | [22_Pencil_Design_Studio.mdc](./22_Pencil_Design_Studio.mdc) | Pencil Design Studio | Estudio de diseño premium | ✅ |
+| [23_Skill_System_SOTA.mdc](./23_Skill_System_SOTA.mdc) | **Skill System SOTA v2.0** | Constitución del Sistema de Skills: 9 categorías Anthropic, anatomía, seguridad, scoring | ✅ |
 
 ---
 
@@ -126,6 +127,6 @@ Think_Different/
 
 ---
 
-_Total Reglas: 22_
+_Total Reglas: 23_
 _Total Skills: ~160+_
 _Framework: Anthropic SOTA 2026 + PersonalOS v6.1_

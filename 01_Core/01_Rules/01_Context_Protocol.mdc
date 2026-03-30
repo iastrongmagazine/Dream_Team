@@ -163,7 +163,7 @@ Crear comandos slash personalizados en `.claude/commands/` para automatizar work
 ## 🔔 CAMPANILLA (Task Complete Sound)
 
 **Al finalizar CADA TAREA SIGNIFICATIVA:**
-- Ejecutar sonido: `01_Core/07_Hooks/04_Sound/task-complete-sound.ps1`
+- Ejecutar sonido: `01_Core/07_Hooks/04_Sound/task-complete.ps1` o `python 01_Core/07_Hooks/04_Sound/notification.py --task-complete`
 - O notificar por voz: "Tarea completada"
 
 </reporting_protocol>

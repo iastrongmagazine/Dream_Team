@@ -1,5 +1,5 @@
 ---
-description: PILAR 06: Protocolo de integración de Skills externas y uso de "Exoesqueletos" de conocimiento.
+description: PILAR 06: Protocolo de integración de Skills externas y uso de "Exoesqueletos" de conocimiento. Ahora incluye Skill Resolver Protocol y las 9 categorías Anthropic 2026.
 globs: */*
 alwaysApply: true
 ---
@@ -39,8 +39,38 @@ Think_Different/
 2.  **Skill First Approach**: Si existe una Skill oficial para la tarea (ej. `/refactor` de Vercel), se DEBE usar esa herramienta sobre una implementación manual.
 3.  **Always Document Impact**: Registrar cada resolución compleja mediante Skills en la Nota de Proceso como un "Hito de Fusión".
 4.  **Context Guardians**: Usar la Skill 13 (Fork) y 14 (Parallel) para mantener la limpieza del hilo principal en tareas de larga duración.
+5.  **Categoría OBLIGATORIA**: Toda skill nueva DEBE declarar su `category` según las 9 categorías de Anthropic en su frontmatter YAML (ver Regla 23).
+6.  **SOTA Compliance**: Toda skill nueva DEBE pasar el `Skill Auditor` con score ≥ 70% y el `skill_security_scan.py` sin errores CRITICAL antes de integración.
 
 </fusion_protocol>
+
+---
+
+## 🔍 Skill Resolver Protocol (v2.0)
+<skill_resolver_protocol>
+
+Cuando se delega trabajo a sub-agentes, el orquestador DEBE inyectar las compact rules de las skills relevantes en el prompt del sub-agente. Los sub-agentes NO leen los SKILL.md directamente — reciben las reglas pre-digeridas.
+
+### Proceso de Resolución
+
+1. **Clasificar la tarea** según las 9 categorías de Anthropic
+2. **Identificar skills** en `01_Core/03_Skills/` que mapean a esa categoría
+3. **Leer el `description`** del SKILL.md (no el cuerpo completo) para confirmar triggers
+4. **Inyectar compact rules** en el prompt del sub-agente como `## Project Standards (auto-resolved)`
+5. **Nunca cargar** el SKILL.md completo en el contexto del orquestador — solo el `description` para decidir
+
+### ❌ BAD: Cargar todo el contexto
+```
+Orquestador lee 10 SKILL.md completos → 50,000 tokens → Context window saturado
+```
+
+### ✅ GOOD: Resolución Quirúrgica
+```
+Orquestador lee solo los `description` (frontmatter) → identifica 2 skills relevantes
+→ inyecta solo esas 2 compact rules en el sub-agente → 2,000 tokens
+```
+
+</skill_resolver_protocol>
 
 ---
 
@@ -95,6 +125,22 @@ _Problema: El agente está adivinando en lugar de usar la Skill instalada._
 ### Integración de Habilidades
 
 - Seguir el formato `NN_Nombre_Skill` para la organización de nuevos exoesqueletos.
+- Toda skill DEBE seguir el estándar definido en `23_Skill_System_SOTA.mdc`.
+- Usar `SKILL_TEMPLATE/` como punto de partida para nuevas skills.
+
+### Las 9 Categorías de Activación (Anthropic 2026)
+
+| Categoría | Activar cuando... |
+|-----------|------------------|
+| Library / API Reference | "cómo usar X", "API de Y" |
+| Product Verification | "verificar que funciona", "test de flujo" |
+| Data Fetching | "obtener datos", "query", "métricas" |
+| Business Process | "ejecutar workflow", "procesar" |
+| Code Scaffolding | "crear nuevo", "scaffolding" |
+| Code Quality | "revisar código", "code review" |
+| CI/CD | "desplegar", "deploy", "pipeline" |
+| Runbooks | "debugging", "incidente", "síntoma" |
+| Infrastructure Ops | "operaciones", "cleanup", "dependencias" |
 
 </project_patterns>
 
@@ -119,6 +165,9 @@ _Problema: El agente está adivinando en lugar de usar la Skill instalada._
 - [ ] ¿Estoy actuando con el "exoesqueleto" adecuado al rol (Arquitectura, UI, Backend)?
 - [ ] ¿He mencionado la Skill utilizada en mi respuesta al usuario?
 - [ ] ¿He registrado el "Hito de Fusión" en la Nota de Proceso?
+- [ ] ¿He clasificado la tarea por categoría Anthropic antes de buscar la skill?
+- [ ] ¿He usado el Skill Resolver Protocol (compact rules) en lugar de cargar SKILL.md completos?
+- [ ] ¿La nueva skill que creé pasó el Skill Auditor (≥70%) y el security scan?
 
 </verification_checklist>
 

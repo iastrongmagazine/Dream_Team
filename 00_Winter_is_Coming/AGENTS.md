@@ -23,6 +23,17 @@ Integrated stack: PersonalOS + SDD + Compound Engineering + Gentleman Skills + G
 
 ---
 
+## 🔔 NOTIFICACIONES DE SONIDO
+
+After completing each task in TodoWrite, ALWAYS execute:
+```bash
+python .agent/04_Extensions/hooks/04_Sound/notification.py --task-complete
+```
+
+This gives you auditory feedback when tasks complete.
+
+---
+
 ## 💾 .agent — BACKUP ESTRATÉGICO
 
 > **.agent/** es el backup estratégico de 01_Core/. La fuente de verdad es **01_Core/**.
