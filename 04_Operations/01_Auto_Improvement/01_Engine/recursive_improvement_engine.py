@@ -1,6 +1,6 @@
 """
 🧠 RECURSIVE SELF-IMPROVEMENT ENGINE
-=====================================
+====================================
 Motor principal de automejora para PersonalOS v6.1
 
 Arquitectura: Detector → Analyzer → Executor → Learner
@@ -12,10 +12,16 @@ Usage:
 """
 
 import sys
+import io
 import json
 import argparse
 from pathlib import Path
 from datetime import datetime
+
+# Fix Windows console encoding
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 # Add scripts_os to path for config_paths
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "08_Scripts_Os"))
@@ -158,7 +164,7 @@ class RecursiveImprovementEngine:
             "issues_detected": len(self.issues_detected),
             "issues_analyzed": len(self.issues_analyzed),
             "fixes_applied": len(self.fixes_applied),
-            "learnings": len(self.learnings),
+            "learnings": self.learnings,
             "details": {
                 "issues": self.issues_detected,
                 "analyzed": self.issues_analyzed,
@@ -227,18 +233,10 @@ def main():
     print("\n" + "=" * 60)
     print("📋 RESUMEN DEL CICLO")
     print("=" * 60)
-    print(
-        f"Issues detectados: {report.get('issues_detected', len(report.get('issues', [])))}"
-    )
-    print(
-        f"Issues analizados: {report.get('issues_analyzed', len(report.get('analyzed', [])))}"
-    )
-    print(
-        f"Fixes aplicados:   {report.get('fixes_applied', len(report.get('fixed', [])))}"
-    )
-    print(
-        f"Aprendizajes:      {report.get('learnings', len(report.get('learnings', [])))}"
-    )
+    print(f"Issues detectados: {report.get('issues_detected', 0)}")
+    print(f"Issues analizados: {report.get('issues_analyzed', 0)}")
+    print(f"Fixes aplicados:   {report.get('fixes_applied', 0)}")
+    print(f"Aprendizajes:      {len(report.get('learnings', []))}")
     print("=" * 60)
 
 

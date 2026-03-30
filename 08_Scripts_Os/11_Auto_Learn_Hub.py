@@ -15,11 +15,17 @@ import sys
 import argparse
 from pathlib import Path
 from datetime import datetime
+import os
 
-# Add engine to path
+# Add engine to path (go up from 08_Scripts_Os to root, then to 04_Operations)
 sys.path.insert(
     0,
-    str(Path(__file__).parent / "04_Operations" / "01_Auto_Improvement" / "01_Engine"),
+    str(
+        Path(__file__).parent.parent
+        / "04_Operations"
+        / "01_Auto_Improvement"
+        / "01_Engine"
+    ),
 )
 
 try:
