@@ -1,8 +1,9 @@
-# 📋 Índice de Reglas — PersonalOS
+# 📋 Índice de Reglas — PersonalOS v6.1
 
 **Versión:** 6.1
 **Última actualización:** 2026-03-29
 **Ubicación:** `01_Core/01_Rules/`
+**Framework:** Anthropic SOTA 2026 + PersonalOS
 
 ---
 
@@ -24,14 +25,48 @@ Think_Different/
 
 ---
 
+## 🚀 MEJORES PRÁCTICAS SOTA ANTHROPIC 2026
+
+> **Referencia:** Paper de Thariq (Claude Code Team @ Anthropic)
+
+### Las 7 Prácticas Fundamentales
+
+| # | Práctica | Descripción |
+|---|---------|-------------|
+| 1 | **CLAUDE.md** | Memoria de proyecto - cerebro permanente |
+| 2 | **Plan then Execute** | Planificar ANTES de ejecutar código |
+| 3 | **Custom Tools** | Comandos slash + MCP para automatización |
+| 4 | **Git Workflows** | Ramas seguras + worktrees para trabajo paralelo |
+| 5 | **Specific Prompting** | Prompts con archivos, URLs, imágenes específicas |
+| 6 | **Context Management** | Sub-agentes + /clear entre tareas |
+| 7 | **Headless Mode + Hooks** | Automatización CI/CD |
+
+### Las 9 Categorías de Skills (Anthropic)
+
+| # | Categoría | Equivalente | Ejemplo |
+|---|-----------|-------------|---------|
+| 1 | Library / API Reference | El menú | nextjs-15, react-19 |
+| 2 | Product Verification | Control de calidad | pr-review, testing |
+| 3 | Data Fetching | Abastecimiento | analytics-tracking |
+| 4 | Business Process | Manual de servicio | sdd-workflow |
+| 5 | Code Scaffolding | Cocina preparativa | skill-creator |
+| 6 | Code Quality | Checklist del chef | security-review |
+| 7 | CI/CD | Delivery | devops scripts |
+| 8 | Runbooks | Simulacro de incendios | systematic-debugging |
+| 9 | Infrastructure Ops | Gerente de equipos | mcp-client |
+
+---
+
 ## 🔘 Pilares Fundamentales (The Core Triad)
 
 | Regla | Nombre | Función |
 | :--- | :--- | :--- |
-| [01_Context_Protocol.mdc](./01_Context_Protocol.mdc) | **Protocolo Génesis** | Protocolo obligatorio de inicio de sesión e idioma (Español). |
+| [01_Context_Protocol.mdc](./01_Context_Protocol.mdc) | **Protocolo Génesis** | Protocolo obligatorio de inicio + SOTA Anthropic practices. |
 | [02_Pilar_Base.mdc](./02_Pilar_Base.mdc) | **Pilar 0: Protocolo** | ADN operativo y bucle de evolución de reglas. |
 | [03_Pilar_Motor.mdc](./03_Pilar_Motor.mdc) | **Pilar 1: El Motor** | Estándares de ingeniería, Premium UI y Armor Layer. |
 | [04_Pilar_Estrategia.mdc](./04_Pilar_Estrategia.mdc) | **Pilar 2: La Estrategia** | Gestión de tareas y observabilidad AIPM. |
+
+---
 
 ## 🛠️ Reglas Operativas y de Integración
 
@@ -50,6 +85,8 @@ Think_Different/
 | [15_Backlog_Processing.mdc](./15_Backlog_Processing.mdc) | Backlog Processing | Triage y priorización del backlog. |
 | [16_Brainstorming.mdc](./16_Brainstorming.mdc) | Brainstorming | Fase de ideación y exploración libre. |
 
+---
+
 ## 🧬 Workflows Especializados
 
 | Regla | Nombre | Descripción |
@@ -60,7 +97,9 @@ Think_Different/
 | [20_Recap_Morning.mdc](./20_Recap_Morning.mdc) | Recap Morning | Resumen de lo planificado por la mañana. |
 | [21_Gentleman_Framework.mdc](./21_Gentleman_Framework.mdc) | Gentleman Framework | Marco de trabajo para desarrollo guiado por agentes. |
 
-## 🧬 Reglas Adicionales
+---
+
+## 🎨 Reglas Adicionales
 
 | Regla | Nombre | Descripción | Estado |
 | :--- | :--- | :--- | :--- |
@@ -68,4 +107,25 @@ Think_Different/
 
 ---
 
+## 🗂️ Skills System (Referencia)
+
+### Documentación
+
+- **[03_Skills/README.md](../03_Skills/README.md)** — Sistema completo de skills
+- **00_Skill_Auditor/** — Auditoría de calidad (SOTA)
+- **15_Skill_Creator/** — Creator oficial de Anthropic
+- **08_Plugins/** — Plugins de PersonalOS
+
+### Sistema de Calidad
+
+| Herramienta | Propósito |
+|------------|-----------|
+| **Skill Auditor** | Audita skills contra estándares Anthropic |
+| **Skill Creator** | Genera scaffolding automáticamente |
+| **Scoring** | 90%+ = Excellent, 70-89% = Good, <50% = Failed |
+
+---
+
 _Total Reglas: 22_
+_Total Skills: ~160+_
+_Framework: Anthropic SOTA 2026 + PersonalOS v6.1_

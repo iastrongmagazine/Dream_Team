@@ -1,10 +1,10 @@
 ---
-description: PILAR 00: Protocolo de Inicialización y Contexto Obligatorio (Genesis)
+description: PILAR 00: Protocolo de Inicialización y Contexto Obligatorio (Genesis) + Mejores Prácticas SOTA Anthropic 2026
 globs: **/*
 alwaysApply: true
 ---
 
-# 🔘 Regla 00: Protocolo Génesis (Contexto & Idioma)
+# 🔘 Regla 00: Protocolo Génesis (Contexto & Idioma) + SOTA Practices
 
 <system_directives>
   <fundamental_rule>
@@ -54,7 +54,7 @@ Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
 
 2.  **📜 LEER REGLAS VIGENTES**:
     - Leer directorio `01_Core/01_Rules/` (todas las reglas).
-    - Leer `CLAUDE.md` para confirmar alineación.
+    - Leer `AGENTS.md` para confirmar alineación.
     - **YA NO BUSCAR ARCHIVO POR ARCHIVO** - Inventario tiene todo.
 
 3.  **🧠 SINCRONIZAR MEMORIA (Para MÍ - Gentleman)**:
@@ -74,6 +74,74 @@ Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
     - **NO PROCEDER** hasta haber emitido este reporte.
 
 </protocol_genesis>
+
+---
+
+## 🚀 MEJORES PRÁCTICAS SOTA ANTHROPIC 2026 (Obligatorias)
+<sota_practices>
+
+### 1. 📄 CLAUDE.md - Memoria de Proyecto (SOTA #1)
+
+**El archivo CLAUDE.md es el cerebro permanente del proyecto.** Claude lo lee automáticamente para obtener contexto.
+
+**Incluir en CLAUDE.md:**
+- Comandos bash comunes: `npm run test`, `npm run build`, etc.
+- Guías de estilo: "Usar ES modules, no CommonJS", "Siempre componentes funcionales con hooks"
+- Archivos clave y patrones: "State management con Zustand; ver `src/stores`"
+- Instrucciones de testing: "Nuevos componentes requieren test con React Testing Library"
+
+**PRO TIP:** Usar múltiples CLAUDE.md. Uno general en raíz, y específicos en sub-carpetas (`/frontend`, `/backend`).
+
+### 2. 📋 PLAN THEN EXECUTE (SOTA #2)
+
+**Workflow obligatorio para tareas no triviales:**
+
+1. **Pedir un plan**: "Crea un plan de implementación detallado"
+2. **Decir que pause**: "NO escribas código aún. Solo dame el plan."
+3. **Revisar y refinar**: Discutir con Claude para ajustar el plan
+4. **Dar luz verde**: "Ok, proceede con el plan"
+
+**Por qué:** Evita soluciones a medio terminar y ahorra tiempo de rework.
+
+### 3. 🛠️ CUSTOM TOOLS & COMMANDS (SOTA #3)
+
+Crear comandos slash personalizados en `.claude/commands/` para automatizar workflows comunes:
+- `/new-component`: Scaffolding de componente + styles + test
+- `/security-review`: Revisión de seguridad del código
+- `/mcp-connect`: Conectar con servicios externos (Puppeteer, Sentry, etc.)
+
+### 4. 🔒 GIT WORKFLOWS SEGUROS (SOTA #4)
+
+**Reglas de seguridad:**
+- **SIEMPRE** crear una nueva rama para cada feature/bug fix
+- Usar `git checkout -b` antes de cualquier código
+- **NUNCA** hacer push directo a main/master
+- Para trabajo paralelo: usar **Git Worktrees** para múltiples ramas aisladas
+
+### 5. 🎯 SPECIFIC PROMPTING (SOTA #5)
+
+**Calidad del prompt = Calidad del código:**
+
+- **Referenciar archivos directamente**: Usar tab-completion para añadir paths específicos
+- **Proveer URLs**: Pegar links a GitHub issues, documentación, Stack Overflow
+- **Usar imágenes**: Arrastrar screenshots de designs al terminal
+- **Ser explícito**: "Escribe un test para `foo.py` que cubra el edge case cuando el usuario está deslogueado. NO uses mocks."
+
+### 6. 🧹 CONTEXT MANAGEMENT (SOTA #6)
+
+**Gestión de ventana de contexto:**
+
+1. **[/clear]**: Usar entre tareas diferentes. Limpia el historial y evita contaminación.
+2. **Sub-agentes**: Para workflows complejos, delegar: "Ahora usa un sub-agente para hacer security review de ese código."
+
+### 7. 🤖 HEADLESS MODE & HOOKS (SOTA #7)
+
+**Automatización CI/CD:**
+
+- **Headless mode**: Usar `claude -p "prompt"` para ejecución desde scripts
+- **Hooks**: Configurar comandos que corran antes/después de editar archivos (linter, type-checker)
+
+</sota_practices>
 
 ---
 
@@ -119,23 +187,6 @@ Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
 
 ---
 
-## 🔄 Protocolo de Impacto por Renombramiento (Indispensable)
-<renaming_protocol>
-
-1.  **ANÁLISIS PREVIO**: ANTES de renombrar cualquier archivo, carpeta o entidad de sistema, es **OBLIGATORIO** realizar una búsqueda global (`grep_search`) para identificar todas las referencias.
-
-2.  **VALIDACIÓN DE RUTAS**: Verificar el impacto en:
-    - Rutas en el código (imports, fetch, etc.).
-    - Documentación (RICMIs, READMEs).
-    - Workflows (.agent/03_Workflows) y comandos asociados.
-    - Pensar y ubicar donde se van a documentar los cambios que se tienen pensado realizar, con el fin de documentar dicho cambio, ante alguna duda preguntar al usuario.
-
-3.  **ACTUALIZACIÓN ATÓMICA**: El renombramiento y la actualización de sus referencias deben ocurrir en el mismo ciclo de trabajo para evitar estados inconsistentes (Broken Links). Al realizar esta tarea activar 3 sub agentes, cargarles el contexto y reglas y estos validaran pensando desde distintas opticas de donde podria fallar o rompenser y verificar que todo este bien. Ante alguna duda consultar al usuario.
-
-</renaming_protocol>
-
----
-
 ## 📊 Monitoreo y Comunicación (Voz & Progreso)
 <monitoring_protocol>
 
@@ -173,8 +224,10 @@ Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
 - [ ] ¿He leído la última Process Note de `04_Operations/03_Process_Notes/`?
 - [ ] ¿He ejecutado Morning Standup para el plan del día?
 - [ ] ¿He emitido el reporte de Handshake (Contexto + Plan)?
-- [ ] ¿He validado el impacto global de mis cambios de nombre antes de renombrar?
-- [ ] ¿He delegado tareas medianas/grandes en sub-agentes (`.claude/agents/` o `.agent/`)?
+- [ ] ¿He seguido el workflow "Plan then Execute" para tareas complejas?
+- [ ] ¿He usado CLAUDE.md como memoria de proyecto?
+- [ ] ¿He creado nueva rama Git antes de tocar código?
+- [ ] ¿He usado /clear entre tareas diferentes?
 - [ ] ¿Estoy redactando todo en **ESPAÑOL**?
 - [ ] ¿He mostrado el **PORCENTAJE** de avance (10%) en tareas multi-paso?
 - [ ] ¿He sonido campanillas al completar cada tarea significativa?
