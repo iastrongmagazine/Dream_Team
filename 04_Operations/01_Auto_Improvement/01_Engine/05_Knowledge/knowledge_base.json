@@ -271,6 +271,26 @@
           "auto_fixable": false
         }
       ]
+    },
+    {
+      "timestamp": "2026-03-30T02:03:06.065235",
+      "issues_processed": 1341,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 53,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1288,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
     }
   ],
   "performance_baseline": {},
