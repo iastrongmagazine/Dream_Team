@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-04_Playwright_QA.py — Playwright QA Integration
+04_Playwright_QA.py â€” Playwright QA Integration
 
-Integración con Playwright para testing interactivo del Evaluator.
-Del artículo: "they use the Playwright MCP so that the evaluator has tools it can use
+IntegraciÃ³n con Playwright para testing interactivo del Evaluator.
+Del artÃ­culo: "they use the Playwright MCP so that the evaluator has tools it can use
 to actually navigate the app, screenshot it and test it like a real user."
 
-Esto permite que el Evaluator INTERACTÚE con el output, no solo evalúe texto.
+Esto permite que el Evaluator INTERACTÃšE con el output, no solo evalÃºe texto.
 
-VERSIÓN: 1.0
+VERSIÃ“N: 1.0
  fecha: 2026-03-26
- FILOSOFÍA: "No te traiciones, no te abandones" — Siempre lo correcto
+ FILOSOFÃA: "No te traiciones, no te abandones" â€” Siempre lo correcto
 
-REFERENCIA: 01_Brain/02_Knowledge_Brain/10_Anthropic_Harness_Design.md
+REFERENCIA: 01_Core/02_Knowledge_Brain/10_Anthropic_Harness_Design.md
 """
 
 import os
@@ -58,7 +58,7 @@ class TestResult:
 
 @dataclass
 class QASession:
-    """Sesión de QA con Playwright"""
+    """SesiÃ³n de QA con Playwright"""
 
     session_id: str
     url: str
@@ -84,7 +84,7 @@ class PlaywrightQA:
     """
     Playwright QA para el Evaluator.
 
-    DEL ARTÍCULO:
+    DEL ARTÃCULO:
     "So they use the Playwright MCP so that the evaluator has tools it can use
     to actually navigate the app, screenshot it and test it like a real user."
 
@@ -101,7 +101,7 @@ class PlaywrightQA:
         self.playwright_available = self._check_playwright()
 
     def _check_playwright(self) -> bool:
-        """Verifica si Playwright está disponible"""
+        """Verifica si Playwright estÃ¡ disponible"""
         try:
             import playwright
 
@@ -110,7 +110,7 @@ class PlaywrightQA:
             return False
 
     def create_session(self, url: str, session_id: str = None) -> QASession:
-        """Crea una sesión de QA"""
+        """Crea una sesiÃ³n de QA"""
         import uuid
 
         return QASession(session_id=session_id or str(uuid.uuid4())[:8], url=url)
@@ -122,7 +122,7 @@ class PlaywrightQA:
         test_func: Callable,
         timeout_ms: int = 30000,
     ) -> TestResult:
-        """Ejecuta un test en la sesión"""
+        """Ejecuta un test en la sesiÃ³n"""
         import time
 
         start = time.time()
@@ -150,7 +150,7 @@ class PlaywrightQA:
         Navega a una ruta y toma screenshot.
         Retorna la ruta del screenshot.
         """
-        # En implementación real, usaría Playwright
+        # En implementaciÃ³n real, usarÃ­a Playwright
         # Por ahora, retornar path simulado
 
         screenshot_path = (
@@ -160,7 +160,7 @@ class PlaywrightQA:
 
     def verify_element_exists(self, session: QASession, selector: str) -> bool:
         """Verifica que un elemento existe"""
-        # En implementación real, usaría Playwright
+        # En implementaciÃ³n real, usarÃ­a Playwright
         # Por ahora, retornar True como placeholder
         return True
 
@@ -171,34 +171,34 @@ class PlaywrightQA:
         Compara visuales contra baseline.
         Retorna similarity score.
         """
-        # En implementación real, usaría image comparison
+        # En implementaciÃ³n real, usarÃ­a image comparison
         return {"similarity": 0.95, "diff_pixels": 100, "passed": True}
 
     def get_qa_report(self, session: QASession) -> str:
         """Genera reporte de QA"""
         status_emoji = {
-            QAState.READY: "⚪",
-            QAState.RUNNING: "🔵",
-            QAState.PASSED: "✅",
-            QAState.FAILED: "❌",
+            QAState.READY: "âšª",
+            QAState.RUNNING: "ðŸ”µ",
+            QAState.PASSED: "âœ…",
+            QAState.FAILED: "âŒ",
         }
 
         lines = [
             f"\n{'=' * 60}",
-            "🎭 PLAYWRIGHT QA REPORT",
+            "ðŸŽ­ PLAYWRIGHT QA REPORT",
             f"{'=' * 60}",
             f"Session ID: {session.session_id}",
             f"URL: {session.url}",
             f"Status: {status_emoji[session.state]} {session.state.value}",
             f"{'=' * 60}",
-            f"\n📊 RESULTS:",
+            f"\nðŸ“Š RESULTS:",
             f"  Passed: {session.passed_count}/{session.total_count} ({session.passed_percentage:.1f}%)",
         ]
 
         if session.tests:
-            lines.append(f"\n📋 TEST DETAILS:")
+            lines.append(f"\nðŸ“‹ TEST DETAILS:")
             for test in session.tests:
-                emoji = "✅" if test.passed else "❌"
+                emoji = "âœ…" if test.passed else "âŒ"
                 lines.append(f"  {emoji} {test.name} ({test.duration_ms:.0f}ms)")
                 if test.error:
                     lines.append(f"      Error: {test.error}")
@@ -210,10 +210,10 @@ class PlaywrightQA:
 
 def run_playwright_qa(url: str, tests: List[dict]) -> dict:
     """
-    Función principal para ejecutar Playwright QA.
+    FunciÃ³n principal para ejecutar Playwright QA.
 
     Usage:
-        from 04_Playwright_QA import run_playwright_qa
+        # TODO: Fix number prefix import - from 04_Playwright_QA import run_playwright_qa
 
         tests = [
             {"name": "Login form exists", "selector": "#login-form"},
@@ -222,15 +222,15 @@ def run_playwright_qa(url: str, tests: List[dict]) -> dict:
 
         result = run_playwright_qa("http://localhost:3000", tests)
     """
-    print("\n🎭 Inicializando Playwright QA...")
+    print("\nðŸŽ­ Inicializando Playwright QA...")
 
     qa = PlaywrightQA(headless=True)
 
-    # Crear sesión
+    # Crear sesiÃ³n
     session = qa.create_session(url)
     session.state = QAState.RUNNING
 
-    print(f"📱 Testing URL: {url}")
+    print(f"ðŸ“± Testing URL: {url}")
 
     # Ejecutar tests
     for test_def in tests:
@@ -245,7 +245,7 @@ def run_playwright_qa(url: str, tests: List[dict]) -> dict:
             return test
 
         result = qa.run_test(session, test_name, make_test(selector))
-        print(f"{'✅' if result.passed else '❌'} {test_name}")
+        print(f"{'âœ…' if result.passed else 'âŒ'} {test_name}")
 
     # Actualizar estado
     if session.passed_percentage >= 80:
@@ -268,7 +268,7 @@ def run_playwright_qa(url: str, tests: List[dict]) -> dict:
 
 if __name__ == "__main__":
     # Demo
-    print("\n🔬 Testing Playwright QA:\n")
+    print("\nðŸ”¬ Testing Playwright QA:\n")
 
     result = run_playwright_qa(
         url="http://localhost:3000",
@@ -280,5 +280,5 @@ if __name__ == "__main__":
         ],
     )
 
-    print("\n📋 Final Result:")
+    print("\nðŸ“‹ Final Result:")
     print(json.dumps(result, indent=2))

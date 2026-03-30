@@ -21,18 +21,18 @@ HEAVY_MODEL: gpt-5-codex-max
 
 1. Determine which model to use based on user request
 2. Construct the command: `codex --model <MODEL> "<PROMPT>"`
-3. Execute: `python .claude/skills/fork-terminal/tools/fork_terminal.py "codex --model <MODEL> \"<PROMPT>\""`
+3. Execute: `python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "codex --model <MODEL> \"<PROMPT>\""`
 
 ## Examples
 
 ### Without Summary
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "codex --model gpt-5.2 \"review the codebase and suggest improvements\""
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "codex --model gpt-5.2 \"review the codebase and suggest improvements\""
 ```
 
 ### With Summary (context handoff)
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "codex --model gpt-5.2 \"<filled fork_summary_user_prompt content here>\""
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "codex --model gpt-5.2 \"<filled fork_summary_user_prompt content here>\""
 ```

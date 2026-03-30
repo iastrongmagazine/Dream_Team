@@ -235,4 +235,4 @@ zustand, state management, react, store, persist, middleware
 
 Guardar en:
 - `03_Knowledge/` — Documentación
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

@@ -131,7 +131,7 @@ Cada skill ahora tiene:
 | Archivo                            | Estado               | Ubicación                                  |
 |------------------------------------|----------------------|--------------------------------------------|
 | 04_Inventario.md                   | ✅ ACTIVO             | `04_Operations/04_Memory_Brain/`                |
-| 01_Inventario_Total.md             | ✅ ACTIVO             | `01_Brain/02_Knowledge_Brain/`             |
+| 01_Inventario_Total.md             | ✅ ACTIVO             | `01_Core/02_Knowledge_Brain/`             |
 
 ---
 

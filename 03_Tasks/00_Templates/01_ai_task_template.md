@@ -15,7 +15,7 @@
 Actúa como un experto en PersonalOS. Mi objetivo es completar la tarea: [Título].
 Contexto relevante: [Metas/Refs].
 Estado actual: [Resumen corto].
-Por favor, lee el archivo de la tarea en `02_Operations/[archivo].md` y propón los primeros pasos.
+Por favor, lee el archivo de la tarea en `04_Operations/[archivo].md` y propón los primeros pasos.
 ```
 
 - --

@@ -119,7 +119,7 @@ class HumanGrader:
 
 ## Referencias
 
-- Artículo: `01_Brain/02_Knowledge_Brain/13_Anthropic_Engineering_01_07.md` (Post 7)
+- Artículo: `01_Core/02_Knowledge_Brain/13_Anthropic_Engineering_01_07.md` (Post 7)
 
 ---
 

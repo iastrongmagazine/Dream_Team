@@ -148,4 +148,4 @@ For the complete guide with all rules expanded: `AGENTS.md`
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

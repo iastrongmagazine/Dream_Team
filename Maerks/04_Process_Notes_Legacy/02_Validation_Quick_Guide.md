@@ -6,16 +6,16 @@
 
 ```bash
 # Validar Stack Completo
-python 04_Engine/06_validate_stack.py
+python 04_Operations/06_validate_stack.py
 
 # Context Reset (Recuperar Estado)
-python 04_Engine/00_context_reset.py
+python 04_Operations/00_context_reset.py
 
 # Ritual de Cierre Completo
-python 04_Engine/01_ritual_cierre.py
+python 04_Operations/01_ritual_cierre.py
 
 # Revisión Semanal
-python 04_Engine/08_weekly_review.py
+python 04_Operations/08_weekly_review.py
 ```
 
 ---
@@ -33,7 +33,7 @@ python 04_Engine/08_weekly_review.py
 ### Estructura
 
 - [x] `00_Core/` presente con AGENTS.md, BACKLOG.md, GOALS.md
-- [x] `04_Engine/` con 12 scripts funcionales
+- [x] `04_Operations/` con 12 scripts funcionales
 - [x] `.claude/hooks/` con 6 hooks activos
 - [x] `.cursor/rules/` con 8 reglas cargadas
 
@@ -94,7 +94,7 @@ python 04_Engine/08_weekly_review.py
    - `.claude/history/sessions/*.json`
 
 4. **Actualizar Reglas Según Aprendizaje**
-   - Documentar en `01_Brain/rules/Rules_Registry.md`
+   - Documentar en `01_Core/rules/Rules_Registry.md`
 
 ---
 

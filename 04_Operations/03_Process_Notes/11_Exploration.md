@@ -11,10 +11,10 @@ Existing README files in 00-06 directories follow a standard "Gentleman" structu
 ### Affected Areas
 
 - 00_Core/README.md
-- 01_Brain/README.md
-- 02_Operations/README.md
+- 01_Core/README.md
+- 04_Operations/README.md
 - 03_Knowledge/README.md
-- 04_Engine/README.md
+- 04_Operations/README.md
 - 05_System/README.md
 - 06_Archive/README.md
 

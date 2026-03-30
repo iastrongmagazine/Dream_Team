@@ -1,18 +1,18 @@
-# 19_Reorganizacion_04_Engine_Installer_2026-03-17
+# 19_Reorganizacion_04_Operations_Installer_2026-03-17
 
 ## Objetivo
 
-Reorganizar la estructura del 04_Engine y crear un installer para migrar PersonalOS a otras máquinas.
+Reorganizar la estructura del 04_Operations y crear un installer para migrar PersonalOS a otras máquinas.
 
 ## Contexto Previo
 
-- Scripts sueltos en 04_Engine/ (00_ a 65_)
+- Scripts sueltos en 04_Operations/ (00_ a 65_)
 - Rutas hardcodeadas en algunos scripts (58, 59)
 - No había forma de migrar PersonalOS a otra PC
 
 ## Acciones Realizadas
 
-### 1. Enumeración de 04_Engine
+### 1. Enumeración de 04_Operations
 
 - Corregir numeración de scripts (00, 64, 65)
 - Scripts workflow: 00_Context_Reset, 00_Context_Switcher
@@ -31,7 +31,7 @@ Reorganizar la estructura del 04_Engine y crear un installer para migrar Persona
 
 ### 3. Mover Scripts a 08_Scripts_Os
 
-- 65 scripts Python movidos de 04_Engine/ a 04_Engine/08_Scripts_Os/
+- 65 scripts Python movidos de 04_Operations/ a 04_Operations/08_Scripts_Os/
 - Actualizar rutas hardcodeadas en 58 y 59 para usar config.json
 
 ### 4. Actualizar Referencias
@@ -44,7 +44,7 @@ Reorganizar la estructura del 04_Engine y crear un installer para migrar Persona
 
 ### 5. Documentación
 
-- README.md de 04_Engine actualizado
+- README.md de 04_Operations actualizado
 - README.md de 07_Installer creado
 
 ## Edge Cases Resueltos

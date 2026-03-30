@@ -34,7 +34,7 @@ personal-os-main/
 │   ├── BACKLOG.md             (3,029 bytes)
 │   └── GOALS.md               (8,217 bytes)
 │
-├── 04_Engine/                  ✅ Validado
+├── 04_Operations/                  ✅ Validado
 │   ├── 00_context_reset.py    ✅ EJECUTADO
 │   ├── 01_ritual_cierre.py    ✅ EJECUTADO
 │   ├── 09_Backlog_Triage.py
@@ -257,7 +257,7 @@ Exit code: 0
 
 - La convención de números (`00_`, `01_`, etc.) es intencional
 - Facilita el ordenamiento y la ejecución secuencial
-- Es consistente en todo el directorio `04_Engine`
+- Es consistente en todo el directorio `04_Operations`
 - No afecta la funcionalidad
 
 ### 2. Git Remote No Configurado (ADVERTENCIA)
@@ -297,7 +297,7 @@ git remote add origin <URL-de-tu-repositorio>
 
 ### Detección de ROOT_DIR
 
-Todos los scripts en `04_Engine` usan la función `find_project_root()`:
+Todos los scripts en `04_Operations` usan la función `find_project_root()`:
 
 ```python
 def find_project_root(current_path):
@@ -328,7 +328,7 @@ def find_project_root(current_path):
 
 - [x] ROOT_DIR detection funcional
 - [x] 00_Core presente y accesible
-- [x] 04_Engine con todos los scripts
+- [x] 04_Operations con todos los scripts
 - [x] .claude/hooks configurados
 - [x] .cursor/rules presentes
 
@@ -387,7 +387,7 @@ git remote add origin https://github.com/tu-usuario/personal-os.git
 
 ### 2. Mantener Convención de Nombres
 
-La convención de números en `04_Engine` es correcta y debe mantenerse:
+La convención de números en `04_Operations` es correcta y debe mantenerse:
 
 - Facilita ordenamiento
 - Indica secuencia de ejecución
@@ -395,7 +395,7 @@ La convención de números en `04_Engine` es correcta y debe mantenerse:
 
 ### 3. Uso Regular del Ritual de Cierre
 
-Ejecutar `python 04_Engine/01_ritual_cierre.py` regularmente para:
+Ejecutar `python 04_Operations/01_ritual_cierre.py` regularmente para:
 
 - Validar el stack
 - Limpiar el sistema

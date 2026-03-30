@@ -208,7 +208,7 @@ Run the Task code-simplicity-reviewer() to see if we can simplify the code.
 
 ### 5. Findings Synthesis and Todo Creation Using file-todos Skill
 
-<critical_requirement> ALL findings MUST be stored in the todos/ directory using the file-todos skill. Create todo files immediately after synthesis - do NOT present findings for user approval first. Use the skill for structured todo management. </critical_requirement>
+<critical_requirement> ALL findings MUST be stored in the 03_Tasks/ directory using the file-todos skill. Create todo files immediately after synthesis - do NOT present findings for user approval first. Use the skill for structured todo management. </critical_requirement>
 
 #### Step 1: Synthesize All Findings
 
@@ -238,7 +238,7 @@ Remove duplicates, prioritize by severity and impact.
 
 - Create todo files directly using Write tool
 - All findings in parallel for speed
-- Use standard template from `.claude/skills/file-todos/assets/todo-template.md`
+- Use standard template from `.agent/02_Skills/00_Compound_Engineering/07_Skills/todo-create/assets/todo-template.md`
 - Follow naming convention: `{issue_id}-pending-{priority}-{description}.md`
 
 **Option B: Sub-Agents in Parallel (Recommended for Scale)** For large PRs with 15+ findings, use sub-agents to create finding files in parallel:
@@ -284,7 +284,7 @@ Sub-agents can:
    ```
 
    The skill provides:
-   - Template location: `.claude/skills/file-todos/assets/todo-template.md`
+   - Template location: `.agent/02_Skills/00_Compound_Engineering/07_Skills/todo-create/assets/todo-template.md`
    - Naming convention: `{issue_id}-{status}-{priority}-{description}.md`
    - YAML frontmatter structure: status, priority, issue_id, tags, dependencies
    - All required sections: Problem Statement, Findings, Solutions, etc.
@@ -304,7 +304,7 @@ Sub-agents can:
    004-pending-p3-unused-parameter.md
    ```
 
-5. Follow template structure from file-todos skill: `.claude/skills/file-todos/assets/todo-template.md`
+5. Follow template structure from file-todos skill: `.agent/02_Skills/00_Compound_Engineering/07_Skills/todo-create/assets/todo-template.md`
 
 **Todo File Structure (from template):**
 
@@ -395,7 +395,7 @@ After creating all todo files, present comprehensive summary:
 
 2. **Triage All Todos**:
    ```bash
-   ls todos/*-pending-*.md  # View all pending todos
+   ls 03_Tasks/*-pending-*.md  # View all pending todos
    /triage                  # Use slash command for interactive triage
    ```
 ````
@@ -409,7 +409,7 @@ After creating all todo files, present comprehensive summary:
 4. **Track Progress**:
    - Rename file when status changes: pending → ready → complete
    - Update Work Log as you work
-   - Commit todos: `git add todos/ && git commit -m "refactor: add code review findings"`
+   - Commit todos: `git add 03_Tasks/ && git commit -m "refactor: add code review findings"`
 
 ### Severity Breakdown:
 

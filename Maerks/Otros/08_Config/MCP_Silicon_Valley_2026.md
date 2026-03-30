@@ -93,7 +93,7 @@ Para activar los nuevos MCPs, actualizar las variables de entorno:
 cat .mcp.json
 
 # Probar MCPs
-python 04_Engine/61_MCP_Health_Check.py
+python 04_Operations/61_MCP_Health_Check.py
 ```
 
 ---

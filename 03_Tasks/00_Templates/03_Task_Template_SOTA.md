@@ -11,7 +11,7 @@ Tags:
   - complete
   - production
 Resource_Refs:
-  - 01_Brain/04_Rules/
+  - 01_Core/04_Rules/
   - 04_Agent_Teams_Lite/
   - 06_Taste_Skills/
   - .agent/05_GGA/

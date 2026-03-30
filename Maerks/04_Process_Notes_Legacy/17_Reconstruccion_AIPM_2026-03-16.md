@@ -20,7 +20,7 @@ Reconstruir y estabilizar el sistema Think Different AI después de detectar pro
 
 ✅ **Problemas Identificados:**
 
-- Carpetas duplicadas en `01_Brain/` (`Context_Memory` vs `01_Context_Memory`, `Engram` vs `06_Template`)
+- Carpetas duplicadas en `01_Core/` (`Context_Memory` vs `01_Context_Memory`, `Engram` vs `06_Template`)
 - Scripts AIPM usaban `sys.path.append` hardcodeado en lugar de configuración centralizada
 - Archivos en raíz que no correspondían (`tasks.md`, `analytics_output`, `excalidraw.log`)
 - Sistema de memoria no estaba sincronizado entre notas de proceso y contexto
@@ -58,8 +58,8 @@ Reconstruir y estabilizar el sistema Think Different AI después de detectar pro
 
 ✅ **Archivos Movidos:**
 
-- `tasks.md` → `02_Operations/01_Active_Tasks/AIPM_Migration_Tasks.md`
-- `analytics_output/` → `02_Operations/02_Evals/analytics_output/` (fusionado)
+- `tasks.md` → `04_Operations/01_Active_Tasks/AIPM_Migration_Tasks.md`
+- `analytics_output/` → `04_Operations/02_Evals/analytics_output/` (fusionado)
 - `excalidraw.log` → `06_Archive/`
 
 ### 6. Validación del Sistema
@@ -76,7 +76,7 @@ Reconstruir y estabilizar el sistema Think Different AI después de detectar pro
 ✅ **Archivos Modificados:**
 
 - `README.md` (raíz) - Actualizada estructura AIPM
-- `04_Engine/README.md` - Documentación de AIPM
+- `04_Operations/README.md` - Documentación de AIPM
 - `05_System/README.md` - Estructura del núcleo
 
 - --
@@ -85,7 +85,7 @@ Reconstruir y estabilizar el sistema Think Different AI después de detectar pro
 
 ### 1. La estructura de carpetas es sagrada
 
-Las carpetas `01_Brain/` deben seguir la convención `[DD]_[Nombre]`. La duplicación de carpetas (`Context_Memory` vs `01_Context_Memory`) causa que los scripts escriban en un lugar y el sistema lea de otro.
+Las carpetas `01_Core/` deben seguir la convención `[DD]_[Nombre]`. La duplicación de carpetas (`Context_Memory` vs `01_Context_Memory`) causa que los scripts escriban en un lugar y el sistema lea de otro.
 
 *Aprendizaje:* Siempre verificar la estructura antes de asumir que el sistema está funcionando.
 
@@ -97,7 +97,7 @@ Usar `os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))` es más ma
 
 ### 3. El Protocolo Génesis debe ejecutarse siempre
 
-Al inicio de cada sesión, debemos leer tanto `01_Brain/01_Context_Memory/` (para mi contexto) como `01_Brain/03_Process_Notes/` (para el contexto del usuario).
+Al inicio de cada sesión, debemos leer tanto `01_Core/01_Context_Memory/` (para mi contexto) como `01_Core/03_Process_Notes/` (para el contexto del usuario).
 
 *Aprendizaje:* Si esto no se hace, el sistema opera "a ciegas".
 
@@ -105,7 +105,7 @@ Al inicio de cada sesión, debemos leer tanto `01_Brain/01_Context_Memory/` (par
 
 Cada vez que se crea un nuevo módulo o script, la documentación debe reflejar esos cambios.
 
-*Aprendizaje:* README.md, 04_Engine/README.md y 05_System/README.md son los puntos de verdad.
+*Aprendizaje:* README.md, 04_Operations/README.md y 05_System/README.md son los puntos de verdad.
 
 - --
 
@@ -139,16 +139,16 @@ Cada vez que se crea un nuevo módulo o script, la documentación debe reflejar 
 1. **Fusionar rama** `fix/reconstruccion-aipm` con `main`
 2. **Ejecutar Ritual de Cierre** para verificar estado completo
 3. **Actualizar Engram** con los aprendizajes de esta sesión
-4. **Revisar tareas pendientes** en `02_Operations/01_Active_Tasks/AIPM_Migration_Tasks.md`
+4. **Revisar tareas pendientes** en `04_Operations/01_Active_Tasks/AIPM_Migration_Tasks.md`
 
 - --
 
 ## 🔗 Referencias
 
-- **Fast Vision:** `04_Engine/60_Fast_Vision.py`
-- **Config Paths:** `04_Engine/61_Config_Paths.py`
+- **Fast Vision:** `04_Operations/60_Fast_Vision.py`
+- **Config Paths:** `04_Operations/61_Config_Paths.py`
 - **AIPM Core:** `05_System/05_Core/AIPM/`
-- **Tareas AIPM:** `02_Operations/01_Active_Tasks/AIPM_Migration_Tasks.md`
+- **Tareas AIPM:** `04_Operations/01_Active_Tasks/AIPM_Migration_Tasks.md`
 
 - --
 

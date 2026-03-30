@@ -31,8 +31,8 @@ def get_tasks_dir() -> Path:
     candidates = [
         "Tasks",
         "../Tasks",
-        "../../02_Operations/01_Active_Tasks",
-        "02_Operations/01_Active_Tasks",
+        "../../04_Operations/01_Active_Tasks",
+        "04_Operations/01_Active_Tasks",
     ]
 
     for candidate in candidates:

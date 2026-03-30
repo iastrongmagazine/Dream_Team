@@ -15,7 +15,7 @@ description: Provides a quick way to capture ideas without interrupting flow. Tr
 
 1.  **Raw Capture**: Append input to `BACKLOG.md` immediately.
 2.  **Classification**: Distinguish between an **Insight** (Knowledge) or an **Action** (Task).
-3.  **Refinement**: Suggest appropriate home in `01_Brain/` or create a task in `02_Operations/01_Active_Tasks/`.
+3.  **Refinement**: Suggest appropriate home in `01_Core/` or create a task in `04_Operations/01_Active_Tasks/`.
 
 ## Instructions
 

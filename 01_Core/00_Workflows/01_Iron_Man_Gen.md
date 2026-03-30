@@ -34,6 +34,6 @@ Ejecutar al inicio de cada sesión para cargar el contexto completo del sistema:
      - Estado actual del proyecto (último commit, cambios recientes).
      - Reglas críticas de esta sesión.
      - Tareas en progreso / bloqueadas inmediatas.
-     - Agentes y herramientas disponibles (`.claude/agents/`, `.agent/01_Agents/`).
+     - Agentes y herramientas disponibles (`.agent/01_Agents/`, `.agent/01_Agents/`).
 
 // turbo-all

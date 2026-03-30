@@ -22,7 +22,7 @@ Completar la integración del ecosistema Gentleman Programming en el sistema Thi
 - Context_Memory duplicado → fusionado a 01_Context_Memory/01_Backups/
 - Engram movido a 05_System/05_Core/Engram/ (infraestructura)
 - 05_Docs_AI y 07_Archive eliminados
-- analytics_output movido a 02_Operations/02_Evals/
+- analytics_output movido a 04_Operations/02_Evals/
 
 ✅ **Actualización de documentación:**
 - README.md - estructura actualizada con Engram
@@ -100,7 +100,7 @@ Gentle-AI no instala los agentes (Claude, OpenCode, etc.), sino que los potencia
 
 ### 2. Engram debe estar en infraestructura
 
-Engram es el cerebro del sistema. Debe estar en 05_System/05_Core/Engram/ (infraestructura), no en 01_Brain/.
+Engram es el cerebro del sistema. Debe estar en 05_System/05_Core/Engram/ (infraestructura), no en 01_Core/.
 
 ### 3. Skills se copian, no se instalan
 

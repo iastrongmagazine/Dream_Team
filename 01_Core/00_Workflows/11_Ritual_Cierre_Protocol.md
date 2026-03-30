@@ -20,7 +20,7 @@ Ejecutar al finalizar cada sesión de trabajo. Garantiza que el sistema quede en
 ### 1. Validar Estado del Sistema
 
 1. `git status` — confirmar qué archivos cambiaron
-2. Verificar que no hay referencias rotas: `grep -r "04_Engine\|01_Brain\|02_Operations\|docs/" --include="*.py" --include="*.md"`
+2. Verificar que no hay referencias rotas: `grep -r "04_Operations\|01_Core\|04_Operations\|docs/" --include="*.py" --include="*.md"`
 3. Si hay errores → resolverlos antes de continuar
 
 ### 2. Actualizar Inventario (si aplica)

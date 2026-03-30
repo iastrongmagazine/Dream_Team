@@ -48,4 +48,30 @@ TIMEOUT="300"
 # Base branch for --pr-mode (auto-detects main/master/develop if empty)
 # Default: auto-detect
 # PR_BASE_BRANCH="main"
-# test
+
+# ==============================================================================
+# SOTA Skills System v2.0 - Pre-Commit Validation
+# ==============================================================================
+
+# Skill validation enabled
+SKILL_VALIDATION_ENABLED="true"
+
+# Path to skill validator script
+SKILL_VALIDATOR_SCRIPT="08_Scripts_Os/Validator_Fixed/skill_validator.py"
+
+# Minimum score threshold (FAIL if below)
+SKILL_MIN_SCORE="50"
+
+# Auto-run validation when files in these paths change (comma-separated)
+SKILL_PATHS="01_Core/03_Skills/"
+
+# Security scan enabled
+SKILL_SECURITY_SCAN="true"
+
+# Security scanner script
+SKILL_SECURITY_SCRIPT="08_Scripts_Os/Validator_Fixed/skill_security_scan.py"
+
+# Block commit on CRITICAL security issues
+SKILL_BLOCK_ON_CRITICAL="true"
+
+# ==============================================================================

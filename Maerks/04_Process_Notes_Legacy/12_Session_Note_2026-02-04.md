@@ -23,7 +23,7 @@
 ### 🧬 Integración de Compound Engineering
 
 - Se mapeó exhaustivamente el repositorio de `compound-engine`, descubriendo un arsenal masivo de agentes y comandos de clase mundial.
-- Se documentó la metodología en `01_Brain/02_Knowledge_Brain/04_Metodologia_Ingenieria_Compuesta.md`, estableciendo el ciclo Plan -> Work -> Review -> Compound como estándar.
+- Se documentó la metodología en `01_Core/02_Knowledge_Brain/04_Metodologia_Ingenieria_Compuesta.md`, estableciendo el ciclo Plan -> Work -> Review -> Compound como estándar.
 
 ### 🏆 Estandarización Elite y Optimización de Reglas
 

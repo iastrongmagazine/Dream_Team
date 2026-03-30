@@ -96,7 +96,7 @@ pass_3 = calculate_pass_all_k(results, k=3)
 
 ## Referencias
 
-- Artículo: `01_Brain/02_Knowledge_Brain/13_Anthropic_Engineering_01_07.md` (Post 7)
+- Artículo: `01_Core/02_Knowledge_Brain/13_Anthropic_Engineering_01_07.md` (Post 7)
 - Docs: https://docs.anthropic.com/docs/build-with-claude/prompt-engineering
 
 ---

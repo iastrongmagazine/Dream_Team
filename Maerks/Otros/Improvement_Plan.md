@@ -12,7 +12,7 @@ Este documento consolida las áreas de oportunidad detectadas durante la Auditor
 ### 2. Estandarización de Skills
 
 - **Estado**: Existen 55 Skills activas, pero el inventario previo reportaba 51. La estructura de carpetas (`01_Core`, `02_High_Value`, `03_Utilities`) es excelente pero requiere una numeración secuencial unificada en la documentación para evitar saltos cognitivos.
-- **Acción**: Implementar un script `04_Engine/17_skill_harmonizer.py` que valide la paridad entre carpetas físicas y el Inventario Total.
+- **Acción**: Implementar un script `04_Operations/17_skill_harmonizer.py` que valide la paridad entre carpetas físicas y el Inventario Total.
 
 ### 3. Automatización de Respaldo "Labs"
 

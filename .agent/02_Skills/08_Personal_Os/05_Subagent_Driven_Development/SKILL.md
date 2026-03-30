@@ -263,4 +263,4 @@ Done!
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado
+- `04_Operations/` — Estado

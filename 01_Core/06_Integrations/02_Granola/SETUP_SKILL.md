@@ -1,6 +1,6 @@
 # Setup Granola Integration Skill
 
-Copy this to `.claude/skills/setup-granola/SKILL.md` to enable automatic installation.
+Copy this to `01_Core/03_Skills/setup-granola/SKILL.md` to enable automatic installation.
 
 ---
 
@@ -82,8 +82,8 @@ mkdir -p Knowledge/Transcripts
 Copy the Granola skills to the user's Claude skills folder:
 
 ```bash
-mkdir -p .claude/skills/meeting-sync
-cp core/integrations/granola/skills/meeting-sync/SKILL.md .claude/skills/meeting-sync/
+mkdir -p 01_Core/03_Skills/meeting-sync
+cp core/integrations/granola/skills/meeting-sync/SKILL.md 01_Core/03_Skills/meeting-sync/
 ```
 
 ### Step 6: Update .mcp.json
@@ -135,7 +135,7 @@ Check for new Granola meetings
 - [ ] granola-ai-mcp-server cloned and dependencies installed
 - [ ] test_server.py passes
 - [ ] Knowledge/Transcripts folder exists
-- [ ] meeting-sync skill installed to .claude/skills/
+- [ ] meeting-sync skill installed to 01_Core/03_Skills/
 - [ ] .mcp.json updated with granola config
 - [ ] Claude Code restarted
 - [ ] Granola tools accessible (search_meetings works)

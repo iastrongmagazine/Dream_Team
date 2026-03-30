@@ -332,13 +332,13 @@
 ```
 Think_Different_AI/
 ├── 00_Core/                    # ADN: AGENTS.md, GOALS.md, BACKLOG.md
-├── 01_Brain/                   # Memoria y conocimiento
+├── 01_Core/                   # Memoria y conocimiento
 │   ├── 01_Context_Memory/     # Memoria JSON + MD
 │   ├── 02_Knowledge_Brain/    # Base de conocimiento
 │   ├── 03_Process_Notes/       # Notas de sesiones
 │   ├── 04_Rules/              # Reglas del sistema
 │   └── ...
-├── 02_Operations/              # Tasks, Evals, Progress
+├── 04_Operations/              # Tasks, Evals, Progress
 ├── 03_Knowledge/               # Research, Marketing, etc
 ├── 08_Scripts_Os/                  # Scripts (86+)
 │   └── 08_Scripts_Os/         # Hubs + Anthropic

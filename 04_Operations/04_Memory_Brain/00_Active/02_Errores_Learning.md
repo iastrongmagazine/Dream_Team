@@ -192,7 +192,7 @@ git add --renormalize .
 La persistencia de rutas absolutas en los logs del sistema causaba falsos positivos durante la validación de integridad y fragilidad ante cambios de entorno.
 
 * *Solución*:
-Se establece el uso obligatorio de rutas relativas al `PROJECT_ROOT` en todos los scripts de logs y validación del motor (04_Engine/).
+Se establece el uso obligatorio de rutas relativas al `PROJECT_ROOT` en todos los scripts de logs y validación del motor (04_Operations/).
 
 * *Learned*:
 - ⚠️ **Las rutas absolutas son enemigas de la portabilidad**

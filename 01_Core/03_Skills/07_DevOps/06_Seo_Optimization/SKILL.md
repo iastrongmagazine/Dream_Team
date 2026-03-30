@@ -119,4 +119,4 @@ Add new entries to `public/sitemap.xml`:
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

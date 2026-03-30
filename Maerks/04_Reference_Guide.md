@@ -80,7 +80,7 @@
 | Gentleman Ecosystem                | `Revisar_Analizar/02_Gentleman_Ecosystem_Tutorial.md`      |
 | **Firecrawl Guide**                | `Revisar_Analizar/03_Firecrawl_Guide.md` (pendiente)       |
 | Tool Shed MCPs                     | `03_Knowledge/08_Config_Mcp/mcp-tools/`                    |
-| Resolutions                        | `01_Brain/10_Resolutions/`                                 |
+| Resolutions                        | `01_Core/10_Resolutions/`                                 |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ### 2. Procesar Backlog
 - Comando: `"Lee AGENTS.md y procesa mi backlog"`
-- Crea tareas en `02_Operations/01_Active_Tasks/`
+- Crea tareas en `04_Operations/01_Active_Tasks/`
 
 ### 3. Planificar
 - Usar `/ce:plan` para generar plan técnico

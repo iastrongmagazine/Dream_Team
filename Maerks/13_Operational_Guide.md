@@ -12,10 +12,10 @@
 ### Ejecución Diaria
 | Script                            | Propósito                            | Ubicación                            |
 |-----------------------------------|--------------------------------------|--------------------------------------|
-| `09_Backlog_Triage.py`            | Procesar backlog con dedup           | `04_Engine/08_Scripts_Os/`           |
-| `14_Morning_Standup.py`           | Daily standup                        | `04_Engine/08_Scripts_Os/`           |
-| `13_Validate_Stack.py`            | Validar herramientas                 | `04_Engine/08_Scripts_Os/`           |
-| `08_Ritual_Cierre.py`             | Ritual de cierre                     | `04_Engine/08_Scripts_Os/`           |
+| `09_Backlog_Triage.py`            | Procesar backlog con dedup           | `04_Operations/08_Scripts_Os/`           |
+| `14_Morning_Standup.py`           | Daily standup                        | `04_Operations/08_Scripts_Os/`           |
+| `13_Validate_Stack.py`            | Validar herramientas                 | `04_Operations/08_Scripts_Os/`           |
+| `08_Ritual_Cierre.py`             | Ritual de cierre                     | `04_Operations/08_Scripts_Os/`           |
 
 ### Mantenimiento del Sistema
 | Script                              | Propósito                       |
@@ -63,8 +63,8 @@ Ideate → Brainstorm → Plan → Work → Review → Compound → Repeat
 
 ### Backlog Flow
 1. Extraer ítems de `00_Core/BACKLOG.md`
-2. Usar `04_Engine/08_Scripts_Os/09_Backlog_Triage.py`
-3. Crear tareas en `02_Operations/01_Active_Tasks/`
+2. Usar `04_Operations/08_Scripts_Os/09_Backlog_Triage.py`
+3. Crear tareas en `04_Operations/01_Active_Tasks/`
 4. Vincular con metas en `00_Core/GOALS.md`
 
 ---

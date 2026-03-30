@@ -110,7 +110,7 @@ Limpiar y validar el PersonalOS después de semanas de desarrollo intensivo. Ide
 
 #### RTM - Requirements Traceability Matrix
 
-* *Ubicación:** `02_Operations/02_Evals/RTM_Engine_Scripts.md`
+* *Ubicación:** `04_Operations/02_Evals/RTM_Engine_Scripts.md`
 
 | Métrica                            | Valor                  |
 |------------------------------------|------------------------|
@@ -121,7 +121,7 @@ Limpiar y validar el PersonalOS después de semanas de desarrollo intensivo. Ide
 
 #### Edge Cases Documentation
 
-* *Ubicación:** `02_Operations/02_Evals/Edge_Cases_Documentation.md`
+* *Ubicación:** `04_Operations/02_Evals/Edge_Cases_Documentation.md`
 
 | Categoría                    | Edge Cases                |
 |------------------------------|---------------------------|
@@ -178,9 +178,9 @@ Limpiar y validar el PersonalOS después de semanas de desarrollo intensivo. Ide
 ```
 ✅ 00_Core          ✅
 ✅ 01_Brain         ✅
-✅ 02_Operations    ✅
+✅ 04_Operations    ✅
 ✅ 03_Knowledge     ✅
-✅ 04_Engine        ✅ (73 scripts)
+✅ 04_Operations        ✅ (73 scripts)
 ✅ 05_System        ✅
 ✅ 06_Archive       ✅ (19 Process Notes archivados)
 ```

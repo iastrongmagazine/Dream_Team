@@ -12,7 +12,7 @@ Este documento identifica la conexión entre Skills y Scripts mediante comandos,
 1. **Mapping por Nomenclatura**: Vinculación automática por nombre (ej. `Morning_Standup` -> `14_Morning_Standup.py`).
 2. **Búsqueda de Alias**: Resolución dinámica de alias (`gr`, `ce-commit`).
 3. **Escaneo de Contenido**: Detección de nombres de scripts dentro de la documentación de Skills.
-4. **Validación Física**: Comprobación de existencia real en `04_Engine`.
+4. **Validación Física**: Comprobación de existencia real en `04_Operations`.
 
 ---
 
@@ -86,7 +86,7 @@ Este documento identifica la conexión entre Skills y Scripts mediante comandos,
 | `skills`                         | `parallel-orchestration`         | `__init__.py`                | `✅ ACTIVE` | ``                                                        |
 
 ### 2.2 Referencias Externas / Sin Mapeo Core
-> Skills con menciones a scripts que no residen en `04_Engine`.
+> Skills con menciones a scripts que no residen en `04_Operations`.
 
 | Perfil de Skill               | Nombre de la Skill            | Referencia                     | Estado      | Detalle                |
 |-------------------------------|-------------------------------|--------------------------------|-------------|------------------------|
@@ -168,87 +168,87 @@ Este documento identifica la conexión entre Skills y Scripts mediante comandos,
 
 ---
 
-## 👻 4. Scripts Huérfanos (04_Engine)
+## 👻 4. Scripts Huérfanos (04_Operations)
 
 Scripts físicos sin invocaciones detectadas desde Skills.
 
 | Nombre del Script                    | Ruta                                                                        | Categoría Sugerida   |
 |--------------------------------------|-----------------------------------------------------------------------------|----------------------|
-| `00_Sync_Gentleman_Skills.py`        | `04_Engine\10_Scripts_Sync\01_Gentleman_Skills\00_Sync_Gentleman_Skills.py` | `Standalone/Core`    |
-| `01_Beauty_Table.py`                 | `04_Engine\12_Validation\01_Beauty_Table.py`                                | `Standalone/Core`    |
-| `01_Cleanup_Tabs.py`                 | `04_Engine\04_Tools\01_Cleanup_Tabs.py`                                     | `Standalone/Core`    |
-| `01_Spider_Brainstorm.py`            | `04_Engine\08_Scripts_Os\01_Spider_Brainstorm.py`                           | `Standalone/Core`    |
-| `02_Beauty_Docs.py`                  | `04_Engine\12_Validation\02_Beauty_Docs.py`                                 | `Standalone/Core`    |
-| `02_Generate_Tree.py`                | `04_Engine\04_Tools\02_Generate_Tree.py`                                    | `Standalone/Core`    |
-| `02_Multi_Step_Script_Template.py`   | `04_Engine\03_Templates\02_Multi_Step_Script_Template.py`                   | `Standalone/Core`    |
-| `02_Professor_X_Plan.py`             | `04_Engine\08_Scripts_Os\02_Professor_X_Plan.py`                            | `Standalone/Core`    |
-| `03_Thor_Work.py`                    | `04_Engine\08_Scripts_Os\03_Thor_Work.py`                                   | `Standalone/Core`    |
-| `04_Vision_Review.py`                | `04_Engine\08_Scripts_Os\04_Vision_Review.py`                               | `Standalone/Core`    |
-| `06_AntMan_Lfg_Lite.py`              | `04_Engine\08_Scripts_Os\06_AntMan_Lfg_Lite.py`                             | `Standalone/Core`    |
-| `07_Doc_Strange_Lfg.py`              | `04_Engine\08_Scripts_Os\07_Doc_Strange_Lfg.py`                             | `Standalone/Core`    |
-| `12_Update_Links.py`                 | `04_Engine\08_Scripts_Os\12_Update_Links.py`                                | `Standalone/Core`    |
-| `16_Clean_System.py`                 | `04_Engine\08_Scripts_Os\16_Clean_System.py`                                | `Standalone/Core`    |
-| `19_Generate_Progress.py`            | `04_Engine\08_Scripts_Os\19_Generate_Progress.py`                           | `Standalone/Core`    |
-| `20_Master_Analytics_Factory.py`     | `04_Engine\08_Scripts_Os\20_Master_Analytics_Factory.py`                    | `Standalone/Core`    |
-| `22_AIPM_Trace_Logger.py`            | `04_Engine\08_Scripts_Os\22_AIPM_Trace_Logger.py`                           | `Standalone/Core`    |
-| `23_AIPM_Evaluator.py`               | `04_Engine\08_Scripts_Os\23_AIPM_Evaluator.py`                              | `Standalone/Core`    |
-| `24_AIPM_Interview_Sim.py`           | `04_Engine\08_Scripts_Os\24_AIPM_Interview_Sim.py`                          | `Standalone/Core`    |
-| `25_Token_Budget_Guard.py`           | `04_Engine\08_Scripts_Os\25_Token_Budget_Guard.py`                          | `Standalone/Core`    |
-| `26_RAG_Optimizer_Pro.py`            | `04_Engine\08_Scripts_Os\26_RAG_Optimizer_Pro.py`                           | `Standalone/Core`    |
-| `27_Probabilistic_Risk_Audit.py`     | `04_Engine\08_Scripts_Os\27_Probabilistic_Risk_Audit.py`                    | `Standalone/Core`    |
-| `28_AIPM_Control_Center.py`          | `04_Engine\08_Scripts_Os\28_AIPM_Control_Center.py`                         | `Standalone/Core`    |
-| `29_Guardrails_Service.py`           | `04_Engine\08_Scripts_Os\29_Guardrails_Service.py`                          | `Standalone/Core`    |
-| `30_AIPM_Consolidated_Report.py`     | `04_Engine\08_Scripts_Os\30_AIPM_Consolidated_Report.py`                    | `Standalone/Core`    |
-| `31_Silicon_Valley_Auditor.py`       | `04_Engine\08_Scripts_Os\31_Silicon_Valley_Auditor.py`                      | `Standalone/Core`    |
-| `32_Multi_Agent_Final_Validation.py` | `04_Engine\08_Scripts_Os\32_Multi_Agent_Final_Validation.py`                | `Standalone/Core`    |
-| `33_Parallel_Audit_Pro.py`           | `04_Engine\08_Scripts_Os\33_Parallel_Audit_Pro.py`                          | `Standalone/Core`    |
-| `34_Skill_Auditor.py`                | `04_Engine\08_Scripts_Os\34_Skill_Auditor.py`                               | `Standalone/Core`    |
-| `36_Beauty_Doc.py`                   | `04_Engine\08_Scripts_Os\36_Beauty_Doc.py`                                  | `Standalone/Core`    |
-| `37_Linter_Autofix.py`               | `04_Engine\08_Scripts_Os\37_Linter_Autofix.py`                              | `Standalone/Core`    |
-| `38_Recap_Planning.py`               | `04_Engine\08_Scripts_Os\38_Recap_Planning.py`                              | `Standalone/Core`    |
-| `39_Repair_Corruption.py`            | `04_Engine\08_Scripts_Os\39_Repair_Corruption.py`                           | `Standalone/Core`    |
-| `43_Marketing_Skills_Distributor.py` | `04_Engine\08_Scripts_Os\43_Marketing_Skills_Distributor.py`                | `Standalone/Core`    |
-| `44_Auto_Compound_Intelligence.py`   | `04_Engine\08_Scripts_Os\44_Auto_Compound_Intelligence.py`                  | `Standalone/Core`    |
-| `45_Migration_Master.py`             | `04_Engine\08_Scripts_Os\45_Migration_Master.py`                            | `Standalone/Core`    |
-| `46_Sync_MCP_OpenCode.py`            | `04_Engine\08_Scripts_Os\46_Sync_MCP_OpenCode.py`                           | `Standalone/Core`    |
-| `47_Verify_OpenCode_Status.py`       | `04_Engine\08_Scripts_Os\47_Verify_OpenCode_Status.py`                      | `Standalone/Core`    |
-| `48_Design_Critique_Expert.py`       | `04_Engine\08_Scripts_Os\48_Design_Critique_Expert.py`                      | `Standalone/Core`    |
-| `49_Path_Optimization.py`            | `04_Engine\08_Scripts_Os\49_Path_Optimization.py`                           | `Standalone/Core`    |
-| `50_System_Health_Monitor.py`        | `04_Engine\08_Scripts_Os\50_System_Health_Monitor.py`                       | `Standalone/Core`    |
-| `52_Safe_Commit.py`                  | `04_Engine\08_Scripts_Os\52_Safe_Commit.py`                                 | `Standalone/Core`    |
-| `53_Structure_Auditor.py`            | `04_Engine\08_Scripts_Os\53_Structure_Auditor.py`                           | `Standalone/Core`    |
-| `57_Repo_Sync_Auditor.py`            | `04_Engine\08_Scripts_Os\57_Repo_Sync_Auditor.py`                           | `Standalone/Core`    |
-| `58_Batch_Beautify_README.py`        | `04_Engine\08_Scripts_Os\58_Batch_Beautify_README.py`                       | `Standalone/Core`    |
-| `60_Fast_Vision.py`                  | `04_Engine\08_Scripts_Os\60_Fast_Vision.py`                                 | `Standalone/Core`    |
-| `64_Campanilla.py`                   | `04_Engine\08_Scripts_Os\64_Campanilla.py`                                  | `Standalone/Core`    |
-| `65_CTX_Generator.py`                | `04_Engine\08_Scripts_Os\65_CTX_Generator.py`                               | `Standalone/Core`    |
-| `67_Retry_Decorator.py`              | `04_Engine\08_Scripts_Os\67_Retry_Decorator.py`                             | `Standalone/Core`    |
-| `71_Script_Template.py`              | `04_Engine\08_Scripts_Os\71_Script_Template.py`                             | `Standalone/Core`    |
-| `72_Validate_Skills_Duplicates.py`   | `04_Engine\08_Scripts_Os\72_Validate_Skills_Duplicates.py`                  | `Standalone/Core`    |
-| `73_Avengers_Workflow.py`            | `04_Engine\08_Scripts_Os\73_Avengers_Workflow.py`                           | `Standalone/Core`    |
-| `74_MCP_Top_Tests.py`                | `04_Engine\08_Scripts_Os\74_MCP_Top_Tests.py`                               | `Standalone/Core`    |
-| `76_Obsidian_Exporter.py`            | `04_Engine\08_Scripts_Os\76_Obsidian_Exporter.py`                           | `Standalone/Core`    |
-| `77_Notify_System.py`                | `04_Engine\08_Scripts_Os\77_Notify_System.py`                               | `Standalone/Core`    |
-| `78_Context_Switcher.py`             | `04_Engine\08_Scripts_Os\78_Context_Switcher.py`                            | `Standalone/Core`    |
-| `81_RTM_Generator.py`                | `04_Engine\08_Scripts_Os\81_RTM_Generator.py`                               | `Standalone/Core`    |
-| `82_Health_Monitor.py`               | `04_Engine\08_Scripts_Os\82_Health_Monitor.py`                              | `Standalone/Core`    |
-| `83_Skill_Script_Mapper.py`          | `04_Engine\08_Scripts_Os\83_Skill_Script_Mapper.py`                         | `Standalone/Core`    |
-| `99_PascalCase_Reference_Test.py`    | `04_Engine\12_Validation\99_PascalCase_Reference_Test.py`                   | `Standalone/Core`    |
-| `cleanup_tabs.py`                    | `04_Engine\04_Tools\cleanup_tabs.py`                                        | `Standalone/Core`    |
-| `config_paths.py`                    | `04_Engine\08_Scripts_Os\config_paths.py`                                   | `Standalone/Core`    |
-| `configure_paths.py`                 | `04_Engine\07_Installer\scripts\configure_paths.py`                         | `Standalone/Core`    |
-| `detect_machine.py`                  | `04_Engine\07_Installer\scripts\detect_machine.py`                          | `Standalone/Core`    |
-| `generate_tree.py`                   | `04_Engine\04_Tools\generate_tree.py`                                       | `Standalone/Core`    |
-| `setup_aliases.py`                   | `04_Engine\07_Installer\scripts\setup_aliases.py`                           | `Standalone/Core`    |
-| `setup_dependencies.py`              | `04_Engine\07_Installer\scripts\setup_dependencies.py`                      | `Standalone/Core`    |
-| `test_audit_engineering.py`          | `04_Engine\05_Tests\test_audit_engineering.py`                              | `Standalone/Core`    |
-| `test_audit_sync_master.py`          | `04_Engine\05_Tests\test_audit_sync_master.py`                              | `Standalone/Core`    |
-| `test_benchmark_baseline.py`         | `04_Engine\05_Tests\test_benchmark_baseline.py`                             | `Standalone/Core`    |
-| `test_config_paths.py`               | `04_Engine\05_Tests\test_config_paths.py`                                   | `Standalone/Core`    |
-| `test_context_switcher.py`           | `04_Engine\05_Tests\test_context_switcher.py`                               | `Standalone/Core`    |
-| `test_retry_decorator.py`            | `04_Engine\05_Tests\test_retry_decorator.py`                                | `Standalone/Core`    |
-| `test_safe_commit.py`                | `04_Engine\05_Tests\test_safe_commit.py`                                    | `Standalone/Core`    |
-| `test_structure_auditor.py`          | `04_Engine\05_Tests\test_structure_auditor.py`                              | `Standalone/Core`    |
+| `00_Sync_Gentleman_Skills.py`        | `04_Operations\10_Scripts_Sync\01_Gentleman_Skills\00_Sync_Gentleman_Skills.py` | `Standalone/Core`    |
+| `01_Beauty_Table.py`                 | `04_Operations\12_Validation\01_Beauty_Table.py`                                | `Standalone/Core`    |
+| `01_Cleanup_Tabs.py`                 | `04_Operations\04_Tools\01_Cleanup_Tabs.py`                                     | `Standalone/Core`    |
+| `01_Spider_Brainstorm.py`            | `04_Operations\08_Scripts_Os\01_Spider_Brainstorm.py`                           | `Standalone/Core`    |
+| `02_Beauty_Docs.py`                  | `04_Operations\12_Validation\02_Beauty_Docs.py`                                 | `Standalone/Core`    |
+| `02_Generate_Tree.py`                | `04_Operations\04_Tools\02_Generate_Tree.py`                                    | `Standalone/Core`    |
+| `02_Multi_Step_Script_Template.py`   | `04_Operations\03_Templates\02_Multi_Step_Script_Template.py`                   | `Standalone/Core`    |
+| `02_Professor_X_Plan.py`             | `04_Operations\08_Scripts_Os\02_Professor_X_Plan.py`                            | `Standalone/Core`    |
+| `03_Thor_Work.py`                    | `04_Operations\08_Scripts_Os\03_Thor_Work.py`                                   | `Standalone/Core`    |
+| `04_Vision_Review.py`                | `04_Operations\08_Scripts_Os\04_Vision_Review.py`                               | `Standalone/Core`    |
+| `06_AntMan_Lfg_Lite.py`              | `04_Operations\08_Scripts_Os\06_AntMan_Lfg_Lite.py`                             | `Standalone/Core`    |
+| `07_Doc_Strange_Lfg.py`              | `04_Operations\08_Scripts_Os\07_Doc_Strange_Lfg.py`                             | `Standalone/Core`    |
+| `12_Update_Links.py`                 | `04_Operations\08_Scripts_Os\12_Update_Links.py`                                | `Standalone/Core`    |
+| `16_Clean_System.py`                 | `04_Operations\08_Scripts_Os\16_Clean_System.py`                                | `Standalone/Core`    |
+| `19_Generate_Progress.py`            | `04_Operations\08_Scripts_Os\19_Generate_Progress.py`                           | `Standalone/Core`    |
+| `20_Master_Analytics_Factory.py`     | `04_Operations\08_Scripts_Os\20_Master_Analytics_Factory.py`                    | `Standalone/Core`    |
+| `22_AIPM_Trace_Logger.py`            | `04_Operations\08_Scripts_Os\22_AIPM_Trace_Logger.py`                           | `Standalone/Core`    |
+| `23_AIPM_Evaluator.py`               | `04_Operations\08_Scripts_Os\23_AIPM_Evaluator.py`                              | `Standalone/Core`    |
+| `24_AIPM_Interview_Sim.py`           | `04_Operations\08_Scripts_Os\24_AIPM_Interview_Sim.py`                          | `Standalone/Core`    |
+| `25_Token_Budget_Guard.py`           | `04_Operations\08_Scripts_Os\25_Token_Budget_Guard.py`                          | `Standalone/Core`    |
+| `26_RAG_Optimizer_Pro.py`            | `04_Operations\08_Scripts_Os\26_RAG_Optimizer_Pro.py`                           | `Standalone/Core`    |
+| `27_Probabilistic_Risk_Audit.py`     | `04_Operations\08_Scripts_Os\27_Probabilistic_Risk_Audit.py`                    | `Standalone/Core`    |
+| `28_AIPM_Control_Center.py`          | `04_Operations\08_Scripts_Os\28_AIPM_Control_Center.py`                         | `Standalone/Core`    |
+| `29_Guardrails_Service.py`           | `04_Operations\08_Scripts_Os\29_Guardrails_Service.py`                          | `Standalone/Core`    |
+| `30_AIPM_Consolidated_Report.py`     | `04_Operations\08_Scripts_Os\30_AIPM_Consolidated_Report.py`                    | `Standalone/Core`    |
+| `31_Silicon_Valley_Auditor.py`       | `04_Operations\08_Scripts_Os\31_Silicon_Valley_Auditor.py`                      | `Standalone/Core`    |
+| `32_Multi_Agent_Final_Validation.py` | `04_Operations\08_Scripts_Os\32_Multi_Agent_Final_Validation.py`                | `Standalone/Core`    |
+| `33_Parallel_Audit_Pro.py`           | `04_Operations\08_Scripts_Os\33_Parallel_Audit_Pro.py`                          | `Standalone/Core`    |
+| `34_Skill_Auditor.py`                | `04_Operations\08_Scripts_Os\34_Skill_Auditor.py`                               | `Standalone/Core`    |
+| `36_Beauty_Doc.py`                   | `04_Operations\08_Scripts_Os\36_Beauty_Doc.py`                                  | `Standalone/Core`    |
+| `37_Linter_Autofix.py`               | `04_Operations\08_Scripts_Os\37_Linter_Autofix.py`                              | `Standalone/Core`    |
+| `38_Recap_Planning.py`               | `04_Operations\08_Scripts_Os\38_Recap_Planning.py`                              | `Standalone/Core`    |
+| `39_Repair_Corruption.py`            | `04_Operations\08_Scripts_Os\39_Repair_Corruption.py`                           | `Standalone/Core`    |
+| `43_Marketing_Skills_Distributor.py` | `04_Operations\08_Scripts_Os\43_Marketing_Skills_Distributor.py`                | `Standalone/Core`    |
+| `44_Auto_Compound_Intelligence.py`   | `04_Operations\08_Scripts_Os\44_Auto_Compound_Intelligence.py`                  | `Standalone/Core`    |
+| `45_Migration_Master.py`             | `04_Operations\08_Scripts_Os\45_Migration_Master.py`                            | `Standalone/Core`    |
+| `46_Sync_MCP_OpenCode.py`            | `04_Operations\08_Scripts_Os\46_Sync_MCP_OpenCode.py`                           | `Standalone/Core`    |
+| `47_Verify_OpenCode_Status.py`       | `04_Operations\08_Scripts_Os\47_Verify_OpenCode_Status.py`                      | `Standalone/Core`    |
+| `48_Design_Critique_Expert.py`       | `04_Operations\08_Scripts_Os\48_Design_Critique_Expert.py`                      | `Standalone/Core`    |
+| `49_Path_Optimization.py`            | `04_Operations\08_Scripts_Os\49_Path_Optimization.py`                           | `Standalone/Core`    |
+| `50_System_Health_Monitor.py`        | `04_Operations\08_Scripts_Os\50_System_Health_Monitor.py`                       | `Standalone/Core`    |
+| `52_Safe_Commit.py`                  | `04_Operations\08_Scripts_Os\52_Safe_Commit.py`                                 | `Standalone/Core`    |
+| `53_Structure_Auditor.py`            | `04_Operations\08_Scripts_Os\53_Structure_Auditor.py`                           | `Standalone/Core`    |
+| `57_Repo_Sync_Auditor.py`            | `04_Operations\08_Scripts_Os\57_Repo_Sync_Auditor.py`                           | `Standalone/Core`    |
+| `58_Batch_Beautify_README.py`        | `04_Operations\08_Scripts_Os\58_Batch_Beautify_README.py`                       | `Standalone/Core`    |
+| `60_Fast_Vision.py`                  | `04_Operations\08_Scripts_Os\60_Fast_Vision.py`                                 | `Standalone/Core`    |
+| `64_Campanilla.py`                   | `04_Operations\08_Scripts_Os\64_Campanilla.py`                                  | `Standalone/Core`    |
+| `65_CTX_Generator.py`                | `04_Operations\08_Scripts_Os\65_CTX_Generator.py`                               | `Standalone/Core`    |
+| `67_Retry_Decorator.py`              | `04_Operations\08_Scripts_Os\67_Retry_Decorator.py`                             | `Standalone/Core`    |
+| `71_Script_Template.py`              | `04_Operations\08_Scripts_Os\71_Script_Template.py`                             | `Standalone/Core`    |
+| `72_Validate_Skills_Duplicates.py`   | `04_Operations\08_Scripts_Os\72_Validate_Skills_Duplicates.py`                  | `Standalone/Core`    |
+| `73_Avengers_Workflow.py`            | `04_Operations\08_Scripts_Os\73_Avengers_Workflow.py`                           | `Standalone/Core`    |
+| `74_MCP_Top_Tests.py`                | `04_Operations\08_Scripts_Os\74_MCP_Top_Tests.py`                               | `Standalone/Core`    |
+| `76_Obsidian_Exporter.py`            | `04_Operations\08_Scripts_Os\76_Obsidian_Exporter.py`                           | `Standalone/Core`    |
+| `77_Notify_System.py`                | `04_Operations\08_Scripts_Os\77_Notify_System.py`                               | `Standalone/Core`    |
+| `78_Context_Switcher.py`             | `04_Operations\08_Scripts_Os\78_Context_Switcher.py`                            | `Standalone/Core`    |
+| `81_RTM_Generator.py`                | `04_Operations\08_Scripts_Os\81_RTM_Generator.py`                               | `Standalone/Core`    |
+| `82_Health_Monitor.py`               | `04_Operations\08_Scripts_Os\82_Health_Monitor.py`                              | `Standalone/Core`    |
+| `83_Skill_Script_Mapper.py`          | `04_Operations\08_Scripts_Os\83_Skill_Script_Mapper.py`                         | `Standalone/Core`    |
+| `99_PascalCase_Reference_Test.py`    | `04_Operations\12_Validation\99_PascalCase_Reference_Test.py`                   | `Standalone/Core`    |
+| `cleanup_tabs.py`                    | `04_Operations\04_Tools\cleanup_tabs.py`                                        | `Standalone/Core`    |
+| `config_paths.py`                    | `04_Operations\08_Scripts_Os\config_paths.py`                                   | `Standalone/Core`    |
+| `configure_paths.py`                 | `04_Operations\07_Installer\scripts\configure_paths.py`                         | `Standalone/Core`    |
+| `detect_machine.py`                  | `04_Operations\07_Installer\scripts\detect_machine.py`                          | `Standalone/Core`    |
+| `generate_tree.py`                   | `04_Operations\04_Tools\generate_tree.py`                                       | `Standalone/Core`    |
+| `setup_aliases.py`                   | `04_Operations\07_Installer\scripts\setup_aliases.py`                           | `Standalone/Core`    |
+| `setup_dependencies.py`              | `04_Operations\07_Installer\scripts\setup_dependencies.py`                      | `Standalone/Core`    |
+| `test_audit_engineering.py`          | `04_Operations\05_Tests\test_audit_engineering.py`                              | `Standalone/Core`    |
+| `test_audit_sync_master.py`          | `04_Operations\05_Tests\test_audit_sync_master.py`                              | `Standalone/Core`    |
+| `test_benchmark_baseline.py`         | `04_Operations\05_Tests\test_benchmark_baseline.py`                             | `Standalone/Core`    |
+| `test_config_paths.py`               | `04_Operations\05_Tests\test_config_paths.py`                                   | `Standalone/Core`    |
+| `test_context_switcher.py`           | `04_Operations\05_Tests\test_context_switcher.py`                               | `Standalone/Core`    |
+| `test_retry_decorator.py`            | `04_Operations\05_Tests\test_retry_decorator.py`                                | `Standalone/Core`    |
+| `test_safe_commit.py`                | `04_Operations\05_Tests\test_safe_commit.py`                                    | `Standalone/Core`    |
+| `test_structure_auditor.py`          | `04_Operations\05_Tests\test_structure_auditor.py`                              | `Standalone/Core`    |
 
 ---
 

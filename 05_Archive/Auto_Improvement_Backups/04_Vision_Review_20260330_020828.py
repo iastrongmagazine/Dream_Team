@@ -20,9 +20,9 @@ from config_paths import PROJECT_ROOT, OPERATIONS_DIR, OPERATIONS_TASKS_DIR
 REQUIRED_DIRS = [
     "00_Core",
     "01_Brain",
-    "02_Operations",
+    "04_Operations",
     "03_Knowledge",
-    "04_Engine",
+    "04_Operations",
     "05_System",
     "06_Archive",
 ]
@@ -126,9 +126,9 @@ def is_personalos_project(root_dir):
     dimensions = [
         "00_Core",
         "01_Brain",
-        "02_Operations",
+        "04_Operations",
         "03_Knowledge",
-        "04_Engine",
+        "04_Operations",
         "05_System",
         "06_Archive",
     ]
@@ -136,7 +136,7 @@ def is_personalos_project(root_dir):
 
 
 def get_tasks_dir():
-    """Retorna el directorio correcto de tareas: 02_Operations/01_Active_Tasks/"""
+    """Retorna el directorio correcto de tareas: 04_Operations/01_Active_Tasks/"""
     tasks_dir = OPERATIONS_TASKS_DIR
     os.makedirs(tasks_dir, exist_ok=True)
     return tasks_dir
@@ -487,7 +487,7 @@ def create_todo_files(review_findings):
     print(f"\n{INFO}[7/8] CREANDO ARCHIVOS DE TAREAS...{RESET}")
     dynamic_speak("Creando archivos de tareas estructurados para todos los hallazgos.")
 
-    # Usar directorio correcto: 02_Operations/01_Active_Tasks/
+    # Usar directorio correcto: 04_Operations/01_Active_Tasks/
     tasks_dir = get_tasks_dir()
     next_id = get_next_task_number(tasks_dir)
 
@@ -515,7 +515,7 @@ def create_todo_files(review_findings):
             next_id += 1
 
     print(
-        f"{SUCCESS}✅ Creados {len(todo_files_created)} archivos de tareas en 02_Operations/01_Active_Tasks/{RESET}"
+        f"{SUCCESS}✅ Creados {len(todo_files_created)} archivos de tareas en 04_Operations/01_Active_Tasks/{RESET}"
     )
     for todo_file in todo_files_created[:3]:  # Mostrar primeros 3
         print(f"{INFO}  • {os.path.basename(todo_file)}{RESET}")
@@ -667,7 +667,7 @@ def generate_summary_report(review_target, consolidated_findings, todo_files):
 
 2. **TRIAR TODOS LOS TODOS**:
    ```bash
-   ls todos/*-pending-*.md  # Ver todos los pendientes
+   ls 03_Tasks/*-pending-*.md  # Ver todos los pendientes
    /triage                  # Usar slash command para triaje interactivo
    ```
 
@@ -679,7 +679,7 @@ def generate_summary_report(review_target, consolidated_findings, todo_files):
 4. **SEGUIR PROGRESO**:
    - Renombrar archivo al cambiar status: pending → ready → complete
    - Actualizar Work Log mientras se trabaja
-   - Commitear todos: `git add todos/ && git commit -m "refactor: agregar hallazgos de code review"`
+   - Commitear todos: `git add 03_Tasks/ && git commit -m "refactor: agregar hallazgos de code review"`
 """
 
     print(f"\n{SUCCESS}{'=' * 70}")

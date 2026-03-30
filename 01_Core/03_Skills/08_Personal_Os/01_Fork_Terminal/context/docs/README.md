@@ -35,19 +35,19 @@ Usuario ──► Agente Primario ──► Fork Terminal ──► Agente Secun
 ### 1. Primer Fork (30 segundos)
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "echo Hola Mundo && pause"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "echo Hola Mundo && pause"
 ```
 
 ### 2. Demo Completa (2 minutos)
 
 ```bash
-python .claude/skills/fork-terminal/tools/run_all_tests.py
+python 01_Core/03_Skills/fork-terminal/tools/run_all_tests.py
 ```
 
 ### 3. Uso Real con Claude Code
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "claude --model claude-sonnet-4.5 --dangerously-skip-permissions 'analiza este código y sugiere mejoras'"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "claude --model claude-sonnet-4.5 --dangerously-skip-permissions 'analiza este código y sugiere mejoras'"
 ```
 
 ---

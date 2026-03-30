@@ -81,7 +81,7 @@ El sistema es autónomo. Para usarlo en el futuro:
 1.  **Para Tareas Complejas:**
 
     ```bash
-    # Crear un script en .claude/skills/parallel-orchestration/tools/
+    # Crear un script en 01_Core/03_Skills/parallel-orchestration/tools/
     # Importar AgentOrchestrator
     # Definir agentes y .launch()
     ```
@@ -89,7 +89,7 @@ El sistema es autónomo. Para usarlo en el futuro:
 2.  **Para Mantenimiento:**
     ```bash
     # Ejecutar la auditoría rápida de 5 agentes
-    python .claude/skills/parallel-orchestration/tools/run_final_5_agent_test.py
+    python 01_Core/03_Skills/parallel-orchestration/tools/run_final_5_agent_test.py
     ```
 
 ---

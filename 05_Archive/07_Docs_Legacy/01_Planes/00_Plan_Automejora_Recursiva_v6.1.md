@@ -928,7 +928,7 @@ steps:
 - [x] Tests de integración
 - [x] Crear `metrics_tracker.py`
 - [x] Crear `rules_engine.py`
-- [ ] Integrar con System Guardian (pendiente)
+- [x] Integrar con System Guardian (implementado en stop.py)
 
 ### FASE 3: Aprendizaje (Semana 3) ✅ DONE
 - [x] `knowledge_base.json` existe
@@ -941,6 +941,12 @@ steps:
 - [x] Implementar predicciones (trends calculation)
 - [x] Documentación completa (este plan)
 - [x] Tests finales (verificación manual)
+
+### CICLO 1: Fix Detected Issues 📋 PLANNED
+- [ ] **2026-03-30-002**: Fix 1,338 Auto Improvement Issues
+  - 49 BROKEN_IMPORT (HIGH priority)
+  - 1,289 NAMING_INCONSISTENCY (LOW priority)
+  - Plan: `docs/plans/2026-03-30-002-fix-auto-improvement-issues-plan.md`
 
 ---
 

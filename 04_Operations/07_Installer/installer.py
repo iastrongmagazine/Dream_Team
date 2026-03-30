@@ -364,7 +364,7 @@ def main():
         print("\nComandos útiles:")
         print("  gr              # System Guardian (dry-run)")
         print("  gra             # System Guardian (con fixes)")
-        print("  python 04_Engine/13_Validate_Stack.py")
+        print("  python 04_Operations/13_Validate_Stack.py")
     else:
         print("\n❌ INSTALACIÓN FALLIDA")
         sys.exit(1)

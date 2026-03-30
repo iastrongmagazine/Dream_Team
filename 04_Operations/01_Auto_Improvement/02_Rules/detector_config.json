@@ -1,0 +1,43 @@
+{
+  "exclusion_patterns": {
+    "directories_to_skip": [
+      "Legacy_Backup",
+      "node_modules",
+      ".git",
+      "venv",
+      "__pycache__",
+      ".venv",
+      "AIPM_Fixed",
+      "Auditor_Fixed",
+      "Data_Fixed",
+      "General_Fixed",
+      "Integration_Fixed",
+      "Ritual_Fixed",
+      "Tool_Fixed",
+      "Validator_Fixed",
+      "Workflow_Fixed"
+    ],
+    "file_exceptions": [
+      "README.md",
+      "README.txt",
+      "setup.py",
+      "setup.cfg",
+      "pyproject.toml",
+      "__init__.py",
+      "conftest.py",
+      ".env",
+      ".env.example",
+      ".gitignore",
+      ".dockerignore"
+    ],
+    "legacy_prefixes_to_exclude": [
+      "04_",
+      "05_",
+      "Legacy_"
+    ]
+  },
+  "naming_rules": {
+    "python_pattern": "^\\d{2}_[A-Za-z0-9_]*\\.py$",
+    "markdown_pattern": "^\\d{2}_[A-Za-z0-9_\\-\\s]*\\.md$"
+  }
+}

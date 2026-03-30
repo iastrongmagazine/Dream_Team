@@ -11,7 +11,7 @@ Validar la arquitectura de **Orquestación de Agentes con Aislamiento de Context
 **Comando:**
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "echo TEST && pause"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "echo TEST && pause"
 ```
 
 **Resultado:** Terminal forked exitosamente, comando ejecutado.
@@ -27,7 +27,7 @@ python .claude/skills/fork-terminal/tools/fork_terminal.py "echo TEST && pause"
 **Comando:**
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "python .claude/skills/fork-terminal/tools/demo_agent.py Revisar arquitectura del skill"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "python 01_Core/03_Skills/fork-terminal/tools/demo_agent.py Revisar arquitectura del skill"
 ```
 
 **Características:**
@@ -49,7 +49,7 @@ python .claude/skills/fork-terminal/tools/fork_terminal.py "python .claude/skill
 **Comando:**
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "python .claude/skills/fork-terminal/tools/orchestration_demo.py"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "python 01_Core/03_Skills/fork-terminal/tools/orchestration_demo.py"
 ```
 
 **Características:**
@@ -72,7 +72,7 @@ python .claude/skills/fork-terminal/tools/fork_terminal.py "python .claude/skill
 **Comando:**
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "python .claude/skills/fork-terminal/tools/claude_fork_demo.py"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "python 01_Core/03_Skills/fork-terminal/tools/claude_fork_demo.py"
 ```
 
 **Características:**

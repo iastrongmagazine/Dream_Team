@@ -1,5 +1,5 @@
 """
-Fixtures de testing para scripts Python de 04_Engine.
+Fixtures de testing para scripts Python de 04_Operations.
 
 ARMOR LAYER: Los scripts del sistema viven en Legacy_Backup/.
 Todos los tests deben importar desde LEGACY_SCRIPTS_DIR.

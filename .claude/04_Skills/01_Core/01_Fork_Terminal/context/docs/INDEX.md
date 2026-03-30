@@ -13,7 +13,7 @@
 ## 📁 Estructura de Archivos
 
 ```
-.claude/skills/fork-terminal/
+01_Core/03_Skills/fork-terminal/
 │
 ├── 📄 SKILL.md                    ⭐ Definición principal del skill
 ├── 📄 EXECUTIVE_REPORT.md         📊 Reporte ejecutivo completo

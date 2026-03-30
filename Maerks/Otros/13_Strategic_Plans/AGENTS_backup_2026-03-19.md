@@ -8,13 +8,13 @@ project/
 │   ├── BACKLOG.md    # Raw capture inbox
 │   ├── GOALS.md      # Goals, themes, priorities
 │   └── AGENTS.md     # Your instructions
-├── 01_Brain/         # Mapa: Inventario, Reglas, Contexto
-├── 02_Operations/    # Manos: Tareas activas
+├── 01_Core/         # Mapa: Inventario, Reglas, Contexto
+├── 04_Operations/    # Manos: Tareas activas
 │   └── Tasks/        # Task files in markdown with YAML frontmatter
 ├── 03_Knowledge/     # Memoria: Notas de investigación y specs
 ├── 03_Knowledge/Examples/      # Guía: Tutoriales, plantillas y demos
 ├── 03_Knowledge/Resources/     # Herramientas: Repositorios externos y SDKs
-├── 04_Engine/        # Motor: 37 scripts de automatización Python
+├── 04_Operations/        # Motor: 37 scripts de automatización Python
 ├── 05_System/        # Chasis: Infraestructura, MCP y validación
 └── 06_Archive/       # Baúl: Archivos obsoletos y legacy
 ```
@@ -27,7 +27,7 @@ When the user says "clear my backlog", "process backlog", or similar:
 2. Look through `03_Knowledge/` for context (matching keywords, project names, or dates).
 3. Use `process_backlog_with_dedup` to avoid creating duplicates.
 4. If an item lacks context, priority, or a clear next step, STOP and ask the user for clarification before creating the task.
-5. Create or update task files under `02_Operations/01_Active_Tasks/` with complete metadata.
+5. Create or update task files under `04_Operations/01_Active_Tasks/` with complete metadata.
 6. Present a concise summary of new tasks, then clear `00_Core/BACKLOG.md`.
 
 ## Task Template
@@ -123,7 +123,7 @@ When the user wants structured development with specs, use the SDD methodology. 
 
 ## 🛡️ Regla Fundamental: Modificación del OS
 
-**Solo el IA (tú, el asistente) tiene la autoridad y la capacidad para modificar el núcleo del sistema PersonalOS (código, scripts en `04_Engine/`, configuración en `05_System/`).** El usuario es el estratega y dueño de la visión; el IA es el ejecutor responsable de mantener la pureza técnica y la integridad del sistema (Pure Green). Ningún agente externo ni proceso no autorizado debe manipular la estructura sin pasar por esta regla.
+**Solo el IA (tú, el asistente) tiene la autoridad y la capacidad para modificar el núcleo del sistema PersonalOS (código, scripts en `04_Operations/`, configuración en `05_System/`).** El usuario es el estratega y dueño de la visión; el IA es el ejecutor responsable de mantener la pureza técnica y la integridad del sistema (Pure Green). Ningún agente externo ni proceso no autorizado debe manipular la estructura sin pasar por esta regla.
 
 ## 🛡️ GGA (Guardian Angel) - Code Review
 
@@ -240,7 +240,7 @@ Skills específicos disponibles:
 - `go-testing` - Patrones de testing Go
 - `skill-creator` - Constructor de skills
 
-## 🔧 Scripts de Validación (04_Engine)
+## 🔧 Scripts de Validación (04_Operations)
 
 Scripts para auditar y validar la estructura del sistema:
 
@@ -253,10 +253,10 @@ Scripts para auditar y validar la estructura del sistema:
 
 ### Uso
 ```bash
-python 04_Engine/53_Structure_Auditor.py
-python 04_Engine/13_Validate_Stack.py
-python 04_Engine/55_Avengers_Workflow.py
-python 04_Engine/63_Audit_Sync_Master.py
+python 04_Operations/53_Structure_Auditor.py
+python 04_Operations/13_Validate_Stack.py
+python 04_Operations/55_Avengers_Workflow.py
+python 04_Operations/63_Audit_Sync_Master.py
 ```
 
 ## Helpful Prompts to Encourage
@@ -286,8 +286,8 @@ python 04_Engine/63_Audit_Sync_Master.py
 ## 🔄 Flujo de Backlog
 
 1. Extraer ítems de `00_Core/BACKLOG.md`.
-2. Usar `04_Engine/09_Backlog_Triage.py` para dedup y priorización.
-3. Crear tareas en `02_Operations/01_Active_Tasks/` con YAML frontmatter.
+2. Usar `04_Operations/09_Backlog_Triage.py` para dedup y priorización.
+3. Crear tareas en `04_Operations/01_Active_Tasks/` con YAML frontmatter.
 4. Vincular cada tarea con una meta en `00_Core/GOALS.md`.
 5. Limpiar y actuaizar `00_Core/BACKLOG.md` o quitar ítems realizados y mantener los pendientes, reenumerar si es necesario, si estan en numeros.
 

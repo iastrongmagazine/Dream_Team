@@ -199,4 +199,4 @@ pytest, python, testing, fixtures, mocking, parametrize, markers
 
 Guardar en:
 - `03_Knowledge/` — Documentación
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

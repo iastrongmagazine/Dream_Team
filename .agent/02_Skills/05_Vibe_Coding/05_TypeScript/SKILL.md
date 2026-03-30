@@ -123,4 +123,4 @@ typescript, ts, types, interfaces, generics, strict mode, utility types
 
 Guardar en:
 - `03_Knowledge/` — Documentación
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

@@ -17,7 +17,7 @@
 ### 📁 Estructura Completa
 
 ```
-.claude/skills/fork-terminal/
+01_Core/03_Skills/fork-terminal/
 ├── 📄 README.md                   🏠 Inicio - Lee esto primero
 ├── 📄 EXECUTIVE_REPORT.md         📊 Reporte ejecutivo completo
 ├── 📄 INDEX.md                    📚 Índice de documentación
@@ -149,13 +149,13 @@ El skill está listo para:
 ### 1. Lee la Documentación
 
 ```
-📖 Empieza con: .claude/skills/fork-terminal/01_README.md
+📖 Empieza con: 01_Core/03_Skills/fork-terminal/01_README.md
 ```
 
 ### 2. Ejecuta las Demos
 
 ```bash
-cd .claude/skills/fork-terminal/tools
+cd 01_Core/03_Skills/fork-terminal/tools
 python run_all_tests.py
 ```
 
@@ -211,9 +211,9 @@ python tools/fork_terminal.py "echo Hola Mundo && pause"
 
 ### Para ti:
 
-1. 📖 Lee **[.claude/skills/fork-terminal/01_README.md](.claude/skills/fork-terminal/01_README.md)**
-2. 🧪 Ejecuta **[.claude/skills/fork-terminal/tools/run_all_tests.py](.claude/skills/fork-terminal/tools/run_all_tests.py)**
-3. 📊 Revisa **[.claude/skills/fork-terminal/EXECUTIVE_REPORT.md](.claude/skills/fork-terminal/EXECUTIVE_REPORT.md)**
+1. 📖 Lee **[01_Core/03_Skills/fork-terminal/01_README.md](01_Core/03_Skills/fork-terminal/01_README.md)**
+2. 🧪 Ejecuta **[01_Core/03_Skills/fork-terminal/tools/run_all_tests.py](01_Core/03_Skills/fork-terminal/tools/run_all_tests.py)**
+3. 📊 Revisa **[01_Core/03_Skills/fork-terminal/EXECUTIVE_REPORT.md](01_Core/03_Skills/fork-terminal/EXECUTIVE_REPORT.md)**
 
 ---
 

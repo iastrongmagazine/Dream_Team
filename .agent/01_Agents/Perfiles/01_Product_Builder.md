@@ -27,7 +27,7 @@ Este perfil orquesta el ciclo completo de desarrollo de una feature: desde la de
 | **Generator** | Construye feature por feature | Spec | Código |
 | **Evaluator** | QA separado (NO self-evaluation!) | Running app | Bugs + grading |
 
-> **Pattern:** Inspired by Anthropic's [Harness Design](01_Brain/02_Knowledge_Brain/10_Anthropic_Harness_Design.md)
+> **Pattern:** Inspired by Anthropic's [Harness Design](01_Core/02_Knowledge_Brain/10_Anthropic_Harness_Design.md)
 
 ---
 

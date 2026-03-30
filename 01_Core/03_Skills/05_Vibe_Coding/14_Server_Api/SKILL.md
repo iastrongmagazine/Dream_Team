@@ -53,4 +53,4 @@ If payload or route changes, update docs in the same PR.
 
 Guardar en:
 - `03_Knowledge/` — Documentación
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

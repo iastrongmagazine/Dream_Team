@@ -2,7 +2,7 @@
   "discord_webhook": "",
   "channels": ["console", "log"],
   "stop_on_error": true,
-  "log_path": "02_Operations/03_Analytics/alerts",
+  "log_path": "04_Operations/03_Analytics/alerts",
   "notify_voz": true,
   "debug": false
 }

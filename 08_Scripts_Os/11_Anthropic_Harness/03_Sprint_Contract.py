@@ -15,7 +15,7 @@ VERSIÓN: 1.0
  fecha: 2026-03-26
  FILOSOFÍA: "No te traiciones, no te abandones" — Siempre lo correcto
 
-REFERENCIA: 01_Brain/02_Knowledge_Brain/10_Anthropic_Harness_Design.md
+REFERENCIA: 01_Core/02_Knowledge_Brain/10_Anthropic_Harness_Design.md
 """
 
 import os

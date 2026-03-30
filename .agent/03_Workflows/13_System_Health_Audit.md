@@ -1,7 +1,7 @@
 ---
 name: audit
 description: Auditoría completa del sistema — valida estructura, scripts, referencias y estado general. Usar antes de cada entrega importante.
-argument-hint: "[opcional: componente específico a auditar — ej: 04_Engine, workflows, rules]"
+argument-hint: "[opcional: componente específico a auditar — ej: 04_Operations, workflows, rules]"
 ---
 
 # 🏥 Workflow: System Health Audit
@@ -28,7 +28,7 @@ Revisa: estructura de carpetas, scripts Python, referencias en `.md`, reglas `.m
 ### 2. Validar Referencias (grep global)
 
 ```bash
-grep -r "04_Engine\|01_Brain\|02_Operations\|docs/" \
+grep -r "04_Operations\|01_Core\|04_Operations\|docs/" \
   --include="*.py" --include="*.md" --include="*.mdc" \
   | grep -v "(ex " | grep -v "fueron consolidados" | grep -v "Legacy_Backup"
 ```

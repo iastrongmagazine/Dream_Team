@@ -23,7 +23,7 @@ El auditor verifica la robustez técnica:
 - **Type Hinting**: Asegurar tipado fuerte en Python.
 
 ### 2. Auditoría de Estándares (Valley Standards)
-Integración directa con los motores de `04_Engine`:
+Integración directa con los motores de `04_Operations`:
 - **Silicon Valley Auditor (`31_Silicon_Valley_Auditor.py`)**: Valida docstrings, PEP 8 y complejidad ciclomática.
 - **AIPM Evaluator (`23_AIPM_Evaluator.py`)**: Mide la salud y cobertura del ecosistema AIPM.
 - **Vision Review (`04_Vision_Review.py`)**: Simula múltiples perspectivas de revisión (Dev, Ops, Sec, Biz).

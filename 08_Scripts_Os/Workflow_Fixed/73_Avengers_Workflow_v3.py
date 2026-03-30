@@ -48,7 +48,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 os.environ["PERSONAL_OS_ROOT"] = PROJECT_ROOT
 
 # Agregar al path para config
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "04_Engine", "08_Scripts_Os"))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "../..", "08_Scripts_Os"))
 
 try:
     from config_paths import ROOT_DIR, OPERATIONS_DIR
@@ -63,7 +63,7 @@ except ImportError:
 # ==============================================================================
 
 PROJECT_ROOT_PATH = Path(PROJECT_ROOT)
-LOG_DIR = PROJECT_ROOT_PATH / "04_Engine" / "Analytics_Output"
+LOG_DIR = PROJECT_ROOT_PATH / "../.." / "Analytics_Output"
 
 # Crear directorio de logs si no existe
 try:

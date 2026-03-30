@@ -11,7 +11,7 @@ init()
 # ARMOR LAYER - PATH RESOLUTION (3-LEVEL)
 # =============================================================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-# Fix: go up 3 levels from Legacy_Backup/08_Scripts_Os/04_Engine/ to root
+# Fix: go up 3 levels # TODO: Fix legacy import - from Legacy_Backup/08_Scripts_Os/04_Engine/ to root
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(SCRIPT_DIR)))
 
 # Fix Windows console encoding
@@ -22,7 +22,7 @@ if sys.platform == "win32":
 
 def dynamic_speak(text):
     """Interfaz de Voz SOTA v2.2"""
-    print(f"{Fore.MAGENTA}🔊 [VOICE]: {text}{Style.RESET_ALL}")
+    print(f"{Fore.MAGENTA}ðŸ”Š [VOICE]: {text}{Style.RESET_ALL}")
     if sys.platform == "win32":
         try:
             cmd = f"PowerShell -Command \"Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('{text}')\""
@@ -55,7 +55,7 @@ ROOT_DIR = PROJECT_ROOT
 
 
 def check_uv():
-    """Verifica que uv esté instalado."""
+    """Verifica que uv estÃ© instalado."""
     try:
         result = subprocess.run(
             ["uv", "--version"], capture_output=True, text=True, check=False
@@ -71,14 +71,14 @@ def check_uv():
 
 
 def check_python():
-    """Verifica la versión de Python."""
+    """Verifica la versiÃ³n de Python."""
     version = sys.version.split()[0]
     print(f"[OK] Python: {version}")
     return True
 
 
 def check_git():
-    """Verifica que git esté disponible."""
+    """Verifica que git estÃ© disponible."""
     try:
         result = subprocess.run(
             ["git", "--version"],
@@ -98,10 +98,10 @@ def check_git():
 
 
 def check_core_structure():
-    """Verifica la existencia de los archivos críticos actualizados."""
+    """Verifica la existencia de los archivos crÃ­ticos actualizados."""
     critical_files = {
-        "Raíz: README.md": os.path.join(ROOT_DIR, "README.md"),
-        "Raíz: CLAUDE.md": os.path.join(ROOT_DIR, "CLAUDE.md"),
+        "RaÃ­z: README.md": os.path.join(ROOT_DIR, "README.md"),
+        "RaÃ­z: CLAUDE.md": os.path.join(ROOT_DIR, "CLAUDE.md"),
         "Config: settings.local.json": os.path.join(
             ROOT_DIR, ".claude", "settings.local.json"
         ),
@@ -126,21 +126,21 @@ def check_core_structure():
 def main():
     """Ejecuta todas las validaciones del stack."""
     print_banner()
-    dynamic_speak("Iniciando validación del stack tecnológico")
+    dynamic_speak("Iniciando validaciÃ³n del stack tecnolÃ³gico")
 
     print(f"{Fore.CYAN}{'=' * 75}{Style.RESET_ALL}")
-    print("VALIDACIÓN DEL STACK TECNOLÓGICO PersonalOS")
+    print("VALIDACIÃ“N DEL STACK TECNOLÃ“GICO PersonalOS")
     print(f"{Fore.CYAN}{'=' * 75}{Style.RESET_ALL}")
     checks = [check_python(), check_uv(), check_git(), check_core_structure()]
     if all(checks):
         print(
             f"\n{Fore.GREEN}[OK] Todas las validaciones pasaron correctamente{Style.RESET_ALL}"
         )
-        dynamic_speak("Validación del stack exitosa")
+        dynamic_speak("ValidaciÃ³n del stack exitosa")
         sys.exit(0)
     else:
         print(f"\n{Fore.RED}[ERR] Algunas validaciones fallaron{Style.RESET_ALL}")
-        dynamic_speak("Error en la validación del stack")
+        dynamic_speak("Error en la validaciÃ³n del stack")
         sys.exit(1)
 
 

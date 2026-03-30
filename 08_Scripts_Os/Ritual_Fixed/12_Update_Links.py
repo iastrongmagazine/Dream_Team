@@ -55,7 +55,7 @@ REQUIRED_DIRS = [
     "01_Brain",
     "02_Operations",
     "03_Knowledge",
-    "04_Engine",
+    "../..",
     "05_System",
     "06_Archive",
 ]

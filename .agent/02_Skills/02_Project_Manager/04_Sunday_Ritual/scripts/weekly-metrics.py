@@ -31,7 +31,7 @@ def main():
     print("=" * 50)
 
     project_root = find_project_root()
-    task_dir = project_root / "02_Operations" / "01_Active_Tasks"
+    task_dir = project_root / "04_Operations" / "01_Active_Tasks"
 
     if not task_dir.exists():
         print(f"❌ Tasks directory not found: {task_dir}")

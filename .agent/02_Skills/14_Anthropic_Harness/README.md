@@ -92,7 +92,7 @@ En `08_Scripts_Os/11_Anthropic_Harness/`:
 
 ## 📖 Referencia Principal
 
-- Artículo completo: `01_Brain/02_Knowledge_Brain/10_Anthropic_Harness_Design.md`
+- Artículo completo: `01_Core/02_Knowledge_Brain/10_Anthropic_Harness_Design.md`
 - Workflow: `.agent/03_Workflows/17_Anthropic_Harness.md`
 
 ---

@@ -131,7 +131,7 @@ def find_parser_script() -> Path:
     # Fallback: buscar en otros locations
     alt_paths = [
         ROOT_DIR / "83_Universal_Parser.py",
-        ROOT_DIR / "04_Engine" / "08_Scripts_Os" / "83_Universal_Parser.py",
+        ROOT_DIR / "04_Operations" / "08_Scripts_Os" / "83_Universal_Parser.py",
     ]
     for alt in alt_paths:
         if alt.exists():

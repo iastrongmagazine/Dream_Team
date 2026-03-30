@@ -119,7 +119,7 @@ class Analyzer:
         if "Legacy_Backup" in pattern:
             analysis["specific_issue"] = "Legacy path reference"
             analysis["fix_action"] = "Reemplazar con ruta de _Fixed/"
-        elif "04_Engine" in pattern:
+        elif "04_Operations" in pattern:
             analysis["specific_issue"] = "Old structure reference"
             analysis["fix_action"] = "Usar config_paths.py"
         else:

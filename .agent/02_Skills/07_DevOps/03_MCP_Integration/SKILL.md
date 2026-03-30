@@ -260,4 +260,4 @@ def test_server_connection():
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

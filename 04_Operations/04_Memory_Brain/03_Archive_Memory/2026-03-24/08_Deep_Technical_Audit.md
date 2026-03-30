@@ -1,4 +1,4 @@
-# 🛡️ Auditoría Técnica Profunda: Scripts del Motor (04_Engine)
+# 🛡️ Auditoría Técnica Profunda: Scripts del Motor (04_Operations)
 
 > **Estado**: ✅ COMPLETO | **Fecha**: 2026-03-21
 > **Resumen**: Análisis quirúrgico de estándares de ingeniería (Pilar 1).

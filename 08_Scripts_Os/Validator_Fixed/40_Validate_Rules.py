@@ -27,7 +27,7 @@ RESET = Style.RESET_ALL
 
 BRIGHT = Fore.MAGENTA
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from config_paths import PROJECT_ROOT, BRAIN_DIR, ENGINE_DIR, KNOWLEDGE_DIR
 
 REQUIRED_DIRS = [
@@ -35,7 +35,7 @@ REQUIRED_DIRS = [
     "01_Brain",
     "02_Operations",
     "03_Knowledge",
-    "04_Engine",
+    "../..",
     "05_System",
     "06_Archive",
 ]
@@ -257,7 +257,7 @@ def validate_folder_health() -> bool:
         "01_Brain",
         "02_Operations",
         "03_Knowledge",
-        "04_Engine",
+        "../..",
         "05_System",
         "06_Archive",
     ]

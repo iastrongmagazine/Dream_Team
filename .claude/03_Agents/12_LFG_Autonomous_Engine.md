@@ -27,7 +27,7 @@ Para features complejas, cambios arquitectónicos o sistemas críticos.
 2. **Double-Verify**: La feature debe funcionar visual y técnicamente antes de cerrar.
 3. **Rollback Proactivo**: Si una validación falla, retroceder al último estado "Pure Green" inmediatamente.
 4. **Cero alucinaciones**: Solo afirmaciones fundamentadas en código leído.
-5. **Inventario al día**: Registrar nuevos scripts en `01_Brain/Knowledge_Brain/01_Inventario_Total.md`.
+5. **Inventario al día**: Registrar nuevos scripts en `01_Core/Knowledge_Brain/01_Inventario_Total.md`.
 
 ## Contexto del Sistema
 - Repo raíz: `Think_Different/`

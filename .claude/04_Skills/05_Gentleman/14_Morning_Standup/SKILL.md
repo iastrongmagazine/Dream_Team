@@ -13,7 +13,7 @@ description: Guides the user through a quick 2-minute daily focus session. Trigg
 
 ## Workflow
 
-1.  **Retrieve Context**: Read `GOALS.md`, `BACKLOG.md`, and active tasks in `02_Operations/01_Active_Tasks/`.
+1.  **Retrieve Context**: Read `GOALS.md`, `BACKLOG.md`, and active tasks in `04_Operations/01_Active_Tasks/`.
 2.  **Analyze Priorities**: Identify top 3 priorities based on deadlines and alignment with goals.
 3.  **Propose Schedule**: Suggest a realistic plan for the day, highlighting deep work vs. quick wins.
 4.  **Check Blockers**: Identify any blocked tasks and propose next steps to unblock.
@@ -42,7 +42,7 @@ description: Guides the user through a quick 2-minute daily focus session. Trigg
 
 ## Flujo de trabajo
 
-1.  **Recuperar Contexto**: Leer `GOALS.md`, `BACKLOG.md` y tareas activas en `02_Operations/01_Active_Tasks/`.
+1.  **Recuperar Contexto**: Leer `GOALS.md`, `BACKLOG.md` y tareas activas en `04_Operations/01_Active_Tasks/`.
 2.  **Analizar Prioridades**: Identificar las 3 prioridades principales basándose en plazos y alineación con los objetivos.
 3.  **Proponer Horario**: Sugerir un plan realista para el día, destacando el trabajo profundo frente a las victorias rápidas.
 4.  **Verificar Bloqueadores**: Identificar cualquier tarea bloqueada y proponer pasos a seguir para desbloquearla.

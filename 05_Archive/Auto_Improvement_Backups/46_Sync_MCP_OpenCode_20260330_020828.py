@@ -28,9 +28,9 @@ from config_paths import PROJECT_ROOT, KNOWLEDGE_DIR
 REQUIRED_DIRS = [
     "00_Core",
     "01_Brain",
-    "02_Operations",
+    "04_Operations",
     "03_Knowledge",
-    "04_Engine",
+    "04_Operations",
     "05_System",
     "06_Archive",
 ]

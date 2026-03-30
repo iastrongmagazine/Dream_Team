@@ -200,12 +200,12 @@ def main():
     print(f"\n📁 Project Root: {project_root}")
 
     # Find tasks directory
-    task_dir = project_root / "02_Operations" / "01_Active_Tasks"
+    task_dir = project_root / "04_Operations" / "01_Active_Tasks"
     if not task_dir.exists():
         print(f"❌ Error: Directory {task_dir} not found.")
         alt_paths = [
             project_root / "Tasks",
-            project_root / "02_Operations" / "Tasks",
+            project_root / "04_Operations" / "Tasks",
         ]
         for alt in alt_paths:
             if alt.exists():

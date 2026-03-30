@@ -58,7 +58,7 @@ Sesión de trabajo enfocada en mejorar el sistema PersonalOS con:
 - **Solución:**
   1. Agregar `is_personalos_project()` - detecta carpetas 00-06
   2. Skip automático cuando detecta PersonalOS
-  3. Redirigir tareas a `02_Operations/01_Active_Tasks/`
+  3. Redirigir tareas a `04_Operations/01_Active_Tasks/`
   4. Usar numeración secuencial automática
   5. Formato YAML consistente
 
@@ -67,7 +67,7 @@ Sesión de trabajo enfocada en mejorar el sistema PersonalOS con:
 - **Fecha:** 2026-03-18
 - **Cambios:**
   - `00_CORE/` → `00_Core/` (14 refs)
-  - `02_OPERATIONS/` → `02_Operations/` (11 refs)
+  - `02_OPERATIONS/` → `04_Operations/` (11 refs)
   - `.cursor/01_Rules/` → `.cursor/00_Rules/`
 
 ## Next Actions

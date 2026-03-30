@@ -22,4 +22,4 @@ Cuando el usuario necesite conectarse a Supabase, ejecutar queries, gestionar au
 - [ ] Definir patrones de conexión (env vars, cliente)
 - [ ] Documentar operaciones CRUD estándar
 - [ ] Ejemplos de Auth (JWT, RLS)
-- [ ] Integración con scripts de 04_Engine
+- [ ] Integración con scripts de 04_Operations

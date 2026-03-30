@@ -1,4 +1,4 @@
-# Reporte Maestro: Fusión y Estandarización SOTA de `04_Engine`
+# Reporte Maestro: Fusión y Estandarización SOTA de `04_Operations`
 
 > **Fecha:** 2026-03-25
 > **Ejecutor:** AI Agent (Orchestrator)
@@ -9,7 +9,7 @@
 
 ## 1. Contexto y Necesidad (El Problema)
 
-Inicialmente, el directorio `04_Engine/08_Scripts_Os/` contenía más de 86 scripts sueltos. Esto generaba:
+Inicialmente, el directorio `04_Operations/08_Scripts_Os/` contenía más de 86 scripts sueltos. Esto generaba:
 
 1.  **Caos Cognitivo:** Difícil saber qué script ejecutar para cada tarea.
 2.  **Inconsistencia:** Scripts viejos no tenían rutas seguras (`ARMOR LAYER`) ni manejo de errores estandarizado.
@@ -56,7 +56,7 @@ Como explicaríamos este flujo a un nuevo desarrollador:
 
 ## 4. Tabla de Comandos (Guía de Referencia)
 
-Esta es la lista completa de **Comandos Maestros** disponibles en `04_Engine/08_Scripts_Os/`.
+Esta es la lista completa de **Comandos Maestros** disponibles en `04_Operations/08_Scripts_Os/`.
 
 ### 🔧 Hubs de Desarrollo y Gestión
 

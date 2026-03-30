@@ -55,7 +55,7 @@ Estimated_Effort: [X hours]
 Dependencies: [task refs]
 Tags: [lista]
 Resource_Refs:
-  - 01_Brain/04_Rules/
+  - 01_Core/04_Rules/
   - 04_Agent_Teams_Lite/
   - 06_Taste_Skills/
 - --
@@ -65,7 +65,7 @@ Resource_Refs:
 
 ## 🔗 Referencias
 
-- **Rules:** `01_Brain/04_Rules/`
+- **Rules:** `01_Core/04_Rules/`
 - **SDD Workflow:** `04_Agent_Teams_Lite/`
 - **Taste-Skills:** `06_Taste_Skills/`
 - **GGA Code Review:** `.agent/05_GGA/`

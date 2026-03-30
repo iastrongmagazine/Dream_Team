@@ -4,10 +4,10 @@
 | Dimensión                  | Propósito                         | Contenido Clave                                  |
 |----------------------------|-----------------------------------|--------------------------------------------------|
 | `00_Core/`                 | ADN y estrategias                 | AGENTS.md, BACKLOG.md, GOALS.md                  |
-| `01_Brain/`                | Mapa, contexto y reglas           | Context_Memory, Knowledge_Brain, Rules           |
-| `02_Operations/`           | Ejecución diaria                  | Active_Tasks, Evals, Progress                    |
+| `01_Core/`                | Mapa, contexto y reglas           | Context_Memory, Knowledge_Brain, Rules           |
+| `04_Operations/`           | Ejecución diaria                  | Active_Tasks, Evals, Progress                    |
 | `03_Knowledge/`            | Memoria a largo plazo             | Research, Notes, Resources                       |
-| `04_Engine/`               | Automatización                    | Scripts (Python), Tools                          |
+| `04_Operations/`               | Automatización                    | Scripts (Python), Tools                          |
 | `05_System/`               | Chasis                            | MCP, Env, Core                                   |
 | `06_Archive/`              | Histórico                         | Backups, Legacy                                  |
 
@@ -98,4 +98,4 @@ gra             # Con --apply
 gr-agents       # Solo 3 agents
 ```
 
-**Script:** `04_Engine/08_Scripts_Os/79_System_Guardian.py` |
+**Script:** `04_Operations/08_Scripts_Os/79_System_Guardian.py` |

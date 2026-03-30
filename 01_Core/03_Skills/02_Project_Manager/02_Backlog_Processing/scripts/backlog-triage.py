@@ -42,8 +42,8 @@ def get_tasks_dir() -> Path:
     """Find Tasks directory"""
     candidates = [
         "Tasks",
-        "02_Operations/01_Active_Tasks",
-        "../02_Operations/01_Active_Tasks",
+        "04_Operations/01_Active_Tasks",
+        "../04_Operations/01_Active_Tasks",
     ]
     for c in candidates:
         if Path(c).exists():

@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # Create a Custom Claude Code Command
 
-Create a new skill in `.claude/skills/` for the requested task.
+Create a new skill in `01_Core/03_Skills/` for the requested task.
 
 ## Goal
 
@@ -128,7 +128,7 @@ Implement #$ARGUMENTS following these steps:
 
 ## Creating the Command File
 
-1. **Create the directory** at `.claude/skills/[name]/SKILL.md`
+1. **Create the directory** at `01_Core/03_Skills/[name]/SKILL.md`
 2. **Start with YAML frontmatter** (see section above)
 3. **Structure the skill** using the template above
 4. **Test the skill** by using it with appropriate arguments

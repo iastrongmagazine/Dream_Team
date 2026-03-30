@@ -41,8 +41,8 @@ Enterprise (highest priority) → Personal → Project → Plugin (lowest priori
 | Type | Path | Applies to |
 |------|------|-----------|
 | **Enterprise** | See managed settings | All users in organization |
-| **Personal** | `~/.claude/skills/` | You, across all projects |
-| **Project** | `.claude/skills/` | Anyone working in repository |
+| **Personal** | `~/01_Core/03_Skills/` | You, across all projects |
+| **Project** | `01_Core/03_Skills/` | Anyone working in repository |
 | **Plugin** | Bundled with plugins | Anyone with plugin installed |
 
 ## How Skills Work
@@ -180,6 +180,6 @@ Keep explanations conversational. For complex concepts, use multiple analogies.
 
 ## Distribution
 
-- **Project Skills**: Commit `.claude/skills/` to version control
+- **Project Skills**: Commit `01_Core/03_Skills/` to version control
 - **Plugins**: Add `skills/` directory to plugin with Skill folders
 - **Enterprise**: Deploy organization-wide through managed settings

@@ -21,7 +21,7 @@ class AnalyticsFactory:
         self.filename = os.path.basename(self.dataset_path)
         self.domain = "General"
         self.results_dir = ""
-        self.engine_dir = os.path.join(BASE_DIR, "04_Engine")
+        self.engine_dir = os.path.join(BASE_DIR, "04_Operations")
 
     def report_progress(self, step, total, desc):
         """Reporta el progreso del workflow."""
@@ -377,7 +377,7 @@ class AnalyticsFactory:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Uso: python 04_Engine/master_analytics_factory.py path/to/dataset.csv")
+        print("Uso: python 04_Operations/master_analytics_factory.py path/to/dataset.csv")
     else:
         target = sys.argv[1]
         factory = AnalyticsFactory(target)

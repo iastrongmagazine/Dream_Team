@@ -143,10 +143,10 @@ The system is now in its best state ever. From "chaotic but working" to "structu
 
 | Deliverable           | Location                                                       | Size           |
 |-----------------------|----------------------------------------------------------------|----------------|
-| RTM                   | `02_Operations/02_Evals/RTM_Engine_Scripts.md`                 | 3.1 KB         |
-| Edge Cases            | `02_Operations/02_Evals/Edge_Cases_Documentation.md`           | 4.3 KB         |
-| Process Note          | `01_Brain/03_Process_Notes/27_Session_...md`                   | 15 KB          |
-| CTX                   | `01_Brain/01_Context_Memory/CTX_...json`                       | 2 KB           |
+| RTM                   | `04_Operations/02_Evals/RTM_Engine_Scripts.md`                 | 3.1 KB         |
+| Edge Cases            | `04_Operations/02_Evals/Edge_Cases_Documentation.md`           | 4.3 KB         |
+| Process Note          | `01_Core/03_Process_Notes/27_Session_...md`                   | 15 KB          |
+| CTX                   | `01_Core/01_Context_Memory/CTX_...json`                       | 2 KB           |
 | This Report           | `03_Knowledge/13_Strategic_Plans/Momentum_2026-03-19/`         |----------------|
 
 ---

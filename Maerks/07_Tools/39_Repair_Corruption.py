@@ -5,8 +5,8 @@ import sys
 
 # Configuración
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-BACKUP_DIR = PROJECT_ROOT / "04_Engine" / "09_Backups" / "repair_backup_2026-03-21"
-REPAIR_MAP_PATH = PROJECT_ROOT / "04_Engine" / "00_Config" / "repair_map.json"
+BACKUP_DIR = PROJECT_ROOT / "04_Operations" / "09_Backups" / "repair_backup_2026-03-21"
+REPAIR_MAP_PATH = PROJECT_ROOT / "04_Operations" / "00_Config" / "repair_map.json"
 
 
 def load_repair_map():

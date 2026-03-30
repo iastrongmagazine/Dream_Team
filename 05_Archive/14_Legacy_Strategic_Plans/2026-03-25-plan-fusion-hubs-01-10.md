@@ -182,7 +182,7 @@
 ## 9. Comando Final de Validación
 
 ```bash
-python 04_Engine/08_Scripts_Os/01_Auditor_Hub.py estructura
+python 04_Operations/08_Scripts_Os/01_Auditor_Hub.py estructura
 # Esperado: 0 errores
 ```
 

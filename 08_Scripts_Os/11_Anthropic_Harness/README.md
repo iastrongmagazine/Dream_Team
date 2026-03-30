@@ -78,7 +78,7 @@ result = run_playwright_qa("http://localhost:3000", tests)
 
 ## 📚 Referencia
 
-- Artículo: `01_Brain/02_Knowledge_Brain/10_Anthropic_Harness_Design.md`
+- Artículo: `01_Core/02_Knowledge_Brain/10_Anthropic_Harness_Design.md`
 - Skills: `.agent/02_Skills/14_Anthropic_Harness/`
 - Workflow: `.agent/03_Workflows/17_Anthropic_Harness.md`
 

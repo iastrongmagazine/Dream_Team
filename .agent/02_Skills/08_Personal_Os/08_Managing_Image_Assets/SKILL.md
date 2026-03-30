@@ -39,4 +39,4 @@ description: QUÉ HACE: Organiza, cataloga y optimiza activos de imagen generado
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado
+- `04_Operations/` — Estado

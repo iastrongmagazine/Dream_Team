@@ -137,4 +137,4 @@ react, react 19, compiler, useMemo, useCallback, server components, use hook
 
 Guardar en:
 - `03_Knowledge/` — Documentación
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

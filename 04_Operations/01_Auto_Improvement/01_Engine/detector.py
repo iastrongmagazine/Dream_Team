@@ -14,8 +14,10 @@ Tipos de detección:
 
 import os
 import json
+import ast
+import importlib.util
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Set, Optional
 
 
 class Detector:
@@ -24,6 +26,7 @@ class Detector:
     def __init__(self, project_root: Path):
         self.project_root = project_root
         self.issues = []
+        self.config = self._load_config()
 
         # Detection rules
         self.detection_rules = {
@@ -58,6 +61,55 @@ class Detector:
                 "severity": "low",
             },
         }
+
+    def _load_config(self) -> Dict[str, Any]:
+        """Load exclusion patterns from config file"""
+        config_path = (
+            self.project_root
+            / "04_Operations"
+            / "01_Auto_Improvement"
+            / "02_Rules"
+            / "detector_config.json"
+        )
+
+        default_config = {
+            "exclusion_patterns": {
+                "directories_to_skip": [
+                    "Legacy_Backup",
+                    "node_modules",
+                    ".git",
+                    "venv",
+                    "__pycache__",
+                    ".venv",
+                ],
+                "file_exceptions": [
+                    "README.md",
+                    "README.txt",
+                    "setup.py",
+                    "setup.cfg",
+                    "pyproject.toml",
+                    "__init__.py",
+                    "conftest.py",
+                    ".env",
+                    ".env.example",
+                    ".gitignore",
+                    ".dockerignore",
+                ],
+                "legacy_prefixes_to_exclude": ["04_", "05_", "Legacy_"],
+            },
+            "naming_rules": {
+                "python_pattern": r"^\d{2}_[A-Za-z0-9_]*\.py$",
+                "markdown_pattern": r"^\d{2}_[A-Za-z0-9_\-\s]*\.md$",
+            },
+        }
+
+        if config_path.exists():
+            try:
+                with open(config_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                return default_config
+        return default_config
 
     def scan_critical(self) -> List[Dict[str, Any]]:
         """Scan rápido - solo issues críticos"""
@@ -132,24 +184,72 @@ class Detector:
         return issues
 
     def _check_broken_imports(self) -> List[Dict[str, Any]]:
-        """Detectar imports rotos o obsoletos"""
+        """Detectar imports rotos o obsoletos usando AST parsing"""
         issues = []
 
         scripts_dir = self.project_root / "08_Scripts_Os"
         if not scripts_dir.exists():
             return issues
 
-        # Common broken import patterns
-        broken_patterns = [
-            "from Legacy_Backup",
-            "import Legacy_Backup",
-            "04_Engine",
-            "from 04_",
-            "from 05_",
-        ]
+        # Directories to skip
+        directories_to_skip = self.config.get("exclusion_patterns", {}).get(
+            "directories_to_skip", []
+        )
+
+        class ImportVisitor(ast.NodeVisitor):
+            """AST visitor to extract import statements"""
+
+            def __init__(self):
+                self.imports: List[Dict[str, str]] = []
+                self.in_try_except = False
+
+            def visit_Try(self, node):
+                """Track try/except blocks to handle conditional imports"""
+                # Mark that we're in a try block - imports here might be conditional
+                old_in_try = self.in_try_except
+                self.in_try_except = True
+                self.generic_visit(node)
+                self.in_try_except = old_in_try
+
+            def visit_Import(self, node):
+                """Handle: import X, import X as Y, import X.Y"""
+                for alias in node.names:
+                    module_name = alias.name
+                    self.imports.append(
+                        {
+                            "module": module_name,
+                            "full_statement": f"import {module_name}",
+                            "conditional": self.in_try_except,
+                        }
+                    )
+                self.generic_visit(node)
+
+            def visit_ImportFrom(self, node):
+                """Handle: from X import Y, from X.Y import Z"""
+                if node.module:
+                    module_name = node.module
+                    for alias in node.names:
+                        self.imports.append(
+                            {
+                                "module": module_name,
+                                "name": alias.name,
+                                "full_statement": f"from {module_name} import {alias.name}",
+                                "conditional": self.in_try_except,
+                            }
+                        )
+                self.generic_visit(node)
 
         for py_file in scripts_dir.glob("**/*.py"):
             if py_file.name.startswith("_"):
+                continue
+
+            # Skip excluded directories
+            should_skip = False
+            for parent in py_file.parts:
+                if parent in directories_to_skip:
+                    should_skip = True
+                    break
+            if should_skip:
                 continue
 
             try:
@@ -157,34 +257,105 @@ class Detector:
             except:
                 continue
 
-            for pattern in broken_patterns:
-                if pattern in content:
+            try:
+                tree = ast.parse(content, filename=str(py_file))
+            except SyntaxError:
+                # Skip files with syntax errors
+                continue
+
+            # Extract imports using AST visitor
+            visitor = ImportVisitor()
+            visitor.visit(tree)
+
+            # Check each import for validity
+            for imp in visitor.imports:
+                # Skip conditional imports (in try/except)
+                if imp.get("conditional", False):
+                    continue
+
+                module_name = imp["module"]
+
+                # Check if module can be imported
+                if not self._is_module_available(module_name, py_file.parent):
                     issues.append(
                         {
                             "type": "broken_import",
                             "severity": "high",
                             "file": str(py_file.relative_to(self.project_root)),
-                            "description": f"Import obsoleto encontrado: {pattern}",
-                            "pattern": pattern,
+                            "description": f"Import roto: {imp['full_statement']}",
+                            "module": module_name,
                             "auto_fixable": True,
-                            "suggestion": "Actualizar a nueva estructura",
+                            "suggestion": "Verificar que el módulo esté instalado o existe",
                         }
                     )
 
         return issues
+
+    def _is_module_available(self, module_name: str, file_dir: Path) -> bool:
+        """Check if a module can be imported"""
+        # Check built-in modules
+        import sys
+
+        if module_name in sys.builtin_module_names:
+            return True
+
+        # Try to find the module (handle ModuleNotFoundError)
+        try:
+            spec = importlib.util.find_spec(module_name)
+            if spec is not None:
+                return True
+        except ModuleNotFoundError:
+            pass
+        except Exception:
+            pass
+
+        # Check if it's a local module (relative to file location)
+        module_path = file_dir / f"{module_name}.py"
+        if module_path.exists():
+            return True
+
+        # Check if it's a package
+        package_path = file_dir / module_name
+        if package_path.exists() and (package_path / "__init__.py").exists():
+            return True
+
+        # Check in parent directories
+        for parent in file_dir.parents:
+            module_path = parent / f"{module_name}.py"
+            if module_path.exists():
+                return True
+            package_path = parent / module_name
+            if package_path.exists() and (package_path / "__init__.py").exists():
+                return True
+
+        return False
 
     def _check_naming_critical(self) -> List[Dict[str, Any]]:
         """Verificar naming conventions críticos"""
         return self._check_naming_inconsistencies()
 
     def _check_naming_inconsistencies(self) -> List[Dict[str, Any]]:
-        """Detectar inconsistencias de naming"""
+        """Detectar inconsistencias de naming - VERSION EQUILIBRADA"""
         issues = []
 
-        # Expected patterns
-        naming_rules = {
-            "py": r"^\d{2}_[A-Z][a-zA-Z0-9_]*\.py$",
-            "md": r"^\d{2}_[A-Za-z0-9_\-\s]*\.md$",
+        # Load exclusion patterns from config
+        exclusion_patterns = self.config.get("exclusion_patterns", {})
+        directories_to_skip = exclusion_patterns.get("directories_to_skip", [])
+        file_exceptions = exclusion_patterns.get("file_exceptions", [])
+        legacy_prefixes = exclusion_patterns.get("legacy_prefixes_to_exclude", [])
+
+        # Valid naming patterns - relaxed but still meaningful
+        # Python: XX_Name.py where XX is 2 digits and Name starts with letter (any case)
+        # Markdown: XX_Name.md where XX is 2 digits
+        valid_patterns = {
+            "py": r"^\d{2}_[A-Za-z][A-Za-z0-9_]*\.py$",
+            "md": r"^\d{2}_[A-Za-z0-9_\- ]*\.md$",
+        }
+
+        # Invalid patterns - these are clearly wrong
+        invalid_patterns = {
+            "py": r"^\d+_[0-9]",  # Starts with digits_ digits (e.g., 01_2023_script.py)
+            "md": r"^\d+_[0-9]",
         }
 
         import re
@@ -195,27 +366,59 @@ class Detector:
             if not dir_path.exists():
                 continue
 
-            for ext, pattern in naming_rules.items():
+            # Skip entire directories in exclusion list
+            if dir_path.name in directories_to_skip:
+                continue
+
+            for ext, valid_pattern in valid_patterns.items():
+                invalid_pattern = invalid_patterns.get(ext, r"^\d+_[0-9]")
+
                 for file_path in dir_path.glob(f"**/*.{ext}"):
                     if file_path.name.startswith("_") or file_path.name.startswith("."):
                         continue
 
-                    # Skip if matches pattern
-                    if not re.match(pattern, file_path.name):
-                        # Check if it has a number prefix at all
-                        if not re.match(r"^\d{2}_", file_path.name):
-                            issues.append(
-                                {
-                                    "type": "naming_inconsistency",
-                                    "severity": "low",
-                                    "file": str(
-                                        file_path.relative_to(self.project_root)
-                                    ),
-                                    "description": f"Archivo sin prefijo numérico: {file_path.name}",
-                                    "auto_fixable": False,
-                                    "suggestion": "Agregar prefijo XX_Nombre.ext",
-                                }
-                            )
+                    # Check if any parent directory should be skipped
+                    should_skip = False
+                    for parent in file_path.parts:
+                        if parent in directories_to_skip:
+                            should_skip = True
+                            break
+                    if should_skip:
+                        continue
+
+                    # Skip file exceptions
+                    if file_path.name in file_exceptions:
+                        continue
+
+                    # Skip legacy prefixes
+                    should_skip_legacy = False
+                    for prefix in legacy_prefixes:
+                        if file_path.name.startswith(prefix):
+                            should_skip_legacy = True
+                            break
+                    if should_skip_legacy:
+                        continue
+
+                    file_name = file_path.name
+
+                    # Check if it matches valid pattern
+                    if re.match(valid_pattern, file_name):
+                        continue  # Valid - skip
+
+                    # Check if it has a number prefix
+                    if re.match(r"^\d+_", file_name):
+                        # Has prefix but invalid - flag it
+                        issues.append(
+                            {
+                                "type": "naming_inconsistency",
+                                "severity": "low",
+                                "file": str(file_path.relative_to(self.project_root)),
+                                "description": f"Archivo con naming inválido: {file_name}",
+                                "auto_fixable": True,
+                                "suggestion": "Usar formato: XX_Nombre.ext",
+                            }
+                        )
+                    # Files without number prefix are now IGNORED (too many false positives)
 
         return issues
 
@@ -230,27 +433,49 @@ class Detector:
         if not scripts_dir.exists():
             return issues
 
+        # Load exclusion patterns from config
+        directories_to_skip = (
+            self._load_config()
+            .get("exclusion_patterns", {})
+            .get("directories_to_skip", [])
+        )
+
+        # Add _Fixed to skip list
+        skip_dirs = set(directories_to_skip + ["_Fixed"])
+
         # Check for exact duplicate names in different locations
         file_names = {}
         for py_file in scripts_dir.glob("**/*.py"):
+            # Skip excluded directories
+            if any(d in py_file.parts for d in skip_dirs):
+                continue
             name = py_file.stem  # filename without extension
             if name not in file_names:
                 file_names[name] = []
             file_names[name].append(py_file)
 
-        # Report duplicates
+        # Report duplicates only if real (not in _Fixed or Legacy_Backup)
         for name, paths in file_names.items():
             if len(paths) > 1:
-                issues.append(
-                    {
-                        "type": "duplicate_script",
-                        "severity": "medium",
-                        "files": [str(p.relative_to(self.project_root)) for p in paths],
-                        "description": f"Script duplicado: {name}",
-                        "auto_fixable": False,
-                        "suggestion": "Consolidar o mantener uno solo",
-                    }
-                )
+                # Filter out paths in excluded directories
+                valid_paths = [
+                    p for p in paths if not any(d in p.parts for d in skip_dirs)
+                ]
+                if valid_paths and len(valid_paths) > 1:
+                    issues.append(
+                        {
+                            "type": "duplicate_script",
+                            "severity": "medium",
+                            "file": str(valid_paths[0].relative_to(self.project_root)),
+                            "files": [
+                                str(p.relative_to(self.project_root))
+                                for p in valid_paths
+                            ],
+                            "description": f"Script duplicado: {name} ({len(valid_paths)} locations)",
+                            "auto_fixable": False,
+                            "suggestion": "Consolidar o mantener uno solo",
+                        }
+                    )
 
         return issues
 
@@ -266,6 +491,9 @@ class Detector:
 
         for py_file in scripts_dir.glob("**/*.py"):
             if py_file.name.startswith("_"):
+                continue
+            # Skip _Fixed directories
+            if "_Fixed" in py_file.parts:
                 continue
 
             try:
@@ -324,6 +552,14 @@ class Detector:
                 continue
 
             for py_file in dir_path.glob("**/*.py"):
+                # Skip Legacy_Backup, _Fixed, and 10_Backup directories
+                if (
+                    "Legacy_Backup" in py_file.parts
+                    or "_Fixed" in py_file.parts
+                    or "10_Backup" in py_file.parts
+                ):
+                    continue
+
                 try:
                     lines = len(py_file.read_text(errors="ignore").split("\n"))
                 except:

@@ -58,4 +58,4 @@ description: Provides a quick way to capture ideas without interrupting flow. Tr
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado
+- `04_Operations/` — Estado

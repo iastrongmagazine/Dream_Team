@@ -52,7 +52,7 @@ def check_directory_structure():
 
 
 def check_pollution():
-    print(f"\n{Fore.CYAN}--- Verificando Contaminación ---")
+    print(f"\n{Fore.CYAN}--- Verificando ContaminaciÃ³n ---")
     # Example check: look for common junk files in root
     junk_files = [".DS_Store", "Thumbs.db"]
     found_junk = False
@@ -62,7 +62,7 @@ def check_pollution():
             print(f"{Fore.YELLOW}[WARN] Junk file found: {junk}")
             found_junk = True
     if not found_junk:
-        print(f"{Fore.GREEN}[OK] No se detectó contaminación obvia.")
+        print(f"{Fore.GREEN}[OK] No se detectÃ³ contaminaciÃ³n obvia.")
     return not found_junk
 
 
@@ -70,7 +70,7 @@ def verify_master_files():
     print(f"\n{Fore.CYAN}--- Verificando Archivos Maestros ---")
     master_files = ["CLAUDE.md", "README.md"]
     all_found = True
-    # Need to go up 3 levels from Legacy_Backup/08_Scripts_Os/04_Engine to root
+    # Need to go up 3 levels # TODO: Fix legacy import - from Legacy_Backup/08_Scripts_Os/04_Engine to root
     for mf in master_files:
         if os.path.exists(
             os.path.join(os.path.dirname(__file__), "..", "..", "..", mf)

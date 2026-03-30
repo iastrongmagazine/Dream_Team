@@ -222,10 +222,10 @@ OpenCode/
 | Documento                                 | Ubicación                                                              |
 |-------------------------------------------|------------------------------------------------------------------------|
 | **OpenCode Integration**                  | `03_Knowledge/OpenCode_Integration.md`                                 |
-| **Claude Best Practices**                 | `01_Brain/Knowledge_Brain/01_Claude_Best_Practices.md`                 |
+| **Claude Best Practices**                 | `01_Core/Knowledge_Brain/01_Claude_Best_Practices.md`                 |
 | **Commands Reference**                    | `03_Knowledge/OpenCode_Commands_Reference.md`                          |
 | **Active Configuration**                  | `03_Knowledge/OpenCode_Active_Configuration.md`                        |
-| **Inventario Total**                      | `01_Brain/Knowledge_Brain/01_Inventario_Total.md`                      |
+| **Inventario Total**                      | `01_Core/Knowledge_Brain/01_Inventario_Total.md`                      |
 
 ---
 

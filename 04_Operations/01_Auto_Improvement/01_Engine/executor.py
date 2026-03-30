@@ -114,8 +114,8 @@ class Executor:
                 old = "Legacy_Backup"
                 new = "_Fixed"
                 content = content.replace(old, new)
-            elif "04_Engine" in pattern:
-                old = "04_Engine"
+            elif "04_Operations" in pattern:
+                old = "04_Operations"
                 new = "08_Scripts_Os"
                 content = content.replace(old, new)
             else:

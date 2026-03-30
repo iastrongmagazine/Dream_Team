@@ -12,7 +12,7 @@ Only `ready` todos are resolved. `pending` todos are skipped — they haven't be
 
 ### 1. Analyze
 
-Scan `.context/compound-engineering/todos/*.md` and legacy `todos/*.md`. Partition by status:
+Scan `.context/compound-engineering/03_Tasks/*.md` and legacy `03_Tasks/*.md`. Partition by status:
 
 - **`ready`** (status field or `-ready-` in filename): resolve these.
 - **`pending`**: skip. Report them at the end.

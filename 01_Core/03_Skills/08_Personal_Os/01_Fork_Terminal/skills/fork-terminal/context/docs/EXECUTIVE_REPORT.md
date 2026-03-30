@@ -32,7 +32,7 @@ Se completó exitosamente la implementación del Fork Terminal Skill (v2.0), inc
 #### Archivos Creados/Actualizados:
 
 ```
-.claude/skills/fork-terminal/
+01_Core/03_Skills/fork-terminal/
 ├── SKILL.md                              ✅ Creado/Actualizado
 ├── COMPATIBILITY.md                      ✅ Creado
 ├── ADVANCED_TESTS.md                     ✅ Creado
@@ -61,8 +61,8 @@ Se completó exitosamente la implementación del Fork Terminal Skill (v2.0), inc
 
 #### 2.1 Renombrado de Directorio
 
-- **Antes:** `.claude/skills/fork_terminal` (guion bajo)
-- **Después:** `.claude/skills/fork-terminal` (guion medio)
+- **Antes:** `01_Core/03_Skills/fork_terminal` (guion bajo)
+- **Después:** `01_Core/03_Skills/fork-terminal` (guion medio)
 - **Razón:** Consistencia con imagen de referencia y estándares
 
 #### 2.2 Actualización de Rutas
@@ -126,7 +126,7 @@ Cada cookbook ahora incluye:
 
 ### Directorios Explorados
 
-1. `.claude/skills/fork-terminal/`
+1. `01_Core/03_Skills/fork-terminal/`
 2. `Skill One/` (referencia)
 3. `00 Bunker Notes/00 Claude/`
 

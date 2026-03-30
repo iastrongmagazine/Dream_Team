@@ -1,7 +1,7 @@
 # Notas de Progreso - Fusión O4 Engine (2026-03-25)
 
 ## Contexto
-Transformación de `04_Engine` de scripts dispersos a arquitectura de Hubs SOTA.
+Transformación de `04_Operations` de scripts dispersos a arquitectura de Hubs SOTA.
 
 ## Decisiones Técnicas
 1. **Patrón Hub & Spoke:** Centralizar lógica en 10 archivos maestros (91-100).

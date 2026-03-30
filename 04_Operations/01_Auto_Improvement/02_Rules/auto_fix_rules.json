@@ -13,7 +13,7 @@
     {
       "id": "R002",
       "name": "broken_import_old_structure",
-      "pattern": "04_Engine",
+      "pattern": "04_Operations",
       "action": "replace_with_08_Scripts_Os",
       "tier": 1,
       "auto_fix": true,

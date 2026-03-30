@@ -19,7 +19,7 @@ def load_distinct_stress_test():
     print("🤖 PRUEBA DE ORQUESTACIÓN: 5 SUB-AGENTES CLAUDE")
     print("=" * 60)
 
-    fork_script = Path(".claude/skills/fork-terminal/tools/fork_terminal.py")
+    fork_script = Path("01_Core/03_Skills/fork-terminal/tools/fork_terminal.py")
 
     # Definimos 5 misiones diferentes
     missions = [

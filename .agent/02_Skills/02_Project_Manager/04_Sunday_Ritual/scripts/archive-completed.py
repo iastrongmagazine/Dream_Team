@@ -32,7 +32,7 @@ def main():
     print("=" * 50)
 
     project_root = find_project_root()
-    task_dir = project_root / "02_Operations" / "01_Active_Tasks"
+    task_dir = project_root / "04_Operations" / "01_Active_Tasks"
     archive_dir = project_root / "06_Archive" / "01_Tasks_Archive"
 
     if not task_dir.exists():

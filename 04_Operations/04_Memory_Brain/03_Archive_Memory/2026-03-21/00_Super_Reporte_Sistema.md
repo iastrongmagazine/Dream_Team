@@ -16,7 +16,7 @@
 | Canonical Source                          | `.agent/02_Skills/` es fuente canónica                                       | ✅ Completado               |
 | Cursor Mirror                             | `.cursor/02_Skills/` es espejo (README only)                                 | ✅ Completado               |
 | Context Memory Cleanup                    | 08_Context_Memory y Context_Memory eliminadas                                | ✅ Completado               |
-| Backup Central Created                    | 01_Brain/06_Backup_Central/ creado                                           | ✅ Completado               |
+| Backup Central Created                    | 01_Core/06_Backup_Central/ creado                                           | ✅ Completado               |
 | Documentation Beautified                  | 85+ documentos beautificados con pixel-perfect tables                        | ✅ Completado               |
 | Inventory Complete                        | 04_Inventario.md con inventario completo del sistema                         | ✅ Completado               |
 | 01_Brain Sequence                         | Completo: 01, 02, 03, 04, 05, 06, 07, 09                                     | ✅ Completado               |
@@ -56,10 +56,10 @@
 
 ### 3. Backup Central Created
 
-Nueva estructura en `01_Brain/06_Backup_Central/`:
+Nueva estructura en `01_Core/06_Backup_Central/`:
 
 ```
-01_Brain/06_Backup_Central/
+01_Core/06_Backup_Central/
 ├── 01_Config/
 ├── 02_Mcp/
 ├── 03_Agents/
@@ -405,15 +405,15 @@ PASO 9: 3 AGENTS + JUDGE
 Think_Different/
 ├── 00_Core/          # ADN: AGENTS.md, GOALS.md, BACKLOG.md
 
-├── 01_Brain/         # Mapa: Context_Memory, Knowledge_Brain, Rules/
+├── 01_Core/         # Mapa: Context_Memory, Knowledge_Brain, Rules/
 
 │   └── 07_Memory_Brain/  # ESTE REPORTE
 
-├── 02_Operations/    # Manos: Active_Tasks, Evals, Progress, Momentum
+├── 04_Operations/    # Manos: Active_Tasks, Evals, Progress, Momentum
 
 ├── 03_Knowledge/     # Memoria: Research, Notes, Resources
 
-├── 04_Engine/        # Motor: Scripts automatización (00-66+)
+├── 04_Operations/        # Motor: Scripts automatización (00-66+)
 
 ├── 05_System/        # Chasis: Core, Templates, Integrations, Env
 

@@ -22,7 +22,7 @@ def run_validation():
     from pathlib import Path
 
     project_root = Path(__file__).resolve().parents[3]
-    engine_dir = project_root / "04_Engine"
+    engine_dir = project_root / "04_Operations"
 
     # Ejecutar Validate_Stack.py
     validate_script = engine_dir / "13_Validate_Stack.py"
@@ -127,14 +127,14 @@ def check_structure():
     from pathlib import Path
 
     script_path = Path(__file__).resolve()
-    project_root = script_path.parents[3]  # scripts -> Installer -> 04_Engine -> root
+    project_root = script_path.parents[3]  # scripts -> Installer -> 04_Operations -> root
 
     required_dirs = [
         "00_Core",
         "01_Brain",
-        "02_Operations",
+        "04_Operations",
         "03_Knowledge",
-        "04_Engine",
+        "04_Operations",
         "05_System",
         "06_Archive",
         "07_Projects",
@@ -159,7 +159,7 @@ def run_tests():
     from pathlib import Path
 
     project_root = Path(__file__).resolve().parents[3]
-    tests_dir = project_root / "04_Engine" / "05_Tests"
+    tests_dir = project_root / "04_Operations" / "05_Tests"
 
     if not tests_dir.exists():
         print("⚠ Tests no encontrados")

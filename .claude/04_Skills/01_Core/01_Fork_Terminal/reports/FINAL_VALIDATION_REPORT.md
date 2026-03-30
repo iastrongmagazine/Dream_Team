@@ -153,7 +153,7 @@ En ambas pruebas, cada uno de los 40 agentes (20+20) recibió correctamente:
 └── 🎯 Current Mission (Task-specific)
 ```
 
-**Archivo fuente:** `.claude/skills/fork-terminal/prompts/fork_summary_user_prompt.md` (1,515 bytes)
+**Archivo fuente:** `01_Core/03_Skills/fork-terminal/prompts/fork_summary_user_prompt.md` (1,515 bytes)
 
 **Verificación:**
 - ✅ Inyectado en 20 terminales (Prueba 1)
@@ -275,7 +275,7 @@ Este sistema ha sido **validado y certificado** para uso en producción basado e
 
 ### Ejecutar Test de 20 Agentes
 ```bash
-python .claude/skills/parallel-orchestration/tools/run_20_agent_swarm.py
+python 01_Core/03_Skills/parallel-orchestration/tools/run_20_agent_swarm.py
 ```
 
 ### Ver Último Reporte

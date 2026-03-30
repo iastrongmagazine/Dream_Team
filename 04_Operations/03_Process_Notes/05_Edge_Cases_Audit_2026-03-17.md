@@ -53,7 +53,7 @@ Se realizó un análisis exhaustivo de todo el proyecto PersonalOS (Think Differ
 
 ## Decisiones Tomadas
 
-1. Se crearon tareas P0 y P1 en `02_Operations/01_Active_Tasks/07_P0_Edge_Cases_Criticos.md` y `08_P1_Edge_Cases_Medios.md`
+1. Se crearon tareas P0 y P1 en `04_Operations/01_Active_Tasks/07_P0_Edge_Cases_Criticos.md` y `08_P1_Edge_Cases_Medios.md`
 2. Se creó plan de implementación para las reparaciones
 3. Los P2 quedan en backlog para sesiones futuras
 

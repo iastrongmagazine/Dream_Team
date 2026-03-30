@@ -80,7 +80,7 @@ El script `47_Sync_MCP_OpenCode.py` mantiene sincronizados los MCPs entre:
 
 ### Ejecutar Sincronización
 ```bash
-python 04_Engine/47_Sync_MCP_OpenCode.py
+python 04_Operations/47_Sync_MCP_OpenCode.py
 ```
 
 ### Proceso Automático

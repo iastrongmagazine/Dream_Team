@@ -12,24 +12,24 @@ Execute a raw CLI command.
 1. Understand the user's requested CLI command
 2. Optionally run `<command> --help` to verify command syntax
 3. Construct the full command string
-4. Execute: `python .claude/skills/fork-terminal/tools/fork_terminal.py "<FULL_COMMAND>"`
+4. Execute: `python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "<FULL_COMMAND>"`
 
 ## Examples
 
 ### Simple command
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "dir /s"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "dir /s"
 ```
 
 ### Multiple commands
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "cd src && npm run build"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "cd src && npm run build"
 ```
 
 ### Long-running process
 
 ```bash
-python .claude/skills/fork-terminal/tools/fork_terminal.py "npm run dev"
+python 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py "npm run dev"
 ```

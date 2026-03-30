@@ -27,7 +27,7 @@ You generate or update the **skill registry** — a catalog of all available ski
 1. Glob for `*/SKILL.md` files across ALL known skill directories. Check every path below — scan ALL that exist, not just the first match:
 
    **User-level (global skills):**
-   - `~/.claude/skills/` — Claude Code
+   - `~/01_Core/03_Skills/` — Claude Code
    - `~/.config/opencode/skills/` — OpenCode
    - `~/.gemini/skills/` — Gemini CLI
    - `~/.cursor/skills/` — Cursor
@@ -35,7 +35,7 @@ You generate or update the **skill registry** — a catalog of all available ski
    - The parent directory of this skill file (catch-all for any tool)
 
    **Project-level (workspace skills):**
-   - `{project-root}/.claude/skills/` — Claude Code
+   - `{project-root}/01_Core/03_Skills/` — Claude Code
    - `{project-root}/.gemini/skills/` — Gemini CLI
    - `{project-root}/.agent/skills/` — Antigravity (workspace)
    - `{project-root}/skills/` — Generic

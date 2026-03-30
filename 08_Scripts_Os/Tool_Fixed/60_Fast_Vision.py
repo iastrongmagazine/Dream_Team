@@ -11,7 +11,7 @@ import subprocess
 
 def validate():
     # 1. Validate scripts in 04_Engine/
-    engine_dir = "04_Engine"
+    engine_dir = "../.."
     script_pattern = re.compile(r"^\d{2}_[a-zA-Z0-9_]+\.py$")
     all_ok = True
 

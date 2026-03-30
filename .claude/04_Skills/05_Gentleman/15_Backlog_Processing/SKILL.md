@@ -15,8 +15,8 @@ description: Organizes messy notes into actionable tasks. Triggered when the use
 
 1.  **Read Backlog**: Scan `BACKLOG.md` for new entries.
 2.  **Categorize**: Assign items to categories (P0, P1, P2 or Archive).
-3.  **Deduplicate**: Check for existing tasks in `02_Operations/01_Active_Tasks/` to avoid redundancy.
-4.  **Draft Tasks**: For P0 and P1 items, create task files in `02_Operations/01_Active_Tasks/` using the standard template.
+3.  **Deduplicate**: Check for existing tasks in `04_Operations/01_Active_Tasks/` to avoid redundancy.
+4.  **Draft Tasks**: For P0 and P1 items, create task files in `04_Operations/01_Active_Tasks/` using the standard template.
 5.  **Clean Up**: Clear the processed items from `BACKLOG.md`.
 
 ## Instructions
@@ -44,7 +44,7 @@ description: Organizes messy notes into actionable tasks. Triggered when the use
 1.  **Escanear el Backlog**: Leer todas las entradas en `BACKLOG.md`.
 2.  **Categorizar**: Agrupar los elementos por proyecto o tipo de tarea.
 3.  **Estimar**: Proporcionar una estimación rápida de tiempo/esfuerzo para cada elemento.
-4.  **Triage**: Mover los elementos de alta prioridad a archivos de tareas individuales en `02_Operations/01_Active_Tasks/`.
+4.  **Triage**: Mover los elementos de alta prioridad a archivos de tareas individuales en `04_Operations/01_Active_Tasks/`.
 5.  **Limpiar**: Eliminar duplicados y refinar las descripciones de las tareas.
 
 ## Instrucciones

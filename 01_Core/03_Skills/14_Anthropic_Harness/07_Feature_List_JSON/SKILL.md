@@ -101,7 +101,7 @@ print(f"Progress: {stats['passed']}/{stats['total']}")
 
 ## Referencias
 
-- Artículo: `01_Brain/02_Knowledge_Brain/13_Anthropic_Engineering_02_03.md` (Post 8)
+- Artículo: `01_Core/02_Knowledge_Brain/13_Anthropic_Engineering_02_03.md` (Post 8)
 
 ---
 

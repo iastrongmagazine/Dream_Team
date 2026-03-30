@@ -153,8 +153,8 @@ Los comandos SDD se activan con prefijo `/sdd:`
 ## 📚 Documentación Adicional
 
 - **OpenCode Integration**: `03_Knowledge/OpenCode_Integration.md`
-- **Claude Best Practices**: `01_Brain/Knowledge_Brain/01_Claude_Best_Practices.md`
-- **Inventario Total**: `01_Brain/Knowledge_Brain/01_Inventario_Total.md`
+- **Claude Best Practices**: `01_Core/Knowledge_Brain/01_Claude_Best_Practices.md`
+- **Inventario Total**: `01_Core/Knowledge_Brain/01_Inventario_Total.md`
 
 ---
 

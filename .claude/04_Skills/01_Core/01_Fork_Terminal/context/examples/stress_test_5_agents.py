@@ -20,7 +20,7 @@ def load_stress_test():
     print("=" * 60)
     print("Objetivo: Abrir 5 ventanas de navegador en paralelo (google.com)")
 
-    fork_script = Path(".claude/skills/fork-terminal/tools/fork_terminal.py")
+    fork_script = Path("01_Core/03_Skills/fork-terminal/tools/fork_terminal.py")
 
     # El comando que ejecutará cada "agente"
     # start https://google.com es el comando nativo de Windows para abrir URL en navegador default

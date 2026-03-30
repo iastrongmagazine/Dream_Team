@@ -130,7 +130,7 @@ Todos los agentes completaron sus tareas correctamente.
 The agent uses the following priority when searching for skills:
 
 ```
-1. .claude/skills/    (HIGHEST PRIORITY - User customizations)
+1. 01_Core/03_Skills/    (HIGHEST PRIORITY - User customizations)
 2. .agent/skills/     (Standard skills)
 ```
 
@@ -146,7 +146,7 @@ The agent uses the following priority when searching for skills:
 
 ### When Distributing Work
 
-The agent MUST use `.claude/skills/parallel-orchestration/` which:
+The agent MUST use `01_Core/03_Skills/parallel-orchestration/` which:
 
 - Launches visible CMD terminals for each agent
 - Keeps terminals open for user inspection
@@ -163,12 +163,12 @@ The agent MUST use `.claude/skills/parallel-orchestration/` which:
 
 | Location          | Purpose                        | Priority  |
 | ----------------- | ------------------------------ | --------- |
-| `.claude/skills/` | User customizations, overrides | ðŸ¥‡ FIRST  |
+| `01_Core/03_Skills/` | User customizations, overrides | ðŸ¥‡ FIRST  |
 | `.agent/skills/`  | Standard skill library         | ðŸ¥ˆ SECOND |
 
 ## Current Skills
 
-### In .claude/skills/
+### In 01_Core/03_Skills/
 
 - `fork-terminal/` - Terminal orchestration system
 - `parallel-orchestration/` - Multi-agent coordination (NEW)
@@ -192,12 +192,12 @@ The agent MUST use `.claude/skills/parallel-orchestration/` which:
 
 ### Location
 
-`.claude/skills/fork-terminal/tools/fork_terminal.py`
+`01_Core/03_Skills/fork-terminal/tools/fork_terminal.py`
 
 ### Usage Pattern
 
 ```bash
-python ".claude/skills/fork-terminal/tools/fork_terminal.py" "command && pause"
+python "01_Core/03_Skills/fork-terminal/tools/fork_terminal.py" "command && pause"
 ```
 
 ### Benefits

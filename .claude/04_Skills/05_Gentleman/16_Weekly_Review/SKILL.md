@@ -13,7 +13,7 @@ description: Conducts a reflective session to plan the upcoming week. Triggered 
 
 ## Workflow
 
-1.  **Harvest Progress**: Analyze completed tasks in `02_Operations/01_Active_Tasks/` and `README.md`.
+1.  **Harvest Progress**: Analyze completed tasks in `04_Operations/01_Active_Tasks/` and `README.md`.
 2.  **Evaluate Goals**: Check progress against `GOALS.md`.
 3.  **Identify Blockers**: List all stalled or blocked tasks.
 4.  **Plan Future**: Propose P0/P1 tasks for the next week.

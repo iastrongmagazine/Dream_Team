@@ -61,7 +61,7 @@
   - 19_Prompting_Guide_101_Espanol.pdf
   - 20_State_AI_Business_2025_Report.pdf
 - 03_Process_Notes/
-  - 01_Reorganizacion_04_Engine_Installer_2026-03-17.md
+  - 01_Reorganizacion_04_Operations_Installer_2026-03-17.md
   - 02_Reorganizacion_Final_2026-03-17.md
   - 03_Prueba_Integral_OS_2026-03-17.md
   - 04_Skills_Edge_Cases_2026-03-17.md
@@ -108,7 +108,7 @@
 > NOTE: The file continues with full directory tree. Let me add the Revisar_Analizar section - I'll look for a good place to add it.
 
 
-## 02_Operations
+## 04_Operations
 
 ```
 - .gitkeep
@@ -6054,7 +6054,7 @@
 
 ```
 
-## 04_Engine
+## 04_Operations
 
 ```
 - .claude/
@@ -6067,7 +6067,7 @@
   - pytest.ini
   - README.md
   - repair_map.json
-- 01_Brain/
+- 01_Core/
   - Context_Memory/
     - CTX_AUTO_Intelligence_2026-03-20_16-01-42.md
     - CTX_AUTO_Intelligence_2026-03-21_12-56-43.md
@@ -6551,7 +6551,7 @@
       - .mcp.json.backup_20260313_234027
   - link_repair_20260321_173132/
   - link_repair_20260321_173243/
-    - 04_Engine/
+    - 04_Operations/
       - 06_Reports/
         - agent_prompts/
           - Agent-1__Naming_&_Structure.md
@@ -6560,7 +6560,7 @@
     - 06_Archive/
       - 01_Backups/
         - link_repair_20260321_173243/
-          - 04_Engine/
+          - 04_Operations/
             - 06_Reports/
               - agent_prompts/
                 - Agent-1__Naming_&_Structure.md
@@ -9284,7 +9284,7 @@
             - SKILL.md
           - feature-video/
             - SKILL.md
-          - file-todos/
+          - file-03_Tasks/
             - assets/
               - todo-template.md
             - SKILL.md
@@ -9823,7 +9823,7 @@
             - references/
               - EVERY_WRITE_STYLE.md
             - SKILL.md
-          - file-todos/
+          - file-03_Tasks/
             - assets/
               - todo-template.md
             - SKILL.md
@@ -10278,7 +10278,7 @@
             - references/
               - EVERY_WRITE_STYLE.md
             - SKILL.md
-          - file-todos/
+          - file-03_Tasks/
             - assets/
               - todo-template.md
             - SKILL.md
@@ -10629,7 +10629,7 @@
               - ui-density-optimization-react-css.md
             - ui-redesign/
               - v5-2-pressure-formation-standard.md
-          - todos/
+          - 03_Tasks/
             - 001-complete-p1-resolved-compilation-error.md
             - 001-pending-p1-division-by-zero-safety.md
             - 001-pending-p1-missing-error-boundaries.md
@@ -16289,7 +16289,7 @@
             - SKILL.md
           - feature-video/
             - SKILL.md
-          - file-todos/
+          - file-03_Tasks/
             - assets/
               - todo-template.md
             - SKILL.md

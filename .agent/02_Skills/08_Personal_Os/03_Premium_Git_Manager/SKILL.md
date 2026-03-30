@@ -56,4 +56,4 @@ description: QUÉ HACE: Gestiona el ciclo de vida de Git (ramas, verificación, 
 
 ## 💾 State Persistence
 Guardar en:
-- `02_Operations/` — Estado
+- `04_Operations/` — Estado

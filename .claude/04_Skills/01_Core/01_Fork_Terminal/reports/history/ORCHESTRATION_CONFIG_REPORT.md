@@ -11,7 +11,7 @@
 ### Directory Priority (ENFORCED)
 
 ```
-Priority 1 (HIGHEST): .claude/skills/
+Priority 1 (HIGHEST): 01_Core/03_Skills/
 Priority 2 (FALLBACK): .agent/skills/
 ```
 
@@ -19,7 +19,7 @@ Priority 2 (FALLBACK): .agent/skills/
 
 ### Orchestration Method (MANDATORY)
 
-**Tool:** `.claude/skills/fork-terminal/tools/fork_terminal.py`
+**Tool:** `01_Core/03_Skills/fork-terminal/tools/fork_terminal.py`
 **Mode:** Visible CMD terminals
 **Reporting:** Always generate `MULTI_AGENT_*_REPORT.md`
 
@@ -29,7 +29,7 @@ Priority 2 (FALLBACK): .agent/skills/
 
 ### 1. parallel-orchestration
 
-**Location:** `.claude/skills/parallel-orchestration/SKILL.md`
+**Location:** `01_Core/03_Skills/parallel-orchestration/SKILL.md`
 **Purpose:** Enforces fork-terminal usage for all parallel work
 **Features:**
 
@@ -42,7 +42,7 @@ Priority 2 (FALLBACK): .agent/skills/
 
 ## 🗂️ Skills Inventory
 
-### In .claude/skills/ (Priority 1)
+### In 01_Core/03_Skills/ (Priority 1)
 
 1. **fork-terminal/** - Terminal orchestration system
 2. **parallel-orchestration/** - Multi-agent coordination (NEW)
@@ -74,12 +74,12 @@ Priority 2 (FALLBACK): .agent/skills/
 
 ### Location
 
-`.claude/skills/fork-terminal/tools/fork_terminal.py`
+`01_Core/03_Skills/fork-terminal/tools/fork_terminal.py`
 
 ### Standard Usage Pattern
 
 ```bash
-python ".claude/skills/fork-terminal/tools/fork_terminal.py" "
+python "01_Core/03_Skills/fork-terminal/tools/fork_terminal.py" "
   echo === AGENT N: TASK === &&
   <commands> &&
   echo COMPLETE &&
@@ -156,9 +156,9 @@ Project root or relevant subdirectory
 
 | File                                             | Purpose                | Status     |
 | ------------------------------------------------ | ---------------------- | ---------- |
-| `.claude/skills/parallel-orchestration/SKILL.md` | Orchestration rules    | ✅ Created |
+| `01_Core/03_Skills/parallel-orchestration/SKILL.md` | Orchestration rules    | ✅ Created |
 | `AGENT_CONFIG.md`                                | Priority configuration | ✅ Created |
-| `.claude/skills/fork-terminal/`                  | Terminal tool          | ✅ Exists  |
+| `01_Core/03_Skills/fork-terminal/`                  | Terminal tool          | ✅ Exists  |
 
 ---
 
@@ -168,15 +168,15 @@ Project root or relevant subdirectory
 
 ```bash
 # Agent 1
-python ".claude/skills/fork-terminal/tools/fork_terminal.py" "
+python "01_Core/03_Skills/fork-terminal/tools/fork_terminal.py" "
   echo === AGENT 1: STRUCTURE === &&
-  cd .claude/skills &&
+  cd 01_Core/03_Skills &&
   bash validate.sh &&
   pause
 "
 
 # Agent 2
-python ".claude/skills/fork-terminal/tools/fork_terminal.py" "
+python "01_Core/03_Skills/fork-terminal/tools/fork_terminal.py" "
   echo === AGENT 2: DOCS === &&
   ls -lh *.md &&
   pause
@@ -201,7 +201,7 @@ python ".claude/skills/fork-terminal/tools/fork_terminal.py" "
 ### ALWAYS
 
 - ✅ Use fork-terminal for parallel work
-- ✅ Check `.claude/skills/` FIRST
+- ✅ Check `01_Core/03_Skills/` FIRST
 - ✅ Keep terminals visible
 - ✅ Generate consolidated reports
 - ✅ Pause terminals for inspection
@@ -234,13 +234,13 @@ To verify configuration:
 
 ```bash
 # Check .claude priority
-ls -la .claude/skills/
+ls -la 01_Core/03_Skills/
 
 # Check parallel-orchestration
-cat .claude/skills/parallel-orchestration/SKILL.md
+cat 01_Core/03_Skills/parallel-orchestration/SKILL.md
 
 # Check fork-terminal
-ls -lh .claude/skills/fork-terminal/tools/fork_terminal.py
+ls -lh 01_Core/03_Skills/fork-terminal/tools/fork_terminal.py
 
 # Check AGENT_CONFIG
 cat AGENT_CONFIG.md
@@ -261,7 +261,7 @@ cat AGENT_CONFIG.md
 
 When distributing work:
 
-1. Read `.claude/skills/parallel-orchestration/SKILL.md`
+1. Read `01_Core/03_Skills/parallel-orchestration/SKILL.md`
 2. Follow the pattern
 3. Always use visible terminals
 4. Always generate report

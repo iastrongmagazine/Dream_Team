@@ -131,7 +131,7 @@ Status: AGREED
 
 ## Referencias
 
-- Artículo: `01_Brain/02_Knowledge_Brain/10_Anthropic_Harness_Design.md`
+- Artículo: `01_Core/02_Knowledge_Brain/10_Anthropic_Harness_Design.md`
 - Script: `08_Scripts_Os/11_Anthropic_Harness/03_Sprint_Contract.py`
 
 ---

@@ -31,7 +31,7 @@ After analysis, output:
 ## Template Recomendado: [SOTA/MEDIO/CORTO]
 
 Razon: [explicación breve]
-Archivo: [01_Brain/05_Templates/XX_Task_Template_XXX.md]
+Archivo: [01_Core/05_Templates/XX_Task_Template_XXX.md]
 
 ¿Confirmás este template?
 ```

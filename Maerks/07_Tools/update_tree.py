@@ -28,9 +28,9 @@ root = Path(".")
 for sub in [
     "00_Core",
     "01_Brain",
-    "02_Operations",
+    "04_Operations",
     "03_Knowledge",
-    "04_Engine",
+    "04_Operations",
     "05_System",
     "06_Archive",
     "07_Projects",
@@ -46,9 +46,9 @@ arch_map = "# PersonalOS System Map\n\n"
 for sub in [
     "00_Core",
     "01_Brain",
-    "02_Operations",
+    "04_Operations",
     "03_Knowledge",
-    "04_Engine",
+    "04_Operations",
     "05_System",
     "06_Archive",
     "07_Projects",

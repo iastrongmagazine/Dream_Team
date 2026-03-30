@@ -13,7 +13,7 @@
 ┌─ ROOT_DIR Detection ────────────────────────────────────────────────────────┐
 │ ✅ FUNCIONAL                                                                 │
 │                                                                              │
-│ • Todos los scripts en 04_Engine usan find_project_root()                   │
+│ • Todos los scripts en 04_Operations usan find_project_root()                   │
 │ • Búsqueda correcta del directorio 00_Core                                  │
 │ • Fallback seguro implementado                                              │
 │                                                                              │
@@ -32,7 +32,7 @@
 │    ├── 📄 BACKLOG.md (3,029 bytes)                                          │
 │    └── 📄 GOALS.md (8,217 bytes)                                            │
 │                                                                              │
-│ 📂 04_Engine/                                                                │
+│ 📂 04_Operations/                                                                │
 │    ├── ✅ 00_context_reset.py (2,750 bytes) - VALIDADO                      │
 │    ├── ✅ 01_ritual_cierre.py (5,974 bytes) - VALIDADO                      │
 │    ├── 📄 09_Backlog_Triage.py (905 bytes)                                  │
@@ -228,7 +228,7 @@
 │    Justificación:                                                           │
 │    • Facilita ordenamiento automático                                       │
 │    • Indica secuencia de ejecución                                          │
-│    • Es consistente en todo 04_Engine                                       │
+│    • Es consistente en todo 04_Operations                                       │
 │                                                                              │
 │ 2️⃣  Git Remote No Configurado                                               │
 │    Severidad: 🟡 ADVERTENCIA (Baja criticidad)                              │
@@ -330,7 +330,7 @@ El sistema PersonalOS está COMPLETAMENTE FUNCIONAL y listo para uso productivo.
    cd "c:\Users\sebas\Downloads\01 Revisar\07 Now\personal-os-main\personal-os-main"
    git remote add origin <tu-repositorio-url>
 
-2. Mantener la convención de nombres actual en 04_Engine:
+2. Mantener la convención de nombres actual en 04_Operations:
    ────────────────────────────────────────────────────────────────────────────
    • Los números como prefijo (00_, 01_, etc.) son parte del diseño
    • Facilitan ordenamiento y secuencia de ejecución
@@ -338,7 +338,7 @@ El sistema PersonalOS está COMPLETAMENTE FUNCIONAL y listo para uso productivo.
 
 3. Ejecutar el ritual de cierre regularmente:
    ────────────────────────────────────────────────────────────────────────────
-   python 04_Engine/01_ritual_cierre.py
+   python 04_Operations/01_ritual_cierre.py
    
    Esto mantiene el sistema sincronizado y validado automáticamente
 
@@ -355,7 +355,7 @@ El sistema PersonalOS está COMPLETAMENTE FUNCIONAL y listo para uso productivo.
 Este archivo: validation_log.txt (Log técnico detallado)
 Reporte completo: VALIDATION_REPORT.md (Documentación exhaustiva)
 Guía rápida: VALIDATION_QUICK_GUIDE.md (Comandos y checklists)
-Nota de proceso: 01_Brain/03_Process_Notes/05_Validacion_Sistema_Completa_2026-02-02.md
+Nota de proceso: 01_Core/03_Process_Notes/05_Validacion_Sistema_Completa_2026-02-02.md
 
 ════════════════════════════════════════════════════════════════════════════════
 

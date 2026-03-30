@@ -25,7 +25,7 @@ Successfully identified and fixed compatibility issues across the parallel orche
 
 ### 1. Fixed `run_20_agent_swarm.py` (Windows Command Compatibility)
 
-**File:** `.claude/skills/parallel-orchestration/tools/run_20_agent_swarm.py`
+**File:** `01_Core/03_Skills/parallel-orchestration/tools/run_20_agent_swarm.py`
 
 **Issue:** Agent group 2 (Doc Scanners, agents 6-10) used Unix `find` command instead of Windows `findstr`
 
@@ -45,7 +45,7 @@ Successfully identified and fixed compatibility issues across the parallel orche
 
 ### 2. Enhanced `agent_orchestrator.py` (macOS Context Injection)
 
-**File:** `.claude/skills/parallel-orchestration/tools/agent_orchestrator.py`
+**File:** `01_Core/03_Skills/parallel-orchestration/tools/agent_orchestrator.py`
 
 **Issue 1:** Context injection (from `fork_summary_user_prompt.md`) was only implemented for Windows, not macOS
 
@@ -84,14 +84,14 @@ All 8 Python scripts compiled and imported successfully:
 
 | Script | Location | Status |
 |--------|----------|--------|
-| `agent_orchestrator.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
-| `fork_terminal.py` | `.claude/skills/fork-terminal/tools/` | ✅ PASS |
-| `run_20_agent_swarm.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
-| `run_final_5_agent_test.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
-| `run_full_system_test.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
-| `run_single_context_test.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
-| `run_stress_test.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
-| `run_ultimate_test.py` | `.claude/skills/parallel-orchestration/tools/` | ✅ PASS |
+| `agent_orchestrator.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
+| `fork_terminal.py` | `01_Core/03_Skills/fork-terminal/tools/` | ✅ PASS |
+| `run_20_agent_swarm.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
+| `run_final_5_agent_test.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
+| `run_full_system_test.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
+| `run_single_context_test.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
+| `run_stress_test.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
+| `run_ultimate_test.py` | `01_Core/03_Skills/parallel-orchestration/tools/` | ✅ PASS |
 
 ### Import Tests
 
@@ -104,7 +104,7 @@ fork_terminal import: OK
 
 ## 🚀 20-Agent Parallel Test Results
 
-**Test File:** `.claude/skills/parallel-orchestration/tools/run_20_agent_swarm.py`
+**Test File:** `01_Core/03_Skills/parallel-orchestration/tools/run_20_agent_swarm.py`
 **Orchestration Log:** `logs/orchestration_1768718877/`
 **Report:** `.claude/reports/latest/ULTIMATE_SYSTEM_REPORT.md`
 
@@ -199,10 +199,10 @@ Test scripts currently use Windows-specific commands:
 
 ## 📁 Files Modified
 
-1. `.claude/skills/parallel-orchestration/tools/run_20_agent_swarm.py`
+1. `01_Core/03_Skills/parallel-orchestration/tools/run_20_agent_swarm.py`
    - Changed `find` to `findstr` in Doc Scanner group
 
-2. `.claude/skills/parallel-orchestration/tools/agent_orchestrator.py`
+2. `01_Core/03_Skills/parallel-orchestration/tools/agent_orchestrator.py`
    - Added context injection for macOS
    - Fixed AppleScript single-quote escaping
 
@@ -210,7 +210,7 @@ Test scripts currently use Windows-specific commands:
 
 ## 📈 Context Injection Verification
 
-Context from `.claude/skills/fork-terminal/prompts/fork_summary_user_prompt.md` successfully injected in all 20 agent terminals:
+Context from `01_Core/03_Skills/fork-terminal/prompts/fork_summary_user_prompt.md` successfully injected in all 20 agent terminals:
 
 ```yaml
 Environment Context: ✅ Injected
@@ -246,7 +246,7 @@ All core system components validated:
 
 ```
 ✅ .agent/skills/           (12 skills, validate-skills.sh present)
-✅ .claude/skills/          (fork-terminal, parallel-orchestration)
+✅ 01_Core/03_Skills/          (fork-terminal, parallel-orchestration)
 ✅ AGENT_CONFIG.md          (Priority system documented)
 ✅ CLAUDE.md                (Created - repository guide)
 ✅ README.md                (Spanish documentation present)
@@ -278,7 +278,7 @@ The parallel orchestration system is now **production-ready** with:
 
 ### Run 20-Agent Test
 ```bash
-python .claude/skills/parallel-orchestration/tools/run_20_agent_swarm.py
+python 01_Core/03_Skills/parallel-orchestration/tools/run_20_agent_swarm.py
 ```
 
 ### View Latest Report

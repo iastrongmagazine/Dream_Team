@@ -23,6 +23,6 @@ python 08_Scripts_Os/08_Ritual_Cierre.py --mode genesis
 
 This loads:
 - Session rules (.claude/02_Rules/)
-- Long-term memory (01_Brain/01_Context_Memory/)
-- Process notes (01_Brain/03_Process_Notes/)
-- Task status (02_Operations/01_Active_Tasks/)
+- Long-term memory (01_Core/01_Context_Memory/)
+- Process notes (01_Core/03_Process_Notes/)
+- Task status (04_Operations/01_Active_Tasks/)

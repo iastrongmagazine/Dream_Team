@@ -27,7 +27,7 @@ def run_demo(demo_name, script_path, description):
     print(f"   {description}")
     print("-" * 70)
 
-    fork_script = Path(".claude/skills/fork-terminal/tools/fork_terminal.py")
+    fork_script = Path("01_Core/03_Skills/fork-terminal/tools/fork_terminal.py")
     command = f'python "{fork_script}" "python {script_path}"'
 
     print(f"\n📋 Comando: {command}")
@@ -64,17 +64,17 @@ def main():
     demos = [
         {
             'name': 'Demo 1: Agente Simple',
-            'script': '.claude/skills/fork-terminal/context/examples/demo_agent.py',
+            'script': '01_Core/03_Skills/fork-terminal/context/examples/demo_agent.py',
             'description': 'Simula un agente básico trabajando en una tarea'
         },
         {
             'name': 'Demo 2: Orquestación Avanzada',
-            'script': '.claude/skills/fork-terminal/context/examples/orchestration_demo.py',
+            'script': '01_Core/03_Skills/fork-terminal/context/examples/orchestration_demo.py',
             'description': 'Demuestra orquestación con contexto aislado'
         },
         {
             'name': 'Demo 3: Simulación Claude Code',
-            'script': '.claude/skills/fork-terminal/context/examples/claude_fork_demo.py',
+            'script': '01_Core/03_Skills/fork-terminal/context/examples/claude_fork_demo.py',
             'description': 'Simula un agente Claude Code real siendo forked'
         }
     ]

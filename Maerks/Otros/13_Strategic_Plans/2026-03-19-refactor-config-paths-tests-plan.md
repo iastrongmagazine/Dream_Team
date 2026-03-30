@@ -19,7 +19,7 @@ Módulo crítico del sistema PersonalOS que centraliza todas las rutas. Tras la 
 
 ## Proposed Solution
 
-Crear suite de tests unitarios siguiendo los patrones existentes en `04_Engine/08_Scripts_Os/05_Tests/` que cubra:
+Crear suite de tests unitarios siguiendo los patrones existentes en `04_Operations/08_Scripts_Os/05_Tests/` que cubra:
 
 1. **Validación de entorno** (fail-fast)
 2. **Constantes exportadas** (7 Dimensiones)
@@ -85,9 +85,9 @@ def test_run_audit_success():
 
 ### Archivos Relacionados
 
-- `04_Engine/08_Scripts_Os/config_paths.py` — Módulo bajo test
-- `04_Engine/05_Tests/test_safe_commit.py` — Patrón de tests existente
-- `01_Brain/02_Knowledge_Brain/01_Inventario_Total.md` — Referencia de estructura
+- `04_Operations/08_Scripts_Os/config_paths.py` — Módulo bajo test
+- `04_Operations/05_Tests/test_safe_commit.py` — Patrón de tests existente
+- `01_Core/02_Knowledge_Brain/01_Inventario_Total.md` — Referencia de estructura
 - Commit: `f6f1918` — Refactorización determinista
 
 ### Patrones de Test
@@ -104,7 +104,7 @@ from pathlib import Path
 def mock_root_env(monkeypatch, tmp_path):
     monkeypatch.setenv("PERSONAL_OS_ROOT", str(tmp_path))
     # Crear estructura de 7D
-    for dim in ["00_Core", "01_Brain", "02_Operations", "03_Knowledge", "04_Engine", "05_System", "06_Archive"]:
+    for dim in ["00_Core", "01_Brain", "04_Operations", "03_Knowledge", "04_Operations", "05_System", "06_Archive"]:
         (tmp_path / dim).mkdir()
     return tmp_path
 ```
@@ -113,7 +113,7 @@ def mock_root_env(monkeypatch, tmp_path):
 
 ## Implementación Sugerida
 
-### Archivo: `04_Engine/05_Tests/test_config_paths.py`
+### Archivo: `04_Operations/05_Tests/test_config_paths.py`
 
 ```python
 """
@@ -138,9 +138,9 @@ def temp_root(monkeypatch, tmp_path):
     """Fixture que crea estructura temporal de 7D."""
     (tmp_path / "00_Core").mkdir()
     (tmp_path / "01_Brain").mkdir()
-    (tmp_path / "02_Operations").mkdir()
+    (tmp_path / "04_Operations").mkdir()
     (tmp_path / "03_Knowledge").mkdir()
-    (tmp_path / "04_Engine").mkdir()
+    (tmp_path / "04_Operations").mkdir()
     (tmp_path / "05_System").mkdir()
     (tmp_path / "06_Archive").mkdir()
     monkeypatch.setenv("PERSONAL_OS_ROOT", str(tmp_path))
@@ -189,9 +189,9 @@ def test_7_dimensions_constants(temp_root):
     assert config_paths.ROOT_DIR == temp_root
     assert config_paths.CORE_DIR == temp_root / "00_Core"
     assert config_paths.BRAIN_DIR == temp_root / "01_Brain"
-    assert config_paths.OPERATIONS_DIR == temp_root / "02_Operations"
+    assert config_paths.OPERATIONS_DIR == temp_root / "04_Operations"
     assert config_paths.KNOWLEDGE_DIR == temp_root / "03_Knowledge"
-    assert config_paths.ENGINE_DIR == temp_root / "04_Engine"
+    assert config_paths.ENGINE_DIR == temp_root / "04_Operations"
     assert config_paths.SYSTEM_DIR == temp_root / "05_System"
     assert config_paths.ARCHIVE_DIR == temp_root / "06_Archive"
 
@@ -251,9 +251,9 @@ def test_paths_are_resolved(temp_root):
 
 ## Checklist Pre-Commit
 
-- [ ] Tests creados en `04_Engine/05_Tests/test_config_paths.py`
-- [ ] Tests ejecutados: `pytest 04_Engine/05_Tests/test_config_paths.py`
-- [ ] Suite completa pasa: `pytest 04_Engine/05_Tests/ -v`
+- [ ] Tests creados en `04_Operations/05_Tests/test_config_paths.py`
+- [ ] Tests ejecutados: `pytest 04_Operations/05_Tests/test_config_paths.py`
+- [ ] Suite completa pasa: `pytest 04_Operations/05_Tests/ -v`
 - [ ] Commit: `test(engine): agregar tests unitarios para config_paths.py`
 - [ ] Engram actualizado con aprendizaje compuesto
 

@@ -59,7 +59,7 @@
 Think_Different_AI/
 ├── 00_Core/              # ADN: AGENTS.md, GOALS.md, BACKLOG.md, PROGRESS.md
 │
-├── 01_Brain/             # Cerebro: Memoria, Conocimiento, Reglas
+├── 01_Core/             # Cerebro: Memoria, Conocimiento, Reglas
 │   ├── 01_Context_Memory/    # Memoria a largo plazo
 │   ├── 02_Knowledge_Brain/  # Base de conocimiento (+ 11_System_Mapping.md)
 │   ├── 03_Process_Notes/     # Notas de sesiones
@@ -70,7 +70,7 @@ Think_Different_AI/
 │   ├── 08_Audit_Sota/       # Auditorías SOTA
 │   └── 09_Momentum_Os/      # Proyectos de referencia
 │
-├── 02_Operations/        # Manos: Tasks, Evals, Progress
+├── 04_Operations/        # Manos: Tasks, Evals, Progress
 │   ├── 01_Active_Tasks/     # Tareas activas
 │   ├── 02_Evals/            # Evaluaciones
 │   ├── 03_Analytics/        # Analíticas
@@ -91,7 +91,7 @@ Think_Different_AI/
 │   ├── 12_Resources/
 │   └── 13_Strategic_Plans/
 │
-├── 04_Engine/            # Motor: Scripts (10 Hubs)
+├── 04_Operations/            # Motor: Scripts (10 Hubs)
 │   ├── 00_Config/
 │   ├── 08_Scripts_Os/      # 86+ scripts
 │   │   ├── 01_Auditor_Hub.py
@@ -309,7 +309,7 @@ Ubicación: `.agent/04_Extensions/hooks/`
 
 ## 📊 MAPA COMPLETO
 
-**Documento detallado:** `01_Brain/02_Knowledge_Brain/11_System_Mapping.md`
+**Documento detallado:** `01_Core/02_Knowledge_Brain/11_System_Mapping.md`
 
 ---
 

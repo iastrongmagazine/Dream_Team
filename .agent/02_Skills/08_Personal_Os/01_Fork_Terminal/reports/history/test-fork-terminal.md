@@ -23,7 +23,7 @@ El skill está listo para ser usado en producción. La arquitectura de orquestac
 ## Estructura final:
 
 ```
-.claude/skills/fork-terminal/
+01_Core/03_Skills/fork-terminal/
 ├── SKILL.md                              ✅ Actualizado
 ├── cookbook/
 │   ├── cli-command.md                    ✅ Completo

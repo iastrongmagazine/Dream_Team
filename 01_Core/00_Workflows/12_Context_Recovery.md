@@ -52,7 +52,7 @@ Solo si A y B fallan:
 
 ## Prevención
 
-- Usar subagentes (`.claude/agents/`) para tareas largas → protegen la ventana de contexto principal
+- Usar subagentes (`.agent/01_Agents/`) para tareas largas → protegen la ventana de contexto principal
 - Guardar `Process_Notes` al final de cada sesión con `11_Ritual_Cierre_Protocol`
 - Hacer commits frecuentes → el estado del repo siempre refleja el avance real
 - Si una tarea requiere leer más de 10 archivos → delegar a un subagente

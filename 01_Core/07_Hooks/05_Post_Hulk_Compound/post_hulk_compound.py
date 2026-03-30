@@ -48,7 +48,7 @@ def main():
     print("--- POST-HULK-COMPOUND HOOK ---")
 
     project_root = _ext_root.parent.parent
-    script_dir = project_root / "04_Engine" / "08_Scripts_Os"
+    script_dir = project_root / "04_Operations" / "08_Scripts_Os"
     organize_script = script_dir / "56_Organize_Solutions.py"
 
     if not organize_script.exists():

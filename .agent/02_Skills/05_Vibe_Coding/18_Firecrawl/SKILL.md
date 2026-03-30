@@ -36,4 +36,4 @@ _Alineado con el Pilar 1: Motor AI-Prime (Herramientas Técnicas)_
 
 Guardar en:
 - `03_Knowledge/` — Documentación
-- `02_Operations/` — Estado activo
+- `04_Operations/` — Estado activo

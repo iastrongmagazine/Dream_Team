@@ -24,7 +24,7 @@ Commit subagents to your repo. Now everyone on the team has the same specialized
 
 ### Claude Code
 
-Create a markdown file in `.claude/agents/`:
+Create a markdown file in `.agent/01_Agents/`:
 
 ```
 your-repo/
@@ -127,7 +127,7 @@ Now when I say "help me write this post", the agent already knows my voice, the 
 
 ## Quick Start
 
-1. Create the directory: `mkdir -p .claude/agents` (or `.factory/droids`)
+1. Create the directory: `mkdir -p .agent/01_Agents` (or `.factory/droids`)
 2. Create `my-agent.md` with the format above
 3. Add your instructions
 4. Test it out
@@ -160,7 +160,7 @@ Claude Code:
 2. Extracted the template structure into required sections
 3. Turned the writing guidelines into DO/DON'T rules
 4. Analyzed the good examples to identify patterns
-5. Created the `.claude/agents/prd-writer.md` file with everything structured properly
+5. Created the `.agent/01_Agents/prd-writer.md` file with everything structured properly
 
 I then asked it to do the same for Factory droids. It fetched the Factory docs, learned the format differences, and created `.factory/droids/prd-writer.md` with the correct syntax.
 

@@ -97,6 +97,12 @@ def main():
     subparsers.add_parser(
         "edge", help="Validador de edge-cases (reutiliza 80_Edge_Case_Validator.py)"
     )
+    subparsers.add_parser(
+        "skills", help="Validación de skills SOTA (reutiliza skill_validator.py)"
+    )
+    subparsers.add_parser(
+        "security", help="Security scan de skills (reutiliza skill_security_scan.py)"
+    )
 
     args = parser.parse_args()
 
@@ -106,6 +112,8 @@ def main():
         "rules": "40_Validate_Rules.py",
         "linter": "37_Linter_Autofix.py",
         "edge": "80_Edge_Case_Validator.py",
+        "skills": "skill_validator.py",
+        "security": "skill_security_scan.py",
     }
 
     if args.command in cmd_map:

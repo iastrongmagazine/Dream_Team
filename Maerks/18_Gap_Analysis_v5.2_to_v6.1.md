@@ -48,7 +48,7 @@
 | **Tool Shed Pattern** | 36 MCPs organizados en 8 dominios | `03_Knowledge/08_Config_Mcp/mcp-tools/` | Migrar estructura MCP |
 | **MCP Domains** | Core, Knowledge, Dev, Research, Visual, Productivity | Documentado en v5.2 | Implementar organización |
 | **Engram Integration** | Comandos: `mem_save`, `mem_search`, `mem_session_summary` | Documentado pero parcial | Verificar integración completa |
-| **QMD System** | Búsqueda híbrida: `bun qmd.js query` | `04_Engine/` | Verificar si está implementado |
+| **QMD System** | Búsqueda híbrida: `bun qmd.js query` | `04_Operations/` | Verificar si está implementado |
 | **Super Campeones** | 1 Director + 8 Agentes (4 jugadores + 4 auditores) | Planificado | Documentar y implementar |
 
 ### 🟡 Media Prioridad
@@ -66,7 +66,7 @@
 |------------|-------------|----------------------|------------------|
 | **Firecrawl Guide** | Documentación web scraping IA | `Revisar_Analizar/` | Integrar o deprecate |
 | **Stripe Minions** | Patrones MCP avanzados | Documentado | Revisar relevancia |
-| **Content Engine** | 18_Generacion_Contenido.py | `04_Engine/` | Verificar ruta |
+| **Content Engine** | 18_Generacion_Contenido.py | `04_Operations/` | Verificar ruta |
 
 ---
 

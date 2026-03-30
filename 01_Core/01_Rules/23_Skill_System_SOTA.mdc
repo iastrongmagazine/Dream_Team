@@ -1,0 +1,383 @@
+---
+description: CONSTITUCIÓN DEL SISTEMA DE SKILLS: Anatomía, seguridad, scoring y ciclo de vida. Define los estándares SOTA 2026 para todas las skills del ecosistema PersonalOS.
+globs: */*
+alwaysApply: true
+---
+
+# 📘 Regla 23: Skill System SOTA v2.0
+
+> **Versión:** 2.0 (2026-03-30)
+> **Estado:** ✅ Activa
+> **Framework:** Anthropic SOTA 2026 + PersonalOS
+
+---
+
+## 🎯 Objetivo
+
+Institucionalizar el sistema de skills como la capa fundamental de conocimiento especializado del ecosistema PersonalOS. Toda skill debe cumplir con estos estándares para garantizar calidad, seguridad y consistencia.
+
+---
+
+## 📂 Estructura del Sistema de Skills
+
+```
+01_Core/03_Skills/
+├── SKILL_TEMPLATE/           # Template oficial para nuevas skills
+├── 00_Skill_Auditor/        # Auditor de calidad
+├── 15_Skill_Creator_Oficial/ # Creator oficial
+└── [NN_Nombre_Skill]/       # Skills organizadas por número
+```
+
+---
+
+## 🏗️ Anatomía de una Skill (SOTA v2.0)
+
+### Estructura de Archivos
+
+```
+nombre-skill/
+├── SKILL.md                  # Definición principal (OBLIGATORIO)
+├── README.md                 # Documentación pública
+├── LICENSE                   # Licencia
+├── references/              # Documentación de referencia
+│   ├── *.md                 # Guías específicas
+│   └── schemas.md           # Esquemas de datos
+├── scripts/                 # Código ejecutable
+│   ├── *.py                 # Scripts Python
+│   └── *.sh                 # Scripts Bash
+├── assets/                  # Recursos estáticos
+│   ├── templates/           # Plantillas
+│   └── examples/            # Ejemplos
+└── examples/                # Casos de uso (NUEVO v2.0)
+    ├── good_example.md      # Ejemplo correcto
+    └── bad_example.md       # Ejemplo incorrecto
+```
+
+### SKILL.md (Frontmatter Obligatorio)
+
+```yaml
+---
+name: nombre-skill
+description: >
+  Descripción clara de qué hace la skill y cuándo activarse.
+  Incluir todos los triggers específicos.
+  Esta descripción es el mecanismo PRIMARY de activación.
+author: gentleman-programming
+version: 1.0.0
+compatibility: opencode | claude-code | all
+category: [1-9]  # Categoría Anthropic
+tags: []
+---
+```
+
+### Descripción (Frontmatter) - Requisitos
+
+La descripción DEBE incluir:
+1. **Qué hace la skill** - Funcionalidad principal
+2. **Cuándo activarse** - Triggers específicos
+3. **Contexto de uso** - Cuándo NO usarla
+
+**Ejemplo de buena descripción:**
+```yaml
+description: >
+  Patrones de testing para Python usando Pytest. Úsalo cuando:
+  (1) Escribas tests unitarios o de integración,
+  (2) Necesites mocks o fixtures,
+  (3) Configures CI/CD para Python.
+  NO usar para tests E2E (ver skill dedicada).
+```
+
+---
+
+## 🔢 Las 9 Categorías Anthropic (Obligatorias)
+
+Toda skill DEBE declar su categoría en el frontmatter:
+
+| # | Categoría | Descripción | Triggers Comunes |
+|---|-----------|-------------|------------------|
+| 1 | **Library / API Reference** | Librerías, APIs, frameworks | "cómo usar X", "API de Y" |
+| 2 | **Product Verification** | Testing, QA, validación | "verificar que funciona", "test" |
+| 3 | **Data Fetching** | Obtención de datos, queries | "obtener datos", "métricas" |
+| 4 | **Business Process** | Workflows, procesos de negocio | "ejecutar workflow", "procesar" |
+| 5 | **Code Scaffolding** | Generación de código, templates | "crear nuevo", "scaffolding" |
+| 6 | **Code Quality** | Revisión, linting, estándares | "revisar código", "code review" |
+| 7 | **CI/CD** | Despliegue, pipelines | "desplegar", "deploy", "pipeline" |
+| 8 | **Runbooks** | Debugging, resolución de incidentes | "debugging", "incidente" |
+| 9 | **Infrastructure Ops** | Operaciones, DevOps | "operaciones", "cleanup" |
+
+---
+
+## 🛡️ Sistema de Seguridad de Skills
+
+### skill_security_scan.py
+
+Toda skill debe pasar el security scan antes de integración:
+
+```bash
+python 08_Scripts_Os\Validator_Fixed\skill_security_scan.py --skill <path>
+```
+
+### Niveles de Severidad
+
+| Nivel | Descripción | Acción Requerida |
+|-------|-------------|------------------|
+| 🔴 CRITICAL | Acceso a credenciales, ejecución remota | Bloquear integración |
+| 🟠 HIGH | Archivos sensibles, paths peligrosos | Revisión manual obligatoria |
+| 🟡 MEDIUM | Patrones suspectos, mala prácticas | Corrección recomendada |
+| 🟢 LOW | Warnings informativos | Opcional |
+
+### Reglas de Seguridad
+
+1. **NO exponerse credenciales** en scripts o referencias
+2. **NO ejecutar comandos remotos** sin validación
+3. **NO acceder a paths sensibles** fuera del workspace
+4. **Validar inputs** de usuarios antes de procesamiento
+5. **Sanitizar comandos** antes de ejecución
+
+---
+
+## 📊 Sistema de Scoring (Skill Auditor)
+
+### scoring_model:
+
+```
+Score Total = (W1 × Completitud) + (W2 × Calidad) + (W3 × Seguridad) + (W4 × Documentación)
+
+W1 = 0.25  (Completitud)
+W2 = 0.30  (Calidad técnica)
+W3 = 0.25  (Seguridad)
+W4 = 0.20  (Documentación)
+```
+
+### Rangos de Calificación
+
+| Score | Calificación | Acción |
+|-------|--------------|--------|
+| 90-100% | 🏆 Excellent | Aprobado para producción |
+| 70-89% | ✅ Good | Aprobado con warnings |
+| 50-69% | ⚠️ Needs Work | Requiere mejoras |
+| <50% | ❌ Failed | No integrar |
+
+### Criterios de Evaluación
+
+#### Completitud (25%)
+
+- [ ] Frontmatter completo con todos los campos obligatorios
+- [ ] SKILL.md con estructura válida
+- [ ] Al menos un ejemplo en examples/
+- [ ] Referencias/documentación adecuada
+
+#### Calidad Técnica (30%)
+
+- [ ] Código libre de vulnerabilidades conocidas
+- [ ] Manejo de errores apropiado
+- [ ] Logs claros y estructurados
+- [ ] Tests incluidos (si aplica)
+
+#### Seguridad (25%)
+
+- [ ] Pasa skill_security_scan.py sin CRITICAL
+- [ ] No exponen credenciales
+- [ ] Inputs validados
+- [ ] Comandos sanitizados
+
+#### Documentación (20%)
+
+- [ ] Descripción clara en frontmatter
+- [ ] Ejemplos de uso
+- [ ] Casos edge documentados
+- [ ] Changelog actualizado
+
+---
+
+## 🔄 Ciclo de Vida de una Skill
+
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  PLANNING   │───▶│  CREATION   │───▶│  VALIDATION │───▶│ PUBLICATION │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+                                              │                   │
+                                              ▼                   ▼
+                                        ┌─────────────┐    ┌─────────────┐
+                                        │   ITERATE   │◀───│  MONITORING │
+                                        └─────────────┘    └─────────────┘
+```
+
+### Fase 1: Planning
+
+1. Identificar necesidad y gaps
+2. Definir categoría Anthropic
+3. Escribir SPEC preliminar
+4. Validar con stakeholders
+
+### Fase 2: Creation
+
+1. Usar `SKILL_TEMPLATE/` como base
+2. Implementar SKILL.md
+3. Crear scripts/references/assets
+4. Añadir examples/ (NUEVO v2.0)
+
+### Fase 3: Validation
+
+1. Run `skill_security_scan.py`
+2. Run `Skill_Auditor.py` (score ≥ 70%)
+3. Peer review por equipo
+4. Iterar hasta aprobado
+
+### Fase 4: Publication
+
+1. Registrar en skill registry
+2. Actualizar RULES_INDEX.md
+3. Documentar en README
+4. Publicar a producción
+
+### Fase 5: Monitoring
+
+1. Track usage metrics
+2. Collect feedback
+3. Identify improvements
+4. Iterate
+
+---
+
+## 📋 SKILL_TEMPLATE (v2.0)
+
+El template oficial está en: `01_Core/03_Skills/SKILL_TEMPLATE/`
+
+### Uso:
+
+```bash
+# Copiar template
+cp -r 01_Core/03_Skills/SKILL_TEMPLATE/ 01_Core/03_Skills/NN_Nueva_Skill/
+
+# Editar SKILL.md
+nano 01_Core/03_Skills/NN_Nueva_Skill/SKILL.md
+```
+
+### Contenido del Template:
+
+```
+SKILL_TEMPLATE/
+├── SKILL.md              # Template con TODOs
+├── README.md             # Guía de uso
+├── LICENSE               # MIT por defecto
+├── references/
+│   └── TEMPLATE.md       # Guía de referencias
+├── scripts/
+│   └── TEMPLATE.py       # Script base
+├── assets/
+│   └── .gitkeep
+└── examples/
+    ├── good_example.md   # Ejemplo correcto (NUEVO)
+    └── bad_example.md   # Ejemplo incorrecto (NUEVO)
+```
+
+---
+
+## 🔗 Agent Teams Lite - Estructura de Sub-Skills
+
+El sistema Agent Teams Lite usa 10 sub-skills del SDD workflow:
+
+| # | Skill | Función | Examples/ |
+|---|-------|---------|-----------|
+| 1 | sdd-init | Inicializar SDD | ✅ Required |
+| 2 | sdd-explore | Explorar ideas | ✅ Required |
+| 3 | sdd-propose | Crear propuesta | ✅ Required |
+| 4 | sdd-spec | Especificar requisitos | ✅ Required |
+| 5 | sdd-design | Diseño técnico | ✅ Required |
+| 6 | sdd-tasks | Desglose de tareas | ✅ Required |
+| 7 | sdd-apply | Implementación | ✅ Required |
+| 8 | sdd-verify | Verificación | ✅ Required |
+| 9 | sdd-archive | Archivado | ✅ Required |
+| 10 | skill-registry | Registro de skills | ✅ Required |
+
+### Estructura de examples/ para sub-skills:
+
+```
+examples/
+├── scenario_01.md        # Escenario de ejemplo
+├── scenario_02.md        # Segundo escenario
+├── anti_pattern.md       # Qué NO hacer
+└── edge_case.md         # Casos edge
+```
+
+---
+
+## ⚠️ Errores Comunes y Soluciones
+
+### ❌ BAD: Descripción vaga
+
+```yaml
+description: Skill para Python
+# Problema: No dice qué hace NI cuándo activarse
+```
+
+### ✅ GOOD: Descripción específica
+
+```yaml
+description: >
+  Testing con Pytest para proyectos Python.
+  Úsalo cuando: (1) escribas tests, (2) configures CI,
+  (3) necesites mocks. NO usar para E2E.
+```
+
+### ❌ BAD: Sin examples/
+
+```
+nombre-skill/
+├── SKILL.md
+# Problema: No hay ejemplos de uso
+```
+
+### ✅ GOOD: Con examples/ completos
+
+```
+nombre-skill/
+├── SKILL.md
+├── examples/
+│   ├── good_example.md
+│   ├── bad_example.md
+│   └── edge_case.md
+```
+
+### ❌ BAD: Sin security scan
+
+```
+# Problema: Integrar sin validar seguridad
+```
+
+### ✅ GOOD: Con security scan aprobado
+
+```bash
+python 08_Scripts_Os\Validator_Fixed\skill_security_scan.py --skill 01_Core/03_Skills/NN_Skill/
+# Score: 0 CRITICAL, 0 HIGH, 2 MEDIUM
+```
+
+---
+
+## ✅ Checklist de Integración
+
+- [ ] SKILL.md con frontmatter completo
+- [ ] Categoría Anthropic declarada (1-9)
+- [ ] Descripción clara y específica
+- [ ] examples/ con good + bad examples
+- [ ] references/ con documentación
+- [ ] scripts/ probados y funcionales
+- [ ] skill_security_scan.py passing
+- [ ] Skill_Auditor score ≥ 70%
+- [ ] Registrado en skill registry
+- [ ] Actualizado en RULES_INDEX.md
+
+---
+
+## 🔗 Referencias
+
+- [07_Skill_Fusion.mdc](./07_Skill_Fusion.mdc) - Protocolo de uso de skills
+- [RULES_INDEX.md](./RULES_INDEX.md) - Índice de reglas
+- [Skill Auditor](../../03_Skills/00_Skill_Auditor/SKILL.md) - Auditor de calidad
+- [Skill Creator](../../03_Skills/15_Skill_Creator_Oficial/SKILL.md) - Creator oficial
+- [SKILL_TEMPLATE/](../../03_Skills/SKILL_TEMPLATE/) - Template oficial
+
+---
+
+> **Remember:** Skills son el exoesqueleto de conocimiento del agente. Una skill bien diseñada transforma un agente general en un especialista certificado.

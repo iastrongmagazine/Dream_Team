@@ -42,7 +42,7 @@ Cuando el usuario indica "Nos Vamos a Casa", el agente debe ejecutar:
 2.  **Test de Hooks**: Validar `pre_tool_use`, `post_tool_use` y `notification`.
 3.  **Chequeo de Sistema**: Correr la suite de validación rápida.
 4.  **Aviso de Voz**: Confirmar el éxito de los tests mediante TTS.
-5.  **Nota de Sesión**: Crear o actualizar la nota en `01_Brain/03_Process_Notes/Sessions/`.
+5.  **Nota de Sesión**: Crear o actualizar la nota en `01_Core/03_Process_Notes/Sessions/`.
 6.  **ADR Check**: Verificar si hubo decisiones arquitectónicas que documentar.
 7.  **Sincronización**: Verificar dependencias `uv`.
 8.  **Commit Final**: Preparar el mensaje de commit y realizar el push.

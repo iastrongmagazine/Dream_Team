@@ -46,7 +46,7 @@ def main():
                     repair_md(os.path.join(root, file))
 
     # Engine
-    engine_dir = os.path.join(base_dir, "04_Engine")
+    engine_dir = os.path.join(base_dir, "../..")
     if os.path.exists(engine_dir):
         for root, dirs, files in os.walk(engine_dir):
             for file in files:

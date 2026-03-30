@@ -35,12 +35,12 @@ Se está actualizando todas las referencias a carpetas obsoletas en el PersonalO
 | Vieja | Nueva |
 |-------|-------|
 | `.cursor/00_Rules/` | `01_Core/01_Rules/` |
-| `01_Brain/Context_Memory/` | `04_Operations/00_Context_Memory/` + Engram |
-| `01_Brain/Process_Notes/` | `04_Operations/03_Process_Notes/` + Engram |
-| `01_Brain/07_Memory_Brain/` | `04_Operations/04_Memory_Brain/` + Engram |
-| `02_Operations/Tasks/` | `03_Tasks/` |
+| `01_Core/Context_Memory/` | `04_Operations/00_Context_Memory/` + Engram |
+| `01_Core/Process_Notes/` | `04_Operations/03_Process_Notes/` + Engram |
+| `01_Core/07_Memory_Brain/` | `04_Operations/04_Memory_Brain/` + Engram |
+| `04_Operations/Tasks/` | `03_Tasks/` |
 | `00_Core/GOALS.md` | `00_Winter_is_Coming/GOALS.md` |
-| `04_Engine/` | `08_Scripts_Os/` |
+| `04_Operations/` | `08_Scripts_Os/` |
 | `docs/brainstorms/` | `04_Operations/07_Brain_Storming/` |
 | `docs/plans/` | `04_Operations/05_Plans/` |
 | `docs/solutions/` | `04_Operations/06_Solutions/` |
