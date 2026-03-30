@@ -70,7 +70,7 @@ def verify_master_files():
     print(f"\n{Fore.CYAN}--- Verificando Archivos Maestros ---")
     master_files = ["CLAUDE.md", "README.md"]
     all_found = True
-    # Need to go up 3 levels from Legacy_Backup/08_Scripts_Os/04_Engine to root
+    # Need to go up 3 levels from _Fixed/08_Scripts_Os/08_Scripts_Os to root
     for mf in master_files:
         if os.path.exists(
             os.path.join(os.path.dirname(__file__), "..", "..", "..", mf)

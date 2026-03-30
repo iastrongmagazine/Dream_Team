@@ -96,49 +96,49 @@ def main():
     launch_agent(
         1,
         "Stack Integrity",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/13_Validate_Stack.py",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/13_Validate_Stack.py",
     )
 
     # 2. Agente de Reglas
     launch_agent(
         2,
         "Rules Auditor",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/40_Validate_Rules.py",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/40_Validate_Rules.py",
     )
 
     # 3. Agente de Enlaces
     launch_agent(
         3,
         "Link Validator",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/12_Update_Links.py",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/12_Update_Links.py",
     )
 
     # 4. Agente Beautifier (README)
     launch_agent(
         4,
         "Beautifier README",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/35_Beautify_Tables.py target=README.md",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/35_Beautify_Tables.py target=README.md",
     )
 
     # 5. Agente Beautifier (AGENTS)
     launch_agent(
         5,
         "Beautifier AGENTS",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/35_Beautify_Tables.py target=00_Core/AGENTS.md",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/35_Beautify_Tables.py target=00_Core/AGENTS.md",
     )
 
     # 6. Agente Beautifier (INVENTORY)
     launch_agent(
         6,
         "Beautifier INVENTORY",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/35_Beautify_Tables.py target=01_Brain/01_Inventario_Total.md",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/35_Beautify_Tables.py target=01_Brain/01_Inventario_Total.md",
     )
 
     # 7. Agente Beautifier (CLAUDE)
     launch_agent(
         7,
         "Beautifier CLAUDE",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/35_Beautify_Tables.py target=CLAUDE.md",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/35_Beautify_Tables.py target=CLAUDE.md",
     )
 
     # 8. Agente de Inventario (Skills audit)
@@ -160,7 +160,7 @@ def main():
     launch_agent(
         10,
         "Final Reporter",
-        f"python {ROOT_DIR}/04_Engine/08_Scripts_Os/30_AIPM_Consolidated_Report.py",
+        f"python {ROOT_DIR}/08_Scripts_Os/08_Scripts_Os/30_AIPM_Consolidated_Report.py",
     )
 
     print("\n✅ All 10 Agents Deployed.")

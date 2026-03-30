@@ -1,6 +1,18 @@
 {
   "version": "1.0.0",
-  "patterns": [],
+  "patterns": [
+    {
+      "id": "P001",
+      "type": null,
+      "root_cause": null,
+      "solution": null,
+      "auto_fixable": false,
+      "occurrences": 1427,
+      "first_seen": "2026-03-30T01:40:11.415205",
+      "last_seen": "2026-03-30T01:43:26.902451",
+      "success_rate": 1.0
+    }
+  ],
   "evolution_log": [
     {
       "timestamp": "2026-03-29T00:56:56.629056",
@@ -37,6 +49,224 @@
         {
           "pattern": "naming_inconsistency",
           "occurrences": 1268,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:34:58.361747",
+      "issues_processed": 1344,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:36:18.362119",
+      "issues_processed": 1344,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:36:58.566695",
+      "issues_processed": 1344,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:38:26.917804",
+      "issues_processed": 1344,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:39:00.648759",
+      "issues_processed": 1344,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:39:54.895154",
+      "issues_processed": 1344,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:40:11.416543",
+      "issues_processed": 1344,
+      "fixes_applied": 5,
+      "patterns_learned": 4,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 57,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:43:03.085532",
+      "issues_processed": 1340,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 53,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:43:26.906628",
+      "issues_processed": 1423,
+      "fixes_applied": 1423,
+      "patterns_learned": 1423,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 53,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
+          "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
+          "auto_fixable": false
+        },
+        {
+          "pattern": "duplicate_script",
+          "occurrences": 37,
+          "suggestion": "Crear regla autom\u00e1tica para duplicate_script",
+          "auto_fixable": false
+        },
+        {
+          "pattern": "missing_docstring",
+          "occurrences": 21,
+          "suggestion": "Crear regla autom\u00e1tica para missing_docstring",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "large_file",
+          "occurrences": 25,
+          "suggestion": "Crear regla autom\u00e1tica para large_file",
+          "auto_fixable": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-30T01:46:21.012744",
+      "issues_processed": 1340,
+      "fixes_applied": 0,
+      "patterns_learned": 0,
+      "new_patterns": [
+        {
+          "pattern": "broken_import",
+          "occurrences": 53,
+          "suggestion": "Crear regla autom\u00e1tica para broken_import",
+          "auto_fixable": true
+        },
+        {
+          "pattern": "naming_inconsistency",
+          "occurrences": 1287,
           "suggestion": "Crear regla autom\u00e1tica para naming_inconsistency",
           "auto_fixable": false
         }
