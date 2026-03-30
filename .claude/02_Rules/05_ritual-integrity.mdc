@@ -1,25 +1,51 @@
 ---
 description: PILAR 00: Seguridad de Integridad Ritual y Salidas (Add-Only)
-globs: 04_ENGINE/*.py
+globs: 08_Scripts_Os/**/*.py
 alwaysApply: true
 ---
 
-# 🔘 Regla 00: Integridad de Rituales: "Complementar, Jamás Eliminar" (Strict Add-Only)
+# 🔘 Regla 05: Integridad de Rituales: "Complementar, Jamás Eliminar" (Strict Add-Only)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla protege la evolución histórica y la estabilidad ritualística de PersonalOS. Define un mandato absoluto de Preservación Total. Mantiene el legado del sistema asegurando que la innovación no destruya lo que ya funciona.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla protege la evolución histórica y la estabilidad ritualística de PersonalOS. Define un mandato absoluto de **Preservación Total**.
+---
 
-Mantiene el legado del sistema asegurando que la innovación no destruya lo que ya funciona.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Preservación Total (Strict Add-Only)
+<preservation_rule>
 
 1.  **PROHIBIDO ELIMINAR**: Jamás borres líneas de código, bloques de comentarios originales, funciones auxiliares ni mensajes de salida de consola existentes.No elimianr ni una coma en nada de lo que ya está establecido en el sistema. Si ya está en el sistema se complementa con las nuevas mejoras. 
 2.  **PROHIBIDO CAMBIAR LO QUE FUNCIONA**: Si una lógica ya cumple su función (como los pasos 1, 2 y 3 originales), no la modifiques ni la "optimices" quitando su formato anterior. Si ya está escrito tieneuna estructura que se quiere. Solo complementa con la información que ya está. 
 3.  **POLÍTICA DE SOLO EXPANSIÓN (ADD-ONLY)**: Toda actualización debe ser un **complemento**. Las nuevas funcionalidades se añaden como pasos adicionales o bloques nuevos, manteniendo el legado intacto.
 4.  **Fix the root cause**: Si hay un error en el código heredado, corrígelo sin borrar la estructura original, documentando el cambio como una mejora.
 
+</preservation_rule>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Acción Errónea (Reemplazo)
 
@@ -37,7 +63,12 @@ Mantiene el legado del sistema asegurando que la innovación no destruya lo que 
 # CUMPLIMIENTO REGLA 00.
 ```
 
+</violations_solutions>
+
+---
+
 ## When You Think You Need to "Clean Up"
+<cleanup>
 
 ### "El código viejo se ve desordenado frente al nuevo"
 
@@ -46,25 +77,44 @@ Mantiene el legado del sistema asegurando que la innovación no destruya lo que 
 // ✅ GOOD: Agrupar funciones viejas bajo un comentario descriptivo y añadir las nuevas, manteniendo la compatibilidad.
 ```
 
+</cleanup>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Estándares de Ejecución
 
 - **Estructura Homogénea**: Los nuevos pasos deben seguir la numeración y el estilo visual de los pasos previos (ej: si hay pasos 1-3, la mejora es el paso 4).
 - **Consistencia de Comentarios**: Mantén los comentarios descriptivos que el usuario ya conoce. Son parte de la documentación viva.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Validación Humana obligatoria
 
 - Si crees que algo DEBE eliminarse por obsolescencia técnica, DEBES pedir permiso explícito al usuario antes de proceder. De lo contrario, se mantiene.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He evitado eliminar cualquier línea de código o comentario original?
 - [ ] ¿He añadido mi mejora como un complemento (paso adicional) en lugar de un reemplazo?
 - [ ] ¿He mantenido la numeración y estilo visual de los pasos previos?
 - [ ] ¿He pedido permiso explícito antes de considerar cualquier eliminación por obsolescencia?
 - [ ] ¿He preservado los mensajes de salida de consola originales?
+
+</verification_checklist>
+
+---
 
 Remember: El código heredado es sagrado. La innovación solo construye encima.

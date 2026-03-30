@@ -1,19 +1,38 @@
 ---
 description: Elite Reporting Standard - Framework de reportes con storytelling, análisis forense y métricas consolidadas
-globs: ["**/*.py", "**/*.md", "04_ENGINE/**/*"]
+globs: ["**/*.py", "**/*.md", "08_Scripts_Os/**/*"]
 ---
 
-# 🏆 Regla 08: Elite Reporting Standard
+# 🏆 Regla 09: Elite Reporting Standard
 
-## Propósito
+<system_directives>
+  <fundamental_rule>
+    Define el estándar Elite para todos los reportes del sistema PersonalOS, integrando storytelling narrativo, análisis forense de contexto y métricas consolidadas de todas las herramientas AIPM (15-25). Este framework surge de la consolidación exitosa del Arsenal AIPM Elite.
+  </fundamental_rule>
+</system_directives>
 
-Define el estándar Elite para todos los reportes del sistema PersonalOS, integrando storytelling narrativo, análisis forense de contexto y métricas consolidadas de todas las herramientas AIPM (15-25).
+---
 
-## Contexto
+## 📂 Workspace Structure (v6.1)
 
-Este framework surge de la consolidación exitosa del Arsenal AIPM Elite, donde se identificó la necesidad de reportes que no solo presenten métricas, sino que **narren la historia** del problema, su análisis forense y la solución implementada.
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Principios Fundamentales
+<principles>
 
 ### 1. Storytelling Obligatorio
 
@@ -83,7 +102,12 @@ Detectar y documentar problemas con:
 - **PRODUCTION READY** (score ≥ 7.0)
 - **NEEDS IMPROVEMENT** (score < 7.0)
 
+</principles>
+
+---
+
 ## Estructura de Reporte Elite
+<report_structure>
 
 ```markdown
 # [Título] - Elite Grade 🏆
@@ -160,16 +184,26 @@ Detectar y documentar problemas con:
 _Generado por AIPM Consolidated Report - PersonalOS Elite (Herramientas 15-25)_
 ```
 
-## Aplicación en Ritual de Cierre
+</report_structure>
 
-Al ejecutar `01_ritual_cierre.py`, **SIEMPRE**:
+---
+
+## Aplicación en Ritual de Cierre
+<ritual_cierre>
+
+Al ejecutar `Ritual_Fixed/01_ritual_cierre.py`, **SIEMPRE**:
 
 1. Generar reporte consolidado con storytelling
 2. Incluir análisis forense de contexto
 3. Certificar estado Elite/Production Ready
 4. Actualizar notas de proceso con aprendizajes
 
+</ritual_cierre>
+
+---
+
 ## Voz Activa Elite
+<voice_active>
 
 Finalizar **TODOS** los reportes con una declaración en voz activa:
 
@@ -177,7 +211,12 @@ Finalizar **TODOS** los reportes con una declaración en voz activa:
 **Voz Activa:** _"[Sistema] alcanzó [logro]. [Acción clave]. [Métrica de éxito]. [Estado actual]. [Mensaje de cierre]. Somos oficialmente la élite."_ 🔱🏆🔋
 ```
 
+</voice_active>
+
+---
+
 ## Ejemplos de Aplicación
+<examples>
 
 ### ✅ CORRECTO
 
@@ -206,7 +245,12 @@ El sistema tiene algunos problemas de contexto. Se implementaron mejoras.
 Los resultados son buenos.
 ```
 
+</examples>
+
+---
+
 ## Reglas de Oro
+<golden_rules>
 
 1. **Narrativa > Métricas Secas:** Cuenta la historia, no solo los números
 2. **Forense Siempre:** Identifica al "ladrón" de contexto en cada reporte
@@ -215,7 +259,12 @@ Los resultados son buenos.
 5. **Certificación Obligatoria:** Elite Grade / Production Ready / Needs Improvement
 6. **Voz Activa Final:** Cierra con declaración poderosa
 
+</golden_rules>
+
+---
+
 ## Integración con Herramientas
+<tool_integration>
 
 ### `24_aipm_consolidated_report.py`
 
@@ -235,6 +284,8 @@ Los resultados son buenos.
 - Documentar aprendizajes en formato storytelling
 - Incluir análisis forense de problemas encontrados
 - Registrar soluciones implementadas
+
+</tool_integration>
 
 ---
 

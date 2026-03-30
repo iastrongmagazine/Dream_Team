@@ -1,54 +1,75 @@
 ---
-description: PILAR 0: Blindaje de Interconexiones y Auditoría de Motores de Cálculo
-globs: src/engine/**/*.ts
+description: PILAR 02: Ejecución de Redundancia Élite (Metodología The Octopus) y Audición Robusta
+globs: **/*
 alwaysApply: true
 ---
 
-# 🔘 Pilar 0: Blindaje de Interconexiones (Engine Armor)
+# 🔘 Pilar 02: Protocolo "The Octopus" (Blindaje y Redundancia Élite)
 
-## Overview
-
-Este pilar define el protocolo de seguridad para la modificación de los motores de cálculo (Rheology, Hydraulics, Pressures, Pump). Su objetivo es prevenir regresiones y asegurar la integridad de la cadena de cálculo.
-
-## 🧠 Reglas de Oro de los Motores
-
-1.  **Trinidad Reológica**: Todo cálculo de hidráulica DEBE considerar los tres modelos fundamentales: **Bingham Plastic**, **Power Law** y **Herschel-Bulkley**.
-2.  **Protocolo de Interconexión**: Antes de modificar cualquier motor, se debe auditar el `orchestrator.ts` para entender cómo fluyen los datos hacia otros motores.
-3.  **Validación de Tipos (Global Types)**: No se permiten definiciones locales de tipos de resultados. Se deben usar siempre las interfaces definidas en `src/store/types.ts`.
-4.  **Armor Layer en Resultados**: Los resultados de los motores deben ser validados contra `null` o `undefined` en el `store` antes de ser despachados a la UI.
-5.  **Pure Green Engine**: Un cambio en un motor solo se considera completo si `npm run dev` compila sin alertas y los resultados son coherentes con los estándares IADC/API (OilBrain).
-6.  **Directiva de Redundancia Élite (The Octopus)**: Usar siempre **8 Sub-agentes** para tareas críticas (4 para revisión forense, 4 para corrección quirúrgica). Cada sub-agente debe ejecutar el `Workflow Genesis` para asegurar un contexto del 100%.
-7.  **Aprendizajes de Sesión (2026-02-20)**:
-    - **Nan Shielding**: Nunca permitir que `NaN` o `Infinity` lleguen a la UI (usar `Math.max` y guards).
-    - **HB Guard**: El Yield Stress (τ₀) en Herschel-Bulkley debe ser `Math.max(0, ...)`.
-    - **TVD Safe**: Las divisiones por profundidad vertical deben usar un divisor mínimo de 1 para evitar errores de punto flotante o desbordamientos.
-
-## 🛠️ Estándares de Implementación
-
-### ❌ BAD: Saltarse modelos o tipos globales
-
-```typescript
-// Mal: Solo Power Law y tipo local
-function calc(data: any) { ... }
-```
-
-### ✅ GOOD: Integración Total y Tipado
-
-```typescript
-// Bien: Uso de tipos globales e integración de modelos
-import { RheologyResult } from "../store/types";
-function calculateHydraulics(rheology: RheologyResult) {
-  // Manejo de Bingham, PL y HB
-}
-```
-
-## ✅ Checklist de Auditoría
-
-- [ ] ¿He verificado que el cambio afecta a los 3 modelos reológicos si aplica?
-- [ ] ¿He validado la firma de la función contra `orchestrator.ts`?
-- [ ] ¿Los tipos de retorno coinciden exactamente con `types.ts`?
-- [ ] ¿He actualizado la base de conocimientos `oil_brain_standards.md` si la lógica cambió?
+<system_directives>
+  <fundamental_rule>
+    Este pilar define el estándar de máxima seguridad (Armor Layer) para la ejecución y corrección de Tareas Críticas dentro de PersonalOS v6.1. Su objetivo es anular regresiones, bugs silenciosos o pérdida de estado a través de redundancia masiva paralela.
+  </fundamental_rule>
+</system_directives>
 
 ---
 
-_Alineado con el Protocolo PersonalOS: "La precisión es el pilar de la seguridad operativa."_
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
+
+## 🎯 Propósito
+
+El **Motor de Automatización** del PersonalOS - scripts Python para operaciones, auditorías, workflows y rituales diarios.
+
+## 🐙 LA METODOLOGÍA OCTOPUS
+<octopus_framework>
+Para cualquier modificación crítica que implique tocar arquitecturas nucleares, motores o componentes multi-dependencia, el Agente debe invocar la Directiva de Redundancia Élite (The Octopus):
+
+- **Despliegue de 8 Tentáculos (Sub-Agentes Paralelos):**
+  1. **El Ojo Analítico (4 Sub-Agentes Forenses):** Su único trabajo es investigar el código actual en paralelo, proyectando diferentes escenarios de ruptura estructural si se aplican los cambios propuestos. Cada uno asume el peor de los casos (Evals & Audición Robusta).
+  2. **La Mano Quirúrgica (4 Sub-Agentes Ejecutores):** Realizan la corrección, escalándonse una carpeta por agente (aislamiento modular) tal como lo define la metodología 'Super Campeones', garantizando que nadie se sobreescriba.
+
+- **Requisito Genesis:** Cada uno de los 8 sub-agentes **DEBE** ejecutar el `Workflow Genesis` de la Regla 00 y tener el 100% del contexto en su memoria antes de opinar o tocar el código.
+</octopus_framework>
+
+---
+
+## 🚨 TRIGGERS ACTIVOS Y PIPELINE DE BLINDAJE
+<active_triggers>
+
+**[Trigger] Ante Modificaciones o Interconexiones Masivas (Refactor):**
+- **Acción:** Lanza *The Octopus*. Prohibido usar un "God Agent" que intente refactorizar todo solo. El riesgo de alucinación por pérdida de contexto de ventana excede el umbral de seguridad. Delega a los agentes paralelos.
+
+**[Trigger] Manejo de Tipos y Componentes Críticos:**
+- **Acción:** No inventar tipos de datos locales (`any`, o interfaces parciales on-the-fly). Únicamente se debe usar el tipado global del proyecto correspondiente (Ej: `store/types.ts` en TypeScript). 
+
+**[Trigger] Blindaje Contra Vaciados de Estado (Null Shielding):**
+- **Acción:** Si The Octopus detecta que el sistema puede enviar un `null`, `undefined` o `NaN` silencioso a la interfaz de usuario: Los tentáculos bloquean la rama y fuerzan el uso de compuertas (Defensive Programming Gards, Ej: `Math.max(0, val)`).
+</active_triggers>
+
+---
+
+## ✅ CHECKLIST DE INTEGRIDAD (POST-EJECUCIÓN)
+<verification_gates>
+- [ ] ¿He verificado el impacto colateral global del paso de tarea con los sub-agentes auditores?
+- [ ] ¿El Orquestador revisó los reportes de los 4 agentes Forenses antes de dar luz verde a los Ejecutores?
+- [ ] ¿Los 8 agentes (tentáculos) tenían la lectura del `01_Inventario_Total` confirmada?
+- [ ] ¿Los resultados generados mantienen un entorno "Pure Green" en los test o validadores de compilación post-cambio?
+</verification_gates>
+
+*"1 Orquestador no puede ver todo; 8 Mentes focalizadas no dejan escapar nada."*

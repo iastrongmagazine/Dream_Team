@@ -4,15 +4,36 @@ globs: ["01_Core/04_Agents/**/*.md", ".claude/04_Agents/*.md", "08_Scripts_Os/**
 alwaysApply: true
 ---
 
-# 📊 Regla 07: Estándar AIPM: Observabilidad y Razonamiento
+# 📊 Regla 08: Estándar AIPM: Observabilidad y Razonamiento
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Este estándar asegura que todos los agentes y motores de PersonalOS cumplan con los requisitos de un AI Product Manager (AIPM) de nivel 2026, enfocándose en la transparencia del razonamiento y la eficiencia de recursos. Tomamos decisiones intencionadas, no solo usamos IA.
+  </fundamental_rule>
+</system_directives>
 
-Este estándar asegura que todos los agentes y motores de PersonalOS cumplan con los requisitos de un **AI Product Manager (AIPM)** de nivel 2026, enfocándose en la transparencia del razonamiento y la eficiencia de recursos.
+---
 
-Tomamos decisiones intencionadas, no solo usamos IA.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Protocolo de Razonamiento y Métricas AIPM
+<protocol_aipm>
 
 1.  **Visibilidad Obligatoria**: Todo agente DEBE documentar su proceso de razonamiento (`thought_process`). No basta con el resultado final.
 2.  **Las 4 C del Prompting**:
@@ -29,7 +50,12 @@ Tomamos decisiones intencionadas, no solo usamos IA.
     - Pasar el `16_aipm_evaluator.py` sobre la traza de ejecución antes de finalizar.
     - El feedback debe explicar el "Por Qué" (ej: costo de tokens).
 
+</protocol_aipm>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Resultados "Mágicos" sin Trazabilidad
 
@@ -42,31 +68,55 @@ Tomamos decisiones intencionadas, no solo usamos IA.
 - "He analizado el prompt actual [Ratio CoT: 35%]. La latencia fue de 1200ms. He inyectado un ejemplo de Correctness para reducir alucinaciones en el paso 2."
 - Generar respuestas con "guardrails" de validación previa.
 
+</violations_solutions>
+
+---
+
 ## When You Think You Need an Exception
+<exceptions>
 
 ### "La respuesta es obvia, no hace falta CoT detallado"
 
 - **❌ BAD**: Responder directamente sin razonamiento visible.
 - **✅ GOOD**: "Aunque la solución parece directa, el protocolo AIPM exige validar el impacto en el Pilar 3... [Thought Process]... Proponiendo cambio."
 
+</exceptions>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### 4 C del Prompting
 
 - **Correctness**: Incluir siempre una muestra de lo esperado para minimizar el sesgo probalístico.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Gestión de Latencia
 
 - Si se superan los 2000ms recurrentemente, proponer el uso de un modelo más ligero o fragmentar la tarea en subtareas atómicas.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He documentado mi razonamiento (CoT) completo?
 - [ ] ¿He seguido las 4 C del Prompting (Claro, Contexto, Constraints, Correctness)?
 - [ ] ¿He validado el ratio de eficiencia de tokens (20%-50%)?
 - [ ] ¿He reportado proactivamente si la latencia superó los 2000ms?
 - [ ] ¿He pasado el evaluador de AIPM sobre mi traza de ejecución?
+
+</verification_checklist>
+
+---
 
 Remember: Tomamos decisiones intencionadas. El razonamiento es tan importante como el resultado.

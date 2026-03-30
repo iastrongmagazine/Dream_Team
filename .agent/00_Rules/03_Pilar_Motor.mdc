@@ -6,13 +6,34 @@ alwaysApply: true
 
 # 🛠️ Regla 03: El Motor (Engineering & System Standards)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Este pilar define la excelencia técnica y arquitectónica de PersonalOS. Asegura que el sistema sea robusto (Armor Layer), estéticamente superior (Premium UI) y esté perfectamente validado (Pure Green). Implementa la visibilidad de progreso técnica y garantiza el uso de tecnologías premium para una experiencia de usuario superior.
+  </fundamental_rule>
+</system_directives>
 
-Este pilar define la excelencia técnica y arquitectónica de PersonalOS. Asegura que el sistema sea robusto (Armor Layer), estéticamente superior (Premium UI) y esté perfectamente validado (Pure Green).
+---
 
-Implementa la visibilidad de progreso técnica y garantiza el uso de tecnologías premium para una experiencia de usuario superior.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Estándares de Ingeniería y Stack
+<engineering_standards>
 
 1.  **Tecnología Premium**:
     - **Vanilla First**: Priorizar Vanilla CSS/JS sobre frameworks. **No usar Tailwind** a menos que sea pedido.
@@ -24,18 +45,23 @@ Implementa la visibilidad de progreso técnica y garantiza el uso de tecnología
     - Seguir el formato `NN_Nombre_Skill`.
     - Si un flujo se repite 3 veces, crear una nueva Skill.
     - **Skill Fusion**: Usar siempre el conocimiento oficial de skills instaladas (Vercel, Docker, etc.) antes de intentar implementaciones manuales.
-4.  **Vitaminización de Scripts**: Los scripts de `04_ENGINE` deben incluir Branding de PersonalOS y notificaciones de voz (TTS).
+4.  **Vitaminización de Scripts**: Los scripts de `08_Scripts_Os` deben incluir Branding de PersonalOS y notificaciones de voz (TTS).
 5.  **Validación de Salud (Pure Green)**: El sistema debe mantenerse con métricas del 100% en rutas, dependencias y hooks.
 6.  **Visibilidad de Progreso en Scripts Multi-Paso**:
-    - **Descripción**: Todo script en `04_ENGINE` que ejecute múltiples pasos (≥3) DEBE mostrar porcentaje de avance acumulado.
+    - **Descripción**: Todo script en `08_Scripts_Os` que ejecute múltiples pasos (≥3) DEBE mostrar porcentaje de avance acumulado.
     - **Formato**: `[XX.X%] Paso N/Total: Descripción`
     - **Notificaciones de Voz**: Opcional en hitos clave (25%, 50%, 75%) para evitar saturación.
-    - **Template Disponible**: `04_ENGINE/templates/multi_step_script_template.py`
+    - **Template Disponible**: `08_Scripts_Os/templates/multi_step_script_template.py`
 7.  **Integridad Matemática (Domain Logic)**:
     - **Centralización**: Todas las constantes físicas y fórmulas de dominio (ej. API RP 13B-1) DEBEN residir únicamente en el Engine.
     - **Validación de Curvas**: Toda visualización técnica DEBE ser validada contra los puntos de datos reales. Si la curva teórica no pasa por los puntos experimentales, el sistema NO está en PURE GREEN.
 
+</engineering_standards>
+
+---
+
 ## 🎨 Design Tokens (Sleek Dark & Electro-Rams)
+<design_tokens>
 
 - **Primary**: `hsl(230, 100%, 67%)`
 - **Surface**: `rgba(255, 255, 255, 0.03)` + `blur(12px)`
@@ -44,7 +70,12 @@ Implementa la visibilidad de progreso técnica y garantiza el uso de tecnología
 - **Lima (Text)**: `#6A8D00` (High Contrast for labels)
 - **Azul (Cobalto)**: `#2563EB` (Status: Anular, Data)
 
+</design_tokens>
+
+---
+
 ## 🛡️ Estándares Code Logic
+<code_standards>
 
 ### ❌ BAD: Código Frágil o Básico
 
@@ -72,14 +103,24 @@ config_path = os.path.join(BASE_DIR, "data", "config.json")
 }
 ```
 
+</code_standards>
+
+---
+
 ## When You Think You Need a Framework
+<frameworks>
 
 ### "Este componente es complejo, Tailwind lo haría más fácil"
 
 - **❌ BAD**: Inyectar Tailwind en un proyecto Vanilla sin permiso explícito.
 - **✅ GOOD**: Usar CSS Variables y Flexbox/Grid con el diseño HSL/Glassmorphism para mantener el control total y la estética Premium.
 
+</frameworks>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Design Tokens (Sleek Dark)
 
@@ -87,13 +128,23 @@ config_path = os.path.join(BASE_DIR, "data", "config.json")
 - **Surface**: `rgba(255, 255, 255, 0.03)` + `blur(12px)`
 - **Radius**: `16px`
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Gestión de Progreso en Scripts
 
 - Usar notificaciones de voz (TTS) solo en hitos clave (25%, 50%, 75%) para evitar la saturación del usuario.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He aplicado la Armor Layer a todas las rutas de archivo?
 - [ ] ¿El diseño cumple con los estándares Premium (Glassmorphism/HSL)?
@@ -101,5 +152,9 @@ config_path = os.path.join(BASE_DIR, "data", "config.json")
 - [ ] ¿He utilizado las Skills oficiales si están disponibles?
 - [ ] ¿He vitaminizado los nuevos scripts con branding y avisos de voz?
 - [ ] **¿He implementado porcentajes de avance en scripts multi-paso (≥3 pasos)?**
+
+</verification_checklist>
+
+---
 
 Remember: Indestructible por diseño, superior por estética. Alineado con el Motor PersonalOS.

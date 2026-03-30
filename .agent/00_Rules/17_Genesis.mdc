@@ -4,32 +4,57 @@ globs: **/*
 alwaysApply: true
 ---
 
-# 🧬 Workflow: Génesis (Protocolo de Inicio de Sesión)
+# 🧬 Regla 17: Workflow - Génesis (Protocolo de Inicio de Sesión)
 
-Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuperación del 110% del contexto.
+<system_directives>
+  <fundamental_rule>
+    Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuperación del 110% del contexto. Sin contexto no hay inteligencia. Sin claridad no hay avance.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 🚀 SECUENCIA OBLIGATORIA DE ATERRIZAJE
+<sequence>
 
 ### FASE 1: Inventario y Reglas
 
-1.  **Leer Inventario Total**: `01_Brain/02_Knowledge_Brain/01_Inventario_Total.md`
+1.  **Leer Inventario Total**: `00_Winter_is_Coming/01_Inventario_Total.md`
     - Carga TODO el sistema: estructura, agentes, scripts, MCPs, skills
-2.  **Leer Goals**: `00_Core/GOALS.md` → Norte estratégico
-3.  **Leer Backlog**: `00_Core/BACKLOG.md` → Pendientes sin estructurar
+2.  **Leer Goals**: `00_Winter_is_Coming/GOALS.md` → Norte estratégico
+3.  **Leer Backlog**: `00_Winter_is_Coming/BACKLOG.md` → Pendientes sin estructurar
 4.  **Leer Reglas**: `01_Core/01_Rules/*.mdc` (todas las reglas activas)
-5.  **Leer CLAUDE.md**: Confirmar alineación con instrucciones globales
+5.  **Leer AGENTS.md**: Confirmar alineación con instrucciones globales
 
 ### FASE 2: Memoria AI (Contexto Inter-sesiones)
 
-6.  **CTX más reciente**: `01_Brain/01_Context_Memory/CTX_*.md`
+6.  **CTX más reciente**: `00_Context_Memory/CTX_*.md`
     - Tu contexto personal para no perder memoria entre sesiones
-7.  **Process Notes más reciente**: `01_Brain/03_Process_Notes/*.md`
+7.  **Process Notes más reciente**: `04_Operations/03_Process_Notes/*.md`
     - Qué hizo el usuario en la última sesión
 8.  **Buscar en Engram** (opcional): `mem_search` si hay algo relevante
 
 ### FASE 3: Morning Standup
 
-9.  **Ejecutar Script**: `python 08_Scripts_Os/14_Morning_Standup.py`
+9.  **Ejecutar Script**: `python 08_Scripts_Os/Ritual_Fixed/14_Morning_Standup.py`
     - Plan del día, prioridades P0/P1, bloqueos
     - Si es primera sesión del día → presentar "The Big 3"
 
@@ -41,9 +66,12 @@ Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuper
     - **Plan del Día**: The Big 3 tareas prioritarias
     - **⚠️ NO PROCEDER hasta haber emitido este reporte**
 
+</sequence>
+
 ---
 
 ## 📢 Reporting Obligatorio (10% Steps)
+<reporting>
 
 **EN CADA TAREA MULTI-PASO (3+ pasos):**
 
@@ -57,13 +85,18 @@ Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuper
 [100%] ✅ Tarea completada: [resultado]
 ```
 
+</reporting>
+
 ---
 
 ## 🔔 Campanillas (Task Complete Sound)
+<notifications>
 
 **Al finalizar CADA TAREA SIGNIFICATIVA:**
-- Ejecutar: `.agent/04_Extensions/hooks/task-complete-sound.ps1`
+- Ejecutar: `.agent/hooks/task-complete-sound.ps1`
 - O notificar por voz: "Tarea completada"
+
+</notifications>
 
 ---
 
@@ -74,14 +107,17 @@ Este workflow DEBE ejecutarse al inicio de cada sesión para asegurar la recuper
 ---
 
 ## 🛠️ Checklist Mental de Verificación
+<verification_checklist>
 
 - [ ] ¿He leído `01_Inventario_Total.md` + `GOALS.md` + `BACKLOG.md`?
-- [ ] ¿He leído el último CTX de `01_Context_Memory/`?
-- [ ] ¿He leído la última Process Note de `03_Process_Notes/`?
+- [ ] ¿He leído el último CTX de `00_Context_Memory/`?
+- [ ] ¿He leído la última Process Note de `04_Operations/03_Process_Notes/`?
 - [ ] ¿He ejecutado `14_Morning_Standup.py`?
 - [ ] ¿He emitido el reporte de Handshake (Contexto + Plan)?
 - [ ] ¿Estoy redactando todo en **ESPAÑOL**?
 - [ ] ¿He mostrado el **PORCENTAJE** de avance (10%) en tareas multi-paso?
+
+</verification_checklist>
 
 ---
 

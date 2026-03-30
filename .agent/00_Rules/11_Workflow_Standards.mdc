@@ -4,24 +4,50 @@ globs: */*
 alwaysApply: true
 ---
 
-# 🔄 Regla 10: Workflow Standards & Golden Loop
+# 🔄 Regla 11: Workflow Standards & Golden Loop
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla define el mecanismo de supervivencia y evolución de PersonalOS. Transforma cada acción en una lección y cada error en un blindaje, asegurando la recuperación del 1100% del contexto. El error es temporal, la regla es eterna. Sincronizamos la realidad del filesystem con el conocimiento del asistente.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla define el mecanismo de supervivencia y evolución de PersonalOS. Transforma cada acción en una lección y cada error en un blindaje, asegurando la recuperación del 1100% del contexto.
+---
 
-El error es temporal, la regla es eterna. Sincronizamos la realidad del filesystem con el conocimiento del asistente.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Workflow Standards (Golden Loop)
+<workflow_standards>
 
-1.  **Traceability**: Siempre trazar el origen de cada petición desde `00_Core/BACKLOG.md` o `Rules_Registry.md`.
+1.  **Traceability**: Siempre trazar el origen de cada petición desde `00_Winter_is_Coming/BACKLOG.md` o `Rules_Registry.md`.
 2.  **The Golden Loop**: Cada error detectado (lógica, ruta, formato) DEBE inyectarse como una corrección en las reglas `.mdc`.
-3.  **Memoria Persistente**: Mantener las "Notas de Proceso" (`01_Brain/process_notes/`) de forma obsesiva tras cada sesión.
+3.  **Memoria Persistente**: Mantener las "Notas de Proceso" (`04_Operations/03_Process_Notes/`) de forma obsesiva tras cada sesión.
 4.  **Integridad de Inventario**: Antes de actualizar metadatos (`plugin.json`, `README.md`), realizar un audito físico (`ls`) para validar que el conteo coincida con la realidad.
 5.  **Guardianes del Contexto**: Usar la Skill 13 (Fork) y 14 (Parallel) para tareas complejas para evitar la degradación del contexto.
 6.  **Auto-Sanación**: Corregir links rotos o rutas inconsistentes en el momento de detección y actualizar scripts de motor.
 
+</workflow_standards>
+
+---
+
 ## The Golden Loop (Visual)
+<golden_loop>
 
 ```mermaid
 graph LR
@@ -33,16 +59,12 @@ graph LR
     F --> A
 ```
 
-## Rule: Workflow Standards (Golden Loop)
+</golden_loop>
 
-1. **Always trace** el origen de cada petición desde el `00_Core/BACKLOG.md` o el `Rules_Registry.md`.
-2. **Never repeat** un error de lógica, ruta o formato; se debe "Inyectar" la corrección en las reglas.
-3. **Always maintain** las "Notas de Proceso" (`01_Brain/process_notes/`) de forma obsesiva.
-4. **Integridad de Inventario (Armor Layer):** Antes de actualizar cualquier documento de inventario o metadatos (`plugin.json`, `README.md`, `marketplace.json`), la IA DEBE realizar un audito físico (con `ls` o similar) para validar que el conteo de componentes coincida con la realidad del filesystem.
-5. **Guardianes del Contexto:** Para tareas complejas o multitarea, usa la **Skill 13 (Fork Terminal)** y **Skill 14 (Parallel Orchestration)** para evitar la degradación del contexto.
-6. **Auto-Sanación:** Si detectas un link roto o una ruta inconsistente, corrígela y actualiza el script de motor correspondiente.
+---
 
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Conocimiento Volátil
 
@@ -52,31 +74,55 @@ graph LR
 
 - "He detectado que prefieres bordes redondeados. He actualizado la regla 03 y dejado nota en process_notes/2026-02-09_UI_Preferences.md."
 
+</violations_solutions>
+
+---
+
 ## When You Think You Don't Need Documentation
+<documentation>
 
 ### "No hay tiempo para escribir la nota de proceso"
 
 - **❌ BAD**: Saltarse el paso de documentación por "urgencia".
 - **✅ GOOD**: Usar la Skill de automatización de notas para generar un resumen rápido pero efectivo del progreso para la recuperación del 1100% del contexto.
 
+</documentation>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### 1100% Context Recovery
 
 - Al iniciar una sesión, la IA DEBE leer las últimas notas de proceso y el registro de reglas para emular exactamente el estado mental previo.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Inyección Incremental
 
 - Si la regla es muy grande, crear una "Regla de Parche" temporal y luego fusionarla durante el ritual de cierre.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He cerrado el bucle de aprendizaje inyectando el error en una regla?
 - [ ] ¿He actualizado el Rules Registry tras cambios estructurales?
 - [ ] ¿He capturado las lecciones clave en las Notas de Proceso?
 - [ ] ¿He validado físicamente el inventario antes de actualizar documentos de texto?
 - [ ] ¿He recuperado el contexto leyendo las notas de proceso al iniciar?
+
+</verification_checklist>
+
+---
 
 Remember: "Sin documentación, no hay evolución."

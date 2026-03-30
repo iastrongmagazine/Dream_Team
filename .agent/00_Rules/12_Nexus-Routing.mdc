@@ -4,17 +4,38 @@ globs: */*
 alwaysApply: true
 ---
 
-# 🌐 Regla 11: Nexus Routing Layer
+# 🌐 Regla 12: Nexus Routing Layer
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Nexus es la capa de inteligencia que coordina agentes y skills en PersonalOS. Su objetivo es maximizar la eficiencia de la ventana de contexto y minimizar el desperdicio de tokens. Nexus coordina, no adivina. Actúa como el orquestador maestro del sistema.
+  </fundamental_rule>
+</system_directives>
 
-Nexus es la capa de inteligencia que coordina agentes y skills en PersonalOS. Su objetivo es maximizar la eficiencia de la ventana de contexto y minimizar el desperdicio de tokens.
+---
 
-Nexus coordina, no adivina. Actúa como el orquestador maestro del sistema.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Nexus Routing Layer y Protocolo de Escalación
+<nexus_protocol>
 
-1.  **Always Identify Domain**: Antes de cualquier acción, el asistente DEBE clasificar la tarea según los dominios definidos en `CLAUDE.md`.
+1.  **Always Identify Domain**: Antes de cualquier acción, el asistente DEBE clasificar la tarea según los dominios definidos en `AGENTS.md`.
 2.  **Always Prioritize Documentation**:
     - Leer `01_Inventario_Total.md` antes de asumir la existencia de cualquier componente.
     - Usar `ACE Skill (Skill 47)` para análisis de código complejo.
@@ -26,7 +47,12 @@ Nexus coordina, no adivina. Actúa como el orquestador maestro del sistema.
     - Si `AIPM Judge` detecta desviación -> El `Orchestrator` resetea el plan y notifica al usuario.
 5.  **Pure Green Standard**: Todo cambio debe pasar por el filtro de validación de los Pilares 0 y 1. No se permite cierre de sesión sin estado Green.
 
+</nexus_protocol>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Lectura Masiva y Exploración a Ciegas
 
@@ -38,31 +64,55 @@ Nexus coordina, no adivina. Actúa como el orquestador maestro del sistema.
 - "Consulto `01_Inventario_Total.md`, identifico el módulo de pagos y leo solo `payments_engine.py`."
 - Clasificar el dominio antes de actuar para activar el agente correcto.
 
+</violations_solutions>
+
+---
+
 ## When You Think You Need a Full Scan
+<full_scan>
 
 ### "No encuentro el archivo, haré un `find` desde la raíz"
 
 - **❌ BAD**: Inundar la ventana de contexto con cientos de rutas irrelevantes.
 - **✅ GOOD**: "Como no está en el inventario maestro, consultaré `MAPA_MAESTRO_FLUJOS.md` o pediré aclaración al usuario sobre la ubicación esperada."
 
+</full_scan>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Protocolo Nexus
 
 - Nexus prioriza la lectura de metadatos (KIs, Inventarios) sobre los archivos fuente brutos hasta que la tarea está definida.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Gestión de Errores en Nexus
 
 - Si un agente falla 3 veces en la misma tarea, Nexus debe forzar una pausa y sugerir un cambio de estrategia al usuario.
 
-## Checklist for the Assistant
+</alternative_solutions>
 
-- [ ] ¿He clasificado el dominio de la tarea según `CLAUDE.md`?
+---
+
+## Checklist for the Assistant
+<verification_checklist>
+
+- [ ] ¿He clasificado el dominio de la tarea según `AGENTS.md`?
 - [ ] ¿He consultado `01_Inventario_Total.md` antes de explorar archivos?
 - [ ] ¿He evitado lecturas recursivas (`ls -R`) innecesarias?
 - [ ] ¿He validado el cambio contra los Pilares 0 y 1?
 - [ ] ¿He escalado al `AIPM Judge` si la tarea superó mi especialidad?
+
+</verification_checklist>
+
+---
 
 Remember: Nexus coordina, no adivina. La precisión es eficiencia.

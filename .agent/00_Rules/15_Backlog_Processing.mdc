@@ -1,26 +1,59 @@
 ---
 description: Workflow para procesar el BACKLOG.md y convertirlo en tareas accionables.
-globs: 00_Core/BACKLOG.md
+globs: 00_Winter_is_Coming/BACKLOG.md
 alwaysApply: false
 ---
 
-# 🔄 Workflow: Backlog Processing
+# 🔄 Regla 15: Workflow - Backlog Processing
 
-Usa este workflow cuando el usuario pida "procesar mi backlog", "limpiar backlog" o similar.
+<system_directives>
+  <fundamental_rule>
+    Workflow para procesar el BACKLOG.md y convertirlo en tareas accionables. Usa este workflow cuando el usuario pida "procesar mi backlog", "limpiar backlog" o similar.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 📋 Pasos de Ejecución
+<execution_steps>
 
-1.  **Lectura de Entrada**: Leer `00_Core/BACKLOG.md` para extraer todos los ítems accionables.
-2.  **Búsqueda de Contexto**: Revisar `03_Knowledge/` y `01_Brain/process_notes/` para encontrar contexto relacionado (keywords, fechas).
-3.  **Deduplicación**: Verificar tareas existentes en `02_Operations/` para evitar duplicados.
+1.  **Lectura de Entrada**: Leer `00_Winter_is_Coming/BACKLOG.md` para extraer todos los ítems accionables.
+2.  **Búsqueda de Contexto**: Revisar `02_Knowledge/` y `04_Operations/03_Process_Notes/` para encontrar contexto relacionado (keywords, fechas).
+3.  **Deduplicación**: Verificar tareas existentes en `03_Tasks/` para evitar duplicados.
 4.  **Clasificación y Priorización**:
     - Categorizar (technical, outreach, research, writing, admin, personal).
     - Asignar prioridad (P0-P3).
 5.  **Clarificación**: Si un ítem es ambiguo, detenerse y preguntar al usuario antes de crear la tarea.
-6.  **Creación de Tareas**: Generar archivos `.md` en la carpeta correspondiente de `02_Operations/` usando el template oficial.
-7.  **Resumen Final**: Presentar un resumen de tareas creadas y limpiar `00_Core/BACKLOG.md`.
+6.  **Creación de Tareas**: Generar archivos `.md` en la carpeta correspondiente de `03_Tasks/` usando el template oficial.
+7.  **Resumen Final**: Presentar un resumen de tareas creadas y limpiar `00_Winter_is_Coming/BACKLOG.md`.
+
+</execution_steps>
+
+---
 
 ## 💡 Tips para el Asistente
+<tips>
+
 - Mantén la brevedad en el reporte inicial.
 - Agrupa los ítems por "Listos para crear", "Necesitan aclaración" y "Posibles duplicados".
-- Asegúrate de que cada tarea esté vinculada a un objetivo en `00_Core/GOALS.md`.
+- Asegúrate de que cada tarea esté vinculada a un objetivo en `00_Winter_is_Coming/GOALS.md`.
+
+</tips>

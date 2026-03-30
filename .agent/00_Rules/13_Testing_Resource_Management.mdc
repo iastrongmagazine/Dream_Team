@@ -4,15 +4,36 @@ globs: */*.{test,spec}.{js,ts,jsx,tsx}
 alwaysApply: false
 ---
 
-# 🛡️ Regla 12: Test Resource Management (Skill 48)
+# 🛡️ Regla 13: Test Resource Management (Skill 48)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla previene el colapso del sistema PersonalOS al ejecutar suites de pruebas pesadas en entornos locales. Garantiza la estabilidad del hardware del usuario durante la validación masiva.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla previene el colapso del sistema PersonalOS al ejecutar suites de pruebas pesadas en entornos locales. Garantiza la estabilidad del hardware del usuario durante la validación masiva.
+---
 
-Esta regla previene el colapso del sistema PersonalOS al ejecutar suites de pruebas pesadas en entornos locales.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Gestión de Recursos de Hardware (Skill 48)
+<resource_management>
 
 1.  **Always limit Workers**: Siempre añade el flag de límite de workers si no está presente en el comando de ejecución.
     - Vitest: `--maxWorkers=4`
@@ -21,7 +42,12 @@ Esta regla previene el colapso del sistema PersonalOS al ejecutar suites de prue
 2.  **Always Monitor CPU**: Si se detecta un uso de CPU > 90%, cancelar la ejecución e informar al usuario inmediatamente.
 3.  **Always Cleanup**: Asegurar la ejecución de hooks de limpieza tras cada suite para liberar memoria y recursos.
 
+</resource_management>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Ejecución por Defecto (Saturación)
 
@@ -39,29 +65,53 @@ npx vitest --maxWorkers=4
 # Resultado: Estabilidad del sistema garantizada.
 ```
 
+</violations_solutions>
+
+---
+
 ## When You Think You Need More Power
+<power>
 
 ### "Tengo 32 núcleos, puedo usarlos todos para terminar antes"
 
 - **❌ BAD**: Ejecutar al 100% de CPU impidiendo que el usuario pueda seguir usando su ordenador.
 - **✅ GOOD**: "Aunque el hardware es potente, limitaré a 4 workers para mantener la fluidez del entorno operativo siguiendo el Pilar 12."
 
+</power>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Skill 48 (Resource Guardian)
 
-- Integrar la validación de hardware en cualquier script de `04_ENGINE` que realice procesamiento intensivo de archivos.
+- Integrar la validación de hardware en cualquier script de `08_Scripts_Os` que realice procesamiento intensivo de archivos.
+
+</project_patterns>
+
+---
 
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Ejecución Secuencial
 
 - Para archivos de test extremadamente pesados, preferir `--runInBand` o ejecución secuencial si `--maxWorkers=4` sigue saturando la CPU.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He añadido el flag de workers (`--workers=4` o similar) a mi comando de test?
 - [ ] ¿He verificado que la ejecución no bloqueará el sistema del usuario (CPU < 90%)?
 - [ ] ¿He asegurado que los hooks de limpieza se ejecutan al finalizar?
+
+</verification_checklist>
+
+---
 
 Remember: La salud del hardware es prioritaria para la continuidad del desarrollo.

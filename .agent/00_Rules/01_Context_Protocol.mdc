@@ -6,24 +6,50 @@ alwaysApply: true
 
 # 🔘 Regla 00: Protocolo Génesis (Contexto & Idioma)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta es la PRIMERA y MÁS IMPORTANTE regla del sistema. Define los pasos obligatorios que el asistente debe ejecutar al inicio de cada sesión y establece el idioma de operación. IGNORARLA ES UNA FALLA CRÍTICA.
+  </fundamental_rule>
+</system_directives>
 
-Esta es la **PRIMERA y MÁS IMPORTANTE** regla del sistema.
+---
 
-Define los pasos obligatorios que el asistente debe ejecutar al inicio de cada sesión y establece el idioma de operación.
+## 📂 Workspace Structure (v6.1)
 
-**ESTA REGLA NO ES OPCIONAL. IGNORARLA ES UNA FALLA CRÍTICA.**
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 🧠 Protocolo de Inicio de Sesión (The First Step)
+<protocol_genesis>
 
 Antes de responder al usuario o ejecutar cualquier código, el asistente debe realizar la siguiente secuencia de "Aterrizaje":
 
 ### SECUENCIA OBLIGATORIA (EN ORDEN)
 
 1.  **📖 LEER EL PROYECTO COMPLETO (Inventario Vivo)**:
-    - Leer `01_Core/01_Inventario_Total.md` → **TODO el sistema**: estructura, agentes, scripts, MCPs, skills.
-    - Leer `00_Winter_is_Coming/GOALS.md` → Norte estratégico y objetivos.
-    - Leer `00_Winter_is_Coming/BACKLOG.md` → Pendientes y ideas sin estructurar.
+
+Al iniciar una nueva sesion, ejecutar esta secuencia antes de responder:
+
+0. Leer `00_Winter_is_Coming/AGENTS.md` y SIEMPRE Comunicarte en Espanol en Chat
+1. Leer `00_Winter_is_Coming/GOALS.md` — Metas y prioridades
+2. Leer `00_Winter_is_Coming/BACKLOG.md` — Bandeja de entrada
+3. Ejecutar `engram_mem_context(limit=10)` — Ultimas 10 sesiones de Engram
+4. Ejecutar `engram_mem_session_summary()` — Recuperar estado si hubo compaction
+5. Leer los recursos principales: `01_Core/`, `02_Knowledge/`, `03_Tasks/` , `04_Operations/` , `08_Scripts_Os/`
+6. **Reportar en el chat** un resumen del contexto cargado antes de actuar
     - NO pedir "dejame leer" - **YA DEBE ESTAR LEÍDO**.
 
 2.  **📜 LEER REGLAS VIGENTES**:
@@ -32,12 +58,12 @@ Antes de responder al usuario o ejecutar cualquier código, el asistente debe re
     - **YA NO BUSCAR ARCHIVO POR ARCHIVO** - Inventario tiene todo.
 
 3.  **🧠 SINCRONIZAR MEMORIA (Para MÍ - Gentleman)**:
-    - **PRIORIDAD 1**: Leer `04_Operations/01_Context_Memory/CTX_*.md` (más reciente) → **MI contexto** para no perder memoria entre sesiones.
+    - **PRIORIDAD 1**: Leer `00_Context_Memory/CTX_*.md` (más reciente) → **MI contexto** para no perder memoria entre sesiones.
     - **PRIORIDAD 2**: Leer `04_Operations/03_Process_Notes/*.md` (más reciente) → Qué hizo el usuario.
     - **OPCIONAL**: Buscar en Engram (MCP) con `mem_search` si hay algo relevante.
 
 4.  **☀️ EJECUTAR MORNING STANDUP**:
-    - Ejecutar `python 08_Scripts_Os/14_Morning_Standup.py` → Plan del día, prioridades P0/P1, bloqueos.
+    - Ejecutar `python 08_Scripts_Os/Ritual_Fixed/14_Morning_Standup.py` → Plan del día, prioridades P0/P1, bloqueos.
     - Si es primera sesión del día, presentar "The Big 3".
 
 5.  **📊 REPORTAR HANDSAKE (CONtexto + Plan)**:
@@ -47,9 +73,12 @@ Antes de responder al usuario o ejecutar cualquier código, el asistente debe re
       - **Plan del Día**: The Big 3 tareas.
     - **NO PROCEDER** hasta haber emitido este reporte.
 
+</protocol_genesis>
+
 ---
 
 ## 📢 REPORTING OBLIGATORIO (10% Steps)
+<reporting_protocol>
 
 **EN CADA TAREA MULTI-PASO (3+ pasos):**
 
@@ -66,13 +95,18 @@ Antes de responder al usuario o ejecutar cualquier código, el asistente debe re
 ## 🔔 CAMPANILLA (Task Complete Sound)
 
 **Al finalizar CADA TAREA SIGNIFICATIVA:**
-- Ejecutar sonido: `.agent/04_Extensions/hooks/task-complete-sound.ps1`
+- Ejecutar sonido: `01_Core/07_Hooks/04_Sound/task-complete-sound.ps1`
 - O notificar por voz: "Tarea completada"
 
+</reporting_protocol>
+
+---
+
 ## 🤖 Gestión de Contexto: Arquitectura Agent Teams (Delegación Atómica)
+<agent_teams_protocol>
 
 1.  **USO MANDATORIO DE AGENT TEAMS**: Para todas las Tareas (Investigación, Codificación Modular, Auditorías), el agente principal **DEBE** delegar en sub-agentes para proteger la ventana de contexto del orquestador.
-    - **Claude Code nativo** (`.claude/agents/`): `lfg`, `aipm-judge`, `workflow-orchestrator`
+    - **Claude Code nativo** (`.claude/.agents/`): `lfg`, `aipm-judge`, `workflow-orchestrator`
     - **Framework extendido** (`01_Core/04_Agents/`): 13 agentes especializados (TDD, Security, Git, etc.)
 
 2.  **BIBLIOTECA DE REGLAS**: Todo sub-agente o tarea delegada DEBE cargar y priorizar `01_Core/01_Rules/`, `01_Core/04_Agents/`, `01_Core/03_Skills/`, `01_Core/00_Workflows/`, `.agent/04_Extensions/`, `CLAUDE.md` y `00_Winter_is_Coming/AGENTS.md` para garantizar consistencia operativa.
@@ -81,7 +115,12 @@ Antes de responder al usuario o ejecutar cualquier código, el asistente debe re
 
 4.  **AISLAMIENTO ATÓMICO**: Cada sub-agente debe operar en su propio espacio conceptual, en su propia ventana de contexto, reportando solamente resultados consolidados al agente principal.
 
+</agent_teams_protocol>
+
+---
+
 ## 🔄 Protocolo de Impacto por Renombramiento (Indispensable)
+<renaming_protocol>
 
 1.  **ANÁLISIS PREVIO**: ANTES de renombrar cualquier archivo, carpeta o entidad de sistema, es **OBLIGATORIO** realizar una búsqueda global (`grep_search`) para identificar todas las referencias.
 
@@ -93,7 +132,12 @@ Antes de responder al usuario o ejecutar cualquier código, el asistente debe re
 
 3.  **ACTUALIZACIÓN ATÓMICA**: El renombramiento y la actualización de sus referencias deben ocurrir en el mismo ciclo de trabajo para evitar estados inconsistentes (Broken Links). Al realizar esta tarea activar 3 sub agentes, cargarles el contexto y reglas y estos validaran pensando desde distintas opticas de donde podria fallar o rompenser y verificar que todo este bien. Ante alguna duda consultar al usuario.
 
+</renaming_protocol>
+
+---
+
 ## 📊 Monitoreo y Comunicación (Voz & Progreso)
+<monitoring_protocol>
 
 1.  **REPORTE DE PROGRESO**: En cada llamada a `task_boundary`, el asistente **DEBE** incluir:
     - **Porcentaje de Avance (%)**: Estimación precisa del progreso actual de la tarea.
@@ -104,21 +148,14 @@ Antes de responder al usuario o ejecutar cualquier código, el asistente debe re
 3.  **NOTIFICACIÓN POR VOZ (TTS)**: Cada vez que se realice y finalice una tarea o sub-tarea significativa, el asistente **DEBE** notificarlo por voz (usando herramientas de voz o indicándolo claramente en el flujo para el sistema de audio).
 4.  **IDIOMA**: Toda comunicación, reportes y tareas deben ser en **ESPAÑOL**.
 
-## 📂 Estructura del Sistema (7 Dimensiones — 2026-03-02)
+</monitoring_protocol>
 
-```text
-Think_Different/ (00→06, secuencial)
-├── 00_Winter_is_Coming/       # ADN: Agentes, Metas, Backlog
-├── 04_Operations/      # Mapa: Inventario, Memoria AI, Process_Notes
-├── 02_Operations/ # Manos: Tasks activas, Evaluaciones
-├── 03_Knowledge/  # Memoria: Research, Examples/, Resources/
-├── 08_Scripts_Os/ # Motor: 38 scripts Python
-├── 05_System/     # Chasis: MCP, requirements.txt, infraestructura
-└── 06_Archive/    # Baúl: Legacy, backups
-```
+---
 
-1.  **ARCHIVO MAESTRO**: `04_Operations/Knowledge_Brain/01_Inventario_Total.md` y `CLAUDE.md` son la fuente de verdad de la estructura.
-2.  **MCPs ACTIVOS**: `.mcp.json` en raíz — Playwright (navegación web) y Fireflies (reuniones). API keys en `env`.
+## 📂 Referencias del Sistema
+
+1.  **ARCHIVO MAESTRO**: `00_Winter_is_Coming/01_Inventario_Total.md` y `AGENTS.md` son la fuente de verdad de la estructura.
+2.  **MCPs ACTIVOS**: `.mcp.json` en raíz — Playwright (navegación web) y otros. API keys en `env`.
 3.  **VISIBILIDAD**: Actualizar `01_Inventario_Total.md` en cada hito para evitar referencias rotas.
 
 ## 🗣️ Idioma Imperio (Mandato Absoluto)
@@ -126,10 +163,13 @@ Think_Different/ (00→06, secuencial)
 1.  **TODO PLAN, TAREA O LISTA DEBE SER EN ESPAÑOL**.
     - `task.md`, planes de implementación, explicaciones: **ESPAÑOL**.
 
+---
+
 ## 🛠️ Checklist de Verificación (Mental)
+<verification_checklist>
 
 - [ ] ¿He leído `01_Inventario_Total.md` + `GOALS.md` + `BACKLOG.md` al inicio?
-- [ ] ¿He leído el último CTX de `04_Operations/01_Context_Memory/`?
+- [ ] ¿He leído el último CTX de `00_Context_Memory/`?
 - [ ] ¿He leído la última Process Note de `04_Operations/03_Process_Notes/`?
 - [ ] ¿He ejecutado Morning Standup para el plan del día?
 - [ ] ¿He emitido el reporte de Handshake (Contexto + Plan)?
@@ -137,7 +177,9 @@ Think_Different/ (00→06, secuencial)
 - [ ] ¿He delegado tareas medianas/grandes en sub-agentes (`.claude/agents/` o `.agent/`)?
 - [ ] ¿Estoy redactando todo en **ESPAÑOL**?
 - [ ] ¿He mostrado el **PORCENTAJE** de avance (10%) en tareas multi-paso?
-- [ ] ¿He звук campanillas al completar cada tarea significativa?
+- [ ] ¿He sonido campanillas al completar cada tarea significativa?
+
+</verification_checklist>
 
 ---
 

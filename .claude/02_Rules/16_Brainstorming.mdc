@@ -4,21 +4,55 @@ globs: **/*
 alwaysApply: false
 ---
 
-# 🕷️ Workflow: Spider Brainstorm
+# 🕷️ Regla 16: Workflow - Spider Brainstorm
 
-Usa este workflow cuando el usuario quiera explorar ideas, resolver un problema complejo de diseño o conceptualizar un nuevo proyecto.
+<system_directives>
+  <fundamental_rule>
+    Workflow para sesiones de BRAINSTORMING y generación de ideas creativas. Usa este workflow cuando el usuario quiera explorar ideas, resolver un problema complejo de diseño o conceptualizar un nuevo proyecto.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 🧠 Fases de Exploración
+<exploration_phases>
 
 1.  **Divergencia (Captura Total)**: Generar la mayor cantidad de ideas sin juzgar. Usar analogías y pensamiento lateral.
 2.  **Mapeo Mental**: Agrupar ideas en nodos temáticos. Identificar conexiones no obvias.
-3.  **Convergencia (Filtrado)**: Evaluar ideas contra los principios de **Dieter Rams** y los objetivos de `00_Core/GOALS.md`.
+3.  **Convergencia (Filtrado)**: Evaluar ideas contra los principios de **Dieter Rams** y los objetivos de `00_Winter_is_Coming/GOALS.md`.
 4.  **Selección Elite**: Elegir las 3 mejores rutas para profundizar.
 
+</exploration_phases>
+
+---
+
 ## 🛠️ Herramientas Sugeridas
+<tools>
+
 - Usar sub-agentes para investigar referencias externas (Exa).
 - Crear diagramas Mermaid para visualizar las conexiones.
 - Aplicar la técnica de los "5 Porqués" para llegar a la raíz.
 
+</tools>
+
 ---
+
 _"Explorando el multiverso de posibilidades. Conectando lo invisible."_

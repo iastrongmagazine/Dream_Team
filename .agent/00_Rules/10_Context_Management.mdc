@@ -1,25 +1,51 @@
 ---
 description: PILAR 09: Protocolo de Gestión de Contexto Atómico (Atomic Context Management) - Una Tarea = Un Chat.
-globs: 02_Operations/*.md, 00_Core/BACKLOG.md
+globs: 03_Tasks/*.md, 00_Winter_is_Coming/BACKLOG.md
 alwaysApply: true
 ---
 
-# 🗂️ Regla 09: Gestión de Contexto Atómico (Atomic Context Protocol)
+# 🗂️ Regla 10: Gestión de Contexto Atómico (Atomic Context Protocol)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla instituye la ley de Aislamiento de Contexto. Para maximizar la precisión de la IA y minimizar la latencia/costo, cada tarea significativa debe operarse en una ventana de chat independiente. Contexto limpio = Ejecución implacable.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla instituye la ley de **Aislamiento de Contexto**. Para maximizar la precisión de la IA y minimizar la latencia/costo, cada tarea significativa debe operarse en una ventana de chat de Cursor independiente.
+---
 
-Contexto limpio = Ejecución implacable.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Protocolo de Ignición y Aislamiento
+<ignition_protocol>
 
-1.  **Identificación**: Al detectar el inicio de una nueva tarea en `02_Operations/`, se DEBE evaluar la carga del contexto actual.
+1.  **Identificación**: Al detectar el inicio de una nueva tarea en `03_Tasks/`, se DEBE evaluar la carga del contexto actual.
 2.  **Recomendación de Reset**: La IA DEBE sugerir al usuario: _"Iniciemos un nuevo chat para esta tarea para mantener el contexto puro."_
 3.  **Cebado (Briefing)**: Proporcionar siempre el bloque de texto `## 🧩 Context Briefing` de la tarea como primer mensaje del nuevo chat.
 4.  **Monitoreo de Salud**: Vigilar síntomas de saturación (Latencia alta, Alucinación, Ruido de archivos irrelevantes).
 
+</ignition_protocol>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Historial Infinito
 
@@ -31,30 +57,54 @@ Contexto limpio = Ejecución implacable.
 - Finalizar tarea A -> Cerrar chat/Reset -> Abrir nuevo chat -> Pegar briefing de tarea B.
 - Resultado: 100% de precisión, respuestas instantáneas y menor consumo de tokens.
 
+</violations_solutions>
+
+---
+
 ## When You Think You Can Save Time Not Opening a New Chat
+<shortcuts>
 
 ### "Es solo un ajuste de 5 minutos sobre esta misma base"
 
 - **❌ BAD**: Continuar en un chat saturado donde la IA empieza a proponer soluciones de hace 2 horas que ya no aplican.
 - **✅ GOOD**: "Aunque es un ajuste rápido, para evitar alucinaciones con el estado previo de las reglas, iniciemos un chat limpio."
 
+</shortcuts>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Prompt de Ignición
 
 - Un buen briefing de ignición debe incluir: Objetivo, Reglas Relevantes, Archivos a tocar y Estado de Integridad actual.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Gestión de Ventana de Contexto
 
 - Si Cursor no muestra el %, basarse en la latencia de respuesta: si supera los 2000ms en tareas simples, es hora de un reset.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He sugerido abrir un nuevo chat al cambiar sustancialmente de tarea?
 - [ ] ¿He generado un prompt de "Ignición" (Briefing) claro y completo?
 - [ ] ¿He recordado al usuario que cerrar chats viejos ahorra potencia mental?
 - [ ] ¿He verificado si la IA está empezando a mezclar contextos de archivos no relacionados?
+
+</verification_checklist>
+
+---
 
 Remember: Una tarea = Un Chat. Mantén el foco para mantener la potencia.

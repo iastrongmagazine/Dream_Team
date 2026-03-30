@@ -4,21 +4,48 @@ globs: **/*
 alwaysApply: true
 ---
 
-# ☀️ Workflow: Morning Standup
+# ☀️ Regla 18: Workflow - Morning Standup
+
+<system_directives>
+  <fundamental_rule>
+    Workflow para el Standup Matutino. Ejecuta script 14 y presenta plan del día. Enfoque total en lo que importa. Menos, pero mejor.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## ⚡ Flujo Completo
+<flow>
 
 ### 1. Ejecutar Script (Automático)
 
 ```bash
-python 08_Scripts_Os/14_Morning_Standup.py
+python 08_Scripts_Os/Ritual_Fixed/14_Morning_Standup.py
 ```
 
 El script internamente:
 - Lee inventario vivo (`01_Inventario_Total.md`)
-- Recupera CTX previo (`01_Context_Memory/CTX_*.md`)
-- Lee Process Notes (`03_Process_Notes/*.md`)
-- Analiza tareas activas en `02_Operations/01_Active_Tasks/`
+- Recupera CTX previo (`00_Context_Memory/CTX_*.md`)
+- Lee Process Notes (`04_Operations/03_Process_Notes/*.md`)
+- Analiza tareas activas en `03_Tasks/`
 - Genera "The Big 3" basado en prioridades P0/P1
 
 ### 2. Presentar Reporte (Obligatorio)
@@ -49,9 +76,12 @@ El script ya ejecutó el análisis. Presentar en chat:
 - Confirmar si hay compromisos externos (reuniones, etc.)
 - Ajustar "The Big 3" según feedback
 
+</flow>
+
 ---
 
 ## 📌 Criterios de Priorización
+<prioritization>
 
 | Prioridad | Criterio | Ejemplo |
 |-----------|-----------|---------|
@@ -60,19 +90,22 @@ El script ya ejecutó el análisis. Presentar en chat:
 | **P2** | SCHEDULED | Mantenimiento, documentación |
 | **P3** | BACKLOG | Ideas, mejoras menores |
 
+</prioritization>
+
 ---
 
 ## 🛠️ Integración con Goals
+<goals_integration>
 
 Cada tarea del Big 3 DEBE:
-1. Vincularse con un objetivo de `00_Core/GOALS.md`
+1. Vincularse con un objetivo de `00_Winter_is_Coming/GOALS.md`
 2. Citar el heading o bullet específico
 3. Medirse contra métricas de tracking
 
----
-
-_"Enfoque total en lo que importa. Menos, pero mejor."_
+</goals_integration>
 
 ---
 
 **Referencia**: Script `14_Morning_Standup.py` es la fuente de verdad para el análisis automático.
+
+_"Enfoque total en lo que importa. Menos, pero mejor."_

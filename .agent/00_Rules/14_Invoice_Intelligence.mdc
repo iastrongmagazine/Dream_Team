@@ -4,15 +4,36 @@ globs: **/02_skills/02_High_Value/49_Invoice_Intelligence/**/*
 alwaysApply: true
 ---
 
-# 📑 Regla 13: Invoice Intelligence (OCR)
+# 📑 Regla 14: Invoice Intelligence (OCR)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla gobierna el uso y mantenimiento del sistema de procesamiento de facturas de PersonalOS. Asegura que la extracción de datos financieros sea precisa, paralela y esté perfectamente organizada. Eficiencia paralela, precisión quirúrgica.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla gobierna el uso y mantenimiento del sistema de procesamiento de facturas de PersonalOS. Asegura que la extracción de datos financieros sea precisa, paralela y esté perfectamente organizada.
+---
 
-Eficiencia paralela, precisión quirúrgica.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Invoice Intelligence y OCR Escalado
+<invoice_protocol>
 
 1.  **Always use Armor Layer**: Resolver rutas de entrada/salida de forma absoluta usando `os.path.abspath`.
 2.  **Always use Workers**: Mantener el procesamiento paralelo (`multiprocessing.Pool`) para lotes de más de 5 archivos.
@@ -22,7 +43,12 @@ Eficiencia paralela, precisión quirúrgica.
 4.  **Always Backup Data**: Exportar siempre en la tríada: CSV (análisis), Excel (usuario), JSON (sistema).
 5.  **Archivado Inteligente**: Mover facturas a `processed/YYYY-MM/` basado en la fecha de la factura.
 
+</invoice_protocol>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: OCR Innecesario y Rutas Relativas
 
@@ -34,31 +60,55 @@ Eficiencia paralela, precisión quirúrgica.
 - Usar `os.path.join(BASE_DIR, 'invoices')` para blindar la ruta.
 - Fallback a Tesseract solo tras validar que el texto nativo es ilegible.
 
+</violations_solutions>
+
+---
+
 ## When You Want to Process Files manually
+<manual_processing>
 
 ### "Son solo 3 facturas, las abriré y copiaré los datos"
 
 - **❌ BAD**: Introducir errores humanos por saltarse el motor automatizado.
 - **✅ GOOD**: "Aunque son pocas, usaré el `invoice_engine` para asegurar que el JSON del sistema y el Excel del usuario se actualizan con la estructura correcta."
 
+</manual_processing>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Patrón de Normalización
 
 - Nombrar archivos siguiendo el patrón `Vendedor_Fecha_Monto.pdf` para una búsqueda rápida en el sistema de gestión.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Manejo de Lotes Grandes
 
 - Si el lote supera los 100 archivos, emitir notificaciones de voz (TTS) al 50% y 100% del progreso.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿El script utiliza rutas absolutas (`Armor Layer`)?
 - [ ] ¿He intentado `pdfplumber` antes de activar el motor OCR (Tesseract)?
 - [ ] ¿He generado los tres formatos de salida (CSV, Excel, JSON)?
 - [ ] ¿He archivado los archivos en la estructura de carpetas `YYYY-MM` correcta?
 - [ ] ¿Se utiliza el branding de PersonalOS en los logs y notificaciones?
+
+</verification_checklist>
+
+---
 
 Remember: Procesamos datos financieros con rigor absoluto. Ni un céntimo perdido, ni una ruta relativa.

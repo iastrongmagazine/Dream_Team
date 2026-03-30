@@ -4,22 +4,48 @@ globs: */*
 alwaysApply: true
 ---
 
-# 🔧 Regla 06: Skill Fusion Protocol (Advanced Capability Layer)
+# 🔧 Regla 07: Skill Fusion Protocol (Advanced Capability Layer)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla institucionaliza el uso de herramientas externas (Skills) para elevar la precisión técnica de PersonalOS a estándares de industria. Transforma a los agentes de "asistentes generales" a "expertos equipados con exoesqueletos" de conocimiento oficial. Previene la alucinación de comandos y fomenta el uso de soluciones certificadas.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla institucionaliza el uso de herramientas externas (Skills) para elevar la precisión técnica de PersonalOS a estándares de industria. Transforma a los agentes de "asistentes generales" a "expertos equipados con exoesqueletos" de conocimiento oficial.
+---
 
-Previene la alucinación de comandos y fomenta el uso de soluciones certificadas.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Protocolo de Fusión y Exoesqueletos
+<fusion_protocol>
 
 1.  **Never Hallucinate Commands**: Antes de proponer comandos de Vercel, Supabase, Docker, etc., se DEBE verificar la sintaxis en la Skill correspondiente.
 2.  **Skill First Approach**: Si existe una Skill oficial para la tarea (ej. `/refactor` de Vercel), se DEBE usar esa herramienta sobre una implementación manual.
 3.  **Always Document Impact**: Registrar cada resolución compleja mediante Skills en la Nota de Proceso como un "Hito de Fusión".
 4.  **Context Guardians**: Usar la Skill 13 (Fork) y 14 (Parallel) para mantener la limpieza del hilo principal en tareas de larga duración.
 
+</fusion_protocol>
+
+---
+
 ## El Mapa de Poder (Uso por Perfil)
+<power_map>
 
 | Perfil / Agente        | Skill Fusionada            | Superpoder Adquirido                                                   |
 | :--------------------- | :------------------------- | :--------------------------------------------------------------------- |
@@ -28,14 +54,12 @@ Previene la alucinación de comandos y fomenta el uso de soluciones certificadas
 | **Backend / DB**       | `prisma`, `supabase`       | Esquemas type-safe y migraciones sólidas sin errores de sintaxis.      |
 | **DevOps**             | `docker`, `vercel`         | Gestión de infraestructura y contenedores mediante comandos oficiales. |
 
-## Rule: Protocolo de Fusión
+</power_map>
 
-1. **Never Hallucinate Commands:** Antes de proponer un comando de Vercel, Supabase o Docker, se DEBE verificar la sintaxis en la Skill correspondiente.
-2. **Skill First Approach:** Si existe una Skill oficial para la tarea (ej. `/refactor` de Vercel), se DEBE優先 usar esa herramienta sobre una implementación manual.
-3. **Always Document Impact:** Cada vez que una Skill resuelva un problema complejo, regístralo en la Nota de Proceso como un "Hito de Fusión".
-4. **Context Guardians:** Usa la Skill 13 (Fork) y 14 (Parallel) para mantener la limpieza del hilo principal en tareas de larga duración.
+---
 
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Imaginación de Comandos
 
@@ -49,31 +73,55 @@ _Problema: El agente está adivinando en lugar de usar la Skill instalada._
 "Usando la Skill de Vercel (vercel-labs), voy a ejecutar vercel deploy para asegurar sincronización con producción."
 ```
 
+</violations_solutions>
+
+---
+
 ## When You Think You Know the Command
+<command_validation>
 
 ### "He usado Docker mil veces, no necesito leer la Skill"
 
 - **❌ BAD**: Ejecutar una versión obsoleta de un comando que rompe el despliegue.
 - **✅ GOOD**: "Voy a validar rápidamente la sintaxis en la Skill de Docker para asegurar que usamos el estándar de PersonalOS."
 
+</command_validation>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Integración de Habilidades
 
 - Seguir el formato `NN_Nombre_Skill` para la organización de nuevos exoesqueletos.
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Skill Fusion en Tareas Complejas
 
 - Si un agente especializado no resuelve la tarea, escalar al `AIPM Judge` para reevaluar la Skill necesaria.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He verificado si hay una Skill oficial para esta tarea?
 - [ ] ¿He evitado comandos "inventados" consultando el arsenal de skills?
 - [ ] ¿Estoy actuando con el "exoesqueleto" adecuado al rol (Arquitectura, UI, Backend)?
 - [ ] ¿He mencionado la Skill utilizada en mi respuesta al usuario?
 - [ ] ¿He registrado el "Hito de Fusión" en la Nota de Proceso?
+
+</verification_checklist>
+
+---
 
 Remember: Actuamos con conocimiento oficial, no con suposiciones.

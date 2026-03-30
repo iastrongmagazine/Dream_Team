@@ -3,9 +3,41 @@ description: Gentleman Programming Framework Integration
 globs: **/*
 alwaysApply: true
 ---
-# Gentleman Programming Framework
-Before performing any task, the agent MUST:
-1. Load context from 01_Core/04_Agents/ and 01_Core/03_Skills/
-2. Use Orchestrator (10_Workflow_Orchestrator.md) for complex TDD flows.
-3. Validate all code changes using GGA (pre-commit hook).
-4. Utilize Engram MCP for persistent memory.
+
+# 🤵 Regla 21: Gentleman Programming Framework
+
+<system_directives>
+  <fundamental_rule>
+    Gentleman Programming Framework Integration. Antes de realizar cualquier tarea, el agente DEBE cargar el contexto de los Agents y Skills, utilizar el Orquestador para flujos TDD complejos, validar cambios con GGA (pre-commit hook) y utilizar Engram MCP para memoria persistente.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
+
+## ✅ Requisitos del Framework
+<requirements>
+
+1. **Cargar Contexto**: Cargar contexto de `01_Core/04_Agents/` y `01_Core/03_Skills/`
+2. **Utilizar Orquestador**: Usar `10_Workflow_Orchestrator.md` para flujos TDD complejos
+3. **Validar con GGA**: Validar todos los cambios de código usando GGA (pre-commit hook)
+4. **Memoria Persistente**: Utilizar Engram MCP para memoria persistente
+
+</requirements>

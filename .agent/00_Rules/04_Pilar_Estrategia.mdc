@@ -6,17 +6,38 @@ alwaysApply: true
 
 # 🧠 Regla 04: La Estrategia (Strategic Management & AIPM)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Este pilar dirige la "mente" del asistente. Define cómo gestionar el contexto atómico, orquestar workflows complejos y aplicar la observabilidad de un AI Product Manager (AIPM) para optimizar resultados probabilísticos. Mantiene los estándares de razonamiento transparente (CoT), eficiencia de tokens y calidad visual en reportes mediante la "Perfección Geométrica".
+  </fundamental_rule>
+</system_directives>
 
-Este pilar dirige la "mente" del asistente. Define cómo gestionar el contexto atómico, orquestar workflows complejos y aplicar la observabilidad de un AI Product Manager (AIPM) para optimizar resultados probabilísticos.
+---
 
-Mantiene los estándares de razonamiento transparente (CoT), eficiencia de tokens y calidad visual en reportes mediante la "Perfección Geométrica".
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Gestión de Tareas, Contexto y AIPM (2026 Grade)
+<strategic_management>
 
 1.  **Contexto Atómico**: Una Tarea = Un Chat. Resetear el contexto al cambiar de objetivo para evitar la degradación y el ruido.
 2.  **Ciclo de Tarea**: Triage -> Plan -> Ejecución (Progreso 10%) -> Verificación (Walkthrough) -> Aprendizaje (Reglas).
-3.  **The Golden Loop**: Cada error debe inyectarse en las reglas. Las Notas de Proceso (`01_Brain/Process_Notes/`) son la memoria persistente del sistema.
+3.  **The Golden Loop**: Cada error debe inyectarse en las reglas. Las Notas de Proceso (`04_Operations/03_Process_Notes/`) son la memoria persistente del sistema.
 4.  **Ingesta de Contexto**: Todo workflow DEBE comenzar obligando al asistente a leer las reglas vigentes.
 5.  **Observabilidad CoT**: El razonamiento (`thought_process`) debe ser transparente y documentado.
 6.  **Eficiencia de Tokens**: Monitorear el ratio `CoT / Response`.
@@ -26,7 +47,12 @@ Mantiene los estándares de razonamiento transparente (CoT), eficiencia de token
 8.  **Analítica de Dominio**: Todo reporte debe identificar su dominio (Marketing, Salud, etc.) y mostrar la muestra real (Stripplot) sobre la agregación.
 9.  **Perfección Geométrica**: Los reportes Markdown deben usar anchos de columna fijos y una columna aislada (`ST`) para emojis para evitar desajustes visuales.
 
+</strategic_management>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Ejecución sin Rastro y Contexto Sucio
 
@@ -40,17 +66,27 @@ Mantiene los estándares de razonamiento transparente (CoT), eficiencia de token
 
 - Iniciar un chat limpio -> Pegar Briefing de Contexto -> Ejecutar con trazabilidad de tokens y latencia -> Documentar lecciones en Notas de Proceso.
 - Monitorear ratio CoT/Response (objetivo: 20%-50%).
-- Notificar proactivamente sobre riesgos y latencia.
+- Notificar proativamente sobre riesgos y latencia.
 - Terminar con Walkthrough y actualización de la base de conocimiento (KIs/Reglas).
 
+</violations_solutions>
+
+---
+
 ## When You Think You Need a Shortcut
+<shortcuts>
 
 ### "La tarea es pequeña, no hace falta resetear el chat"
 
 - **❌ BAD**: Continuar en un chat con 50 mensajes previos sobre otro tema para ahorrar tiempo.
 - **✅ GOOD**: "Para mantener la precisión y evitar ruido de contexto, iniciemos un nuevo chat para este ajuste específico."
 
+</shortcuts>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Perfección Geométrica en Markdown (Geometric Perfection)
 
@@ -66,14 +102,24 @@ Mantiene los estándares de razonamiento transparente (CoT), eficiencia de token
 | 🐛 | Fix bug | DONE |
 ```
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Gestión de Eficiencia de Tokens
 
 - **Over-thinking**: (>100% CoT vs Response) Sugerir fragmentación de la tarea para manejar la complejidad.
 - **Superficialidad**: (<15% CoT) El asistente debe profundizar más en el razonamiento antes de proponer cambios críticos.
 
+</alternative_solutions>
+
+---
+
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He sugerido un nuevo chat para esta tarea si el contexto actual está saturado?
 - [ ] ¿He incluido el razonamiento detallado (CoT) en mi proceso?
@@ -81,8 +127,12 @@ Mantiene los estándares de razonamiento transparente (CoT), eficiencia de token
 - [ ] ¿He actualizado las Notas de Proceso con los aprendizajes tras detectar un error?
 - [ ] ¿El reporte generado cumple con la Perfección Geométrica (Solo emojis en col 1/ST)?
 
-Remember: El código es temporal, las reglas son eternas. Razonamos con incertidumbre, decidimos con intención.
+</verification_checklist>
 
 ---
 
-_Alineado con la Mente PersonalOS: "Razonamos con incertidumbre, decidimos con intención."_
+Remember: El código es temporal, las reglas son eternas. Razonamos con incertidumbre, decidido con intención.
+
+---
+
+_Alineado con la Mente PersonalOS: "Razonamos con incertidumbre, decidedmos con intención."_

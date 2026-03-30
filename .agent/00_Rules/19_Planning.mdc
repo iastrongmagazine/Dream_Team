@@ -4,11 +4,36 @@ globs: **/*
 alwaysApply: false
 ---
 
-# 🎓 Workflow: Professor X (Strategic Planning)
+# 🎓 Regla 19: Workflow - Professor X (Strategic Planning)
 
-Usa este workflow antes de empezar cualquier implementación técnica o estratégica de gran envergadura.
+<system_directives>
+  <fundamental_rule>
+    Workflow para PLANIFICACIÓN DETALLADA de tareas complejas. Usa este workflow antes de empezar cualquier implementación técnica o estratégica de gran envergadura. La victoria se asegura antes de entrar al campo de batalla.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 🏛️ Estructura del Plan
+<plan_structure>
 
 1.  **Definición de Éxito**: ¿Cómo sabemos que hemos terminado? (Definition of Done).
 2.  **Análisis de Riesgos**: Identificar posibles "Breaking Changes" o dependencias críticas.
@@ -16,9 +41,18 @@ Usa este workflow antes de empezar cualquier implementación técnica o estraté
 4.  **Pasos de Ejecución**: Lista numerada de acciones atómicas, cada una con su método de verificación.
 5.  **Estrategia de Sub-agentes**: Definir qué tareas se delegarán para proteger la ventana de contexto.
 
+</plan_structure>
+
+---
+
 ## 🛡️ Regla de Oro
+<golden_rule>
+
 - **PLAN FIRST**: Nunca escribir código sin un plan aprobado por el usuario.
 - **VERIFICACIÓN PASO A PASO**: Cada paso del plan debe terminar con una acción de lectura/validación.
 
+</golden_rule>
+
 ---
+
 _"La victoria se asegura antes de entrar al campo de batalla. Planificando con precisión cerebral."_

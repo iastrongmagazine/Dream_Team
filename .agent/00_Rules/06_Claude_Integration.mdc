@@ -1,26 +1,52 @@
 ---
 description: PILAR 05: Integración de comandos de barra diagonal (slash commands) de Claude Code en PersonalOS
-globs: 02_Operations/**/*, **/*.md, .agent/workflows/*.md, .agent/workflows/*/*.md
+globs: 03_Tasks/**/*, **/*.md, .agent/workflows/*.md, .agent/workflows/*/*.md
 alwaysApply: true
 ---
 
-# 🤖 Regla 05: Integración de Claude Code (Slash Commands)
+# 🤖 Regla 06: Integración de Claude Code (Slash Commands)
 
-## Overview
+<system_directives>
+  <fundamental_rule>
+    Esta regla define cómo y cuándo utilizar los comandos de barra diagonal proporcionados por el plugin de Claude Code para potenciar el ciclo de vida de las tareas en PersonalOS. Claude Code no reemplaza a PersonalOS; lo vitamina. Los comandos se usan para ejecutar, el sistema para orquestar.
+  </fundamental_rule>
+</system_directives>
 
-Esta regla define cómo y cuándo utilizar los comandos de barra diagonal proporcionados por el plugin de Claude Code para potenciar el ciclo de vida de las tareas en PersonalOS.
+---
 
-Claude Code no reemplaza a PersonalOS; lo vitamina. Los comandos se usan para ejecutar, el sistema para orquestar.
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## Rule: Uso Estratégico de Comandos
+<command_usage>
 
 1.  **Phase: PLANNING**: Siempre usar `/new-task`, `/feature-plan` o `/workflows:plan` para desglosar requerimientos complejos.
 2.  **Phase: EXECUTION**: Siempre usar `/code-cleanup`, `/code-optimize` o `/workflows:review` antes de finalizar un componente.
 3.  **Phase: POST-EXECUTION**: Siempre usar `/docs-generate`, `/workflows:compound` o `/sync-tutorials` para mantener el conocimiento al día.
-4.  **Identification**: Siempre identificar qué agentes o tutores (en `06_Archive/resources/tools/`) son más aptos para la tarea según su especialidad.
+4.  **Identification**: Siempre identificar qué agentes o tutores (en `05_Archive/`) son más aptos para la tarea según su especialidad.
 5.  **Learning**: Usar `/teach-me` o `/quiz-me` al trabajar con tecnologías nuevas para nivelar capacidades rápidamente.
 
+</command_usage>
+
+---
+
 ## Common Violations and Solutions
+<violations_solutions>
 
 ### ❌ BAD: Ignorar herramientas disponibles
 
@@ -32,30 +58,54 @@ Claude Code no reemplaza a PersonalOS; lo vitamina. Los comandos se usan para ej
 - "He terminado la lógica del componente. Ahora ejecutaré `/code-optimize` para asegurar que el rendimiento es óptimo según los estándares de `performance-engineer`."
 - Usar `/lint` proactivamente antes de entregar un código.
 
+</violations_solutions>
+
+---
+
 ## When You Think You Need Manual Documentation
+<documentation>
 
 ### "Solo cambié una variable, no hace falta generar docs"
 
 - **❌ BAD**: Dejar la documentación técnica desactualizada por pereza.
 - **✅ GOOD**: Ejecutar `/docs-generate` para que Claude Code identifique el cambio atómico y actualice los archivos de referencia automáticamente.
 
+</documentation>
+
+---
+
 ## Specific Project Patterns
+<project_patterns>
 
 ### Sincronización de Conocimiento
 
 - Los resultados de Claude Code deben integrarse siempre en el inventario de PersonalOS (README.md, Master Inventory).
 
+</project_patterns>
+
+---
+
 ## Alternative Solutions
+<alternative_solutions>
 
 ### 1. Agentes Especializados
 
-- Consultar los agentes en `06_Archive/resources/tools/` cuando se requiera una validación de arquitectura o backend que exceda el conocimiento general del asistente.
+- Consultar los agentes en `05_Archive/` cuando se requiera una validación de arquitectura o backend que exceda el conocimiento general del asistente.
+
+</alternative_solutions>
+
+---
 
 ## Checklist for the Assistant
+<verification_checklist>
 
 - [ ] ¿He sugerido el uso de `/lint` antes de concluir la ejecución?
 - [ ] ¿He utilizado `/api-new` para crear rutas de backend siguiendo los estándares de `backend-architect`?
 - [ ] ¿He referenciado los agentes de Claude Code en las fases de diseño y arquitectura?
 - [ ] ¿He utilizado los comandos de barra adecuados para la fase actual (Planning/Execution)?
+
+</verification_checklist>
+
+---
 
 Remember: Claude Code no reemplaza a PersonalOS; lo vitamina. Los comandos se usan para ejecutar, el sistema se usa para orquestar y recordar.

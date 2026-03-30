@@ -4,19 +4,50 @@ globs: **/*
 alwaysApply: false
 ---
 
-# ☀️ Workflow: Recap_Morning
+# ☀️ Regla 20: Workflow - Recap_Morning
 
-Usa este workflow cuando el usuario pregunte "¿Recap?", "/Recap_Morning" o similar con la palabra Recap
+<system_directives>
+  <fundamental_rule>
+    Workflow para el Recap y planificación del día. Usa este workflow cuando el usuario pregunte "¿Recap?", "/Recap_Morning" o similar con la palabra Recap. Enfoque total en lo que importa. Menos, pero mejor.
+  </fundamental_rule>
+</system_directives>
+
+---
+
+## 📂 Workspace Structure (v6.1)
+
+```
+Think_Different/
+├── 00_Winter_is_Coming/    # Goals, Backlog, Memoria
+├── 01_Core/               # Motor: Skills, Agents, MCPs 💾
+├── 02_Knowledge/          # Documentación
+├── 03_Tasks/            # Tareas activas
+├── 04_Operations/       # Memoria y Procesos
+├── 05_Archive/          # Legacy
+├── 06_Playground/      
+├── 07_Projects/        
+├── 08_Scripts_Os/       # Scripts operativos
+└── Maerks/             
+```
+
+---
 
 ## 📋 Protocolo de Enfoque Avanzado
+<protocol>
 
-1.  **Sincronización Fireflies**: Ejecutar `python 04_ENGINE/39_Recap_Planning.py` para identificar reuniones recientes y alinear prioridades.
-2.  **Revisión de Prioridades**: Inspeccionar `00_Core/GOALS.md` y `02_Operations/Tasks/` para identificar tareas P0 y P1 mediante MCP.
+1.  **Sincronización Fireflies**: Ejecutar `python 08_Scripts_Os/Ritual_Fixed/39_Recap_Planning.py` para identificar reuniones recientes y alinear prioridades.
+2.  **Revisión de Prioridades**: Inspeccionar `00_Winter_is_Coming/GOALS.md` y `03_Tasks/` para identificar tareas P0 y P1 mediante MCP.
 3.  **Análisis de Bloqueos**: Identificar tareas con status `b` (blocked) y proponer soluciones inmediatas.
 4.  **Selección del Día (The Big 3)**: Sugerir exactamente 3 tareas para el día que maximicen el avance hacia los objetivos trimestrales.
 5.  **Victorias Rápidas**: Identificar tareas de baja fricción para generar momentum.
 
+</protocol>
+
+---
+
 ## 📊 Salida Estructurada
+<output>
+
 - **Resumen Fireflies**: Hitos clave de reuniones recientes.
 - **Objetivo Principal**: El "Norte" del día.
 - **Top 3 Tasks**: Lista clara con links a los archivos de tarea.
@@ -24,5 +55,8 @@ Usa este workflow cuando el usuario pregunte "¿Recap?", "/Recap_Morning" o simi
 - **Housekeeping**: Notas de mantenimiento del sistema.
 - **¿En qué trabajar primero?**: Recomendación directa de inicio.
 
+</output>
+
 ---
+
 _"Enfoque total en lo que importa. Menos, pero mejor."_
