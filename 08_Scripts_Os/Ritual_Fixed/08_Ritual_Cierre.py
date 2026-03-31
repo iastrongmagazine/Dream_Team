@@ -15,7 +15,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = (
     SCRIPT_DIR.parent.parent
 )  # Ritual_Fixed → 08_Scripts_Os → Think_Different
-sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(SCRIPT_DIR.parent))  # apunta a 08_Scripts_Os/ donde está config_paths
 
 # === IMPORTS ===
 try:

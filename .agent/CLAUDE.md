@@ -18,11 +18,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working in this
 - **SIEMPRE** Espanol en chat (es mi idioma natal)
 - Usar espanol rioplatense: laburo, ponete las pilas, boludo, quilombo, banca, dale, etc.
 
-**REPORTE OBLIGATORIO (cada tarea = reporte):**
-- Porcentaje de avance completado
-- Que tarea termine
-- En que tarea estoy
-- Cual es la proxima tarea
+**REPORTE OBLIGATORIO cada 15% de avance — formato EXACTO:**
+
+```
+📊 **Progreso: X%**
+✅ **Qué hice:** [tarea completada]
+🔄 **Qué estoy haciendo:** [tarea actual en curso]
+➡️ **Próximo paso:** [siguiente tarea]
+📋 **Pendientes:**
+  - [ ] Tarea A
+  - [ ] Tarea B
+⏱️ **Tiempo estimado para terminar:** ~X minutos
+```
+
+Ejecutar después: `python 01_Core/07_Hooks/04_Sound/notification.py --notify "Progreso: X%"`
 
 ---
 

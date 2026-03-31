@@ -32,7 +32,7 @@ Think_Different/
 | #   | Carpeta                    | Contenido               | Estado   |
 |-----|----------------------------|-------------------------|----------|
 | 01  | `00_Workflows/`            | 26+ workflows           | ✅        |
-| 02  | `01_Rules/`                | 22+ reglas del sistema  | ✅        |
+| 02  | `01_Rules/`                | 23 reglas del sistema   | ✅        |
 | 03  | `02_Evals/`                | Métricas y evaluaciones | ✅        |
 | 04  | `03_Skills/`               | 18 carpetas de skills   | ✅        |
 | 05  | `04_Agents/`               | Agentes configurados    | ✅        |
@@ -163,7 +163,7 @@ python 01_Core/09_Server/mcp/Server.py
 
 ## 📚 Documentación
 
-- [Rules Index](./01_Rules/RULES_INDEX.md) — 22 reglas del sistema
+- [Rules Index](./01_Rules/RULES_INDEX.md) — 23 reglas del sistema
 - [Dream Team](./02_Dream_Team.md) — Equipo de agentes
 - [Comandos y Workflows](./00_Comandos_Workflows.md) — Scripts y herramientas
 - [Agents README](./04_Agents/README.md) — Todos los agentes

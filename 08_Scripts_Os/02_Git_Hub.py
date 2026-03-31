@@ -24,14 +24,15 @@ except ImportError:
         RESET_ALL = ""
 
 
-from config_paths import ROOT_DIR
-
-
 # =============================================================================
 # ARMOR LAYER - PATH RESOLUTION (2-LEVEL: Scripts -> Root)
 # =============================================================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
+# Asegurar que 08_Scripts_Os esté en path para config_paths
+sys.path.insert(0, SCRIPT_DIR)
+from config_paths import ROOT_DIR
 
 # Fix Windows console encoding
 if sys.platform == "win32":

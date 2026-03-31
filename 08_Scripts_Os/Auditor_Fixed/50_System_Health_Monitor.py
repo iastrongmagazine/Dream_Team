@@ -15,8 +15,8 @@ except ImportError:
         pass
 
 
-# Add ROOT_DIR to path for imports
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+# Add 08_Scripts_Os to path (un nivel up desde Auditor_Fixed)
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from config_paths import (
     CORE_DIR,
     BRAIN_DIR,
@@ -70,10 +70,10 @@ def verify_master_files():
     print(f"\n{Fore.CYAN}--- Verificando Archivos Maestros ---")
     master_files = ["CLAUDE.md", "README.md"]
     all_found = True
-    # Need to go up 3 levels from _Fixed/08_Scripts_Os/08_Scripts_Os to root
+    # Auditor_Fixed → 08_Scripts_Os → Think_Different (2 niveles)
     for mf in master_files:
         if os.path.exists(
-            os.path.join(os.path.dirname(__file__), "..", "..", "..", mf)
+            os.path.join(os.path.dirname(__file__), "..", "..", mf)
         ):
             print(f"{Fore.GREEN}[OK] {mf} encontrado.")
         else:

@@ -30,8 +30,8 @@ if sys.platform == "win32":
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent.parent
 
-# Add Legacy_Backup for config_paths
-sys.path.insert(0, str(PROJECT_ROOT / "08_Scripts_Os" / "Legacy_Backup"))
+# Add 08_Scripts_Os to path donde está config_paths
+sys.path.insert(0, str(PROJECT_ROOT / "08_Scripts_Os"))
 from config_paths import ROOT_DIR, OPERATIONS_DIR, KNOWLEDGE_DIR
 
 

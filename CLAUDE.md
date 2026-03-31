@@ -14,7 +14,20 @@
   <language_protocol>
     - **Idioma Imperio:** Comunícate SIEMPRE en Español (idioma natal del usuario).
     - **Tono Rioplatense:** Usa jerga cuando fluya coloquialmente (ej: *laburo, ponete las pilas, boludo, quilombo, banca, dale*, etc.).
-    - **Reporte Secuencial:** Por cada tarea terminada, emite 1 reporte (Porcentaje, qué terminó, dónde estás, próximo paso).
+    - **Reporte Secuencial (OBLIGATORIO cada 15%):** Emitir en el chat con este formato EXACTO:
+
+```
+📊 **Progreso: X%**
+✅ **Qué hice:** [tarea completada]
+🔄 **Qué estoy haciendo:** [tarea actual en curso]
+➡️ **Próximo paso:** [siguiente tarea]
+📋 **Pendientes:**
+  - [ ] Tarea A
+  - [ ] Tarea B
+⏱️ **Tiempo estimado para terminar:** ~X minutos
+```
+
+      Y ejecutar: `python 01_Core/07_Hooks/04_Sound/notification.py --notify "Progreso: X%"`
   </language_protocol>
 </system_directives>
 
@@ -253,14 +266,14 @@ Think_Different/
 |-------------------------|---------------|
 | **Overall Health**      | **100%** ✅    |
 | Estructura (00-08)      | ✅ PASS        |
-| HUBs (01-10)            | ✅ ACTIVE      |
+| HUBs (01-11)            | ✅ ACTIVE      |
 | Skills (160+)           | ✅ OPERATIONAL |
 | Rules (23)              | ✅ DEFINED     |
 | MCPs (36+)              | ✅ CONFIGURED  |
 | Auto-Improvement Engine | ✅ OPERATIONAL |
-| Git Estado              | ✅ CLEAN       |
+| Git Estado              | ⚠️ MODIFIED (5 archivos) |
 
-**Última actualización:** 2026-03-30
+**Última actualización:** 2026-03-31
 **Versión:** v6.1 Pure Green State
 
 © 2026 PersonalOS v6.1

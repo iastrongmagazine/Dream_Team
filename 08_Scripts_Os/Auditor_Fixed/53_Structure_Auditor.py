@@ -5,16 +5,18 @@ from colorama import init, Fore, Style
 init(autoreset=True)
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
-ENGINE_DIR = ROOT_DIR / "08_Scripts_Os" / "08_Scripts_Os"
+ENGINE_DIR = ROOT_DIR / "08_Scripts_Os"
 
 DIMENSIONS = [
-    "00_Core",
-    "01_Brain",
-    "02_Operations",
-    "03_Knowledge",
+    "00_Winter_is_Coming",
+    "01_Core",
+    "02_Knowledge",
+    "03_Tasks",
+    "04_Operations",
+    "05_Archive",
+    "06_Playground",
+    "07_Projects",
     "08_Scripts_Os",
-    "05_System",
-    "06_Archive",
 ]
 
 

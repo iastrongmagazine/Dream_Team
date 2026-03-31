@@ -29,7 +29,7 @@
           },
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File .agent/04_Extensions/hooks/04_Sound/task-complete-sound.ps1"
+            "command": "python 01_Core/07_Hooks/04_Sound/notification.py --task-complete"
           }
         ]
       }
@@ -59,7 +59,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python .agent/04_Extensions/hooks/04_Sound/notification.py --notify"
+            "command": "python 01_Core/07_Hooks/04_Sound/notification.py --notify"
           }
         ]
       }
@@ -69,7 +69,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File .agent/04_Extensions/hooks/04_Sound/task-complete-sound.ps1"
+            "command": "python 01_Core/07_Hooks/04_Sound/notification.py --task-complete"
           }
         ]
       }

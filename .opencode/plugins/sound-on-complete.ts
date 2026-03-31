@@ -25,26 +25,30 @@ interface SessionEvent {
  */
 function playSound(): void {
 	const platform = process.platform
-	
+
 	let cmd: string[]
-	
+
 	if (platform === "win32") {
-		// Windows: PowerShell [console]::Beep(frequency, duration)
-		// 440Hz for 200ms = pleasant completion tone
-		// Use double quotes to prevent bash interpreting [ as variable
-		cmd = ["powershell", "-Command", "[console]::Beep(440, 200)"]
+		// Windows: SystemAsterisk via winsound (doble beep ascendente como fallback)
+		cmd = [
+			"powershell.exe",
+			"-NoProfile",
+			"-NonInteractive",
+			"-Command",
+			"try { [System.Media.SystemSounds]::Asterisk.Play() } catch { [Console]::Beep(800,150); [Console]::Beep(1100,200) }",
+		]
 	} else if (platform === "darwin") {
 		// macOS: afplay system beep
 		cmd = ["afplay", "/System/Library/Sounds/Glass.aiff"]
 	} else {
-		// Linux: beep command or paplay
+		// Linux: paplay
 		cmd = ["paplay", "/usr/share/sounds/gnome/defaults/alerts/glass.ogg"]
 	}
-	
-	// Use Bun.spawn like notify.ts does
+
+	// Use Bun.spawn — pipe stderr para poder ver errores en logs
 	const proc = Bun.spawn(cmd, {
-		stdout: "ignore",
-		stderr: "ignore",
+		stdout: "pipe",
+		stderr: "pipe",
 	})
 	proc.unref()
 }

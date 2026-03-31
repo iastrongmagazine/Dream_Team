@@ -162,8 +162,9 @@ def main():
     try:
         import winsound
         winsound.Beep(800, 100)
-    except:
-        pass
+        print("[Sound] Beep OK")
+    except Exception as e:
+        print(f"[Sound] Beep falló: {e}")
 
     # Notificación de voz selectiva usando el sistema inteligente
     # Solo notificar para modificaciones de archivos importantes (prioridad normal)
