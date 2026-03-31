@@ -89,7 +89,7 @@ Swarm + Auditor + Engram + Docs pattern:
 
 ### Beautify Tables Script
 
-- ✅ Created `Beautify_Tables_v2.py`
+- ✅ Created `02_Beautify_Tables.py`
 - ✅ Executed on all 2059 markdown files in project
 
 ---
@@ -145,9 +145,10 @@ Swarm + Auditor + Engram + Docs pattern:
 
 | File | Descripción |
 |------|-------------|
-| `08_Scripts_Os/Beautify_Tables_v2.py` | Table beautifier script |
-| `08_Scripts_Os/Legacy_Backup/35_Beautify_Tables.py` | Original source |
-| `08_Scripts_Os/Legacy_Backup/36_Beauty_Doc.py` | Document beautifier |
+| `08_Scripts_Os/02_Beautify_Tables.py` | Table beautifier script |
+| `08_Scripts_Os/03_Beauty_Doc.py` | Document beautifier |
+| `08_Scripts_Os/01_Context_Usage_Bar.py` | Context progress bar |
+| `08_Scripts_Os/00_Sound_Engine.py` | Sound notifications |
 | `08_Scripts_Os/Validator_Fixed/skill_validator.py` | Skill validation |
 
 ---

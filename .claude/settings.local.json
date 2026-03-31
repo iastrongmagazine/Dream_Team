@@ -2,7 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(python3 -c \":*)"
+      "Bash(python3 -c \":*\")"
     ]
   },
   "hooks": {
@@ -26,6 +26,10 @@
           {
             "type": "command",
             "command": "python .agent/04_Extensions/hooks/02_Post_Tool/post_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File .agent/04_Extensions/hooks/04_Sound/task-complete-sound.ps1"
           }
         ]
       }

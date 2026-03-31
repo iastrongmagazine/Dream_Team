@@ -74,7 +74,7 @@ Cada skill ahora tiene:
 | `fix_marketing_essences.py`          | Agregar esencias a Marketing               |   ✅   |
 | `fix_yaml_skills.py`                 | Arreglar skills solo YAML                  |   ✅   |
 | `fix_doc_processing_essences.py`     | Agregar esencias Doc_Processing            |   ✅   |
-| `35_Beautify_Tables.py`              | Embellecer tablas                          |   ✅   |
+| `02_Beautify_Tables.py`              | Embellecer tablas                          |   ✅   |
 
 ---
 
