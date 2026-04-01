@@ -55,9 +55,9 @@ Think_Different/
 
 ├── 08_Scripts_Os/                # 10 HUBs operativos
 
-│   ├── Validator_Fixed/           # skill_validator.py, skill_security_scan.py
+│   ├── 03_Validator/              # skill_validator.py, skill_security_scan.py
 
-│   └── Tool_Fixed/               # Tool Shed, Skill Harmonizer, Notifier
+│   └── 02_Tool/                  # Tool Shed, Skill Harmonizer, Notifier
 
 ├── .agent/                       # Backup estratégico
 
@@ -112,8 +112,8 @@ Think_Different/
 
 | Tool                       | Ubicación                        | Función                |
 |:---------------------------|:---------------------------------|:-----------------------|
-| **skill_validator.py**     | `08_Scripts_Os/Validator_Fixed/` | Valida estructura SOTA |
-| **skill_security_scan.py** | `08_Scripts_Os/Validator_Fixed/` | Escaneo de seguridad   |
+| **skill_validator.py**     | `08_Scripts_Os/03_Validator/` | Valida estructura SOTA |
+| **skill_security_scan.py** | `08_Scripts_Os/03_Validator/` | Escaneo de seguridad   |
 
 - --
 

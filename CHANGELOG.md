@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.5.0 - 2026-04-01
+
+### Added
+- **`00_Plan_Hillary_Integration.md`**: Plan de integración Hillary Life OS → PersonalOS v6.1 (5 skills: Quick Capture, Plan My Day, Daily Notes, Recording Mode, Returns Tracker)
+- **`02_Plan_Restauracion_Opencode.md`**: Plan de restauración quirúrgica de `opencode.json` (Pure Green Recovery)
+- **`03_Task_Restauracion_Opencode.md`**: Checklist de ejecución para restauración de OpenCode
+
+### Fixed
+- **`01_Core/05_Mcp/01_Claude_Code/mcp.json`**: TestSprite migrado a path absoluto + env var `TESTSPRITE_PRIMARY`; notebooklm actualizado a `npx -y notebooklm-mcp@latest`
+- **`01_Core/05_Mcp/02_OpenCode/opencode.json`**: Migración de `npx.cmd` → `npx` en todos los servidores MCP (cross-platform); eliminada clave inválida `plugins`; restaurados servidores exa, Notion, firecrawl, task-master-ai, supadata, zai-mcp-server, excalidraw
+- **`README.md`**: Corregidos paths obsoletos `Validator_Fixed/` → `03_Validator/` y `Tool_Fixed/` → `02_Tool/`
+
+### Removed
+- **`PLAN_HILLARY_INTEGRATION.md`**: Renombrado a `00_Plan_Hillary_Integration.md` siguiendo convención de numeración canónica
+
+---
+
 ## 1.4.0 - 2026-04-01
 
 ### Refactor — Nomenclatura canónica y saneamiento total

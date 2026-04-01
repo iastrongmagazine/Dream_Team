@@ -142,11 +142,21 @@
   "mcp": {
     "@magicuidesign_mcp": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@magicuidesign/mcp@latest"]
+      "command": [
+        "npx",
+        "-y",
+        "@magicuidesign/mcp@latest"
+      ]
     },
     "aim-memory-bank": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "mcp-knowledge-graph", "--memory-path", ".aim"]
+      "command": [
+        "npx",
+        "-y",
+        "mcp-knowledge-graph",
+        "--memory-path",
+        ".aim"
+      ]
     },
     "context7": {
       "enabled": true,
@@ -162,18 +172,35 @@
     },
     "exa": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "exa-mcp-server"],
+      "command": [
+        "npx",
+        "-y",
+        "exa-mcp-server"
+      ],
       "env": {
         "EXA_API_KEY": "9ddeba3a-6948-4dab-85f2-fbb6fb054020"
       }
     },
     "filesystem": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@modelcontextprotocol/server-filesystem", ".", "C:\\Users\\sebas\\Downloads"]
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        ".",
+        "C:\\Users\\sebas\\Downloads"
+      ]
     },
     "fireflies": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "mcp-remote", "https://api.fireflies.ai/mcp", "--header", "Authorization: Bearer 1a6c7e44-cb37-448c-bcae-6b174d977233"]
+      "command": [
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://api.fireflies.ai/mcp",
+        "--header",
+        "Authorization: Bearer 1a6c7e44-cb37-448c-bcae-6b174d977233"
+      ]
     },
     "github": {
       "type": "remote",
@@ -184,22 +211,40 @@
     },
     "mcp-obsidian": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "obsidian-mcp@latest", "C:\\Users\\sebas\\Downloads\\01 Revisar\\06 Context Bunker\\AI Strong Bunker"]
+      "command": [
+        "npx",
+        "-y",
+        "obsidian-mcp@latest",
+        "C:\\Users\\sebas\\Downloads\\01 Revisar\\06 Context Bunker\\AI Strong Bunker"
+      ]
     },
     "n8n-mcp": {
       "type": "local",
-      "command": ["docker", "run", "--rm", "-i", "ghcr.io/czlonkowski/n8n-mcp:latest"]
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-i",
+        "ghcr.io/czlonkowski/n8n-mcp:latest"
+      ]
     },
     "Notion": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@notionhq/notion-mcp-server@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "@notionhq/notion-mcp-server@latest"
+      ],
       "env": {
         "NOTION_TOKEN": "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"
       }
     },
     "Playwright": {
       "type": "local",
-      "command": ["npx.cmd", "@playwright/mcp@latest"]
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ]
     },
     "supabase": {
       "type": "remote",
@@ -210,14 +255,21 @@
     },
     "task-master-ai": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "task-master-ai@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "task-master-ai@latest"
+      ],
       "env": {
         "OPENROUTER_API_KEY": "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"
       }
     },
     "TestSprite": {
       "type": "local",
-      "command": ["bash", "08_Scripts_Os/testsprite_failover.sh"]
+      "command": [
+        "bash",
+        "08_Scripts_Os/testsprite_failover.sh"
+      ]
     },
     "Linear": {
       "type": "remote",
@@ -232,18 +284,28 @@
     },
     "notebooklm": {
       "type": "local",
-      "command": ["notebooklm-mcp.cmd"]
+      "command": [
+        "notebooklm-mcp.cmd"
+      ]
     },
     "supadata": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@supadata/mcp@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "@supadata/mcp@latest"
+      ],
       "env": {
         "SUPADATA_API_KEY": "sd_8fecf5d9caff56612eb6aa0e50ad6931"
       }
     },
     "zai-mcp-server": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@z_ai/mcp-server"],
+      "command": [
+        "npx",
+        "-y",
+        "@z_ai/mcp-server"
+      ],
       "env": {
         "Z_AI_API_KEY": "cc1d95c25d4e4cedab7c546846adf7f7.Wq3L5omNquBRHL59",
         "Z_AI_MODE": "ZAI"
@@ -251,14 +313,22 @@
     },
     "excalidraw-yctimlin": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "excalidraw-mcp@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "excalidraw-mcp@latest"
+      ],
       "env": {
         "EXCALIDRAW_VAULT_PATH": "C:\\Users\\sebas\\Documents\\Diagramas Excalidraw"
       }
     },
     "firecrawl-mcp": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "firecrawl-mcp"],
+      "command": [
+        "npx",
+        "-y",
+        "firecrawl-mcp"
+      ],
       "env": {
         "FIRECRAWL_API_KEY": "fc-34ac9eebd51349aeada4af8abb97e2cf"
       }
@@ -273,27 +343,55 @@
     },
     "obsidian-api": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "obsidian-mcp@latest", "C:\\Users\\sebas\\Downloads\\01 Revisar\\06 Context Bunker\\AI Strong Bunker"]
+      "command": [
+        "npx",
+        "-y",
+        "obsidian-mcp@latest",
+        "C:\\Users\\sebas\\Downloads\\01 Revisar\\06 Context Bunker\\AI Strong Bunker"
+      ]
     },
     "google-workspace": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@presto-ai/google-workspace-mcp"]
+      "command": [
+        "npx",
+        "-y",
+        "@presto-ai/google-workspace-mcp"
+      ]
     },
     "chrome-devtools": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "chrome-devtools-mcp@latest"]
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
     },
     "stackoverflow": {
       "type": "local",
-      "command": ["npx.cmd", "-y", "@modelcontextprotocol/server-stackoverflow"]
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-stackoverflow"
+      ]
     },
     "docker": {
       "type": "local",
-      "command": ["docker", "run", "--rm", "-i", "--mount", "type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock", "mcp/docker:latest"]
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-i",
+        "--mount",
+        "type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock",
+        "mcp/docker:latest"
+      ]
     },
     "qmd": {
       "type": "local",
-      "command": ["qmd", "mcp"]
+      "command": [
+        "qmd",
+        "mcp"
+      ]
     },
     "vercel": {
       "type": "remote",
@@ -352,11 +450,6 @@
     "gentleman/06_Compound_Engineering/ce-work-beta": {
       "enabled": true,
       "path": "{config}/skills/gentleman/06_Compound_Engineering/ce-work-beta"
-    }
-  },
-  "plugins": {
-    "./.opencode/plugins/sound-on-complete.ts": {
-      "enabled": true
     }
   }
 }
