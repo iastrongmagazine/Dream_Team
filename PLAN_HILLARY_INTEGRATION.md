@@ -199,7 +199,7 @@
 
 | # | Tarea | Archivo/Path | Estado |
 |---|-------|--------------|--------|
-| 4.1 | Crear symlink o referencia | `03_Tasks/11_Hillary_Inbox/` → Quick Capture inbox | ⏳ |
+| 4.1 | Crear symlink o referencia | `03_Tasks/02_Hillary_Inbox/` → Quick Capture inbox | ⏳ |
 | 4.2 | Configurar hook de conversión | Quick Capture → task en 03_Tasks/ | ⏳ |
 | 4.3 | Agregar a GOALS.md | Referencia a Hillary Life OS | ⏳ |
 
