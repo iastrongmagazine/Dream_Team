@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.0 - 2026-04-01
+
+### Fixed
+- **`.claude/settings.local.json`**: Eliminado sonido en `PostToolUse` (disparaba en cada tool call — ruidoso e inútil)
+- **`.claude/settings.local.json`**: `UserPromptSubmit` usaba `--notify` sin argumento (error de runtime) → corregido a `--beep`
+- **`CLAUDE.md`**: Git Estado actualizado de MODIFIED → CLEAN
+- **`CLAUDE.md`**: Fecha de última actualización corregida a 2026-04-01
+
+### Sound System — Comportamiento final
+- `TodoWrite` → `notification.py --task-complete` ✅ (suena cuando el agente actualiza tareas)
+- `Stop` → `stop.py` ✅ (suena + System Guardian al cerrar sesión)
+- `UserPromptSubmit` → `notification.py --beep` ✅ (beep simple al recibir mensaje)
+- `PostToolUse` → solo `post_tool_use.py` (sin sonido — era demasiado ruidoso)
+
+---
+
 ## 1.2.0 - 2026-03-31
 
 ### Fixed

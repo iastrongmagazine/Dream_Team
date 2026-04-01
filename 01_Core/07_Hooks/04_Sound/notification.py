@@ -34,7 +34,7 @@ def play_sound_windows(sound_type="Asterisk"):
             "Success":     "SystemAsterisk",
         }
         alias = alias_map.get(sound_type, "SystemAsterisk")
-        winsound.PlaySound(alias, winsound.SND_ALIAS | winsound.SND_ASYNC)
+        winsound.PlaySound(alias, winsound.SND_ALIAS)
         return True
     except Exception:
         return False

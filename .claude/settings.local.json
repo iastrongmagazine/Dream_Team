@@ -34,10 +34,6 @@
           {
             "type": "command",
             "command": "python .agent/04_Extensions/hooks/02_Post_Tool/post_tool_use.py"
-          },
-          {
-            "type": "command",
-            "command": "python 01_Core/07_Hooks/04_Sound/notification.py --task-complete"
           }
         ]
       }
@@ -67,7 +63,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python 01_Core/07_Hooks/04_Sound/notification.py --notify"
+            "command": "python 01_Core/07_Hooks/04_Sound/notification.py --beep"
           }
         ]
       }
