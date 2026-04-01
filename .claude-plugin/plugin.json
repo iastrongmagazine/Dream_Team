@@ -34,7 +34,7 @@
       "08_Scripts_Os"
     ],
     "core_folders": [
-      "01_Core/03_Agents",
+      "01_Core/04_Agents",
       "01_Core/03_Skills",
       "01_Core/02_Evals",
       "01_Core/05_Mcp"

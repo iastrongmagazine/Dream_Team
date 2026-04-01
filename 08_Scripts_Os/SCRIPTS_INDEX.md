@@ -32,6 +32,10 @@
 | 08  | `Workflow_Hub.py`    | Workflows SOTA            | ✅ ACTIVO |
 | 09  | `Data_Hub.py`        | Datos/Sync                | ✅ ACTIVO |
 | 10  | `General_Hub.py`     | Utilidades                | ✅ ACTIVO |
+| 11  | `Auto_Learn_Hub.py`  | Motor de automejora       | ✅ ACTIVO |
+| 12  | `Context_Usage_Bar.py` | Barra de uso de contexto | ✅ ACTIVO |
+| 13  | `Beautify_Tables.py` | Formateo de tablas        | ✅ ACTIVO |
+| 14  | `Beauty_Doc.py`      | Documentos embellecidos   | ✅ ACTIVO |
 
 ### Usage
 
@@ -173,4 +177,4 @@ Scripts en Ritual_Fixed con sus skills asociadas:
 
 ---
 
-*Actualizado: 2026-03-29 — Scripts y Skills integrados*
+*Actualizado: 2026-03-31 — Scripts 12-14 renombrados para resolver colisión de numeración*
