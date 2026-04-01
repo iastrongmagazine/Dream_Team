@@ -14,11 +14,11 @@ Integrated stack: PersonalOS + SDD + Compound Engineering + Gentleman Skills + G
 
 | Herramienta          | Ubicación                                         | Función                              |
 |----------------------|---------------------------------------------------|--------------------------------------|
-| **Tool Shed**        | `08_Scripts_Os/Tool_Fixed/62_Tool_Shed.py`        | Auto-detecta contexto y sugiere MCPs |
-| **Skill Harmonizer** | `08_Scripts_Os/Tool_Fixed/63_Skill_Harmonizer.py` | Valida paridad de skills (20/20)     |
-| **Notifier**         | `08_Scripts_Os/Tool_Fixed/00_Notifier.py`         | Sonido al completar tareas           |
+| **Tool Shed**        | `08_Scripts_Os/02_Tool/62_Tool_Shed.py`        | Auto-detecta contexto y sugiere MCPs |
+| **Skill Harmonizer** | `08_Scripts_Os/02_Tool/63_Skill_Harmonizer.py` | Valida paridad de skills (20/20)     |
+| **Notifier**         | `08_Scripts_Os/02_Tool/00_Notifier.py`         | Sonido al completar tareas           |
 
-### Scripts Reparados (Ritual_Fixed)
+### Scripts Operativos (01_Ritual)
 
 - 08, 11, 12, 13, 16, 17, 19, 50, 57 — todos funcionando
 
@@ -93,8 +93,11 @@ Think_Different/
 ├── 04_Docs/                 # 📋 Planes estratégicos
 ├── 05_Archive/              # 📦 Legacy archivado
 ├── 08_Scripts_Os/           # 🔧 Scripts operativos
-│   ├── Ritual_Fixed/        # 12 scripts funcionando
-│   └── Tool_Fixed/          # Herramientas (Tool Shed, Skill Harmonizer, Notifier)
+│   ├── 01_Ritual/           # 12 scripts de rituales
+│   ├── 02_Tool/             # Herramientas (Tool Shed, Skill Harmonizer, Notifier)
+│   ├── 03_Validator/        # Validadores
+│   ├── 04_Workflow/         # Workflows
+│   └── 10_Legacy/           # Scripts legacy
 └── .agent/                  # 💾 BACKUP ESTRATÉGICO (sincronizado con 01_Core/)
 ```
 

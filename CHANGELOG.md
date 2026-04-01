@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.4.0 - 2026-04-01
+
+### Refactor — Nomenclatura canónica y saneamiento total
+- **`08_Scripts_Os/`**: Renombradas 10 carpetas `*_Fixed` a nomenclatura `XX_Nombre`:
+  - `Ritual_Fixed` → `01_Ritual`
+  - `Tool_Fixed` → `02_Tool`
+  - `Validator_Fixed` → `03_Validator`
+  - `Workflow_Fixed` → `04_Workflow`
+  - `AIPM_Fixed` → `05_AIPM`
+  - `Auditor_Fixed` → `06_Auditor`
+  - `Data_Fixed` → `07_Data`
+  - `General_Fixed` → `08_General`
+  - `Integration_Fixed` → `09_Integration`
+  - `Legacy_Backup` → `10_Legacy`
+- **`01_Core/07_Hooks/`**: `05_Post_Hulk_Compound` → `06_Post_Hulk_Compound` (prefijo duplicado resuelto)
+- **`01_Core/09_Server/00_Env/config_paths.py`**: DIMENSIONS actualizadas a v6.1 (9 dimensiones correctas), ENGINE_DIR corregido a `08_Scripts_Os`
+- **`01_Core/Requirements.txt`**: Unificado con versiones actuales (`mcp>=1.26.0`, `anthropic>=0.84.0`, `python-dotenv>=1.0.0`, `colorama>=0.4.6`)
+- **`01_Core/09_Server/00_Env/Requirements.txt`**: Sincronizado con fuente de verdad (agregado `colorama>=0.4.6`)
+- **`01_Core/09_Server/00_Config_Aliases/aliases.sh`**: Agregados aliases para hubs 11-14 (`auto-learn`, `context-bar`, `beautify`, `beauty-doc`), rutas absolutas via `$PERSONAL_OS_ROOT`, auto-detección de raíz
+- **`.claude/01_Commands/genesis.md`**: Corregido script invocado (`04_Ritual_Hub.py --mode genesis` en vez de `08_Ritual_Cierre.py`)
+- **`01_Core/07_Hooks/06_Post_Hulk_Compound/post_hulk_compound.py`**: Corregido `project_root` (era `_ext_root.parent.parent` → ahora `_ext_root.parent`) y ruta a `56_Organize_Solutions.py`
+- **Documentación**: Actualizadas referencias en `CLAUDE.md`, `AGENTS.md`, `08_Scripts_Os/README.md`, `08_Scripts_Os/SCRIPTS_INDEX.md`
+
+---
+
 ## 1.3.0 - 2026-04-01
 
 ### Fixed

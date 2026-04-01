@@ -139,7 +139,7 @@ Scripts legacy en `08_Scripts_Os/Legacy_Backup/` — referensiados por números:
 
 ## 🔗 Scripts → Skills Mapping (2026-03-29)
 
-Scripts en Ritual_Fixed con sus skills asociadas:
+Scripts en 01_Ritual con sus skills asociadas:
 
 | Script                        | Skill              | Estado   |
 |-------------------------------|--------------------|----------|
@@ -157,7 +157,7 @@ Scripts en Ritual_Fixed con sus skills asociadas:
 
 ---
 
-## 📁 Scripts por Carpeta (Ritual_Fixed)
+## 📁 Scripts por Carpeta (01_Ritual)
 
 | Script                        | Función              |
 |-------------------------------|----------------------|
@@ -177,4 +177,4 @@ Scripts en Ritual_Fixed con sus skills asociadas:
 
 ---
 
-*Actualizado: 2026-03-31 — Scripts 12-14 renombrados para resolver colisión de numeración*
+*Actualizado: 2026-04-01 — Carpetas renombradas a nomenclatura canónica (XX_Nombre)*

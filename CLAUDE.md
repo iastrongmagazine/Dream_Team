@@ -148,7 +148,7 @@ Think_Different/
 | --- 06_Playground/           # Area de pruebas                        |
 | --- 07_Projects/             # Proyectos activos                      |
 | --- 08_Scripts_Os/           # HUBs: Auditor, Git, AIPM, Ritual, etc. |
-| +--- Validator_Fixed/    # skill_validator.py, skill_security_scan.py |
+| +--- 03_Validator/       # skill_validator.py, skill_security_scan.py  |
 | --- .agent/                   # Backup estratégico                    |
 | --- .atl/                    # SDD Registry                           |
 | --- .gga                     # Guardian Angel (Code Review)           |

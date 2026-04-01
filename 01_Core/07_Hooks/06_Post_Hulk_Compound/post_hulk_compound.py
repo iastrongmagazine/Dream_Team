@@ -1,7 +1,5 @@
-import os
 import sys
 import subprocess
-from datetime import datetime
 from pathlib import Path
 
 if sys.platform == "win32":
@@ -47,9 +45,8 @@ def log_to_json(event, data):
 def main():
     print("--- POST-HULK-COMPOUND HOOK ---")
 
-    project_root = _ext_root.parent.parent
-    script_dir = project_root / "04_Operations" / "08_Scripts_Os"
-    organize_script = script_dir / "56_Organize_Solutions.py"
+    project_root = _ext_root.parent
+    organize_script = project_root / "08_Scripts_Os" / "10_Legacy" / "56_Organize_Solutions.py"
 
     if not organize_script.exists():
         print("[!] 56_Organize_Solutions.py not found. Skipping.")

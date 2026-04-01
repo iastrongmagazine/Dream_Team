@@ -18,11 +18,12 @@ Ejecuta el workflow de inicio de sesión para cargar el contexto completo del si
 Execute the Iron Man startup workflow:
 
 ```bash
-python 08_Scripts_Os/08_Ritual_Cierre.py --mode genesis
+python 08_Scripts_Os/04_Ritual_Hub.py --mode genesis $ARGUMENTS
 ```
 
 This loads:
 - Session rules (.claude/02_Rules/)
-- Long-term memory (01_Core/01_Context_Memory/)
-- Process notes (01_Core/03_Process_Notes/)
-- Task status (04_Operations/01_Active_Tasks/)
+- Long-term memory (engram_mem_context)
+- Process notes (04_Operations/03_Process_Notes/)
+- Task status (03_Tasks/)
+- Goals & Backlog (00_Winter_is_Coming/)

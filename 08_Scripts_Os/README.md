@@ -44,11 +44,16 @@ Think_Different/
 ├── 09_Data_Hub.py             # Datos y sincronización
 ├── 10_General_Hub.py          # Utilidades generales
 ├── 11_Anthropic_Harness/     # Anthropic patterns
-├── Ritual_Fixed/              # Rituales funcionando (12 scripts)
-├── Tool_Fixed/                # Herramientas (6)
-├── Validator_Fixed/           # Validadores funcionando
-├── Workflow_Fixed/            # Workflows funcionando
-└── Legacy_Backup/             # Scripts legacy (referencia)
+├── 01_Ritual/                 # Rituales (12 scripts)
+├── 02_Tool/                   # Herramientas (Tool Shed, Skill Harmonizer, Notifier)
+├── 03_Validator/              # Validadores
+├── 04_Workflow/               # Workflows
+├── 05_AIPM/                   # AIPM scripts
+├── 06_Auditor/                # Auditor scripts
+├── 07_Data/                   # Data scripts
+├── 08_General/                # General utilities
+├── 09_Integration/            # Integration scripts
+└── 10_Legacy/                 # Scripts legacy (referencia)
 ```
 
 ---
@@ -61,15 +66,15 @@ El **motor de automatización** del PersonalOS - scripts Python para operaciones
 
 ## 📊 Estadísticas
 
-| Área                     | Cantidad   | Estado        |
-|--------------------------|------------|---------------|
-| Scripts en _Fixed        | 26         | ✅ Funcionando |
-| Scripts en Legacy_Backup | 60+        | ⚠️ Legacy     |
-| HUBs principales         | 10         | ✅ Activos     |
+| Área                        | Cantidad   | Estado        |
+|-----------------------------|------------|---------------|
+| Scripts en 01-09_Carpetas   | 26         | ✅ Funcionando |
+| Scripts en 10_Legacy        | 60+        | ⚠️ Legacy     |
+| HUBs principales (00-14)    | 15         | ✅ Activos     |
 
 ---
 
-## 🔧 Scripts Principales (Ritual_Fixed)
+## 🔧 Scripts Principales (01_Ritual)
 
 | Script                    | Función            | Skill Asociada     |
 |---------------------------|--------------------|--------------------|
@@ -87,13 +92,13 @@ El **motor de automatización** del PersonalOS - scripts Python para operaciones
 
 ```bash
 # Ejecutar Morning Standup
-python 08_Scripts_Os/Ritual_Fixed/14_Morning_Standup.py
+python 08_Scripts_Os/01_Ritual/14_Morning_Standup.py
 
 # Ejecutar Weekly Review
-python 08_Scripts_Os/Ritual_Fixed/15_Weekly_Review.py
+python 08_Scripts_Os/01_Ritual/15_Weekly_Review.py
 
 # Ejecutar Ritual de Cierre
-python 08_Scripts_Os/Ritual_Fixed/08_Ritual_Cierre.py
+python 08_Scripts_Os/01_Ritual/08_Ritual_Cierre.py
 
 # Ver índice completo
 cat 08_Scripts_Os/SCRIPTS_INDEX.md
@@ -104,16 +109,16 @@ cat 08_Scripts_Os/SCRIPTS_INDEX.md
 ## 📚 Recursos
 
 - [SCRIPTS_INDEX.md](./SCRIPTS_INDEX.md) — Índice completo de scripts
-- [Legacy_Backup](./Legacy_Backup/) — Scripts legacy (referencia)
+- [10_Legacy](./10_Legacy/) — Scripts legacy (referencia)
 - [01_Core/03_Skills/08_Personal_Os/](../01_Core/03_Skills/08_Personal_Os/) — Skills asociadas
 
 ---
 
-## ✅ Notas Importantes (2026-03-29)
+## ✅ Notas Importantes (2026-04-01)
 
-- Scripts en carpetas `_Fixed` están funcionando y probados
+- Scripts organizados en carpetas numeradas `01_Ritual` a `09_Integration`
 - Cada script tiene una skill asociada en `08_Personal_Os`
-- Los scripts legacy en Legacy_Backup pueden tener rutas obsoletas
+- Los scripts legacy en `10_Legacy/` pueden tener rutas obsoletas
 
 ---
 
