@@ -81,7 +81,7 @@ Build time: 2.3s
 
 #### Persist Report
 
-Writes to `openspec/changes/add-jwt-auth/verify-report.md`
+Writes to `.atl/openspec/changes/add-jwt-auth/verify-report.md`
 
 ### Return Summary
 

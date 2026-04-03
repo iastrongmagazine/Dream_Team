@@ -179,7 +179,7 @@ Ran verification, found issues, but didn't save report.
 **Change**: add-webhooks
 [Full report content]
 
-[Never saves to openspec/changes/add-webhooks/verify-report.md]
+[Never saves to .atl/openspec/changes/add-webhooks/verify-report.md]
 ```
 
 ### Why This Is Bad

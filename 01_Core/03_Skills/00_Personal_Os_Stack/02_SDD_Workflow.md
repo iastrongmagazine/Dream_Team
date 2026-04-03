@@ -31,7 +31,7 @@ Spec-Driven Development (SDD) es la metodología principal del PersonalOS.
 
 Cada fase genera artefactos que se guardan en:
 - **Engram** (memoria persistente)
-- **openspec/** (archivos locales)
+- **.atl/openspec/** (archivos locales)
 
 ## Reglas
 

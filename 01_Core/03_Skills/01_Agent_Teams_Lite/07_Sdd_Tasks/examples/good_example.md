@@ -61,7 +61,7 @@ First read design.md to understand all file changes and decisions:
 ## Tasks Created
 
 **Change**: add-jwt-auth
-**Location**: openspec/changes/add-jwt-auth/tasks.md
+**Location**: .atl/openspec/changes/add-jwt-auth/tasks.md
 
 ### Breakdown
 | Phase   | Tasks   | Focus                             |

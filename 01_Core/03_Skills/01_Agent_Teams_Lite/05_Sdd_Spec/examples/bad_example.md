@@ -109,7 +109,7 @@ Users MAY delete their profile.
 ### Orchestrator Prompt
 ```
 Write specs for update-checkout change.
-(Existing specs at openspec/specs/payments/spec.md)
+(Existing specs at .atl/openspec/specs/payments/spec.md)
 Mode: openspec
 ```
 
@@ -124,14 +124,14 @@ Mode: openspec
 
 The system MUST implement new payment flow.
 
-[Creates delta without reading existing openspec/specs/payments/spec.md]
+[Creates delta without reading existing .atl/openspec/specs/payments/spec.md]
 ```
 
 ### Why This Is Bad
 
-1. **Didn't read existing spec**: Should read `openspec/specs/payments/spec.md` first
+1. **Didn't read existing spec**: Should read `.atl/openspec/specs/payments/spec.md` first
 2. **May create conflicts**: Need to understand current behavior
-3. **Violated rule**: "If openspec/specs/{domain}/spec.md exists, read it to understand CURRENT behavior"
+3. **Violated rule**: "If .atl/openspec/specs/{domain}/spec.md exists, read it to understand CURRENT behavior"
 4. **Delta without context**: Don't know what's already there
 
 ---

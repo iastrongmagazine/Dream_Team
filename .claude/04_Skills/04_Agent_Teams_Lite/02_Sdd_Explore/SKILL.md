@@ -32,7 +32,7 @@ Read and follow `skills/_shared/persistence-contract.md` for mode resolution rul
 
 Before starting, load any existing project context and specs per the active convention:
 - **engram**: Search for `sdd-init/{project}` (project context) and `sdd/` (existing artifacts).
-- **openspec**: Read `openspec/config.yaml` and `openspec/specs/`.
+- **openspec**: Read `.atl/openspec/config.yaml` and `.atl/openspec/specs/`.
 - **none**: Use whatever context the orchestrator passed in the prompt.
 
 ## What to Do
@@ -74,7 +74,7 @@ If there are multiple approaches, compare them:
 If the orchestrator provided a change name (i.e., this exploration is part of `/sdd-new`), save your analysis to:
 
 ```
-openspec/changes/{change-name}/
+.atl/openspec/changes/{change-name}/
 └── exploration.md          ← You create this
 ```
 

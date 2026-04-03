@@ -6,7 +6,7 @@ Cloud sync adds a hosted Postgres-backed server mode to Engram so teams can shar
 
 The approach deliberately keeps cloud concerns separate from the local SQLite store. The existing `internal/store/` package is deeply coupled to SQLite (FTS5 VIRTUAL TABLE, `datetime('now')`, PRAGMA statements, `modernc.org/sqlite` driver). Rather than abstracting behind an interface (which would require rewriting 15+ methods), the cloud server gets its own storage layer optimized for Postgres.
 
-References: proposal at `openspec/changes/cloud-sync/proposal.md`, specs at `openspec/changes/cloud-sync/specs/`.
+References: proposal at `.atl/openspec/changes/cloud-sync/proposal.md`, specs at `.atl/openspec/changes/cloud-sync/specs/`.
 
 ---
 

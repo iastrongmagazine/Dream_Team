@@ -36,14 +36,14 @@ From the proposal's "Affected Areas", determine which spec domains are touched. 
 
 ### Step 2: Read Existing Specs
 
-If `openspec/specs/{domain}/spec.md` exists, read it to understand CURRENT behavior. Your delta specs describe CHANGES to this behavior.
+If `.atl/openspec/specs/{domain}/spec.md` exists, read it to understand CURRENT behavior. Your delta specs describe CHANGES to this behavior.
 
 ### Step 3: Write Delta Specs
 
 Create specs inside the change folder:
 
 ```
-openspec/changes/{change-name}/
+.atl/openspec/changes/{change-name}/
 ├── proposal.md              ← (already exists)
 └── specs/
     └── {domain}/
@@ -153,7 +153,7 @@ Ready for design (sdd-design). If design already exists, ready for tasks (sdd-ta
 - Include both happy path AND edge case scenarios
 - Keep scenarios TESTABLE — someone should be able to write an automated test from each one
 - DO NOT include implementation details in specs — specs describe WHAT, not HOW
-- Apply any `rules.specs` from `openspec/config.yaml`
+- Apply any `rules.specs` from `.atl/openspec/config.yaml`
 - Return a structured envelope with: `status`, `executive_summary`, `detailed_report` (optional), `artifacts`, `next_recommended`, and `risks`
 
 ## RFC 2119 Keywords Quick Reference

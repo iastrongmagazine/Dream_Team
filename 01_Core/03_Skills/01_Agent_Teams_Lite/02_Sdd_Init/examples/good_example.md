@@ -59,10 +59,10 @@ Initialize SDD for this Go API project using openspec mode.
 **Persistence**: openspec
 
 ### Structure Created
-- openspec/config.yaml ← Project config with detected context
-- openspec/specs/      ← Ready for specifications
-- openspec/changes/    ← Ready for change proposals
-- openspec/changes/archive/ ← Archive directory
+- .atl/openspec/config.yaml ← Project config with detected context
+- .atl/openspec/specs/      ← Ready for specifications
+- .atl/openspec/changes/    ← Ready for change proposals
+- .atl/openspec/changes/archive/ ← Archive directory
 
 ### Config Generated
 ```yaml

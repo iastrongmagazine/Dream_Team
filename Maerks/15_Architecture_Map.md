@@ -6358,7 +6358,7 @@
         - check.go
         - check_test.go
     - LICENSE
-    - openspec/
+    - .atl/openspec/
       - changes/
         - cloud-sync/
           - design.md

@@ -44,7 +44,7 @@ tags: []
 |---------------------------------------------------------------|----------|-----------------------------------|
 | `06_Playground/Hillary_Life_OS_Lab/01_Quick_Capture/SKILL.md` | New      | Skill principal de captura        |
 | `06_Playground/Hillary_Life_OS_Lab/01_Quick_Capture/inbox/`   | New      | Directorio para tareas capturadas |
-| `openspec/changes/quick-capture/proposal.md`                  | New      | Este documento                    |
+| `.atl/openspec/changes/quick-capture/proposal.md`                  | New      | Este documento                    |
 
 ## Risks
 
@@ -56,7 +56,7 @@ tags: []
 ## Rollback Plan
 
 1. Eliminar carpeta `01_Quick_Capture/`
-2. Eliminar `openspec/changes/quick-capture/`
+2. Eliminar `.atl/openspec/changes/quick-capture/`
 3. No hay impacto en sistema existente (skill nueva)
 
 ## Dependencies

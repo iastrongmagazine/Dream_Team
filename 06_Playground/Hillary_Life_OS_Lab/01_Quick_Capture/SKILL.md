@@ -228,8 +228,8 @@ Minimal logging — only errors. No success messages (anti-system philosophy).
 
 ## Related Artifacts
 
-- **Proposal**: `openspec/changes/quick-capture/proposal.md`
-- **Spec**: `openspec/changes/quick-capture/specs/quick-capture/spec.md`
+- **Proposal**: `.atl/openspec/changes/quick-capture/proposal.md`
+- **Spec**: `.atl/openspec/changes/quick-capture/specs/quick-capture/spec.md`
 
 ---
 

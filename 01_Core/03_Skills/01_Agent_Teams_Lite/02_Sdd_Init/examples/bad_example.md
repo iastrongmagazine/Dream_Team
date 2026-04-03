@@ -46,12 +46,12 @@ Initialize SDD for my Python FastAPI project.
 **Persistence**: openspec
 
 ### Structure Created
-- openspec/config.yaml
-- openspec/specs/
-- openspec/specs/placeholder.md ← BAD: Don't create this!
-- openspec/specs/api/placeholder.md ← BAD!
-- openspec/changes/
-- openspec/changes/archive/
+- .atl/openspec/config.yaml
+- .atl/openspec/specs/
+- .atl/openspec/specs/placeholder.md ← BAD: Don't create this!
+- .atl/openspec/specs/api/placeholder.md ← BAD!
+- .atl/openspec/changes/
+- .atl/openspec/changes/archive/
 
 ### Context
 This is a FastAPI project.
@@ -70,7 +70,7 @@ This is a FastAPI project.
 
 ### Orchestrator Prompt
 ```
-Initialize SDD for this project that already has openspec/.
+Initialize SDD for this project that already has .atl/openspec/.
 ```
 
 ### Agent Execution (INCORRECT)
@@ -82,12 +82,12 @@ Initialize SDD for this project that already has openspec/.
 **Stack**: Angular, NestJS, PostgreSQL
 **Persistence**: openspec
 
-Created fresh openspec/ directory structure.
+Created fresh .atl/openspec/ directory structure.
 ```
 
 ### Why This Is Bad
 
-1. **Ignored existing structure**: Should check if openspec/ already exists
-2. **Overwrote potentially valuable data**: The rule says "If the project already has an `openspec/` directory, report what exists and ask the orchestrator if it should be updated"
+1. **Ignored existing structure**: Should check if .atl/openspec/ already exists
+2. **Overwrote potentially valuable data**: The rule says "If the project already has an `.atl/openspec/` directory, report what exists and ask the orchestrator if it should be updated"
 3. **No warning to orchestrator**: Should ask before overwriting
 4. **Not reading current config**: Should read existing config.yaml to understand current state

@@ -13,7 +13,7 @@ Mode: openspec
 
 #### Step 1: Sync Delta Specs to Main Specs
 
-Read existing `openspec/specs/authentication/spec.md`:
+Read existing `.atl/openspec/specs/authentication/spec.md`:
 ```markdown
 # Authentication Specification
 
@@ -26,7 +26,7 @@ The system MUST maintain user sessions using server-side storage.
 [existing requirements...]
 ```
 
-Apply delta from `openspec/changes/add-jwt-auth/specs/authentication/spec.md`:
+Apply delta from `.atl/openspec/changes/add-jwt-auth/specs/authentication/spec.md`:
 
 **ADDED Requirements:**
 - JWT Token Validation → Appended to end
@@ -63,8 +63,8 @@ The login endpoint MUST validate credentials and return JWT tokens...
 
 ```bash
 # Move change folder to archive with date prefix
-openspec/changes/add-jwt-auth/
-  → openspec/changes/archive/2026-03-30-add-jwt-auth/
+.atl/openspec/changes/add-jwt-auth/
+  → .atl/openspec/changes/archive/2026-03-30-add-jwt-auth/
 ```
 
 #### Step 3: Verify Archive
@@ -80,7 +80,7 @@ openspec/changes/add-jwt-auth/
 ## Change Archived
 
 **Change**: add-jwt-auth
-**Archived to**: openspec/changes/archive/2026-03-30-add-jwt-auth/
+**Archived to**: .atl/openspec/changes/archive/2026-03-30-add-jwt-auth/
 
 ### Specs Synced
 | Domain         | Action   | Details                                      |
@@ -95,7 +95,7 @@ openspec/changes/add-jwt-auth/
 
 ### Source of Truth Updated
 The following specs now reflect the new behavior:
-- `openspec/specs/authentication/spec.md`
+- `.atl/openspec/specs/authentication/spec.md`
 
 ### SDD Cycle Complete
 The change has been fully planned, implemented, verified, and archived.
@@ -128,22 +128,22 @@ Mode: openspec
 
 #### Step 1: Sync Delta Specs
 
-Check if `openspec/specs/notifications/spec.md` exists → NO
+Check if `.atl/openspec/specs/notifications/spec.md` exists → NO
 
 This is a new domain, so copy delta directly:
 
 ```bash
-openspec/changes/add-notifications/specs/notifications/spec.md
-  → openspec/specs/notifications/spec.md
+.atl/openspec/changes/add-notifications/specs/notifications/spec.md
+  → .atl/openspec/specs/notifications/spec.md
 ```
 
-Created directory: `openspec/specs/notifications/`
+Created directory: `.atl/openspec/specs/notifications/`
 
 #### Step 2: Move to Archive
 
 ```bash
-openspec/changes/add-notifications/
-  → openspec/changes/archive/2026-03-30-add-notifications/
+.atl/openspec/changes/add-notifications/
+  → .atl/openspec/changes/archive/2026-03-30-add-notifications/
 ```
 
 ### Return Summary
@@ -152,7 +152,7 @@ openspec/changes/add-notifications/
 ## Change Archived
 
 **Change**: add-notifications
-**Archived to**: openspec/changes/archive/2026-03-30-add-notifications/
+**Archived to**: .atl/openspec/changes/archive/2026-03-30-add-notifications/
 
 ### Specs Synced
 | Domain        | Action   | Details                       |
@@ -166,7 +166,7 @@ openspec/changes/add-notifications/
 - tasks.md ✅ (12/12 tasks complete)
 
 ### Source of Truth Updated
-- `openspec/specs/notifications/spec.md` (new)
+- `.atl/openspec/specs/notifications/spec.md` (new)
 
 ### SDD Cycle Complete
 ```
@@ -238,11 +238,11 @@ Mode: openspec
 
 ```bash
 # Create archive directory (doesn't exist yet)
-mkdir -p openspec/changes/archive
+mkdir -p .atl/openspec/changes/archive
 
 # Move change
-openspec/changes/add-metrics/
-  → openspec/changes/archive/2026-03-30-add-metrics/
+.atl/openspec/changes/add-metrics/
+  → .atl/openspec/changes/archive/2026-03-30-add-metrics/
 ```
 
 ### Return Summary
@@ -251,7 +251,7 @@ openspec/changes/add-metrics/
 ## Change Archived
 
 **Change**: add-metrics
-**Archived to**: openspec/changes/archive/2026-03-30-add-metrics/
+**Archived to**: .atl/openspec/changes/archive/2026-03-30-add-metrics/
 
 ### Specs Synced
 | Domain   | Action   | Details    |
@@ -265,11 +265,11 @@ openspec/changes/add-metrics/
 - tasks.md ✅
 
 ### Source of Truth Updated
-- `openspec/specs/metrics/spec.md` (new)
+- `.atl/openspec/specs/metrics/spec.md` (new)
 ```
 
 ### Why This Is Good
 
-1. **Follows rule**: "If openspec/changes/archive/ doesn't exist, create it"
+1. **Follows rule**: "If .atl/openspec/changes/archive/ doesn't exist, create it"
 2. **Handled missing directory**: Not an error
 3. **Proceeded correctly**: Archive still works

@@ -15,8 +15,8 @@ Ignored critical issues, proceeded with archive.
 
 ```bash
 # Moved to archive anyway
-openspec/changes/add-payment/
-  → openspec/changes/archive/2026-03-30-add-payment/
+.atl/openspec/changes/add-payment/
+  → .atl/openspec/changes/archive/2026-03-30-add-payment/
 ```
 
 ### Why This Is Bad
@@ -43,8 +43,8 @@ Mode: openspec
 Moved to archive immediately, didn't update main specs.
 
 ```bash
-openspec/changes/add-cache/
-  → openspec/changes/archive/2026-03-30-add-cache/
+.atl/openspec/changes/add-cache/
+  → .atl/openspec/changes/archive/2026-03-30-add-cache/
 ```
 
 Main specs still don't have cache requirements!
@@ -71,7 +71,7 @@ Mode: openspec
 
 ```bash
 # Deleted instead of archiving!
-rm -rf openspec/changes/add-search/
+rm -rf .atl/openspec/changes/add-search/
 ```
 
 ### Why This Is Bad
@@ -97,11 +97,11 @@ Mode: openspec
 
 ```bash
 # Moved to archive
-openspec/changes/add-api/
-  → openspec/changes/archive/2026-03-30-add-api/
+.atl/openspec/changes/add-api/
+  → .atl/openspec/changes/archive/2026-03-30-add-api/
 
 # Then edited the archived proposal to fix typo!
-nano openspec/changes/archive/2026-03-30-add-api/proposal.md
+nano .atl/openspec/changes/archive/2026-03-30-add-api/proposal.md
 ```
 
 ### Why This Is Bad
@@ -124,7 +124,7 @@ Mode: openspec
 
 ### Agent Execution (INCORRECT)
 
-Read existing `openspec/specs/authentication/spec.md`:
+Read existing `.atl/openspec/specs/authentication/spec.md`:
 ```markdown
 # Auth Spec
 
@@ -177,8 +177,8 @@ Mode: openspec
 
 ```bash
 # Used wrong date format
-openspec/changes/add-webhooks/
-  → openspec/changes/archive/March-30-2026-add-webhooks/
+.atl/openspec/changes/add-webhooks/
+  → .atl/openspec/changes/archive/March-30-2026-add-webhooks/
 ```
 
 ### Why This Is Bad

@@ -26,7 +26,7 @@ From the orchestrator:
 Read and follow `skills/_shared/persistence-contract.md` for mode resolution rules.
 
 - If mode is `engram`: Read and follow `skills/_shared/engram-convention.md`. Artifact type: `verify-report`. Retrieve `proposal`, `spec`, `design`, and `tasks` as dependencies.
-- If mode is `openspec`: Read and follow `skills/_shared/openspec-convention.md`. Save to `openspec/changes/{change-name}/verify-report.md`.
+- If mode is `openspec`: Read and follow `skills/_shared/openspec-convention.md`. Save to `.atl/openspec/changes/{change-name}/verify-report.md`.
 - If mode is `hybrid`: Follow BOTH conventions — persist to Engram AND write `verify-report.md` to filesystem.
 - If mode is `none`: Return the verification report inline only. Never write files.
 
@@ -92,7 +92,7 @@ Detect the project's test runner and execute the tests:
 
 ```
 Detect test runner from:
-├── openspec/config.yaml → rules.verify.test_command (highest priority)
+├── .atl/openspec/config.yaml → rules.verify.test_command (highest priority)
 ├── package.json → scripts.test
 ├── pyproject.toml / pytest.ini → pytest
 ├── Makefile → make test
@@ -116,7 +116,7 @@ Detect and run the build/type-check command:
 
 ```
 Detect build command from:
-├── openspec/config.yaml → rules.verify.build_command (highest priority)
+├── .atl/openspec/config.yaml → rules.verify.build_command (highest priority)
 ├── package.json → scripts.build → also run tsc --noEmit if tsconfig.json exists
 ├── pyproject.toml → python -m build or equivalent
 ├── Makefile → make build
@@ -134,7 +134,7 @@ Flag: WARNING if there are type errors even with passing build
 
 ### Step 4d: Coverage Validation (Real Execution — if threshold configured)
 
-Run with coverage only if `rules.verify.coverage_threshold` is set in `openspec/config.yaml`:
+Run with coverage only if `rules.verify.coverage_threshold` is set in `.atl/openspec/config.yaml`:
 
 ```
 IF coverage_threshold is configured:
@@ -174,7 +174,7 @@ A spec scenario is only considered COMPLIANT when there is a test that passed pr
 Persist the report according to the resolved `artifact_store.mode`, following the conventions in `skills/_shared/`:
 
 - **engram**: Use `engram-convention.md` — artifact type `verify-report`
-- **openspec**: Write to `openspec/changes/{change-name}/verify-report.md`
+- **openspec**: Write to `.atl/openspec/changes/{change-name}/verify-report.md`
 - **none**: Return the full report inline, do NOT write any files
 
 ### Step 7: Return Summary
@@ -276,6 +276,6 @@ Return to the orchestrator the same content you wrote to `verify-report.md`:
 - WARNINGS = should fix but won't block
 - SUGGESTIONS = improvements, not blockers
 - DO NOT fix any issues — only report them. The orchestrator decides what to do.
-- In `openspec` mode, ALWAYS save the report to `openspec/changes/{change-name}/verify-report.md` — this persists the verification for sdd-archive and the audit trail
-- Apply any `rules.verify` from `openspec/config.yaml`
+- In `openspec` mode, ALWAYS save the report to `.atl/openspec/changes/{change-name}/verify-report.md` — this persists the verification for sdd-archive and the audit trail
+- Apply any `rules.verify` from `.atl/openspec/config.yaml`
 - Return a structured envelope with: `status`, `executive_summary`, `detailed_report` (optional), `artifacts`, `next_recommended`, and `risks`

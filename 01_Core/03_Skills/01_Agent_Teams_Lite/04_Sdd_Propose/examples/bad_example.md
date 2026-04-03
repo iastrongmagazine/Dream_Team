@@ -117,7 +117,7 @@ Change pricing tiers.
 
 1. **Didn't read existing proposal**: Rule says "READ it first and UPDATE it"
 2. **Overwrote existing work**: Lost previous context
-3. **Should have read**: `openspec/changes/update-pricing/proposal.md`
+3. **Should have read**: `.atl/openspec/changes/update-pricing/proposal.md`
 4. **Violated persistence contract**: Must read existing before creating
 
 ---
@@ -143,7 +143,7 @@ Mode: openspec
 - **Approach**: Use admin library
 - **Risk Level**: Low
 
-[Never creates openspec/changes/add-admin-panel/proposal.md]
+[Never creates .atl/openspec/changes/add-admin-panel/proposal.md]
 ```
 
 ### Why This Is Bad

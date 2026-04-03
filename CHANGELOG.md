@@ -117,7 +117,7 @@ MCPs excluidos del `.mcp.json` activo por falta de credenciales (son templates e
 - **Formato de reporte 15%**: CLAUDE.md y .agent/CLAUDE.md actualizados con 5 campos obligatorios (qué hice, qué estoy haciendo, próximo paso, pendientes, tiempo estimado)
 - **OpenCode sound plugin**: `sound-on-complete.ts` corregido para Windows (PowerShell correcto)
 - **~/.config/opencode/AGENTS.md**: Reporte 15% configurado igual que Claude Code
-- **`.atl/openspec/`**: Movido desde raíz del proyecto a `.atl/openspec/`
+- **`.atl/.atl/openspec/`**: Movido desde raíz del proyecto a `.atl/.atl/openspec/`
 
 ### Verified
 - Auditor Hub: `=== ESTATUS: SALUDABLE ===` (todas las dimensiones OK)

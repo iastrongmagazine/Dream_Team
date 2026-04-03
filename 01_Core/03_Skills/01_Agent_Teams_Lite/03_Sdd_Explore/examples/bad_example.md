@@ -59,9 +59,9 @@ Mode: none
 ## Exploration: File Upload
 
 Created the following files:
-- openspec/changes/add-file-upload/exploration.md
-- openspec/changes/add-file-upload/proposal.md
-- openspec/changes/add-file-upload/spec.md
+- .atl/openspec/changes/add-file-upload/exploration.md
+- .atl/openspec/changes/add-file-upload/proposal.md
+- .atl/openspec/changes/add-file-upload/spec.md
 
 [Full exploration content...]
 ```

@@ -151,7 +151,7 @@ No migration required - this is new authentication path alongside existing (will
 ## Design Created
 
 **Change**: add-jwt-auth
-**Location**: openspec/changes/add-jwt-auth/design.md
+**Location**: .atl/openspec/changes/add-jwt-auth/design.md
 
 ### Summary
 - **Approach**: Access + refresh JWT with HTTP-only cookies, token rotation

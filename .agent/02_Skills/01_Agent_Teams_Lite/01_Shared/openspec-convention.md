@@ -3,7 +3,7 @@
 ## Directory Structure
 
 ```
-openspec/
+.atl/openspec/
 ├── config.yaml              <- Project-specific SDD config
 ├── specs/                   <- Source of truth (main specs)
 │   └── {domain}/
@@ -26,43 +26,43 @@ openspec/
 
 | Skill | Creates / Reads | Path |
 |-------|----------------|------|
-| orchestrator | Creates/Updates | `openspec/changes/{change-name}/state.yaml` (DAG state for compaction recovery) |
-| sdd-init | Creates | `openspec/config.yaml`, `openspec/specs/`, `openspec/changes/`, `openspec/changes/archive/` |
-| sdd-explore | Creates (optional) | `openspec/changes/{change-name}/exploration.md` |
-| sdd-propose | Creates | `openspec/changes/{change-name}/proposal.md` |
-| sdd-spec | Creates | `openspec/changes/{change-name}/specs/{domain}/spec.md` |
-| sdd-design | Creates | `openspec/changes/{change-name}/design.md` |
-| sdd-tasks | Creates | `openspec/changes/{change-name}/tasks.md` |
-| sdd-apply | Updates | `openspec/changes/{change-name}/tasks.md` (marks `[x]`) |
-| sdd-verify | Creates | `openspec/changes/{change-name}/verify-report.md` |
-| sdd-archive | Moves | `openspec/changes/{change-name}/` → `openspec/changes/archive/YYYY-MM-DD-{change-name}/` |
-| sdd-archive | Updates | `openspec/specs/{domain}/spec.md` (merges deltas into main specs) |
+| orchestrator | Creates/Updates | `.atl/openspec/changes/{change-name}/state.yaml` (DAG state for compaction recovery) |
+| sdd-init | Creates | `.atl/openspec/config.yaml`, `.atl/openspec/specs/`, `.atl/openspec/changes/`, `.atl/openspec/changes/archive/` |
+| sdd-explore | Creates (optional) | `.atl/openspec/changes/{change-name}/exploration.md` |
+| sdd-propose | Creates | `.atl/openspec/changes/{change-name}/proposal.md` |
+| sdd-spec | Creates | `.atl/openspec/changes/{change-name}/specs/{domain}/spec.md` |
+| sdd-design | Creates | `.atl/openspec/changes/{change-name}/design.md` |
+| sdd-tasks | Creates | `.atl/openspec/changes/{change-name}/tasks.md` |
+| sdd-apply | Updates | `.atl/openspec/changes/{change-name}/tasks.md` (marks `[x]`) |
+| sdd-verify | Creates | `.atl/openspec/changes/{change-name}/verify-report.md` |
+| sdd-archive | Moves | `.atl/openspec/changes/{change-name}/` → `.atl/openspec/changes/archive/YYYY-MM-DD-{change-name}/` |
+| sdd-archive | Updates | `.atl/openspec/specs/{domain}/spec.md` (merges deltas into main specs) |
 
 ## Reading Artifacts
 
 Each skill reads its dependencies from the filesystem:
 
 ```
-Proposal:  openspec/changes/{change-name}/proposal.md
-Specs:     openspec/changes/{change-name}/specs/  (all domain subdirectories)
-Design:    openspec/changes/{change-name}/design.md
-Tasks:     openspec/changes/{change-name}/tasks.md
-Verify:    openspec/changes/{change-name}/verify-report.md
-Config:    openspec/config.yaml
-Main specs: openspec/specs/{domain}/spec.md
+Proposal:  .atl/openspec/changes/{change-name}/proposal.md
+Specs:     .atl/openspec/changes/{change-name}/specs/  (all domain subdirectories)
+Design:    .atl/openspec/changes/{change-name}/design.md
+Tasks:     .atl/openspec/changes/{change-name}/tasks.md
+Verify:    .atl/openspec/changes/{change-name}/verify-report.md
+Config:    .atl/openspec/config.yaml
+Main specs: .atl/openspec/specs/{domain}/spec.md
 ```
 
 ## Writing Rules
 
-- ALWAYS create the change directory (`openspec/changes/{change-name}/`) before writing artifacts
+- ALWAYS create the change directory (`.atl/openspec/changes/{change-name}/`) before writing artifacts
 - If a file already exists, READ it first and UPDATE it (don't overwrite blindly)
 - If the change directory already exists with artifacts, the change is being CONTINUED
-- Use the `openspec/config.yaml` `rules` section to apply project-specific constraints per phase
+- Use the `.atl/openspec/config.yaml` `rules` section to apply project-specific constraints per phase
 
 ## Config File Reference
 
 ```yaml
-# openspec/config.yaml
+# .atl/openspec/config.yaml
 schema: spec-driven
 
 context: |
@@ -99,7 +99,7 @@ rules:
 
 When archiving, the change folder moves to:
 ```
-openspec/changes/archive/YYYY-MM-DD-{change-name}/
+.atl/openspec/changes/archive/YYYY-MM-DD-{change-name}/
 ```
 
 Use today's date in ISO format. The archive is an AUDIT TRAIL — never delete or modify archived changes.

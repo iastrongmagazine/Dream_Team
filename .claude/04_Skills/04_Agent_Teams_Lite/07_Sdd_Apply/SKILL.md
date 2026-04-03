@@ -45,7 +45,7 @@ Before writing code, determine if the project uses TDD:
 
 ```
 Detect TDD mode from (in priority order):
-├── openspec/config.yaml → rules.apply.tdd (true/false — highest priority)
+├── .atl/openspec/config.yaml → rules.apply.tdd (true/false — highest priority)
 ├── User's installed skills (e.g., tdd/SKILL.md exists)
 ├── Existing test patterns in the codebase (test files alongside source)
 └── Default: standard mode (write code first, then verify)
@@ -89,7 +89,7 @@ Detect the test runner for execution:
 
 ```
 Detect test runner from:
-├── openspec/config.yaml → rules.apply.test_command (highest priority)
+├── .atl/openspec/config.yaml → rules.apply.test_command (highest priority)
 ├── package.json → scripts.test
 ├── pyproject.toml / pytest.ini → pytest
 ├── Makefile → make test
@@ -179,7 +179,7 @@ If none, say "None."}
 - If a task is blocked by something unexpected, STOP and report back
 - NEVER implement tasks that weren't assigned to you
 - Load and follow any relevant coding skills for the project stack (e.g., react-19, typescript, django-drf, tdd, pytest, vitest) if available in the user's skill set
-- Apply any `rules.apply` from `openspec/config.yaml`
+- Apply any `rules.apply` from `.atl/openspec/config.yaml`
 - If TDD mode is detected (Step 2), ALWAYS follow the RED → GREEN → REFACTOR cycle — never skip RED (writing the failing test first)
 - When running tests during TDD, run ONLY the relevant test file/suite, not the entire test suite (for speed)
 - Return a structured envelope with: `status`, `executive_summary`, `detailed_report` (optional), `artifacts`, `next_recommended`, and `risks`

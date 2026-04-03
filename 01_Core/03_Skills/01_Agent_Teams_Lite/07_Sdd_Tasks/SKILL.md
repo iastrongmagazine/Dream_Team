@@ -42,7 +42,7 @@ From the design document, identify:
 Create the task file:
 
 ```
-openspec/changes/{change-name}/
+.atl/openspec/changes/{change-name}/
 ├── proposal.md
 ├── specs/
 ├── design.md
@@ -121,7 +121,7 @@ Return to the orchestrator:
 ## Tasks Created
 
 **Change**: {change-name}
-**Location**: openspec/changes/{change-name}/tasks.md
+**Location**: .atl/openspec/changes/{change-name}/tasks.md
 
 ### Breakdown
 | Phase   | Tasks   | Focus        |
@@ -146,6 +146,6 @@ Ready for implementation (sdd-apply).
 - Each task should be completable in ONE session (if a task feels too big, split it)
 - Use hierarchical numbering: 1.1, 1.2, 2.1, 2.2, etc.
 - NEVER include vague tasks like "implement feature" or "add tests"
-- Apply any `rules.tasks` from `openspec/config.yaml`
+- Apply any `rules.tasks` from `.atl/openspec/config.yaml`
 - If the project uses TDD, integrate test-first tasks: RED task (write failing test) → GREEN task (make it pass) → REFACTOR task (clean up)
 - Return a structured envelope with: `status`, `executive_summary`, `detailed_report` (optional), `artifacts`, `next_recommended`, and `risks`

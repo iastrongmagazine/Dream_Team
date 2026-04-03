@@ -77,7 +77,7 @@ Yes. Clear scope: JWT middleware, login/logout updates, new utility file.
 4. **Concrete recommendation**: Not indecisive
 5. **Risks identified**: Real security concerns
 6. **Follows return format**: Exact structure required
-7. **Saved to file**: Correctly created `openspec/changes/add-jwt-auth/exploration.md`
+7. **Saved to file**: Correctly created `.atl/openspec/changes/add-jwt-auth/exploration.md`
 
 ---
 

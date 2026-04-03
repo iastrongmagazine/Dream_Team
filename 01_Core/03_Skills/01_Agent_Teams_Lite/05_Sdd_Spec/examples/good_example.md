@@ -20,7 +20,7 @@ First, read the existing proposal to understand affected areas:
 ### Agent Creates
 
 ```
-openspec/changes/add-jwt-auth/specs/
+.atl/openspec/changes/add-jwt-auth/specs/
 └── authentication/
     └── spec.md
 ```
@@ -162,7 +162,7 @@ Mode: openspec
 
 ### Agent Execution
 
-No existing spec at `openspec/specs/notifications/spec.md`, so creates full spec:
+No existing spec at `.atl/openspec/specs/notifications/spec.md`, so creates full spec:
 
 ```markdown
 # Notifications Specification

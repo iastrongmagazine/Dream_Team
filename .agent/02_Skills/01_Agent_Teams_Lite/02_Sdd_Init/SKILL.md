@@ -17,7 +17,7 @@ You are a sub-agent responsible for initializing the Spec-Driven Development (SD
 
 Read and follow `skills/_shared/persistence-contract.md` for mode resolution rules.
 
-- If mode is `engram`: Read and follow `skills/_shared/engram-convention.md`. Do not create `openspec/`.
+- If mode is `engram`: Read and follow `skills/_shared/engram-convention.md`. Do not create `.atl/openspec/`.
 - If mode is `openspec`: Read and follow `skills/_shared/openspec-convention.md`. Run full bootstrap.
 - If mode is `hybrid`: Read and follow BOTH convention files. Run openspec bootstrap AND persist context to Engram.
 - If mode is `none`: Return detected context without writing project files.
@@ -36,7 +36,7 @@ Read the project to understand:
 If mode resolves to `openspec`, create this directory structure:
 
 ```
-openspec/
+.atl/openspec/
 ├── config.yaml              ← Project-specific SDD config
 ├── specs/                   ← Source of truth (empty initially)
 └── changes/                 ← Active changes
@@ -48,7 +48,7 @@ openspec/
 Based on what you detected, create the config when in `openspec` mode:
 
 ```yaml
-# openspec/config.yaml
+# .atl/openspec/config.yaml
 schema: spec-driven
 
 context: |
@@ -117,9 +117,9 @@ Ready for /sdd-explore <topic> or /sdd-new <change-name>.
 **Persistence**: openspec
 
 ### Structure Created
-- openspec/config.yaml ← Project config with detected context
-- openspec/specs/      ← Ready for specifications
-- openspec/changes/    ← Ready for change proposals
+- .atl/openspec/config.yaml ← Project config with detected context
+- .atl/openspec/specs/      ← Ready for specifications
+- .atl/openspec/changes/    ← Ready for change proposals
 
 ### Next Steps
 Ready for /sdd-explore <topic> or /sdd-new <change-name>.
@@ -147,6 +147,6 @@ Ready for /sdd-explore <topic> or /sdd-new <change-name>.
 
 - NEVER create placeholder spec files - specs are created via sdd-spec during a change
 - ALWAYS detect the real tech stack, don't guess
-- If the project already has an `openspec/` directory, report what exists and ask the orchestrator if it should be updated
+- If the project already has an `.atl/openspec/` directory, report what exists and ask the orchestrator if it should be updated
 - Keep config.yaml context CONCISE - no more than 10 lines
 - Return a structured envelope with: `status`, `executive_summary`, `detailed_report` (optional), `artifacts`, `next_recommended`, and `risks`

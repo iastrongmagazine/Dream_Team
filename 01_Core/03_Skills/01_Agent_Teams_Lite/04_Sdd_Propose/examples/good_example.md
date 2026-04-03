@@ -100,7 +100,7 @@ Use access token + refresh token with rotation:
 ## Proposal Created
 
 **Change**: add-jwt-auth
-**Location**: openspec/changes/add-jwt-auth/proposal.md
+**Location**: .atl/openspec/changes/add-jwt-auth/proposal.md
 
 ### Summary
 - **Intent**: Replace sessions with JWT for stateless auth and scalability

@@ -28,7 +28,7 @@ Read and follow `skills/_shared/persistence-contract.md` for mode resolution rul
 - If mode is `openspec`: Read and follow `skills/_shared/openspec-convention.md`.
 - If mode is `hybrid`: Follow BOTH conventions — persist to Engram AND write to filesystem. Retrieve dependencies from Engram (primary) with filesystem fallback.
 - If mode is `none`: Return result only. Never create or modify project files.
-- Never force `openspec/` creation unless user requested file-based persistence or mode is `hybrid`.
+- Never force `.atl/openspec/` creation unless user requested file-based persistence or mode is `hybrid`.
 
 ## What to Do
 
@@ -37,13 +37,13 @@ Read and follow `skills/_shared/persistence-contract.md` for mode resolution rul
 Create the change folder structure:
 
 ```
-openspec/changes/{change-name}/
+.atl/openspec/changes/{change-name}/
 └── proposal.md
 ```
 
 ### Step 2: Read Existing Specs
 
-If `openspec/specs/` has relevant specs, read them to understand current behavior that this change might affect.
+If `.atl/openspec/specs/` has relevant specs, read them to understand current behavior that this change might affect.
 
 ### Step 3: Write proposal.md
 
@@ -105,7 +105,7 @@ Return to the orchestrator:
 ## Proposal Created
 
 **Change**: {change-name}
-**Location**: openspec/changes/{change-name}/proposal.md
+**Location**: .atl/openspec/changes/{change-name}/proposal.md
 
 ### Summary
 - **Intent**: {one-line summary}
@@ -125,5 +125,5 @@ Ready for specs (sdd-spec) or design (sdd-design).
 - Every proposal MUST have a rollback plan
 - Every proposal MUST have success criteria
 - Use concrete file paths in "Affected Areas" when possible
-- Apply any `rules.proposal` from `openspec/config.yaml`
+- Apply any `rules.proposal` from `.atl/openspec/config.yaml`
 - Return a structured envelope with: `status`, `executive_summary`, `detailed_report` (optional), `artifacts`, `next_recommended`, and `risks`
