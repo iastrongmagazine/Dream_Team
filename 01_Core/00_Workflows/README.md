@@ -7,15 +7,15 @@ Workflows reutilizables del sistema. Invocar según el contexto de la tarea.
 | Workflow                                         | Cuándo usar                        | Tiempo   |
 |--------------------------------------------------|------------------------------------|----------|
 | [Génesis — Iron Man](01_Iron_Man_Gen.md)         | Inicio de cada sesión              | 2 min    |
-| [Ritual de Cierre](11_Ritual_Cierre_Protocol.md) | Fin de cada sesión                 | 3 min    |
-| [Context Recovery](12_Context_Recovery.md)       | Contexto degradado / AI confundido | 5 min    |
+| [Ritual de Cierre](12_Ritual_Cierre_Protocol.md) | Fin de cada sesión                 | 3 min    |
+| [Context Recovery](13_Context_Recovery.md)       | Contexto degradado / AI confundido | 5 min    |
 
 ## 📅 Workflows Diarios
 
 | Workflow                                       | Cuándo usar                             | Tiempo   |
 |------------------------------------------------|-----------------------------------------|----------|
-| [Morning Standup](00_Morning_Standup.md)       | Inicio del día — elegir foco            | 2 min    |
-| [Backlog Processing](00_Backlog_Processing.md) | Fin del día o cuando se acumula backlog | 5-10 min |
+| [Morning Standup](23_Morning_Standup.md)       | Inicio del día — elegir foco            | 2 min    |
+| [Backlog Processing](21_Backlog_Processing.md) | Fin del día o cuando se acumula backlog | 5-10 min |
 
 ## 📆 Workflows Semanales
 

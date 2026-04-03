@@ -11,7 +11,7 @@
 
 ## Proyecto: Think_Different
 
-**Última actualización:** 2026-03-31
+**Última actualización:** 2026-04-03
 
 ### Convenciones del Proyecto
 
@@ -41,41 +41,52 @@ Think_Different/
 ├── 08_Scripts_Os/         # HUBs (10 scripts) + config_paths.py
 ├── .agent/                # Backup estratégico + Hooks
 ├── .atl/                  # SDD Registry (este archivo) + openspec/
+│   └── openspec/          # SDD config y cambios
 └── .claude/rules/         # Reglas Claude Code → apuntan a 01_Core/01_Rules/
 ```
 
-### Skills Principales
+### SDD Configuration
+
+| Item | Valor |
+|------|-------|
+| Modo | openspec |
+| Strict TDD | ❌ disabled |
+| Config | `.atl/openspec/config.yaml` |
+
+### Available Skills (Global OpenCode)
 
 | Categoría | Skill | Propósito |
 |-----------|-------|-----------|
 | **Agent Teams** | sdd-* (9 fases) | SDD workflow |
-| **Compound** | ce:* | Compound Engineering |
+| **SDD Init** | sdd-init | Initialize SDD context |
+| **SDD Explore** | sdd-explore | Explore ideas before committing |
+| **SDD Propose** | sdd-propose | Create change proposals |
+| **SDD Spec** | sdd-spec | Write specifications |
+| **SDD Design** | sdd-design | Create technical designs |
+| **SDD Tasks** | sdd-tasks | Break down into tasks |
+| **SDD Apply** | sdd-apply | Implement tasks |
+| **SDD Verify** | sdd-verify | Validate implementation |
+| **SDD Archive** | sdd-archive | Archive completed changes |
+| **Compound** | ce:* | Compound Engineering (brainstorm, plan, work, review, compound) |
 | **Skill Creator** | Skill_Creator_Official | Crear skills v2.0 |
 | **Data** | Silicon_Valley_Data_Analyst | Análisis de datos |
 | **SEO** | SEO_SOTA_Master | SEO técnico |
 | **Personal Life OS** | quick-capture, plan-my-day, daily-notes, recording-mode, returns-tracker | Productividad personal — Hillary |
+| **Utilities** | playwright, pytest, react-19, nextjs-15, tailwind-4, zustand-5, etc. | Framework-specific tools |
+| **Marketing** | social-content, paid-ads, seo-audit, programmatic-seo, referral-program | Marketing tech |
+| **Review** | pr-review, github-pr, judgment-day, systematic-debugging, verification-before-completion | Code review workflows |
 
-### HUBs Disponibles (08_Scripts_Os/)
+### Project Conventions (AGENTS.md)
 
-| Hub | Propósito |
-|-----|-----------|
-| 01_Auditor | Validación del sistema |
-| 02_Git | Operaciones Git |
-| 03_AIPM | Monitoreo de performance IA |
-| 04_Ritual | Rituales de sesión |
-| 05_Validator | Validación de código |
-| 06_Tool | Gestión de herramientas |
-| 07_Integration | Integraciones MCP |
-| 08_Workflow | Automatización de workflows |
-| 09_Data | Procesamiento de datos |
-| 10_General | Utilidades generales |
+- Root AGENTS.md → GGA pre-commit hook
+- Core rules → 00_Winter_is_Coming/AGENTS.md
+- Code review rules: No `var`, prefer interfaces, no `any`, functional components, named exports
 
-### Validators (04_Operations/)
+### Skill Registry Sources
 
-| Tool | Ubicación |
-|------|-----------|
-| skill_validator.py | `08_Scripts_Os/Validator_Fixed/` |
-| skill_security_scan.py | `08_Scripts_Os/Validator_Fixed/` |
+- User-level: `~/.config/opencode/skills/`
+- Project-level: `.agent/02_Skills/`
+- SDD Config: `.atl/openspec/config.yaml`
 
 ---
 

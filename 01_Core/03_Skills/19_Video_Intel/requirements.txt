@@ -1,0 +1,5 @@
+yt-dlp>=2024.8.6
+whisper>=20231117
+click>=8.1.7
+astor>=0.8.1
+tiktoken>=0.7.0

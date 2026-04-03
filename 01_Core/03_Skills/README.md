@@ -32,6 +32,7 @@
 ├── 16_Silicon_Valley_Data_Analyst/ ⭐ Data Analyst
 ├── 17_SEO_SOTA_Master/            ⭐ SEO Master
 └── 18_Personal_Life_OS/           ⭐ Hillary Life OS (5 items)
+├── 19_Video_Intel/                🔬 Video Intel — exploracion YouTube/GitHub
 ```
 
 **Total: 21 categorías — 160+ skills**
@@ -278,6 +279,7 @@ python 08_Scripts_Os/55_Sync_Skills.py --confirm
 | 16_Silicon_Valley_Data_Analyst | 1      | Data Fetching         |
 | 17_SEO_SOTA_Master             | 1      | Library/API Reference |
 | 18_Personal_Life_OS            | 5      | Runbooks              |
+| 19_Video_Intel                 | —      | Exploration           |
 
 **Total categorías:** 21 — **Total skills activas:** 160+
 

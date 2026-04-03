@@ -73,7 +73,7 @@
 | Tailwind 4 | 05_Vibe_Coding/03_Tailwind_4/ | Estilos |
 | Zod 4 | 05_Vibe_Coding/07_Zod_4/ | Validacion forms |
 | AI SDK 5 | 05_Vibe_Coding/08_Ai_Sdk_5/ | Asistente cotizacion |
-| Playwright | 06_Testing/16_Playwright/ | E2E testing |
+| Playwright | 06_Testing/08_E2e_Testing/ | E2E testing |
 | DevOps | 07_DevOps/ | Deploy Vercel |
 | SEO SOTA | 17_SEO_SOTA_Master/ | SEO local Atlanta |
 | Product Design | 04_Product_Design/ | UI/UX premium |

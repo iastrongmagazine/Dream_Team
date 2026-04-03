@@ -30,13 +30,15 @@ Located: `~/.config/opencode/skills/`
 
 Located: `01_Core/03_Skills/`
 
-> 160+ skills available. Source of truth: `01_Core/03_Skills/`
+> 170+ skills available (22 categorias, incl. 1 exploracion). Source of truth: `01_Core/03_Skills/`
 
 ### Key Skills
 
 | Category          | Skill                       | Purpose              |
 |-------------------|-----------------------------|----------------------|
 | **Agent Teams**   | sdd-* (8 phases)            | SDD workflow         |
+| **Hillary OS**    | 18_Personal_Life_OS (5)     | Quick Capture, Plan My Day, Daily Notes, Recording Mode, Returns Tracker |
+| **Video Intel**   | 19_Video_Intel              | Analisis YouTube/GitHub (exploracion) |
 | **Compound**      | ce:*                        | Compound Engineering |
 | **Skill Creator** | Skill_Creator_Official      | Create skills (v2.0) |
 | **Data**          | Silicon_Valley_Data_Analyst | Data analysis        |
