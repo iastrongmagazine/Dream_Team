@@ -1,81 +1,71 @@
-# VIDEO ANALYSIS REPORT: PM + Agent Team - What Could Go Wrong?
+# 🎬 VIDEO ANALYSIS REPORT: PM + Agent Team - What Could Go Wrong?
 
-**Date:** 2026-04-03  
-**Source:** [Product School Live / O Corres o Te Encaramas](https://www.youtube.com/live/3psHUg6KzOo?si=Y6bZACLup04IfPCF)  
-**Host:** Aníbal  
-**Guest:** Ariel Contreras (Head of Product)
-
----
-
-## 1. RESUMEN DEL VIDEO (Executive Summary)
-
-El video explora la transformación radical del rol de Product Manager (PM) ante la llegada de equipos de agentes autónomos. Ariel Contreras argumenta que el PM tradicional que solo gestiona tickets está destinado a desaparecer. En el futuro cercano (2026), un solo PM asistido por agentes podrá realizar el trabajo que antes requería un equipo de 5 personas. La clave no es la programación, sino la **gestión de contexto y principios**.
+> [!NOTE]
+> **Fecha:** 2026-04-03  
+> **Fuente:** [Product School Live / O Corres o Te Encaramas](https://www.youtube.com/live/3psHUg6KzOo?si=Y6bZACLup04IfPCF)  
+> **Invitado:** Ariel Contreras (Head of Product)
 
 ---
 
-## 2. METODOLOGÍAS NOMBRADAS
+## 🚀 1. RESUMEN EJECUTIVO (Executive Summary)
 
-- **Agentic Workflows:** Coordinación de múltiples agentes para tareas de extremo a extremo.
-- **Continuous Discovery:** Uso de IA para sintetizar feedback de usuarios constantemente.
-- **POC (Proof of Concept) Accelerators:** Reducción drástica del tiempo para validar ideas técnicas.
-- **Context Engineering:** La habilidad más crítica; alimentar a los agentes con la información exacta para obtener resultados precisos (98% de precisión mencionado).
+El video analiza la disrupción del rol de **Product Manager (PM)** causada por los agentes autónomos. En el horizonte de 2026, la eficiencia se multiplicará por 5: un solo PM podrá orquestar lo que antes requería un equipo completo. La ventaja competitiva ya no reside en la ejecución técnica, sino en el **diseño de contexto y la definición de principios**.
 
 ---
 
-## 3. METODOLOGÍAS IMPLEMENTADAS / RECOMENDADAS
+## 🧠 2. METODOLOGÍAS NOMBRADAS
 
-- **File Stack Management:** Cada agente debe tener un conjunto de archivos (Identidad, Rol, Principios, Instrucciones) que evolucionan con el tiempo.
-- **Principle-Based Management:** En lugar de dar instrucciones paso a paso, se definen principios de "qué es un buen resultado".
-- **Compounding Corrections:** Tratar los errores de los agentes como datos valiosos para mejorar los prompts de forma permanente.
-
----
-
-## 4. DEMOS REALIZADOS (En contexto)
-
-- **Automatización de Documentación:** Generación del 98% de PRDs y specs técnicos usando Claude Code/OpenCode.
-- **Gestión de 8 Agentes:** Referencia al sistema de Shubham Saboo donde 8 agentes cubren investigación, diseño, código, QA y marketing.
+| Concepto | Descripción Clave |
+| :--- | :--- |
+| **Agentic Workflows** | Orquestación de múltiples agentes para resolver flujos complejos de inicio a fin. |
+| **Continuous Discovery** | Implementación de IA para la síntesis perpetua de feedback de usuario. |
+| **POC Accelerators** | Reducción de semanas a horas en la validación de hipótesis técnicas. |
+| **Context Engineering** | La capacidad de alimentar al agente con la "verdad" necesaria para una precisión del 98%. |
 
 ---
 
-## 5. LISTA DE PROMPTS (ES / EN)
+## 🛠️ 3. ESTRATEGIAS RECOMENDADAS
 
-### Escenario A: Definición de Principios para un Agente
-- **ES:** "Tu objetivo es filtrar noticias de IA. Principio: Solo muestra herramientas que un desarrollador pueda usar hoy. Ignora noticias corporativas de inversión."
-- **EN:** "Your goal is to filter AI news. Principle: Only surface tools developers can use today. Ignore corporate investment news."
+> [!TIP]
+> **Principle-Based Management:** Deja de dar instrucciones (How) y empieza a definir principios (What/Why).
 
-### Escenario B: Corrección Permanente
-- **ES:** "Este resultado es demasiado genérico. De ahora en adelante, para cada recomendación, incluye un ejemplo de código real y un enlace a la documentación oficial."
-- **EN:** "This output is too generic. From now on, for every recommendation, include a real code example and a link to the official documentation."
-
-### Escenario C: Alineación de Contexto
-- **ES:** "Lee nuestro archivo AGENTS.md y asegúrate de que cualquier propuesta de arquitectura siga el patrón de Micro-frontends definido."
-- **EN:** "Read our AGENTS.md file and ensure any architecture proposal follows the defined Micro-frontends pattern."
+- **File Stack Management**: Mantener un stack de identidad y principios para cada agente que evolucione con el sistema.
+- **Compounding Corrections**: Cada error del agente es una señal para refinar permanentemente el prompt base, no solo para corregir el resultado actual.
 
 ---
 
-## 6. VERIFICACIÓN VS PERSONALOS
+## ⚡ 4. DEMOS & INSIGHTS (Hands-on)
 
-| Componente | Estado en OS | Mejora Sugerida |
-|------------|--------------|-----------------|
-| **Context Injection** | ✅ Implementado | Automatizar la actualización de "Principios" basada en fallos detectados en sesiones. |
-| **Agent Roles** | ✅ Implementado | Crear una jerarquía de agentes donde uno actúe como "Chief of Staff" para monitorear a los demás. |
-| **Document Automation** | ✅ Implementado | Integrar la Skill `Video_Intel` para que la documentación de nuevos aprendizajes sea 100% autónoma. |
+- **Automatización Documental**: Generación casi total (98%) de PRDs y Documentación Técnica con herramientas como **Claude Code** y **OpenCode**.
+- **Modelos Swarm**: Referencia a sistemas de 8 agentes cubriendo roles de Research, UX, Dev y QA simultáneamente.
 
 ---
 
-## 7. PLAN DE IMPLEMENTACIÓN PARA EL OS
+## 📋 5. PROMPTS DE ALTO IMPACTO (ES / EN)
 
-1. **Crear Skill `Agent_Governor`:** Para gestionar la "evolución permanente" de los principios de cada agente basándose en feedback.
-2. **Implementar `Context_Refresher`:** Un hook que, al detectar un error corregido, lo guarde en el archivo de principios del agente correspondiente.
-3. **Refactorizar `Video_Intel`:** Para que use `supadata` por defecto, garantizando transcripciones rápidas sin depender de hardware local.
+### Escenario: Alineación con el Sistema
+> [!IMPORTANT]
+> **ES:** "Analiza nuestro archivo `AGENTS.md` y valida que esta propuesta estructural cumpla con los patrones de Micro-frontends establecidos."  
+> **EN:** "Analyze our `AGENTS.md` file and validate that this structural proposal complies with the established Micro-frontends patterns."
+
+---
+
+## 🔍 6. VERIFICACIÓN VS PERSONALOS (Audit)
+
+| Componente | Estado | Mejora Sugerida |
+| :--- | :---: | :--- |
+| **Context Injection** | ✅ | Automatizar la actualización de "Log de Fallos" para refinar principios de sesión. |
+| **Agent Roles** | ✅ | Implementar un "Agent Orchestrator" que supervise el cumplimiento de los Pilares. |
+| **Document Automation** | ✅ | **Integración de Video_Intel**: Automatizar la captura de conocimiento de fuentes externas. |
 
 ---
 
-## 8. REGISTRO DE VIDEO (Registry Entry)
+## 📅 7. PLAN DE ACCIÓN PARA EL OS
 
-- **URL:** https://www.youtube.com/live/3psHUg6KzOo
-- **Temas:** IA en Product Management, Equipos de Agentes, Optimización de Roles, Gestión de Contexto.
-- **Recomendación:** Migrar el foco de "escribir código" a "escribir principios".
+1.  **Skill `Agent_Governor`**: Gestionar la evolución de los principios de los agentes.
+2.  **`Context_Refresher`**: Hook de corrección permanente.
+3.  **Refactor `Video_Intel`**: Migrar a `supadata` para transcripciones SOTA.
 
 ---
+
 *Think Different PersonalOS - Unicorn Engineering SOTA 2026*
