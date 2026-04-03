@@ -53,6 +53,7 @@ Think_Different/
 | **Skill Creator** | Skill_Creator_Official | Crear skills v2.0 |
 | **Data** | Silicon_Valley_Data_Analyst | Análisis de datos |
 | **SEO** | SEO_SOTA_Master | SEO técnico |
+| **Personal Life OS** | quick-capture, plan-my-day, daily-notes, recording-mode, returns-tracker | Productividad personal — Hillary |
 
 ### HUBs Disponibles (08_Scripts_Os/)
 

@@ -1,7 +1,7 @@
 # Scripts Index — PersonalOS Think Different v6.1
 
 > **Total Scripts:** 89+ (HUBs + Legacy)
-> **Last Updated:** 2026-03-29
+> **Last Updated:** 2026-04-01
 > **Validation:** Auditorías PASANDO - Sistema OPERATIVO
 
 ---
@@ -68,7 +68,7 @@ Think_Different/
 ├── 02_Knowledge/            ✅ Base de conocimiento
 ├── 03_Tasks/                ✅ 17+ tareas activas
 ├── 04_Operations/           ✅ Memoria, Brain, Notas
-├── 05_Archive/              ✅ Repos, Legacy
+├── 05_Archive/              ✅ Repos, Legacy (v6.1: 01-09)
 ├── 07_Projects/             ✅ Proyectos
 └── 08_Scripts_Os/           ✅ 10 HUBs + Legacy_Backup
 ```
@@ -99,8 +99,9 @@ Think_Different/
 | 15  | `15_Skill_Creator_Oficial`       | Skill Creator v2.0 |
 | 16  | `16_Silicon_Valley_Data_Analyst` | Data Analyst       |
 | 17  | `17_SEO_SOTA_Master`             | SEO Master         |
+| 18  | `18_Personal_Life_OS`            | Personal Life OS (Hillary) — Quick Capture, Plan My Day, Daily Notes, Recording Mode, Returns Tracker |
 
-**Total: 19 categorías de skills**
+**Total: 20 categorías de skills**
 
 ---
 
@@ -177,4 +178,4 @@ Scripts en 01_Ritual con sus skills asociadas:
 
 ---
 
-*Actualizado: 2026-04-01 — Carpetas renombradas a nomenclatura canónica (XX_Nombre)*
+*Actualizado: 2026-04-01 — Estructura 05_Archive estandarizada (01-09)*

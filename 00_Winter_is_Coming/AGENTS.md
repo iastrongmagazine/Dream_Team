@@ -615,6 +615,22 @@ matplotlib, seaborn, plotly
 | **Document**     | `/ce:compound`                                |
 | **Validate**     | `gr` or `01_Auditor_Hub.py`                   |
 | **Memory**       | `engram save <title> <msg>`                   |
+| **Hillary**      | `/hillary` / "capture" / "plan my day"        |
+
+## Hillary Life OS — Triggers
+
+| Trigger | Skill | Workflow |
+|---------|-------|----------|
+| "capture", "captura", "quick add", "anota" | `01_Quick_Capture` | `24_Hillary_Life_OS.md` |
+| "plan my day", "plan día", "qué hago hoy" | `02_Plan_My_Day` | `24_Hillary_Life_OS.md` |
+| "daily notes", "log this", "registro" | `03_Daily_Notes` | `24_Hillary_Life_OS.md` |
+| "record", "transcribe", "recording mode" | `04_Recording_Mode` | `24_Hillary_Life_OS.md` |
+| "auto-skill", "track returns", "create skill from" | `05_Returns_Tracker` | `24_Hillary_Life_OS.md` |
+| "/hillary", "life os", "personal productivity" | Orquestador | `24_Hillary_Life_OS.md` |
+
+**Skills location:** `01_Core/03_Skills/18_Personal_Life_OS/`
+**Inbox:** `03_Tasks/02_Hillary_Inbox/`
+**RUNBOOK:** `02_Knowledge/04_Docs/Hillary_Life_OS_RUNBOOK.md`
 
 ---
 
