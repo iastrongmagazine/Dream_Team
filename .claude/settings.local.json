@@ -10,7 +10,8 @@
       "Bash(grep:*)",
       "Bash(mv:*)",
       "Bash(cp:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "mcp__plugin_engram_engram__mem_context"
     ]
   },
   "hooks": {

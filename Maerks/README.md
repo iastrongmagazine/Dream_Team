@@ -15,7 +15,16 @@ Think_Different/
 ├── 02_Knowledge/          # Documentación, Research, Notas 📚
 ├── 03_Tasks/             # Tareas activas (YAML frontmatter)
 ├── 04_Operations/        # Memoria y Procesos
-├── 05_Archive/           # Legacy archivado 📦
+├── 05_Archive/                  # 📦 Legacy archivado (01-09)
+│   ├── 01_Raiz_Archive/         # Raíz y contexto
+│   ├── 02_Rules_Legacy/         # Reglas antiguas
+│   ├── 03_Docs_Legacy/          # Documentación histórica
+│   ├── 04_Backups_AutoMejora/   # Backups de mejoras
+│   ├── 05_Planes_Legacy/        # Planes cerrados
+│   ├── 06_Recursos/             # Activos y recursos
+│   ├── 07_Repos_Gentleman/      # Ecosistema Gentleman
+│   ├── 08_Planes_Estrategicos/  # Estrategia legacy
+│   └── 09_OpenSpec_Archive/     # Especificaciones antiguas
 ├── 06_Playground/       # Pruebas y experimentos
 ├── 07_Projects/         # Proyectos activos
 ├── 08_Scripts_Os/       # Scripts operativos

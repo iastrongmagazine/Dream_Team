@@ -2457,27 +2457,32 @@
     - plugin/
       - veil.lua
     - README.md
-- 09_Archive_Recovery/
-  - README.md
-- 10_Repos_Gentleman/
-  - agent-teams-lite/
-    - .gitattributes
-    - .github/
-      - ISSUE_TEMPLATE/
-        - bug_report.yml
-        - config.yml
-        - feature_request.yml
-      - PULL_REQUEST_TEMPLATE.md
-      - workflows/
-        - pr-check.yml
-    - .gitignore
-    - AGENTS.md
-    - CONTRIBUTING.md
-    - docs/
-      - architecture.md
-      - changelog.md
-      - concepts.md
-      - installation.md
+- 05_Archive/
+  - 01_Raiz_Archive/
+  - 02_Rules_Legacy/
+  - 03_Docs_Legacy/
+  - 04_Backups_AutoMejora/
+  - 05_Planes_Legacy/
+  - 06_Recursos/
+  - 07_Repos_Gentleman/
+    - agent-teams-lite/
+      - .gitattributes
+      - .github/
+        - ISSUE_TEMPLATE/
+          - bug_report.yml
+          - config.yml
+          - feature_request.yml
+        - PULL_REQUEST_TEMPLATE.md
+        - workflows/
+          - pr-check.yml
+      - .gitignore
+      - AGENTS.md
+      - CONTRIBUTING.md
+      - docs/
+        - architecture.md
+        - changelog.md
+        - concepts.md
+        - installation.md
       - persistence.md
       - sub-agents.md
       - token-economics.md
@@ -6030,7 +6035,7 @@
       - SKILL.md
     - taste-skill/
       - SKILL.md
-- 10_Repos_Gentleman.7z
+- 07_Repos_Gentleman.7z
 - 11_Legacy_Resources/
   - Gentleman/
     - Gentleman.Dots_backup/

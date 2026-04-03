@@ -37,13 +37,14 @@ DIMENSIONS = [
     "03_Tasks",
     "04_Operations",
     "05_Archive",
+    "06_Playground",
     "07_Projects",
     "08_Scripts_Os",
 ]
 
 
 def audit_dimensions():
-    """Valida las 7 dimensiones del proyecto."""
+    """Valida las 7+ dimensiones del proyecto."""
     print(f"\n{Style.BRIGHT}Validating Dimensions:")
     errors = 0
     for dim in DIMENSIONS:
@@ -115,8 +116,8 @@ def dynamic_speak(text):
 
 
 def run_script(script_name):
-    # Usamos Auditor_Fixed para scripts corregidos (SISTEMA INDEPENDIENTE)
-    script_path = Path(__file__).parent / "Auditor_Fixed" / script_name
+    # Usamos 06_Auditor para scripts corregidos (SISTEMA INDEPENDIENTE)
+    script_path = Path(__file__).parent / "06_Auditor" / script_name
     if not script_path.exists():
         print(f"{Fore.RED}[ERROR] Script no encontrado: {script_path}{Style.RESET_ALL}")
         return

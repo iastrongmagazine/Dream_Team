@@ -75,9 +75,9 @@
 - `04_Operations\01_Active_Tasks\Task_End\34_H3_Democratization_Features.md -> 04_Operations\01_Active_Tasks\Task_End\docs\solutions\runtime-errors\20260311-system-setup-and-framework-activation-is-fixed-and-solution.md`
 - `04_Operations\01_Active_Tasks\Task_End\35_H4_System_Setup.md -> 04_Operations\01_Active_Tasks\Task_End\docs\solutions\runtime-errors\20260311-mcp-routes-fixed-and-system-working-solution.md`
 - `04_Operations\04_Progress\05_PROGRESS.md -> 04_Operations\04_Progress\..\01_Active_Tasks\2026-03-02-feat-webp-conversion-review-plan.md`
-- `03_Knowledge\10_Repos_Gentleman\agent-teams-lite\docs\installation.md -> 03_Knowledge\10_Repos_Gentleman\agent-teams-lite\docs\examples\claude-code\CLAUDE.md`
-- `03_Knowledge\10_Repos_Gentleman\agent-teams-lite\docs\installation.md -> 03_Knowledge\10_Repos_Gentleman\agent-teams-lite\docs\examples\opencode\opencode.single.json`
-- `03_Knowledge\10_Repos_Gentleman\agent-teams-lite\docs\installation.md -> 03_Knowledge\10_Repos_Gentleman\agent-teams-lite\docs\examples\opencode\opencode.multi.json`
+- `05_Archive\07_Repos_Gentleman\agent-teams-lite\docs\installation.md -> 05_Archive\07_Repos_Gentleman\agent-teams-lite\docs\examples\claude-code\CLAUDE.md`
+- `05_Archive\07_Repos_Gentleman\agent-teams-lite\docs\installation.md -> 05_Archive\07_Repos_Gentleman\agent-teams-lite\docs\examples\opencode\opencode.single.json`
+- `05_Archive\07_Repos_Gentleman\agent-teams-lite\docs\installation.md -> 05_Archive\07_Repos_Gentleman\agent-teams-lite\docs\examples\opencode\opencode.multi.json`
 - ... and 19 more
 
 ### Step 6: Ghost Files

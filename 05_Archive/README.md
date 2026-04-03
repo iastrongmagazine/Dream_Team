@@ -1,7 +1,7 @@
 # 05_Archive — Legacy y Repositorios
 
 **Versión:** 6.1
-**Última actualización:** 2026-03-29
+**Última actualización:** 2026-04-01
 **Estado:** 📦 Legacy
 
 ---
@@ -29,29 +29,15 @@ Think_Different/
 ```
 05_Archive/
 ├── README.md                    # Este archivo
-├── 00_Raiz_Archive/           # Archivos de raíz archivados
-├── 01_Recursos/               # Recursos varios
-├── 14_Legacy_Strategic_Plans/ # Planes estratégicos legacy
-├── Auto_Improvement_Backups/  # Backups de auto-mejora
-└── 10_Repos_Gentleman/        # Repositorios clonados
-    ├── README.md               # Guía de repos
-    ├── agent-teams-lite/       # SDD workflow
-    ├── compound-engineering-plugin/ # Compound Engineering
-    ├── curso-ai-devs/          # Curso AI Devs
-    ├── digitalgarden/          # Obsidian Digital Garden
-    ├── docling/                # Document processing
-    ├── engram/                 # Memoria persistente
-    ├── gentle-ai/               # Ecosistema configurador
-    ├── Gentleman.Dots/          # Dotfiles + config
-    ├── gentleman-guardian-angel/ # GGA Code Review
-    ├── gentleman-skills/       # Skills curadas
-    ├── google-workspace-mcp-server-main/
-    ├── Kit Profesional Alto Impacto 2026/
-    ├── n8n-skills-main/        # Skills n8n
-    ├── personal-os-main/       # Original del fork
-    ├── pi-vs-claude-code-main/
-    ├── qmd/                    # Búsqueda local (NO clonado)
-    └── taste-skill/           # Diseño premium
+├── 01_Raiz_Archive/             # Archivos de raíz archivados (LICENSE, setup)
+├── 02_Rules_Legacy/             # Reglas y Pilares antiguos
+├── 03_Docs_Legacy/              # Documentación legacy (Auditorías, Planes)
+├── 04_Backups_AutoMejora/       # Backups del sistema de auto-mejora
+├── 05_Planes_Legacy/            # Planes de acción archivados
+├── 06_Recursos/                 # Recursos (WF, Imágenes, PDFs)
+├── 07_Repos_Gentleman/          # Repositorios de referencia (Gentleman Ecosystem)
+├── 08_Planes_Estrategicos/      # Planes estratégicos complejos legacy
+└── 09_OpenSpec_Archive/         # Archivo de especificaciones OpenSpec
 ```
 
 ---
