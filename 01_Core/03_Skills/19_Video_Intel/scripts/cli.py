@@ -7,13 +7,25 @@ Usage:
 """
 
 import json
+import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import click
 
 from synthesis_engine import SynthesisEngine
 from video_registry import VideoRegistry
+
+# Root of the PersonalOS repo (4 levels up from scripts/)
+_REPO_ROOT = Path(__file__).resolve().parents[4]
+
+
+def _default_output(video_title: str) -> str:
+    """Generate Video_Analysis_{date}_{slug}.md filename in repo root."""
+    date = datetime.now().strftime("%Y-%m-%d")
+    slug = re.sub(r"[^a-zA-Z0-9]+", "_", video_title or "Video")[:40].strip("_")
+    return str(_REPO_ROOT / f"Video_Analysis_{date}_{slug}.md")
 
 
 @click.group()
@@ -27,7 +39,7 @@ def cli():
 @click.argument("video_url")
 @click.option("--repo", "-r", help="GitHub repository URL for code analysis")
 @click.option(
-    "--output", "-o", default="implementation_plan.md", help="Output file path"
+    "--output", "-o", default=None, help="Output file path (default: Video_Analysis_{date}_{title}.md in repo root)"
 )
 @click.option(
     "--format",
@@ -69,37 +81,28 @@ def analyze(video_url, repo, output, format, verbose, no_transcript):
 
         result = engine.synthesize(video_url, repo)
 
+        # Resolve output path — default to repo root with auto name
+        video_title = result.get("components", {}).get("video", {}).get("title", "")
+        resolved_output = output or _default_output(video_title)
+
         # Output results
         if format == "json":
             output_data = json.dumps(result, indent=2)
-
-            if output:
-                Path(output).write_text(output_data, encoding="utf-8")
-                click.echo(f"[+] Results saved to: {output}")
-            else:
-                click.echo(output_data)
+            Path(resolved_output).write_text(output_data, encoding="utf-8")
+            click.echo(f"[+] Results saved to: {resolved_output}")
 
         else:
             # Generate markdown output
             markdown = generate_markdown(result)
+            Path(resolved_output).write_text(markdown, encoding="utf-8")
+            click.echo(f"[+] Implementation plan saved to: {resolved_output}")
 
-            if output:
-                Path(output).write_text(markdown, encoding="utf-8")
-                click.echo(f"[+] Implementation plan saved to: {output}")
-            else:
-                click.echo(markdown)
-                
             # Log to registry
             if result.get("components", {}).get("video"):
                 try:
                     registry_path = Path(__file__).parent.parent.parent.parent.parent / "02_Knowledge" / "06_Unicorn" / "video_analysis_registry.md"
                     video_registry = VideoRegistry(str(registry_path))
-                    
-                    if output:
-                        abs_output = str(Path(output).resolve())
-                    else:
-                        abs_output = "No File Output"
-                        
+                    abs_output = str(Path(resolved_output).resolve())
                     video_registry.append_to_registry(result["components"]["video"], abs_output)
                     if verbose:
                         click.echo(f"[+] Added entry to Video Registry")
