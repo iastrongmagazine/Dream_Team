@@ -11,7 +11,10 @@
       "Bash(mv:*)",
       "Bash(cp:*)",
       "Bash(mkdir:*)",
-      "mcp__plugin_engram_engram__mem_context"
+      "mcp__plugin_engram_engram__mem_context",
+      "Bash(py -3 cli.py analyze \"https://www.youtube.com/live/3psHUg6KzOo?si=Y6bZACLup04IfPCF\" --no-transcript --verbose -o test_output.md)",
+      "Bash(gh --version)",
+      "Bash(gh auth:*)"
     ]
   },
   "hooks": {

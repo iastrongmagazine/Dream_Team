@@ -9,12 +9,7 @@
     "aim-memory-bank": {
       "transport": "stdio",
       "command": "npx.cmd",
-      "args": [
-        "-y",
-        "mcp-knowledge-graph",
-        "--memory-path",
-        ".aim"
-      ]
+      "args": ["-y", "mcp-knowledge-graph", "--memory-path", ".aim"]
     },
 
     "context7": {
@@ -87,6 +82,7 @@
     },
 
     "Notion": {
+      "enable": true,
       "transport": "stdio",
       "command": "npx.cmd",
       "args": ["-y", "@notionhq/notion-mcp-server@latest"],
@@ -122,7 +118,9 @@
     "TestSprite": {
       "transport": "stdio",
       "command": "bash",
-      "args": ["C:/Users/sebas/Downloads/01 Revisar/09 Versiones/00 Respaldo PC Sebas/01 Github/personal-os/Think_Different/08_Scripts_Os/testsprite_failover.sh"],
+      "args": [
+        "C:/Users/sebas/Downloads/01 Revisar/09 Versiones/00 Respaldo PC Sebas/01 Github/personal-os/Think_Different/08_Scripts_Os/testsprite_failover.sh"
+      ],
       "env": {
         "TESTSPRITE_PRIMARY": "sk-user-kQ-VuVu0H01mJpA2bbzhnMb1dzukIQEaHaF8kr49X-nYJNdP_vCo9CYj1w1J03Vg48Zm5KsdrE9bY-ZEGjeJmQfQlAXRJ0rR92s1xNbOO7w0TVS-ui8RXaAB2djntZHjcRo"
       }
@@ -229,7 +227,14 @@
     "docker": {
       "transport": "stdio",
       "command": "docker",
-      "args": ["run", "--rm", "-i", "--mount", "type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock", "mcp/docker:latest"]
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--mount",
+        "type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock",
+        "mcp/docker:latest"
+      ]
     },
 
     "qmd": {

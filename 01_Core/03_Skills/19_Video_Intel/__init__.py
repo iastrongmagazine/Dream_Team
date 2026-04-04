@@ -19,9 +19,11 @@ __author__ = "personal-os"
 from .video_analyzer import VideoAnalyzer
 from .repo_scanner import RepoScanner
 from .synthesis_engine import SynthesisEngine
+from .video_registry import VideoRegistry
 
 __all__ = [
     "VideoAnalyzer",
     "RepoScanner",
     "SynthesisEngine",
+    "VideoRegistry",
 ]

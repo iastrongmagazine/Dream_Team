@@ -59,7 +59,13 @@
 
 ## ARQUITECTURA DE PAGINAS
 
-
+- **`/` (Home):** Hero B2B, llamada a la acción principal, listado destacado de liquidaciones y Chat/Bot de cotización rápida.
+- **`/inventory`:** Catálogo de productos con filtros por categoría comercial, estado y precio (vía Meilisearch).
+  - **`/inventory/[id]`:** Detalle del lote/producto, galería HD, dimensiones e información de contacto/"Quiero este lote".
+- **`/services/liquidation`:** Landing page especializada B2B para captación de clientes que liquidan oficinas.
+- **`/about`:** Información corporativa de AOLI, equipo y credibilidad (Social Proof).
+- **`/admin` (Payload v3):** Panel interno (CMS) para gestión total: subida rápida Uploadthing de fotos, edición de lotes y visualización.
+- **`/api/*`:** Endpoints para Server Actions e integración backend (AI SDK 5, Stripe, Meilisearch webhooks).
 
 ---
 
@@ -85,64 +91,74 @@
 
 Si alguno falla: diagnosticar antes de continuar. No desperdiciar creditos con MCPs rotos.
 
-
+1. **Test MCP `engram`:** Recuperar context o hacer search de reglas previas (`mem_context`).
+2. **Test MCP `context7`:** Obtener el ID más reciente para Next.js o Payload (`resolve-library-id`).
+3. **Validación General:** Verificar acceso file system / edición iterativa al repo Think_Different.
 
 ---
 
 ## FASE 1 - INVENTARIO AUTOMATIZADO (15 min)
 
-0
-
-
+1. **Definir Collections en Payload v3:** Crear esquemas de `Products`, `Categories` y `Media`.
+2. **Setup Meilisearch Webhooks:** Configurar Lifecycle hooks (`afterChange`, `afterDelete`) para replicación indexada de Payload a Meili.
+3. **Prompt Ingeniería (Catalogación):** Definir script/prompt mediante el cual Claude va a auto-completar descripciones y extraer specs de las fotos subidas.
 
 ---
 
 ## FASE 2 - VALIDACION DOCUMENTACION (20 min)
 
-
+1. **Auditar Skills (05_Vibe_Coding):** Comprobar que `.md` de Next.js, TypeScript y Tailwind existen y tienen las reglas de 2026.
+2. **Auditar Reglas SOTA:** Confirmar que no hay referencias cruzadas desactualizadas (ej. NextAuth en vez de BetterAuth).
+3. **Verificar Pilar 0:** Revisar si los estándares de plan-first y comunicación en español están propagados en la carpeta `01_Core`.
 
 ---
 
 ## FASE 3 - VALIDACION FUNCIONAL (60 min)
 
 ### 3.1 Stack Web AOLI - P0 CRITICO
-
+- Setup base: Probar comando de instalación (Skeletons / Next+Tailwind).
+- Rutas Bajas: Validar compilado inicial en local mediante `npm run dev`.
 
 ### 3.2 SDD end-to-end - P0 CRITICO
-
+- Lanzar `sdd-init` sobre subdirectorio de AOLI web.
+- Probar la lectura y guardado de issues simulados vía MCP / Engram.
 
 ### 3.3 Hillary Life OS - P1
-
+- Validar conectividad de integraciones legacy si afecta o se retroalimenta.
 
 ### 3.4 CE Compound Engineering - P1
-
+- Verificar disponibilidad del plugin CE interactivo y rubricas de confianza en la CLI.
 
 ### 3.5 Scripts HUBs - P1
-
+- Lanzar testeo genérico en Python/TS HUBs.
 
 ### 3.6 GGA Guardian Angel - P1
-
+- Activar dry-run pre-commit hook de GGA para comprobar el linting de strict TS.
 
 ### 3.7 Engram end-to-end - P1
-
+- Crear y buscar un recuerdo (topic test) via `mem_save` -> `mem_search`.
 
 ### 3.8 Agents - P1
-
+- Comprobar sub-agentes duales (Judgment Day) con una tarea menor simulada.
 
 ### 3.9 N8N + Integraciones - P2
-
+- Revisar status de N8N automations de base.
 
 ---
 
 ## FASE 4 - VALIDACION INTEGRACION (20 min)
 
-
+1. **Testing de Cotización IA:** Conectar AI SDK 5 con mock de Database (Postgres) para validar Streaming UI.
+2. **Emailing:** Probar integración de Resend o simular envío para los request de cotizaciones.
+3. **SEO Local:** Correr scripts de genado XML schema.org e insert de tags via Next Metadata rules.
 
 ---
 
 ## FASE 5 - REPORTE (15 min)
 
-
+1. Generar consolidado markdown de los estatus (Fase 0-4).
+2. Taguear incidentes y fallos con Severidad (CRITICAL / WARNING / SUGGESTION).
+3. Cerrar iteración de ecosistemas vía `mem_session_summary`.
 
 Severity: CRITICAL / WARNING / SUGGESTION
 
@@ -150,7 +166,11 @@ Severity: CRITICAL / WARNING / SUGGESTION
 
 ## FASE 6 - BOOTSTRAP PROYECTO AOLI [EL OBJETIVO REAL]
 
-
+1. Inicialización Git Repo: `aoli-web-platform` en directorio correspondiente de PersonalOS.
+2. Scaffold de Next.js 15, Drizzle, y Tailwind 4 con Strict TypeScript configuration.
+3. Setup the Base UI Theme (Tokens) para AOLI en `globals.css` / Tailwind.
+4. Conexión de Drizzle con Neon DB remota (`db push`).
+5. Configurar Vercel Dashboard (Deploy Automático de rama Master).
 
 ---
 
@@ -186,7 +206,10 @@ Severity: CRITICAL / WARNING / SUGGESTION
 
 ## OUTPUT ESPERADO DEL PROXIMO RESET
 
-
+1. **Repo AOLI Inicializado:** Push funcional en master de la arquitectura Next.js sin errores de build ni TS lints.
+2. **Dashboard Cargo:** Acceso local a Payload CMS con tablas de inventario en blanco conectadas a base de datos externa Neon DB.
+3. **Vercel Deploy:** URL temporal funcional comprobando la integración del Pipeline.
+4. **Resumen de Sistema:** Un reporte limpio del estado de SDD, Engram, y GGA (Fases de la auditoría) con resolución de impedimentos.
 
 ---
 

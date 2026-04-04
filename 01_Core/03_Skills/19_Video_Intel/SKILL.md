@@ -17,6 +17,46 @@ metadata:
 
 Skill en PRODUCCION. Ubicacion: `01_Core/03_Skills/19_Video_Intel/`
 
+## Engram Integration
+
+Persiste aprendizajes con `topic_key: video-intel-skill`. Guardar: metodologias nuevas, patrones exitosos, errores recurrentes.
+
+## 9-Step Workflow
+
+| Step | Action | Description |
+|------|--------|-------------|
+| 1 | Video URL Validation | Verifica URL valida de YouTube |
+| 2 | Metadata Extraction | yt-dlp obtiene titulo, canal, duracion |
+| 3 | Subtitle Download | Descarga subtitles si estan disponibles |
+| 4 | Transcript Generation | whisper transcribe audio a texto |
+| 5 | NLP Methodology Extraction | Identifica tecnicas, herramientas, pasos |
+| 6 | Demo URL Detection | Extrae URLs de demos/sandboxes del transcript |
+| 7 | OS Verification | Verifica herramientas vs sistema del usuario |
+| 8 | Plan Synthesis | Combina todo en plan ejecutable |
+| 9 | Output Generation | Genera markdown con implementacion_plan.md |
+
+## Video Registry
+
+`video_registry.py` gestiona cache local de videos analizados.
+
+**Proposito:** Evita reanalizar videos, almacena transcripciones, permite busqueda por tema.
+
+**API:**
+```python
+from video_registry import VideoRegistry
+
+registry = VideoRegistry(registry_path="./video_cache.md")
+registry.append_to_registry({"url": url, "title": title, "channel": channel}, local_filepath)
+filepath = registry.write_analysis_file(analysis_content, title, output_dir)
+```
+
+## Knowledge Migration
+
+Aprendizajes migran a la **Unicorn Engineering knowledge base** en `02_Knowledge/05_Unicorn/06_Engineering/`:
+- `06_Engineering/patterns/` - Metodologias extraidas
+- `06_Engineering/learnings/` - Documentacion Video_Intel
+- `06_Engineering/bugfixes/` - Errores y workarounds
+
 ## Esencia Original
 
 **Proposito:** Transformar contenido audiovisual (YouTube) y codigo (GitHub) en planes de accion ejecutables y verificados contra el sistema operativo del usuario.
@@ -51,13 +91,13 @@ Skill en PRODUCCION. Ubicacion: `01_Core/03_Skills/19_Video_Intel/`
 
 ```bash
 # Analizar video
-python -m video_intel.cli analyze "https://www.youtube.com/watch?v=..."
+python 01_Core/03_Skills/19_Video_Intel/scripts/cli.py analyze "https://www.youtube.com/watch?v=..."
 
 # Con repositorio
-python -m video_intel.cli analyze "VIDEO_URL" --repo "https://github.com/user/repo"
+python 01_Core/03_Skills/19_Video_Intel/scripts/cli.py analyze "VIDEO_URL" --repo "https://github.com/user/repo"
 
 # Salida JSON
-python -m video_intel.cli analyze "VIDEO_URL" --format json -o plan.json
+python 01_Core/03_Skills/19_Video_Intel/scripts/cli.py analyze "VIDEO_URL" --format json -o plan.json
 ```
 
 ### Como Modulo Python
@@ -82,6 +122,7 @@ print(result["prerequisites"])
 | `video_analyzer.py` | yt-dlp + whisper para metadata y transcripcion |
 | `repo_scanner.py` | git clone + AST parsing para analisis de codigo |
 | `synthesis_engine.py` | Combina datos y genera plan |
+| `video_registry.py` | Cache local de videos analizados y busqueda |
 | `cli.py` | Interfaz Click para CLI |
 
 ## Output
@@ -113,6 +154,10 @@ El resultado incluye:
 - **Modelos whisper**: Por defecto usa modelo `base`. Para mayor precision usar `medium` (mas lento)
 - **URLs de demo**: Solo detecta URLs en el transcript, no en metadata
 - **Metodologias limitadas**: NLP simple - no extrae todo perfectamente. Revisar manualmente
+- **Cache invalido**: Videos actualizados en YouTube no se re-descargan. Borar cache manualmente si hay cambios
+- **UTF-8 encoding**: Algunos transcripts tienen caracteres especiales. Asegurar UTF-8 al guardar archivos
+- **API rate limits**: YouTube/API pueden rate-limitear. Implementar backoff exponencial
+- **Espacio en disco**: Videos completos ocupan GBs. Configurar cleanup automatico en config
 
 ## Recursos
 
