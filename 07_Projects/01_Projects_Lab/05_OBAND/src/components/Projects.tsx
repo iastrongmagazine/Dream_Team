@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight, MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 interface Project {
   id: number;
@@ -66,71 +66,89 @@ const PROJECTS: Project[] = [
 
 const springTransition = {
   type: "spring" as const,
-  stiffness: 300,
-  damping: 30,
+  stiffness: 100,
+  damping: 20,
+};
+
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { staggerChildren: 0.12 }
+  }
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { ...springTransition, duration: 0.8 }
+  }
 };
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="w-full py-32 px-6 md:px-8 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter font-heading mb-6">
-            Proyectos Recientes
-          </h2>
-          <p className="text-muted text-lg leading-relaxed font-light">
-            Una seleccion curada de proyectos de amueblamiento corporativo ejecutados con precision 
-            e ingenieria de primer nivel. Cada espacio transformado es una oportunidad de excelencia.
-          </p>
-        </div>
-        <button 
-          type="button"
-          className="text-sm font-bold uppercase tracking-widest border-b border-accent pb-1 text-accent transition-all hover:pr-4 cursor-pointer"
-        >
-          Ver Todos los Proyectos
-        </button>
-      </div>
+    <section id="proyectos" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      {/* Section Header - minimal, left aligned */}
+      <motion.div 
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-16 md:mb-24"
+      >
+        <motion.div variants={fadeInUp} className="mb-4">
+          <span className="text-xs font-medium tracking-widest text-neutral-500 uppercase">
+            Proyectos
+          </span>
+        </motion.div>
+        <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+          Trabajos recientes
+        </motion.h2>
+        <motion.p variants={fadeInUp} className="max-w-xl text-neutral-400 leading-relaxed">
+          Proyectos de amueblamiento corporativo ejecutados con precision e ingenieria de primer nivel.
+        </motion.p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {PROJECTS.map((project, i) => (
-          <motion.div 
+      {/* Asymmetric Grid - NO 3-column card layout */}
+      <motion.div 
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8"
+      >
+        {PROJECTS.map((project, index) => (
+          <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ ...springTransition, duration: 0.8, delay: i * 0.1 }}
-            className="group relative flex flex-col gap-6 cursor-pointer"
+            variants={fadeInUp}
+            className={`group relative cursor-pointer ${
+              // Asymmetric layout: first 2 items span 7 cols, next 2 span 5 cols
+              index < 2 
+                ? 'md:col-span-7' 
+                : index < 4 
+                  ? 'md:col-span-5' 
+                  : 'md:col-span-6'
+            }`}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl glass border border-glass-border">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent transition-opacity group-hover:opacity-0 z-10" />
+            <div className="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-2xl bg-white/5">
               <Image 
                 src={project.image} 
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                loading={i === 0 ? "eager" : "lazy"}
-                decoding="async"
-                priority={i === 0}
+                className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                loading={index < 2 ? "eager" : "lazy"}
               />
-              
-              <div className="absolute top-6 right-6 flex gap-2">
-                <div className="p-3 rounded-full bg-black/40 backdrop-blur-md border border-white/10 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                  <ArrowUpRight className="w-4 h-4 text-white" />
-                </div>
-              </div>
+              {/* Minimal overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
 
-            <div className="px-2">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 glass border border-glass-border rounded-md text-neutral-400">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h3 className="text-2xl font-bold mb-2 font-heading">{project.title}</h3>
-              <div className="flex items-center gap-4 text-sm text-muted">
+            {/* Content below image - no cards, just spacing */}
+            <div className="mt-4 md:mt-6">
+              <h3 className="text-lg md:text-xl font-medium text-white mb-2">{project.title}</h3>
+              <div className="flex items-center gap-4 text-xs text-neutral-500">
                 <span className="flex items-center gap-1">
                   <MapPin className="w-3 h-3" />
                   {project.location}
@@ -143,7 +161,7 @@ export default function Projects() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

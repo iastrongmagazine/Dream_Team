@@ -22,46 +22,80 @@ const SERVICES = [
   {
     icon: Package,
     title: "Logistica e Instalacion",
-    description: "Transporte, montje y configuracion de equipamiento con garantias de calidad.",
+    description: "Transporte, montaje y configuracion de equipamiento con garantias de calidad.",
   },
 ];
 
 const springTransition = {
   type: "spring" as const,
-  stiffness: 300,
-  damping: 30,
+  stiffness: 100,
+  damping: 20,
+};
+
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { ...springTransition, duration: 0.8 }
+  }
 };
 
 export default function Services() {
   return (
-    <section id="servicios" className="w-full py-32 px-6 md:px-8 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter font-heading mb-6">
-            Nuestros Servicios
-          </h2>
-          <p className="text-muted text-lg leading-relaxed font-light">
-            Soluciones integrales para la transformacion de espacios corporativos. 
-            Cada servicio esta diseñado para entregar resultados que superan expectativas.
-          </p>
-        </div>
-      </div>
+    <section id="servicios" className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      {/* Section Header - Left aligned, minimal */}
+      <motion.div 
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-20"
+      >
+        <motion.div variants={fadeInUp} className="mb-4">
+          <span className="text-xs font-medium tracking-widest text-neutral-500 uppercase">
+            Servicios
+          </span>
+        </motion.div>
+        <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+          Soluciones integrales
+        </motion.h2>
+        <motion.p variants={fadeInUp} className="max-w-xl text-neutral-400 leading-relaxed">
+          Transformacion de espacios corporativos con resultados que superan expectativas.
+        </motion.p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {SERVICES.map((service, i) => (
+      {/* Services - 2 column asymmetric grid (no 4-card layout) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        {SERVICES.map((service, index) => (
           <motion.div
             key={service.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ ...springTransition, duration: 0.6, delay: i * 0.1 }}
-            className="group p-8 rounded-3xl glass border border-glass-border hover:bg-glass-hover transition-all duration-300"
+            transition={{ delay: index * 0.1 }}
+            className="group"
           >
-            <div className="p-4 bg-accent/10 rounded-2xl w-fit mb-6 group-hover:bg-accent/20 transition-colors">
-              <service.icon className="w-8 h-8 text-accent" />
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-300">
+                <service.icon className="w-5 h-5 text-neutral-400 group-hover:text-accent transition-colors" />
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-white mb-2">{service.title}</h3>
+                <p className="text-neutral-500 text-sm leading-relaxed max-w-sm">
+                  {service.description}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 font-heading">{service.title}</h3>
-            <p className="text-muted text-sm leading-relaxed">{service.description}</p>
           </motion.div>
         ))}
       </div>
