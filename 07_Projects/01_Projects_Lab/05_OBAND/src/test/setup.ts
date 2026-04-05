@@ -16,11 +16,24 @@ vi.mock('next/navigation', () => ({
   usePathname: () => '/',
 }));
 
-// Mock next/image - use a simple functional component wrapper
+// Mock next/image - convert boolean props to strings
 vi.mock('next/image', () => {
   const MockImage = (props: { src: string; alt: string; [key: string]: unknown }) => {
-    const { src, alt, ...rest } = props;
-    return React.createElement('img', { src, alt, ...rest });
+    const { src, alt, fill, priority, loading, ...rest } = props;
+    const imgProps: Record<string, string> = { src, alt };
+    if (fill === true) imgProps.fill = 'true';
+    if (priority === true) imgProps.priority = 'true';
+    if (loading) imgProps.loading = String(loading);
+    return React.createElement('img', { ...imgProps, ...rest });
   };
   return { __esModule: true, default: MockImage };
 });
+
+// Mock IntersectionObserver for Framer Motion viewport animations
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
+  takeRecords() { return []; }
+} as unknown as typeof IntersectionObserver;
