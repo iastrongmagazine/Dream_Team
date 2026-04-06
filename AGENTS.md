@@ -25,6 +25,11 @@ graph TD
 > [!IMPORTANT]
 > The following rules must be enforced by Guardian Angel on every commit constraint check.
 
+### Environment Detection (ALWAYS ACTIVE)
+- ✅ **Detect IDE/Terminal**: When starting work or reading files, identify what environment is being used (Cursor, VS Code, Terminal, etc.)
+- ✅ **Research Capabilities**: Understand the native features, shortcuts, and limitations of the detected environment
+- ✅ **Leverage Native Tools**: Use built-in browser, terminal, or IDE features instead of external tools when available
+
 ### TypeScript / JavaScript
 - ✅ **Use `const` or `let`**.
 - ❌ **NEVER use `var`**.
