@@ -136,24 +136,27 @@ export function ScrollVideoServices({
         aria-hidden="true"
       />
       
-      {/* Services Overlay - Progressive content */}
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-        <div className="bg-black/60 backdrop-blur-md px-8 py-12 rounded-2xl max-w-2xl w-full mx-4">
+      {/* Services Overlay - Asymmetric per taste-skill DESIGN_VARIANCE: 8 */}
+      {/* Left-aligned content, not centered - creates editorial tech-forward feel */}
+      <div className="absolute top-0 left-0 w-full h-full flex items-center">
+        <div className="bg-zinc-900/70 backdrop-blur-lg border border-white/5 px-10 py-14 rounded-none max-w-xl ml-6 md:ml-16 lg:ml-24 mt-32">
           {servicesData.map((service, index) => (
             <div 
               key={service.title}
-              className={`transition-opacity duration-500 ${
-                index === currentServiceIndex ? 'opacity-100' : 'opacity-0 absolute'
+              className={`transition-all duration-500 ease-out ${
+                index === currentServiceIndex 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 absolute -translate-y-4'
               }`}
             >
-              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 text-center tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-medium text-white mb-5 tracking-tight">
                 {service.title}
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {service.items.map((item) => (
-                  <li key={item} className="flex items-center text-white/90">
-                    <span className="w-2 h-2 bg-[#FF5F5E] rounded-full mr-3 flex-shrink-0" />
-                    <span className="text-lg">{item}</span>
+                  <li key={item} className="flex items-center text-zinc-300">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-3 flex-shrink-0" />
+                    <span className="text-base">{item}</span>
                   </li>
                 ))}
               </ul>
