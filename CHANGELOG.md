@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.8.0 - 2026-04-10
+
+### Added — Skills & Video Intelligence
+- **`.agent/02_Skills/18_Personal_Life_OS/`**: 5 nuevos skills para productividad personal:
+  - Quick_Capture: Captura rápida de ideas y tareas
+  - Plan_My_Day: Planificación diaria
+  - Daily_Notes: Notas diarias estructuradas
+  - Recording_Mode: Modo de grabación/transcripción
+  - Returns_Tracker: Seguimiento de devoluciones
+- **`.agent/02_Skills/19_Video_Intel copy/`**: Sistema completo de análisis de video con IA
+- **`.agent/02_Skills/20_Skill_Template/`**: Template reusable para crear nuevos skills
+- **`05_Archive/03_Docs_Legacy/`**: Documentación legacy reorganizada
+
+### Fixed — VPN & Network Investigation
+- **Error 403 en Claude Code**: diagnosticado - IP de Perú bloqueada
+- **Radmin VPN**: Split tunneling impedía tráfico del terminal
+- **Routes forzadas** para rutear todo el tráfico por VPN
+- **ProtonVPN**: servicio iniciado pero requiere conexión manual a servidor
+- **Resultado**: Tráfico ahora pasa por VPN (IP Venezuela) pero requiere servidor de país soportado
+
+### Notes
+- 29 commits por ahead de origin/master
+- Skills count: 165+
+- Para usar Claude Code: conectarte a servidor VPN de EE.UU./Países Bajos/Japón
+
+---
+
 ## 1.7.1 - 2026-04-02
 
 ### Fixed — OpenCode terminal launch errors

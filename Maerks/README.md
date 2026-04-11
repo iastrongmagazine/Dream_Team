@@ -1,7 +1,7 @@
 # Maerks — Tests Legacy y Planes
 
 **Versión:** 6.1
-**Última actualización:** 2026-03-29
+**Última actualización:** 2026-04-11
 **Estado:** 📦 Legacy
 
 ---

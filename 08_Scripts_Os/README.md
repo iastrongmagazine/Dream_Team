@@ -1,7 +1,7 @@
 # 08_Scripts_Os — Motor de Automatización
 
 **Versión:** 6.1
-**Última actualización:** 2026-04-04
+**Última actualización:** 2026-04-10
 **Estado:** ✅ Activo
 
 ---

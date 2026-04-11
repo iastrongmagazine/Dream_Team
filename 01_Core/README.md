@@ -1,7 +1,7 @@
 # 01_Core — Think Different PersonalOS
 
 **Versión:** 6.1
-**Última actualización:** 2026-04-10
+**Última actualización:** 2026-04-11
 **Estado:** ✅ Activo | 💾 FUENTE DE VERDAD
 
 ---
