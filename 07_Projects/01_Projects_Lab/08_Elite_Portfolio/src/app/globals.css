@@ -1,0 +1,161 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --font-geist: Geist, sans-serif;
+  --font-outfit: Outfit, sans-serif;
+  /* Accent: Deep Emerald - singular, no saturation */
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-geist), sans-serif;
+    background-color: #fafafa;
+    color: #09090b;
+  }
+
+  /* Anti-Pure Black */
+  :root {
+    --foreground: #09090b;
+  }
+
+  .dark {
+    --foreground: #fafafa;
+    background-color: #09090b;
+  }
+
+  body {
+    color: var(--foreground);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: white;
+  }
+}
+
+@layer utilities {
+  /* NO Inter - usar Geist/Outfit */
+  .font-display {
+    font-family: var(--font-outfit), sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-geist), sans-serif;
+  }
+
+  /* Layout containers */
+  .container-premium {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Anti-center bias - Left aligned content */
+  .content-left {
+    text-align: left;
+  }
+
+  /* Glassmorphism premium con inner border */
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass-premium {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Grain texture - fixed, pointer-events-none */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Viewport stability - 100dvh NOT h-screen */
+  .min-h-hero {
+    min-height: 100dvh;
+  }
+
+  /* Scrollbar hide */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  /* Button Primary - Emerald accent */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           font-medium text-sm tracking-tight
+           bg-emerald-600 text-white rounded-full
+           transition-all duration-300
+           hover:bg-emerald-700 hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/20
+           active:translate-y-[1px];
+  }
+
+  /* Button Secondary */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           font-medium text-sm tracking-tight
+           border border-zinc-300 dark:border-zinc-700 
+           text-zinc-900 dark:text-zinc-100 rounded-full
+           transition-all duration-300
+           hover:bg-zinc-100 dark:hover:bg-zinc-800;
+  }
+
+  /* Link arrow */
+  .link-arrow {
+    @apply inline-flex items-center gap-2 text-sm font-medium transition-all duration-300;
+  }
+
+  .link-arrow::after {
+    content: "→";
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-arrow:hover::after {
+    transform: translateX(4px);
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight;
+  }
+
+  /* Section subheading */
+  .section-subheading {
+    @apply font-body text-lg md:text-xl text-zinc-500 dark:text-zinc-400;
+  }
+}
