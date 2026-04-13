@@ -61,5 +61,138 @@
       "action": "allow",
       "command": ""
     }
+  },
+  {
+    "timestamp": "2026-04-12T20:01:08.894938",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:03:24.471607",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:07:59.229069",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:13:10.910989",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:16:20.604773",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:16:21.600572",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:20:12.010622",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:20:12.075748",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:22:21.451381",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:24:54.661733",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:27:23.899966",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:29:32.650029",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:30:34.781583",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:32:49.488672",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:34:59.483064",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:38:00.661506",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:40:17.856074",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:44:46.882188",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T20:49:01.439304",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
   }
 ]

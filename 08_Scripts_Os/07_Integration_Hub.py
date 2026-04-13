@@ -1,3 +1,18 @@
+"""
+07_Integration_Hub.py — MCP & External Integrations Hub
+=========================================================
+PersonalOS v6.1 | Think Different
+
+Administra las integraciones con servicios externos y servidores MCP.
+Permite verificar estado de conexión, recargar configuraciones y diagnosticar
+problemas de conectividad con Context7, EXA, Notion, OpenRouter, Engram, etc.
+
+Uso:
+    python 07_Integration_Hub.py --help
+    python 07_Integration_Hub.py status
+    python 07_Integration_Hub.py check <mcp-name>
+    python 07_Integration_Hub.py reload
+"""
 import argparse
 import sys
 from pathlib import Path

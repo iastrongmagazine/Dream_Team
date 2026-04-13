@@ -1,3 +1,18 @@
+"""
+10_General_Hub.py — General Utilities Hub
+==========================================
+PersonalOS v6.1 | Think Different
+
+Colección de utilidades generales del OS: limpieza de temporales, verificación
+de dependencias, reset de estado, helpers de debugging y operaciones
+de mantenimiento que no encajan en hubs especializados.
+
+Uso:
+    python 10_General_Hub.py --help
+    python 10_General_Hub.py clean
+    python 10_General_Hub.py deps-check
+    python 10_General_Hub.py reset-state
+"""
 import sys
 from pathlib import Path
 

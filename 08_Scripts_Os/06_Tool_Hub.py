@@ -1,3 +1,18 @@
+"""
+06_Tool_Hub.py — Tool Integration & Management Hub
+====================================================
+PersonalOS v6.1 | Think Different
+
+Gestiona la integración y el ciclo de vida de herramientas externas dentro del OS.
+Proporciona comandos para instalar, verificar, actualizar y auditar las herramientas
+del ecosistema (CLI tools, binaries, MCP servers, etc.).
+
+Uso:
+    python 06_Tool_Hub.py --help
+    python 06_Tool_Hub.py list
+    python 06_Tool_Hub.py check <tool>
+    python 06_Tool_Hub.py audit
+"""
 import argparse
 import os
 import io

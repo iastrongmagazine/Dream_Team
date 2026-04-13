@@ -1,3 +1,18 @@
+"""
+09_Data_Hub.py — Data Processing & Analytics Hub
+==================================================
+PersonalOS v6.1 | Think Different
+
+Procesa y analiza datos del OS: métricas de sesiones, consumo de tokens,
+performance de skills, reportes de auditoría y visualización de tendencias.
+Genera outputs en `04_Operations/10_Reports/` para revisión manual o automatizada.
+
+Uso:
+    python 09_Data_Hub.py --help
+    python 09_Data_Hub.py analyze
+    python 09_Data_Hub.py report --period week
+    python 09_Data_Hub.py export --format csv
+"""
 import sys
 from pathlib import Path
 

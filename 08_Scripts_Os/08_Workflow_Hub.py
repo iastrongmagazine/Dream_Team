@@ -1,3 +1,18 @@
+"""
+08_Workflow_Hub.py — Workflow Automation Hub
+=============================================
+PersonalOS v6.1 | Think Different
+
+Automatiza flujos de trabajo recurrentes del OS: rituales de apertura/cierre,
+procesamiento de backlog, generación de reportes de sesión y ejecución de
+pipelines predefinidos (SDD, CE, etc.).
+
+Uso:
+    python 08_Workflow_Hub.py --help
+    python 08_Workflow_Hub.py open         # Ritual de apertura
+    python 08_Workflow_Hub.py close        # Ritual de cierre
+    python 08_Workflow_Hub.py run <name>   # Ejecutar workflow específico
+"""
 import sys
 from pathlib import Path
 
