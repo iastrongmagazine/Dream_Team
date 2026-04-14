@@ -210,7 +210,7 @@ Think_Different/
 | **Rules Index**          | `01_Core/01_Rules/RULES_INDEX.md`                   |
 | **Skills Index**         | `01_Core/03_Skills/README.md`                       |
 
-### 5. SKILLS DISPONIBLES (19 Categorías en 01_Core/03_Skills/)
+### 5. SKILLS DISPONIBLES (22 Categorías en 01_Core/03_Skills/)
 | Categoria                    | Skills        | Ubicacion                         |
 |------------------------------|---------------|-----------------------------------|
 | **00_Compound_Engineering**  | 8             | `00_Compound_Engineering/`        |
@@ -233,6 +233,8 @@ Think_Different/
 | **15_Skill_Creator_Oficial** | Creator v2    | `15_Skill_Creator_Oficial/`       |
 | **16_SV_Data_Analyst**       | Analyst       | `16_Silicon_Valley_Data_Analyst/` |
 | **17_SEO_SOTA_Master**       | SEO           | `17_SEO_SOTA_Master/`             |
+| **18_Personal_Life_OS**      | Life OS       | `18_Personal_Life_OS/`            |
+| **19_Video_Intel**           | Video AI      | `19_Video_Intel/`                 |
 </architecture_routing>
 
 ---

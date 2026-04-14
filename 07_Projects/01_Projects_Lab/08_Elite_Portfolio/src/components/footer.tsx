@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { InstagramLogo, LinkedinLogo, DribbbleLogo } from "phosphor-react";
+import { InstagramLogo, LinkedinLogo, DribbbleLogo } from "@phosphor-icons/react";
 
 const socialLinks = [
   { icon: InstagramLogo, href: "#", label: "Instagram" },

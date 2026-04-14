@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import { ArrowRight, CheckCircle, Envelope, Phone, MapPin } from "phosphor-react";
+import { ArrowRight, CheckCircle, Envelope, Phone, MapPin } from "@phosphor-icons/react";
 
 interface FormData {
   name: string;

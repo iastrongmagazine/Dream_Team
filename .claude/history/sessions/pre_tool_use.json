@@ -222,5 +222,189 @@
       "action": "allow",
       "command": ""
     }
+  },
+  {
+    "timestamp": "2026-04-12T20:59:56.540634",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T21:02:34.036016",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T21:05:16.352736",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T21:09:03.243819",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T21:09:03.330047",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-12T21:13:36.380604",
+    "data": {
+      "action": "cancel",
+      "reason": "low_battery",
+      "level": 12
+    }
+  },
+  {
+    "timestamp": "2026-04-12T21:16:04.228662",
+    "data": {
+      "action": "cancel",
+      "reason": "low_battery",
+      "level": 8
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:03:24.670073",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:03:24.679563",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:07:33.420354",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:10:05.938290",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:14:51.613852",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:17:30.614964",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:17:30.734069",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:19:53.152080",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T19:22:21.495055",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:12:52.247574",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:15:55.595433",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:21:27.880521",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:24:00.736566",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:26:26.068231",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:28:46.851403",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:31:26.712036",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:33:58.338063",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:36:26.005283",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
+  },
+  {
+    "timestamp": "2026-04-13T20:41:33.959021",
+    "data": {
+      "action": "allow",
+      "command": ""
+    }
   }
 ]

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "phosphor-react";
+import { ArrowUpRight } from "@phosphor-icons/react";
 
 interface Project {
   id: string;

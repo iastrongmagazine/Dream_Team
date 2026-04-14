@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import { List, X, ArrowUpRight } from "phosphor-react";
+import { List, X, ArrowUpRight } from "@phosphor-icons/react";
 
 interface NavItem {
   label: string;

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, ArrowDown } from "phosphor-react";
+import { ArrowRight, ArrowDown } from "@phosphor-icons/react";
 
 interface HeroProps {
   name: string;
