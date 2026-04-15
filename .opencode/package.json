@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@opencode-ai/plugin": "1.4.3"
+    "@opencode-ai/plugin": "1.4.4"
   },
   "devDependencies": {
     "node-notifier": "10.0.1",
