@@ -21,6 +21,7 @@ except ImportError:
 def check_directory_structure():
     print(f"{Fore.CYAN}--- Verificando Estructura de Directorios ---")
     required_dirs = [
+        MATRIX_DIR,
         CORE_DIR,
         BRAIN_DIR,
         OPERATIONS_DIR,
@@ -28,6 +29,8 @@ def check_directory_structure():
         ENGINE_DIR,
         SYSTEM_DIR,
         ARCHIVE_DIR,
+        PROJECTS_DIR,
+        PLAYGROUND_DIR,
     ]
     all_good = True
     for d in required_dirs:

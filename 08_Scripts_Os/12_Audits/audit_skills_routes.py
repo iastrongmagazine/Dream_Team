@@ -24,9 +24,8 @@ import os
 import re
 from collections import defaultdict
 
-ROOT = Path(
-    r"C:\Users\sebas\Downloads\01 Revisar\09 Versiones\00 Respaldo PC Sebas\01 Github\personal-os\Think_Different"
-)
+# ROOT ya viene de config_paths como ROOT_DIR
+ROOT = ROOT_DIR
 
 OLD_PATH = ".agent/02_Skills/"
 NEW_PATH = "01_Core/03_Skills/"

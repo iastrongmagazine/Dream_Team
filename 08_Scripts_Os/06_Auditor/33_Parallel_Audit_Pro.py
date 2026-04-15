@@ -153,7 +153,7 @@ def main():
     launch_agent(
         8,
         "Skill Auditor",
-        "echo Auditing 01_Core/03_Skills vs Inventory... & dir /s 01_Core\\03_Skills",
+        f'echo Auditing {SKILLS_DIR} vs Inventory... & dir /s "{SKILLS_DIR}"',
     )
 
     # 9. Agente de Seguridad

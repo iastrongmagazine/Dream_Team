@@ -59,6 +59,8 @@ def audit_dimensions():
         "03_Tasks",
         "04_Operations",
         "05_Archive",
+        "06_Playground",
+        "07_Projects",
         "08_Scripts_Os",
     ]
     for dim in dims:

@@ -17,7 +17,17 @@ except ImportError:
     class Style: BRIGHT = ""
 
 # Las dimensiones ya vienen de config_paths o se definen aquí
-DIMENSIONS = ["00_Winter_is_Coming", "01_Core", "02_Knowledge", "03_Tasks", "04_Operations", "05_Archive", "08_Scripts_Os"]
+DIMENSIONS = [
+    "00_Winter_is_Coming",
+    "01_Core",
+    "02_Knowledge",
+    "03_Tasks",
+    "04_Operations",
+    "05_Archive",
+    "06_Playground",
+    "07_Projects",
+    "08_Scripts_Os",
+]
 
 
 def audit():
