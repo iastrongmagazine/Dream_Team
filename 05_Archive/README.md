@@ -38,7 +38,8 @@ Think_Different/
 ├── 06_Recursos/                 # Recursos (WF, Imágenes, PDFs)
 ├── 07_Repos_Gentleman/          # Repositorios de referencia (Gentleman Ecosystem)
 ├── 08_Planes_Estrategicos/      # Planes estratégicos complejos legacy
-└── 09_OpenSpec_Archive/         # Archivo de especificaciones OpenSpec
+├── 09_OpenSpec_Archive/         # Archivo de especificaciones OpenSpec
+└── 10_To_Delete/               # 🗑️ Legacy para revisión antes de eliminar
 ```
 
 ---
