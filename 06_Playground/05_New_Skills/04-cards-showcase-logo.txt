@@ -1,0 +1,73 @@
+# Step 5 — CardsShowcase: Logo Burst Phase (frames 130–183)
+
+Continue in `src/CardsShowcase.tsx`. Add the `LogoBurst` component that plays after cards converge.
+
+## Timing constants
+
+```tsx
+const LOGO_START   = CONV_END - 6;       // 130 — starts slightly before converge ends
+const LOGO_SETTLE  = LOGO_START + 18;    // 148
+const DOMAIN_START = LOGO_START + 15;    // 145
+```
+
+## LogoBurst component
+
+Only renders when `frame >= LOGO_START`. Use `f = frame - LOGO_START` for local time.
+
+**1. Background flash:**
+```tsx
+const bgFlash = interpolate(f, [0, 8], [0.18, 0], clamp);
+// render: <div style={{ background: "#fff", opacity: bgFlash }} />
+```
+
+**2. Three expanding glow rings** (staggered):
+```tsx
+const glow1Scale = interpolate(f, [0, 18], [0, 4.5], { clamp, easing: Easing.out(Easing.cubic) });
+const glow1Op    = interpolate(f, [0, 16], [1, 0], clamp);
+const glow2Scale = interpolate(f, [3, 24], [0, 6.5], { clamp, easing: Easing.out(Easing.cubic) });
+const glow2Op    = interpolate(f, [3, 22], [0.55, 0], clamp);
+const glow3Scale = interpolate(f, [7, 32], [0, 9],   { clamp, easing: Easing.out(Easing.cubic) });
+const glow3Op    = interpolate(f, [7, 30], [0.25, 0], clamp);
+```
+Each ring is a `borderRadius: "50%"` div with a radial gradient, centered at (960, 540), 260×260px, using `transform: scale(${glowScale})`.
+
+**3. Logo spring overshoot:**
+```tsx
+const logoScale = interpolate(f, [0, 10, 16, 18], [0, 1.5, 0.92, 1.0],
+  { clamp, easing: Easing.out(Easing.cubic) });
+```
+After settling, add gentle breathing:
+```tsx
+const logoBreath     = 1 + 0.018 * Math.sin(((f - 18) / 70) * Math.PI * 2);
+const finalLogoScale = logoScale * (f > 18 ? logoBreath : 1);
+```
+
+**4. Logo 2D spin** (rotates during the bounce):
+```tsx
+const logoSpin = interpolate(f, [0, 30], [0, 360],
+  { clamp, easing: Easing.inOut(Easing.cubic) });
+// apply: transform: `scale(${finalLogoScale}) rotateZ(${logoSpin}deg)`
+```
+
+**5. Ambient halo** behind logo — soft blue radial glow, 320×320px, `opacity: logoOpacity`.
+
+**6. Brand name** slides up at `DOMAIN_START`:
+```tsx
+const domainF = frame - DOMAIN_START;
+opacity:   interpolate(domainF, [0, 2],  [0, 1], clamp)
+translateY: interpolate(domainF, [0, 18], [24, 0], { clamp, easing: Easing.out(Easing.cubic) })
+```
+Style: 48px, weight 700, letterSpacing -1.5, color `#1d1d1f`.
+
+**7. Subtitle** fades in 8 frames after brand name:
+```tsx
+opacity:   interpolate(domainF - 8, [0, 14], [0, 1], clamp)
+translateY: interpolate(domainF - 8, [0, 18], [18, 0], { clamp, easing: Easing.out(Easing.cubic) })
+```
+Style: 28px, weight 400, color `#6e6e73`.
+
+## Logo file
+```tsx
+<Img src={staticFile("logo.svg")} style={{ width: 220, height: 220 }} />
+```
+Centered at (960, 540): `left: 960 - 110, top: 540 - 110`.

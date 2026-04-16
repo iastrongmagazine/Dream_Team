@@ -1,91 +1,78 @@
 # 06_Playground — Pruebas y Experimentos
 
-**Versión:** 6.1
-**Última actualización:** 2026-04-14
-**Estado:** ✅ Activo
+**Version:** 6.1
+**Ultima actualizacion:** 2026-04-15
+**Estado:** Activo — Estructura enumerada SOTA
 
 ---
 
-## 📂 Estructura (Workspace)
-
-```
-Think_Different/
-├── 00_Winter_is_Coming/    # Estrategia, Backlog y ADN (ESTRATÉGICO)
-├── 01_Core/               # Motor OS: Skills, Agents, MCPs (FUENTE DE VERDAD) 💾
-├── 02_Knowledge/          # Base de Conocimiento, Research y Documentación
-├── 03_Tasks/              # Gestión de Tareas Activas
-├── 04_Operations/         # Cerebro Operativo y Automatización
-├── 05_Archive/            # Repositorio de Proyectos Finalizados
-├── 06_Playground/         # Laboratorio de Pruebas y Experimentos ✅
-├── 07_Projects/           # Desarrollo de Proyectos Activos
-└── 08_Scripts_Os/         # Scripts y HUBs Operativos del Sistema
-```
-
----
-
-## 📂 Contenido
+## Estructura
 
 ```
 06_Playground/
-├── Focus_Now_Lab/             # Laboratorio de enfoque actual
-│   ├── README.md              # Documentación del lab
-│   ├── Resumen/               # Resúmenes y CVs (JAO)
-│   └── Test_Plan.md           # Plan de pruebas activo
-│
-├── Hillary_Life_OS/           # Sistema Life OS completo
-│   ├── 01_Quick_Capture/      # Captura rápida de ideas
-│   ├── 02_Plan_My_Day/        # Planificación diaria
-│   ├── 03_Daily_Notes/        # Notas diarias
-│   ├── 04_Recording_Mode/     # Modo grabación
-│   ├── 05_Returns_Tracker/     # Seguimiento de retornos
-│   ├── RUNBOOK.md             # Manual de ejecución
-│   └── SESSION_SUMMARY.md     # Resumen de sesión
-│
-├── New_Skills/                # Skills nuevos (evaluación)
-│   ├── *.txt                  # Prompts de referencia
-│   └── *.skill                # Archivos de skill (.zip)
-│   │   ├── brand-voice.skill           # ✅ YA INTEGRADO en 04_Product_Design/08_Brand_Voice_Generator
-│   │   ├── content-ideation.skill      # ✅ YA INTEGRADO en 09_Marketing/12_Content_Ideation
-│   │   ├── offer-and-bio-writer.skill # ❌ NO INTEGRADO - requiere ubicación
-│   │   └── video-prompt-builder.skill # ✅ YA INTEGRADO en 20_James_Cameron/01_Video_Prompt_Builder
-│
-└── Maerks/                    # Entorno de testing y validación
-    ├── 00_Dream_Team_Full.md
-    ├── 00_Test_Anthropic_Harness/    # Framework de evaluación de prompts
-    ├── 01_Create_Agent_Skills/       # Guía para crear skills
-    ├── 02_Skill_Creator/              # Scripts de creación
-    ├── 03_File_Todos/                 # Sistema de TODOs basado en archivos
-    ├── 04_Process_Notes_Legacy/       # Notas de procesos (histórico)
-    ├── 05_Tests/                      # Suite de tests pytest
-    ├── 06_Reports/                    # Reportes de auditoría
-    ├── 07_Tools/                      # Herramientas utilities
-    ├── 08_SOP_Prompts/                # Prompts de procedimientos
-    └── 09_Claude_Code_Learn/          # Recursos de Claude Code
+|--- 01_Focus_Now_Lab/          # Laboratorio de enfoque y pruebas activas
+|    |--- README.md
+|    |--- Resumen/               # CVs y resumenes (JAO)
+|    +--- Test_Plan.md
+|
+|--- 02_Hillary_Life_OS/        # Sistema Life OS v1 (estructura base)
+|    |--- 01_Quick_Capture/
+|    |--- 02_Plan_My_Day/
+|    |--- 03_Daily_Notes/
+|    |--- 04_Recording_Mode/
+|    |--- 05_Returns_Tracker/
+|    |--- Plan_Hillary_OS.md     # Plan maestro del Life OS
+|    |--- RUNBOOK.md
+|    +--- SESSION_SUMMARY.md
+|
+|--- 03_Hillary_Life_OS_Lab/    # Lab extendido con SDD y OpenSpec
+|    |--- 01_Quick_Capture/
+|    |--- .atl/                  # SDD artifacts
+|    +--- openspec/
+|
+|--- 04_Maerks/                 # Entorno de testing, validacion y docs legacy
+|    |--- 00_Dream_Team_Full.md
+|    |--- 00_Test_Anthropic_Harness/
+|    |--- 01_Create_Agent_Skills/
+|    |--- 02_Skill_Creator/
+|    |--- 03_File_Todos/
+|    |--- 04_Process_Notes_Legacy/
+|    |--- 05_Tests/
+|    |--- 06_Reports/
+|    |--- 07_Tools/
+|    |--- 08_SOP_Prompts/
+|    +--- 09_Claude_Code_Learn/
+|
+|--- 05_New_Skills/             # Skills en evaluacion antes de integrar a 01_Core
+|    |--- Top_20_Skills.md       # Ranking de skills prioritarias
+|    |--- *.txt                  # Prompts de referencia
+|    +--- *.skill                # Archivos .skill listos para instalar
+|
++--- 06_Integration_Tests/      # Tests de integracion del sistema
+     |--- test_configs.py
+     |--- test_runner.py
+     +--- test_scripts.py
 ```
 
 ---
 
-## 🔄 Cambios Recientes (2026-04-14)
+## Skills en 05_New_Skills
 
-### Duplicados Eliminados
-- ❌ `Focus_Now_Lab/01_Test_Anthropic_Harness/` → duplicado de `Maerks/00_Test_Anthropic_Harness/`
-
-### Skills Verificados
-| Skill | Estado | Ubicación en 01_Core |
-|-------|--------|---------------------|
-| brand-voice | ✅ Ya integrado | `04_Product_Design/08_Brand_Voice_Generator` |
-| content-ideation | ✅ Ya integrado | `09_Marketing/12_Content_Ideation` |
-| video-prompt-builder | ✅ Ya integrado | `20_James_Cameron/01_Video_Prompt_Builder` |
-| offer-and-bio-writer | ❌ Pendiente | No encontrado |
+| Skill                | Estado        | Ubicacion en 01_Core                        |
+|----------------------|---------------|---------------------------------------------|
+| brand-voice          | Integrado     | `09_Marketing/11_Brand_Voice_Guardian`      |
+| content-ideation     | Integrado     | `09_Marketing/12_Content_Ideation`          |
+| video-prompt-builder | Integrado     | `20_James_Cameron/01_Video_Prompt_Builder`  |
+| offer-and-bio-writer | Integrado     | `09_Marketing/13_Offer_And_Bio_Writer`      |
 
 ---
 
-## 🎯 Propósito
+## Proposito
 
-Espacio para **pruebas, experimentos y prototipos** sin afectar el sistema principal.
+Espacio para **pruebas, experimentos y prototipos** sin afectar el sistema principal (`01_Core/`).
 
-**Nota:** Cualquier feature validada aquí debe moverse a `01_Core/` para ser parte del sistema oficial.
+**Regla de oro:** Todo lo que se valida aqui se integra a `01_Core/03_Skills/` o `07_Projects/`. Nada queda huerfano.
 
 ---
 
-_Think Different PersonalOS v6.1 — Playground activo_
+*Think Different PersonalOS v6.1 — Playground SOTA 2026-04-15*

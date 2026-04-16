@@ -11,6 +11,7 @@ Usage:
     python 11_Auto_Learn_Hub.py --apply      # Aplicar fixes
 """
 
+import argparse
 import sys
 from pathlib import Path
 

@@ -1,0 +1,48 @@
+# Step 3 — CardsShowcase: Headline Phase (frames 0–58)
+
+Create `src/CardsShowcase.tsx`. This is the first phase of the second sequence.
+The sequence starts from white (transition from BrowserSearch).
+
+## Timing constants for this phase
+
+```tsx
+const WORDS       = ["¿Dónde", "quieres", "extraer", "tus", "leads?"];  // your headline words
+const WORD_DUR    = 4;   // frames between each word appearing
+const ZOOM_END    = 45;  // container zoom settles
+const SLIDE_START = 50;  // text starts exiting
+const CARD_DELAY  = 58;  // cards start entering (end of this phase)
+```
+
+## White fade-from (frames 0–18)
+Render a white div that fades out at sequence start — continues the transition from BrowserSearch:
+```tsx
+<div style={{
+  position: "absolute", inset: 0, background: "#fff",
+  opacity: interpolate(frame, [0, 18], [1, 0], { clamp, easing: Easing.out(Easing.cubic) }),
+}} />
+```
+
+## HeadlineWords component
+
+**Container zoom:** starts at 1.5x, eases to 1.0x by frame 45:
+```tsx
+const containerScale = interpolate(frame, [0, ZOOM_END], [1.5, 1.0],
+  { clamp, easing: Easing.out(Easing.cubic) });
+```
+
+**Words appear one by one** at their natural position in the sentence (inline spans). Each word:
+- Appears every `WORD_DUR` frames at `appearAt = i * WORD_DUR`
+- Opacity: `interpolate(f, [0, 4], [0, 1], clamp)`
+- Subtle pop-in scale: `interpolate(f, [0, 8], [1.08, 1.0], { clamp, easing: Easing.out(Easing.cubic) })`
+- `display: "inline-block"`, `transformOrigin: "center bottom"`
+- Words do NOT disappear — they accumulate
+
+**Apple-style exit (frames 50–58):** scale up + blur + fade simultaneously:
+```tsx
+const exitOpacity = interpolate(frame, [SLIDE_START, CARD_DELAY], [1, 0],   { clamp, easing: Easing.in(Easing.cubic) });
+const exitBlur    = interpolate(frame, [SLIDE_START, CARD_DELAY], [0, 14],  { clamp, easing: Easing.in(Easing.quad) });
+const exitScale   = interpolate(frame, [SLIDE_START, CARD_DELAY], [1.0, 1.09], { clamp, easing: Easing.in(Easing.quad) });
+```
+Apply to the container: `opacity`, `filter: blur(${exitBlur}px)`, `transform: scale(${containerScale * exitScale})`.
+
+**Style:** font SF Pro Display / -apple-system, 58px, weight 800, letterSpacing -2, color `#1d1d1f`, `whiteSpace: "nowrap"`, centered at `top: 488`.

@@ -7,7 +7,9 @@ Reutiliza scripts de validación: 13, 40, 37, 80
 import argparse
 import os
 import io
+import sys
 import subprocess
+from pathlib import Path
 
 
 # === PROTOCOLO DE RUTA DINÁMICA (v6.1) ===

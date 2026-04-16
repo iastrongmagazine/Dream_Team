@@ -16,7 +16,9 @@ Uso:
 import argparse
 import os
 import io
+import sys
 import subprocess
+from pathlib import Path
 
 
 # === PROTOCOLO DE RUTA DINÁMICA (v6.1) ===
@@ -36,7 +38,6 @@ except ImportError:
 
 # Fix Windows console encoding
 if sys.platform == "win32":
-    import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 

@@ -199,6 +199,10 @@ Think_Different/
 | **Workflow**    | `08_Workflow_Hub.py`    | Workflow automation                                 |
 | **Data**        | `09_Data_Hub.py`        | Data processing and analytics                       |
 | **General**     | `10_General_Hub.py`     | General utilities                                   |
+| **Auto Learn**  | `11_Auto_Learn_Hub.py`  | Motor de automejora y aprendizaje                   |
+| **Context Bar** | `12_Context_Usage_Bar.py` | Barra de uso de contexto                          |
+| **Beautify**    | `13_Beautify_Tables.py` | Formateo de tablas markdown                         |
+| **Beauty Doc**  | `14_Beauty_Doc.py`      | Documentos embellecidos                             |
 
 ### 📚 Documentación del Sistema
 

@@ -13,6 +13,8 @@ Uso:
     python 09_Data_Hub.py report --period week
     python 09_Data_Hub.py export --format csv
 """
+import argparse
+import subprocess
 import sys
 from pathlib import Path
 
@@ -56,8 +58,9 @@ def print_banner():
     print(banner)
 
 
-import argparse
-import subprocess
+def dynamic_speak(text):
+    print(f"{Fore.MAGENTA}[VOICE]: {text}{Style.RESET_ALL}")
+
 
 def run_script(script_name):
     # Los scripts de Datos están en 07_Data

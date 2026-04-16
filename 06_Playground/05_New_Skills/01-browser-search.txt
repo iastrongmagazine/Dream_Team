@@ -1,0 +1,45 @@
+# Step 2 — BrowserSearch Sequence (90 frames)
+
+Create `src/BrowserSearch.tsx`. This sequence simulates a browser typing a URL.
+
+## Timing constants
+
+```tsx
+const URL_TEXT     = "yourdomain.com";
+const CHARS        = URL_TEXT.length;
+const FPC          = 3;                          // frames per character
+const T_FOCUS      = 18;
+const T_TYPE_START = 26;
+const T_TYPE_END   = T_TYPE_START + CHARS * FPC;
+const T_MOVE_END   = T_TYPE_END + 14;
+const T_FADE_START = T_MOVE_END;
+const T_FADE_END   = T_FADE_START + 10;
+```
+
+## Layout
+- Background: `#f5f5f7`
+- Centered browser window with realistic chrome
+- Address bar has a **lock icon (🔒)** on the left, not a magnifying glass
+- Search/go button on the right
+
+## Animations
+
+**Camera zoom + pan while typing:**
+- Zoom to 2.2x following the cursor position
+- Use `transformOrigin` set to the cursor's X position each frame so the camera tracks right as letters appear
+- Wrap the entire browser window in a div with `transform: scale(${finalZoom})` and dynamic `transformOrigin`
+
+**Hand pointer click:**
+- Appears near the search button at `T_MOVE_END`
+- Scales up: `interpolate(frame, [T_MOVE_END, T_MOVE_END+5, T_MOVE_END+10], [1, 1.35, 1.2])`
+
+**Fade-to-white transition (sequence end):**
+```tsx
+const pushZoom    = interpolate(frame, [T_FADE_START, T_FADE_END], [1, 1.18], { clamp, easing: Easing.in(Easing.cubic) });
+const whiteOverlay = interpolate(frame, [T_FADE_START, T_FADE_END], [0, 1],   { clamp, easing: Easing.in(Easing.cubic) });
+```
+Apply `pushZoom` to the camera wrapper and render a white `<div>` with `opacity: whiteOverlay` as the last child of `AbsoluteFill`.
+
+## Visual polish
+- Vignette overlay: `radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.18) 100%)`
+- Subtle radial gradient behind the browser to focus attention

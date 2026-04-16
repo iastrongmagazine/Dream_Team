@@ -1,86 +1,51 @@
 # 02_Knowledge — Base de Conocimiento
 
-**Versión:** 6.1
-**Última actualización:** 2026-04-14
-**Estado:** ✅ Activo
+**Version:** 6.1
+**Ultima actualizacion:** 2026-04-15
+**Estado:** Activo
 
 ---
 
-## 📂 Estructura (Workspace)
-
-```
-Think_Different/
-├── 00_Winter_is_Coming/    # Estrategia, Backlog y ADN (ESTRATÉGICO)
-├── 01_Core/               # Motor OS: Skills, Agents, MCPs (FUENTE DE VERDAD) 💾
-├── 02_Knowledge/          # Base de Conocimiento, Research y Documentación 📚
-├── 03_Tasks/              # Gestión de Tareas Activas
-├── 04_Operations/         # Cerebro Operativo y Automatización
-├── 05_Archive/            # Repositorio de Proyectos Finalizados
-├── 06_Playground/         # Laboratorio de Pruebas y Experimentos
-├── 07_Projects/           # Desarrollo de Proyectos Activos
-├── 08_Scripts_Os/         # Scripts y HUBs Operativos del Sistema
-└── Maerks/               # Entorno de Testing y Validación
-```
-
----
-
-## 📂 Estructura 02_Knowledge
+## Estructura
 
 ```
 02_Knowledge/
-├── README.md                         # Este archivo (v6.1)
-├── Skill_Creator_v2_Analysis.md     # Análisis profundo del motor de creación de skills
-├── 00_Examples_Personal_Os/         # Tutoriales, workflows y archivos de ejemplo
-├── 01_Research_Os/                   # Investigación tecnológica y rankings
-├── 02_Perfiles_Team/                 # Definición de roles (Prompt Engineering)
-├── 03_Writing_Content/               # Borradores de contenido y reflexiones de diseño
-├── 04_Docs/                          # Documentación oficial (Auditorías, Runbooks, ATL)
-├── 05_Aipm/                          # Recursos de AI Project Management
-├── 06_Unicorn/                       # Unicorn Engineering (Fuente de Verdad Técnica)
-└── 07_Invictus/                      # Metodología de creación de agentes Invictus
+|--- README.md                        # Este archivo
+|--- 00_Examples_Personal_Os/         # Tutoriales, workflows y ejemplos del OS
+|--- 01_Research_Os/                  # Investigacion tecnologica y rankings SOTA
+|--- 03_Writing_Content/              # Borradores de contenido y reflexiones
+|--- 04_Docs/                         # Documentacion oficial (Auditorias, Runbooks, ATL)
+|    |--- OS_Integration_Audit_v6.1.md
+|    |--- OS_Edge_Cases_Analysis.md
+|    |--- Skill_Creator_v2_Analysis.md
+|    +--- 99_ATL/skill-registry.md
+|--- 05_Aipm/                         # Recursos de AI Project Management
+|--- 06_Unicorn/                      # Unicorn Engineering — 6 areas SOTA
+|    |--- README.md
+|    |--- 01_Pm/                      # Project Management
+|    |--- 02_Pdm/                     # Product Management
+|    |--- 03_Product_Design/          # UX, wireframes, Design Sprint
+|    |--- 04_Art_Director/            # Visual, branding, design system
+|    |--- 05_Aipm/                    # AI patterns, agents, context engineering
+|    +--- 06_Engineering/             # Full-stack, arquitectura, codigo
++--- 07_Invictus/                     # Metodologia de creacion de agentes Invictus
 ```
-```
+
+> Nota: `02_Perfiles_Team` fue eliminado en una sesion anterior. El indice salta de 01 a 03.
 
 ---
 
-## 🎯 Propósito
+## Proposito
 
-Almacena **documentación de referencia, investigación, specs, notas de reuniones** y cualquier información persistente que las tareas necesiten.
-
-> ⚠️ **Esta carpeta está gitignored** — Tus notas bleiben privadas y locales.
-
----
-
-## 📚 Contenido
+Almacena **documentacion de referencia, investigacion, specs y notas** que las tareas y skills necesitan.
 
 | Tipo           | Ejemplos                                     |
-| -------------- | -------------------------------------------- |
-| Specs & briefs | Requisitos de proyecto, specs de features    |
-| Meeting notes  | Decisiones, action items, asistentes         |
-| Research       | Análisis de mercado, hallazgos técnicos      |
+|----------------|----------------------------------------------|
+| Specs          | Requisitos de proyecto, specs de features    |
+| Research       | Analisis de mercado, hallazgos tecnicos      |
 | Process docs   | How-tos, checklists, runbooks                |
-| References     | Links, contactos, credenciales (encriptadas) |
+| Unicorn KB     | Decisions, lessons, patterns por area        |
 
 ---
 
-## 🔗 Vinculación desde Tareas
-
-Referenciar documentos en tus archivos de tareas:
-
-```yaml
-resource_refs:
-  - 02_Knowledge/project-spec.md
-  - 02_Knowledge/meeting-notes-2026-03-27.md
-```
-
----
-
-## 📚 Recursos
-
-- [Tutorials](./00_Examples_Personal_Os/Tutorials/README.md) — Guías paso a paso
-- [Workflows](./00_Examples_Personal_Os/Workflows/README.md) — Flujos de trabajo
-- [Example Files](./00_Examples_Personal_Os/Example_Files/) — Archivos de ejemplo
-
----
-
-_Think Different PersonalOS v6.1 — Conocimiento activo_
+*Think Different PersonalOS v6.1 — Conocimiento activo 2026-04-15*

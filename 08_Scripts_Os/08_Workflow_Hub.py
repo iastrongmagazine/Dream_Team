@@ -13,6 +13,8 @@ Uso:
     python 08_Workflow_Hub.py close        # Ritual de cierre
     python 08_Workflow_Hub.py run <name>   # Ejecutar workflow específico
 """
+import argparse
+import subprocess
 import sys
 from pathlib import Path
 

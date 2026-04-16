@@ -1,0 +1,77 @@
+# Step 5 — Audio
+
+Add all sound effects and background music.
+
+## Setup
+Place all `.mp3` files in `/public/`. Import in Remotion:
+```tsx
+import { Audio, Sequence, staticFile } from "remotion";
+```
+
+**Important:** Never use a `delay` prop on `<Audio>` — it doesn't exist in Remotion.
+Always use `<Sequence from={frameNumber}>` to trigger audio at a specific frame.
+
+---
+
+## Find silence offset with ffmpeg
+Before adding any audio, run this to find where the actual sound starts (skip leading silence):
+```bash
+ffmpeg -i "your-file.mp3" -af "silencedetect=noise=-40dB:d=0.01" -f null - 2>&1
+```
+Look for the first `silence_end` value. Convert to frames: `seconds × 30 = startFrom`.
+
+---
+
+## Keyboard sound (in BrowserSearch.tsx)
+Plays during typing, cut off when typing ends:
+```tsx
+<Sequence from={T_TYPE_START} durationInFrames={T_TYPE_END - T_TYPE_START}>
+  <Audio src={staticFile("sonido-teclado.mp3")} startFrom={210} />
+</Sequence>
+```
+> `startFrom={210}` = second 7 of the audio. Adjust based on your file's silence offset.
+
+## Click sound (in BrowserSearch.tsx)
+Plays on hand pointer click:
+```tsx
+<Sequence from={T_MOVE_END}>
+  <Audio src={staticFile("sonido-clic.mp3")} startFrom={1} />
+</Sequence>
+```
+
+## Logo burst sound (in CardsShowcase.tsx)
+```tsx
+<Sequence from={LOGO_START}>
+  <Audio src={staticFile("sonido-logo.mp3")} startFrom={9} />
+</Sequence>
+```
+> `startFrom={9}` skips 0.31s of silence. Adjust to your file.
+
+---
+
+## Background music (in your root composition component)
+Align the **end of the song** with the **end of the video**:
+
+1. Find where the last sound ends in your music file:
+```bash
+ffmpeg -i "music.mp3" -af "silencedetect=noise=-40dB:d=0.1" -f null - 2>&1
+# Look for the last silence_start value — that's where sound ends
+```
+
+2. Calculate startFrom:
+```
+startFrom = (lastSoundEnd_seconds - videoDuration_seconds) × 30
+```
+
+3. Add to your root composition component (outside `<Series>`, as a sibling):
+```tsx
+export const ProductDemo: React.FC = () => (
+  <>
+    <Audio src={staticFile("musica-fondo.mp3")} startFrom={547} volume={0.4} />
+    <Series>
+      ...
+    </Series>
+  </>
+);
+```
+> `volume={0.4}` keeps music subtle so SFX are audible on top.

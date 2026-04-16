@@ -7,7 +7,9 @@ SISTEMA SOTA INDEPENDIENTE - Sin dependencias Legacy
 import argparse
 import os
 import io
+import sys
 import subprocess
+from pathlib import Path
 
 
 # === PROTOCOLO DE RUTA DINÁMICA (v6.1) ===
